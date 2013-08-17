@@ -1,11 +1,11 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LOAD EXTERNALS
-" VIM SETTINGS
-" PLUGIN SETTINGS
-" FILE TYPE SETTINGS
-" MAPPINGS
-" COMMANDS
-" COLORSCHEME
+" LOAD EXTERNALS.................load external resources, start package manager
+" VIM SETTINGS..................................vim built in setting overwrites
+" PLUGIN SETTINGS.....................................plugin setting overwrites
+" FILE TYPE SETTINGS......................file type specific setting overwrites
+" MAPPINGS..................................................custom key mappings
+" COMMANDS......................................................custom commands
+" COLORSCHEME..................................colorscheme and color overwrites
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
