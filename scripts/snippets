@@ -1,0 +1,21 @@
+#!/bin/bash
+
+exit
+
+# -----------------------------------------------------------------------------------------------------
+# git daemon (http://coldmochi.com/2011/07/11/quick-git-repo-setup-between-dev-machines/)
+# on local machine
+mkdir /workplace/gitrepos
+cd /workplace/gitrepos
+mkdir HelloWorld.git
+cd HelloWorld.git
+git init --bare
+cd ..
+git daemon --reuseaddr --base-path=. --export-all --enable=receive-pack
+
+# remove machine
+git remote add origin git://foobar.com/HelloWorld.git
+git push origin master
+# -----------------------------------------------------------------------------------------------------
+
+

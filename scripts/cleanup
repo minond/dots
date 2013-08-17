@@ -1,0 +1,27 @@
+#! /bin/bash
+reset
+echo -e '\E[34;47mTaking the Trash out.'; tput sgr0
+rm -rf  /home/marcos/.local/share/Trash/files/*
+rm -rf  /home/marcos/.local/share/Trash/info/*
+
+# echo -e '\E[34;47mPerform repository update.'; tput sgr0
+# apt-get update
+
+# echo -e '\E[34;47mPerform any upgrades.'; tput sgr0
+# apt-get upgrade
+
+# echo -e '\E[34;47mFixing Apt.'; tput sgr0
+# dpkg --configure -a
+# apt-get -f install
+# apt-get dist-upgrade
+
+#echo -e '\E[34;47mKilling Orphans.'; tput sgr0
+#people with external repos tend to have orphaned packages they acually need. 
+#deborphan --guess-all | xargs apt-get -y remove --purge
+
+echo -e '\E[34;47mAutoremove.'; tput sgr0
+apt-get --yes autoremove --purge
+
+
+echo -e '\E[34;47mAuto clean.'; tput sgr0
+apt-get --yes autoclean --purge

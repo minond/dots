@@ -1,0 +1,6 @@
+--langmap=php:+.inc.lan.view.act.get.controller.isui
+--langmap=html:+.tpl.page
+--langmap=java:+.cls
+--exclude=resources/js/*
+--exclude=nexus_library/js/*
+--exclude=smartmvc/resources/js/*
