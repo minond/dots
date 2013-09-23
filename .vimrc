@@ -55,9 +55,19 @@ au Filetype yaml source ~/.vim/scripts/yml.vim
 au Filetype yml source ~/.vim/scripts/yml.vim
 
 au BufNewFile,BufRead *.json set ft=javascript
-au BufNewFile,BufRead *.tpl set ft=smarty
 au BufNewFile,BufRead *.twig set ft=htmljinja
+
+" work shift
+au BufNewFile,BufRead *.tpl set ft=smarty
 au BufNewFile,BufRead *{.inc,.lan,.view,.act,.get,.controller} set ft=php
+
+" apex shiat
+au BufNewFile,BufRead *.cls set ft=java
+au BufNewFile,BufRead *.page set ft=html
+au BufNewFile,BufRead *.object set ft=xml
+hi link javaCharacter javaString
+hi link javaSpecialCharError javaString
+hi link javaError None
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $MAPPINGS
