@@ -54,6 +54,7 @@ au Filetype * source ~/.vim/scripts/script.vim
 au Filetype yaml source ~/.vim/scripts/yml.vim
 au Filetype yml source ~/.vim/scripts/yml.vim
 
+au BufNewFile,BufRead *.md set ft=mkd
 au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead *.twig set ft=htmljinja
 
