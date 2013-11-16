@@ -1,6 +1,7 @@
 --langmap=php:+.inc.lan.view.act.get.controller.isui
 --langmap=html:+.tpl.page
 --langmap=java:+.cls
+--regex-PHP=/trait ([^ ]*)/\1/c/
 --exclude=resources/js/*
 --exclude=nexus_library/js/*
 --exclude=smartmvc/resources/js/*
