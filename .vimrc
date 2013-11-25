@@ -53,6 +53,7 @@ let g:Powerline_symbols = 'fancy'
 au Filetype * source ~/.vim/scripts/script.vim
 au Filetype yaml source ~/.vim/scripts/yml.vim
 au Filetype yml source ~/.vim/scripts/yml.vim
+au Filetype cucumber source ~/.vim/scripts/yml.vim
 
 au BufNewFile,BufRead *.md set ft=mkd
 au BufNewFile,BufRead *.json set ft=javascript
@@ -80,20 +81,24 @@ map <C-c> <ESC>:TComment<CR>
 xmap <C-c> <ESC>:'<,'>TComment<CR>
 map <C-f> <ESC>:NERDTreeFind<CR>
 map <S-f> <ESC>:NERDTreeTabsToggle<CR>
-map <leader>t :TagbarToggle<CR>
 
 map <C-b> <ESC>:exec("tag ".expand("<cword>"))<CR>
 map <C-l> <ESC>:echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
 map <S-j> <ESC>:bp<CR>
 map <S-k> <ESC>:bn<CR>
 map <S-s> <ESC>:w<CR>
+map <C-s> <ESC>:w<CR>
 map <Tab> <C-w><C-w>
-map <leader><Tab> <C-w><C-w>
 
+map <leader><Tab> <C-w><C-w>
+map <leader>t :TagbarToggle<CR>
+map <leader>g :GitGutter<CR>
+nmap <leader>s :source $MYVIMRC<CR>
 nmap <leader>l :set list!<CR>
+nmap <leader>n :set relativenumber!<CR>
 vnoremap <leader>p "_dP
 nnoremap <leader> w :call <SID>StripTrailingWhitespaces()<CR>
-map <C-h> :if exists("g:syntax_on") <Bar>
+map <leader>h :if exists("g:syntax_on") <Bar>
     \ syntax off <Bar>
     \ else <Bar>
     \syntax on <Bar>
