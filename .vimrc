@@ -2,6 +2,7 @@
 " LOAD EXTERNALS.................load external resources, start package manager
 " VIM SETTINGS..................................vim built in setting overwrites
 " PLUGIN SETTINGS.....................................plugin setting overwrites
+" ENV SPECIFIC SETTINGS............settings that are specific to an environment
 " FILE TYPE SETTINGS......................file type specific setting overwrites
 " MAPPINGS..................................................custom key mappings
 " COMMANDS......................................................custom commands
@@ -16,13 +17,13 @@ execute pathogen#infect()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $VIM SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hidden                               " best. thing. ever. no buffer closed
 set antialias
 set cursorline                           " highlight the line cursor is on
 set hlsearch                             " highlight all matches
 set ignorecase                           " case insensitive searches
 set incsearch                            " highlight matches while typing
 set list                                 " display special characters
-set listchars=tab:▸\ ,eol:¬              " special characters to tabs and eols
 set ls=2
 set nocompatible
 set nowrap
@@ -34,18 +35,29 @@ set softtabstop=4                        " back character length
 set tabstop=4                            " tab character length
 set numberwidth=4                        " set line numbers section width
 set shiftwidth=4                         " shift movement length
-set wildmenu
 set colorcolumn=80,120
 set expandtab
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " ignored by vim fs access
 set wildignore+=*/templates_c/*,*/bin/*
 set t_Co=256
+set wildmenu
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $PLUGIN SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDChristmasTree = 1
-let g:Powerline_symbols = 'fancy'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $ENV SPECIFIC SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if !empty($WORK_ENV)
+    " is.com env settings
+    set listchars=tab:>\ ,eol:¬,trail:.  " special characters for special char
+else
+    " personal compueter settings
+    set listchars=tab:▸\ ,eol:¬,trail:.  " special characters for special char
+    let g:Powerline_symbols = 'fancy'
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
@@ -90,13 +102,16 @@ map <S-s> <ESC>:w<CR>
 map <C-s> <ESC>:w<CR>
 map <Tab> <C-w><C-w>
 
+" exit insert mode within insert mode
+inoremap jj <Esc>
+
 map <leader><Tab> <C-w><C-w>
 map <leader>t :TagbarToggle<CR>
 map <leader>g :GitGutter<CR>
-nmap <leader>s :source $MYVIMRC<CR>
+nmap <leader>s :source $MYVIMRC<CR>:noh<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>n :set relativenumber!<CR>
-vnoremap <leader>p "_dP
+map <leader>p :set paste!<CR>
 nnoremap <leader> w :call <SID>StripTrailingWhitespaces()<CR>
 map <leader>h :if exists("g:syntax_on") <Bar>
     \ syntax off <Bar>
@@ -136,8 +151,6 @@ hi link phpMethods phpRegion
 match ExtraWhitespace /\s\+\%#\@<!$/
 
 
-
-
 " todo: get function out of here
 " white space
 function! <SID>StripTrailingWhitespaces()
@@ -151,3 +164,4 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
+
