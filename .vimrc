@@ -119,17 +119,27 @@ map <leader>h :if exists("g:syntax_on") <Bar>
     \syntax on <Bar>
     \ endif <CR>
 
+" colon, semi-colon switch
+nnoremap ; :
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-command! Cupdate !composer update
-command! -nargs=* Diff !git diff <f-args>
-command! Stat !git status
-command! -nargs=* Test !phpunit <f-args>
-command! ViewTests !gnome-open ./bin/report/index.html
 command! Ctags !if [ -f tags ]; then rm tags; fi && ctags -R --verbose
+
+" gcc
 command! GccRun !gcc % -o prog.out && chmod +x prog.out && ./prog.out && rm prog.out
 command! -nargs=* GccCat !gcc % -o prog.out && chmod +x prog.out && cat <f-args> | ./prog.out && rm prog.out
+
+" php
+command! Cupdate !composer update
+command! -nargs=* Test !phpunit <f-args>
+command! ViewTests !gnome-open ./bin/report/index.html
+
+" git commands
+command! Ann !git annotate %
+command! Stat !git status
+command! -nargs=* Diff !git diff <f-args>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLORSCHEME
