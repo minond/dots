@@ -126,7 +126,7 @@ nnoremap ; :
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-command! Ctags !if [ -f tags ]; then rm tags; fi && ctags -R --verbose
+command! Ctags !ctags -R --verbose -f .tags
 
 " gcc
 command! GccRun !gcc % -o prog.out && chmod +x prog.out && ./prog.out && rm prog.out
