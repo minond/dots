@@ -41,6 +41,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip " ignored by vim fs access
 set wildignore+=*/templates_c/*,*/bin/*
 set t_Co=256
 set wildmenu
+set tags^=./.tags,./.TAGS,.tags,.TAGS
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $PLUGIN SETTINGS
