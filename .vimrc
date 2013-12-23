@@ -47,6 +47,7 @@ set tags^=./.tags,./.TAGS,.tags,.TAGS
 " $PLUGIN SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDChristmasTree = 1
+let g:ctrlp_max_height = 30
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $ENV SPECIFIC SETTINGS
@@ -68,9 +69,11 @@ au Filetype yaml source ~/.vim/scripts/yml.vim
 au Filetype yml source ~/.vim/scripts/yml.vim
 au Filetype cucumber source ~/.vim/scripts/yml.vim
 
+" file type remapping for syntax highlighting
 au BufNewFile,BufRead *.md set ft=mkd
 au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead *.twig set ft=htmljinja
+au BufNewFile,BufRead *.dist set ft=xml
 
 " work shift
 au BufNewFile,BufRead *.tpl set ft=smarty
