@@ -182,6 +182,7 @@ export PERL_MB_OPT="--install_base /home/marcos/perl5";
 export PERL_MM_OPT="INSTALL_BASE=/home/marcos/perl5";
 export PERL5LIB="/home/marcos/perl5/lib/perl5/i686-linux-gnu-thread-multi-64int:/home/marcos/perl5/lib/perl5";
 export PATH="/home/marcos/perl5/bin:$PATH";
+export PATH="$PATH:/home/marcos/.composer/bin/";
 export EDITOR=vim
 
 ### Added by the Heroku Toolbelt
