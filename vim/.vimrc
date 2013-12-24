@@ -68,12 +68,14 @@ au Filetype * source ~/.vim/scripts/script.vim
 au Filetype yaml source ~/.vim/scripts/yml.vim
 au Filetype yml source ~/.vim/scripts/yml.vim
 au Filetype cucumber source ~/.vim/scripts/yml.vim
+au Filetype ruby source ~/.vim/scripts/yml.vim
 
 " file type remapping for syntax highlighting
 au BufNewFile,BufRead *.md set ft=mkd
 au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead *.twig set ft=htmljinja
 au BufNewFile,BufRead *.dist set ft=xml
+au BufNewFile,BufRead *.pp set ft=ruby
 
 " work shift
 au BufNewFile,BufRead *.tpl set ft=smarty
