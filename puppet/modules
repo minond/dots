@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#==============================================================================
+#         FILE: modules
+#        USAGE: ./modules
+#  DESCRIPTION: installs my puppet modules
+# REQUIREMENTS: puppet
+#==============================================================================
+
+modules=$(puppet module list)
+
+#=== FUNCTION =================================================================
+#        NAME: install_puppet_module
+# DESCRIPTION: installs a puppet module if it hasn't been installed already
+# PARAMETER 1: module
+#==============================================================================
+install_puppet_module () {
+    module=$1
+    echo $modules | grep $module &> /dev/null
+
+    if [ $? -eq 0 ]; then
+        echo "$module is already installed"
+    else
+        echo "install $module..."
+        puppet module install $module
+        echo
+    fi
+}
+
+#------------------------------------------------------------------------------
+# all modules
+#------------------------------------------------------------------------------
+install_puppet_module "puppetlabs-apt"
+install_puppet_module "nodes-php"
+
+#------------------------------------------------------------------------------
+# visual confirmation
+#------------------------------------------------------------------------------
+puppet module list
+

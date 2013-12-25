@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/bin/bash
+
 reset
 echo -e '\E[34;47mTaking the Trash out.'; tput sgr0
 rm -rf  /home/marcos/.local/share/Trash/files/*
