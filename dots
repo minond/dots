@@ -38,8 +38,19 @@ function="dots_${action}_${what}"
 # DESCRIPTION: print usage text with possible actions and what options
 #==============================================================================
 usage() {
-    echo "invalid action ($action) or what ($what) input"
-    echo "options include:"
+    echo "usage: ./dots [-h|--help] [-u|--update] <action> [<what>] [--all]"
+    echo " --help             # view this text output"
+    echo " --update           # update this repository (needed for vim plugins)"
+
+    echo
+    echo "actions:"
+    echo " install            # backup old configuration and set new configuration files"
+    echo " uninstall          # restore old configuration files"
+    echo " reset              # delete configuration files"
+
+    echo
+    echo "actions:"
+    echo " - install --all    # install all configuration"
 
     # get all functions declared in this scripts
     typeset -F | sort | \
@@ -245,9 +256,22 @@ if [ $? -eq 0 ]; then
     eval $function
 else
     case $action in
+        "")
+            usage
+            ;;
+
+        -h|--help)
+            usage
+            ;;
+
+        -u|--update)
+            git pull --rebase origin master
+            git submodule update --init
+            ;;
+
         install)
             case $what in
-                all)
+                --all)
                     echo "installing everything..."
                     dots_install_bash
                     dots_install_vim
@@ -258,6 +282,7 @@ else
                     ;;
 
                 *)
+                    echo "invalid what: $what"
                     usage
                     exit 1
                     ;;
@@ -265,6 +290,7 @@ else
             ;;
 
         *)
+            echo "invalid action: $action"
             usage
             exit 1
             ;;
