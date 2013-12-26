@@ -2,7 +2,6 @@
 
 #==============================================================================
 #         FILE: dots
-#        USAGE: ./dots [action]
 #  DESCRIPTION: links configuration files to files in this repo
 #        USAGE: see "usage" function NOTES section
 # REQUIREMENTS: this script must be ran from the root of the dots project
@@ -31,7 +30,7 @@
 
 action=$1
 what=$2
-function="dots_${action}_${what}"
+func="dots_${action}_${what}"
 
 #=== FUNCTION =================================================================
 #        NAME: usage
@@ -250,10 +249,10 @@ dots_install_composer() {
 #------------------------------------------------------------------------------
 # execute
 #------------------------------------------------------------------------------
-declare -f $function > /dev/null
+declare -f $func > /dev/null
 
 if [ $? -eq 0 ]; then
-    eval $function
+    eval $func
 else
     case $action in
         "")
