@@ -1,0 +1,179 @@
+#!/bin/bash
+
+#==============================================================================
+#         FILE: dots
+#        USAGE: ./dots [action]
+#  DESCRIPTION: links configuration files to files in this repo
+# REQUIREMENTS: this script must be ran from the root of the dots project
+#         NOTE: configuration management should include actions for the
+#               following tasks:
+#                - install
+#                - uninstall
+#                - reset
+#               new actions are added by creating new functions. function
+#               naming convention: dots_<action>_<what>. ie:
+#                - dots_install_vim
+#                - dots_uninstall_vim
+#                - dots_reset_vim
+#==============================================================================
+
+#==============================================================================
+# HELPERS..................................helper functions for file management
+# VIM.................................................................vim files
+# BASH...............................................................bash files
+#==============================================================================
+
+action=$1
+what=$2
+function="dots_${action}_${what}"
+
+#------------------------------------------------------------------------------
+# $HELPERS
+#------------------------------------------------------------------------------
+
+#=== FUNCTION =================================================================
+#        NAME: link
+# DESCRIPTION: create a symbolic link
+# PARAMETER 1: file
+# PARAMETER 2: link
+#==============================================================================
+link() {
+    file=`pwd`/$1
+    link=$2
+
+    if [ -f $link ] || [ -d $link ]; then
+        rm -r $link
+    fi
+
+    echo "linking $file to $link"
+    ln -s $file $link
+}
+
+#=== FUNCTION =================================================================
+#        NAME: remove
+# DESCRIPTION: removes a file
+# PARAMETER 1: file
+#==============================================================================
+remove() {
+    file=$1
+
+    if [ -f $file ] || [ -d $file ]; then
+        echo "removing $file"
+        rm -r $file
+    fi
+}
+
+#=== FUNCTION =================================================================
+#        NAME: backup
+# DESCRIPTION: creates a backup file
+# PARAMETER 1: file
+#==============================================================================
+backup() {
+    file=$1
+    back=$file.bak
+
+    if [ -f $file ] || [ -d $file ]; then
+        [ -d $back ] && rm -r $back
+        echo "backing up $file into $back"
+        cp -r $file $back
+    else
+        echo "not backing up $file (not found)"
+    fi
+}
+
+#=== FUNCTION =================================================================
+#        NAME: restore
+# DESCRIPTION: restores a backup file
+# PARAMETER 1: file
+#==============================================================================
+restore() {
+    file=$1
+    back=$file.bak
+
+    if [ -f $back ] || [ -d $back ]; then
+        [ -d $file ] && rm -r $file
+        echo "restoring $file from $back"
+        mv $back $file
+    else
+        echo "not restoring $file found. backup ($back) not found"
+    fi
+}
+
+#------------------------------------------------------------------------------
+# $VIM
+#------------------------------------------------------------------------------
+
+#=== FUNCTION =================================================================
+#        NAME: dots_install_vim
+# DESCRIPTION: add all vim related files. creates a backup of what was
+#              previously there
+#==============================================================================
+dots_install_vim() {
+    backup ~/.vim
+    backup ~/.vimrc
+    link vim/.vim ~/.vim
+    link vim/.vimrc ~/.vimrc
+}
+
+#=== FUNCTION =================================================================
+#        NAME: dots_uninstall_vim
+# DESCRIPTION: remove all vim related files. restores files that where
+#              previously there
+#==============================================================================
+dots_uninstall_vim() {
+    restore ~/.vim
+    restore ~/.vimrc
+}
+
+#=== FUNCTION =================================================================
+#        NAME: dots_reset_vim
+# DESCRIPTION: remove all vim related files.
+#==============================================================================
+dots_reset_vim() {
+    remove ~/.vim
+    remove ~/.vimrc
+}
+
+#------------------------------------------------------------------------------
+# $BASH
+#------------------------------------------------------------------------------
+
+#=== FUNCTION =================================================================
+#        NAME: dots_install_bash
+# DESCRIPTION: add all bash related files. creates a backup of what was
+#              previously there
+#==============================================================================
+dots_install_bash() {
+    backup ~/.bashrc
+    link .bashrc ~/.bashrc
+}
+
+#=== FUNCTION =================================================================
+#        NAME: dots_uninstall_bash
+# DESCRIPTION: remove all bash related files. restores files that where
+#              previously there
+#==============================================================================
+dots_uninstall_bash() {
+    restore ~/.bashrc
+}
+
+#=== FUNCTION =================================================================
+#        NAME: dots_reset_bash
+# DESCRIPTION: remove all bash related files.
+#==============================================================================
+dots_reset_bash() {
+    remove ~/.bashrc
+}
+
+#------------------------------------------------------------------------------
+# execute
+#------------------------------------------------------------------------------
+declare -f $function > /dev/null
+
+if [ $? -eq 0 ]; then
+    eval $function
+else
+    echo "invalid action ($action) or what ($what) option"
+    exit 1
+fi
+
