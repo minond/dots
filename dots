@@ -4,12 +4,14 @@
 #         FILE: dots
 #        USAGE: ./dots [action]
 #  DESCRIPTION: links configuration files to files in this repo
+#        USAGE: see "usage" function NOTES section
 # REQUIREMENTS: this script must be ran from the root of the dots project
-#         NOTE: configuration management should include actions for the
+#        NOTES: configuration management should include actions for the
 #               following tasks:
 #                - install
 #                - uninstall
 #                - reset
+#               it must at the very least include an "install" action
 #               new actions are added by creating new functions. function
 #               naming convention: dots_<action>_<what>. ie:
 #                - dots_install_vim
@@ -21,11 +23,35 @@
 # HELPERS..................................helper functions for file management
 # VIM.................................................................vim files
 # BASH...............................................................bash files
+# TMUX...............................................................tmux files
+# CTAGS.............................................................ctags files
+# GIT.................................................................git files
+# COMPOSER.......................................................composer files
 #==============================================================================
 
 action=$1
 what=$2
 function="dots_${action}_${what}"
+
+#=== FUNCTION =================================================================
+#        NAME: usage
+# DESCRIPTION: print usage text with possible actions and what options
+#==============================================================================
+usage() {
+    echo "invalid action ($action) or what ($what) input"
+    echo "options include:"
+
+    # get all functions declared in this scripts
+    typeset -F | sort | \
+        # just dots_ functions. other functions are ignored
+        grep dots_ | \
+        # remove extras from typeset output and dots_ prefix
+        sed 's/declare -f dots_//' | \
+        # replace _ with spaces (ie. reset_vim -> reset vim)
+        sed 's/_/ /g' | \
+        # output name
+        xargs -I {} echo " - {}"
+}
 
 #------------------------------------------------------------------------------
 # $HELPERS
@@ -148,21 +174,66 @@ dots_install_bash() {
     link .bashrc ~/.bashrc
 }
 
-#=== FUNCTION =================================================================
-#        NAME: dots_uninstall_bash
-# DESCRIPTION: remove all bash related files. restores files that where
-#              previously there
-#==============================================================================
-dots_uninstall_bash() {
-    restore ~/.bashrc
-}
+#------------------------------------------------------------------------------
+# $TMUX
+#------------------------------------------------------------------------------
 
 #=== FUNCTION =================================================================
-#        NAME: dots_reset_bash
-# DESCRIPTION: remove all bash related files.
+#        NAME: dots_install_tmux
+# DESCRIPTION: add all tmux related files. creates a backup of what was
+#              previously there
 #==============================================================================
-dots_reset_bash() {
-    remove ~/.bashrc
+dots_install_tmux() {
+    backup ~/.tmux.conf
+    link .tmux.conf ~/.tmux.conf
+}
+
+#------------------------------------------------------------------------------
+# $CTAGS
+#------------------------------------------------------------------------------
+
+#=== FUNCTION =================================================================
+#        NAME: dots_install_ctags
+# DESCRIPTION: add all ctags related files. creates a backup of what was
+#              previously there
+#==============================================================================
+dots_install_ctags() {
+    backup ~/.ctags
+    link .ctags ~/.ctags
+}
+
+#------------------------------------------------------------------------------
+# $GIT
+#------------------------------------------------------------------------------
+
+#=== FUNCTION =================================================================
+#        NAME: dots_install_git
+# DESCRIPTION: add all git related files. creates a backup of what was
+#              previously there
+#==============================================================================
+dots_install_git() {
+    backup ~/.gitconfig
+    backup ~/.gitignore
+    link git/.gitconfig ~/.gitconfig
+    link git/.gitignore ~/.gitignore
+}
+
+#------------------------------------------------------------------------------
+# $COMPOSER
+#------------------------------------------------------------------------------
+
+#=== FUNCTION =================================================================
+#        NAME: dots_install_composer
+# DESCRIPTION: add all composer related files. creates a backup of what was
+#              previously there
+#==============================================================================
+dots_install_composer() {
+    backup ~/.composer/composer.json
+    backup ~/.composer/composer.lock
+    backup ~/.composer/config.json
+    link composer/composer.json ~/.composer/composer.json
+    link composer/composer.lock ~/.composer/composer.lock
+    link composer/config.json ~/.composer/config.json
 }
 
 #------------------------------------------------------------------------------
@@ -173,7 +244,30 @@ declare -f $function > /dev/null
 if [ $? -eq 0 ]; then
     eval $function
 else
-    echo "invalid action ($action) or what ($what) option"
-    exit 1
+    case $action in
+        install)
+            case $what in
+                all)
+                    echo "installing everything..."
+                    dots_install_bash
+                    dots_install_vim
+                    dots_install_git
+                    dots_install_ctags
+                    dots_install_composer
+                    dots_install_tmux
+                    ;;
+
+                *)
+                    usage
+                    exit 1
+                    ;;
+            esac
+            ;;
+
+        *)
+            usage
+            exit 1
+            ;;
+    esac
 fi
 
