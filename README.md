@@ -6,7 +6,7 @@ my configuration files
 - <code>composer</code>: global composer settings
 - <code>git</code>: global git config and git ignore
 - <code>multiplexer</code>: gnu screen and tmux configuration
-- <code>puppet</code>:ppet manifests
+- <code>puppet</code>: puppet manifests
 - <code>putty</code>: putty color schemes
 - <code>scripts</code>: random scritps
 - <code>vim</code>: vimrc and vim directory
