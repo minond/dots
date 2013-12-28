@@ -118,7 +118,8 @@ nmap <leader>s :source $MYVIMRC<CR>:noh<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>n :set relativenumber!<CR>
 map <leader>p :set paste!<CR>
-nnoremap <leader> w :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <leader>c :Copy<CR><CR>
 map <leader>h :if exists("g:syntax_on") <Bar>
     \ syntax off <Bar>
     \ else <Bar>
@@ -132,6 +133,7 @@ nnoremap ; :
 " $COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! Ctags !ctags -R --verbose -f .tags
+command! Copy !cat % | xclip -sel clip && echo "copied to clip board"
 
 " gcc
 command! GccRun !gcc % -o prog.out && chmod +x prog.out && ./prog.out && rm prog.out
