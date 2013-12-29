@@ -41,6 +41,7 @@ set colorcolumn=80,120
 set expandtab
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " ignored by vim fs access
 set wildignore+=*/templates_c/*,*/bin/*
+set wildignore+=*/node_modules/*
 set t_Co=256
 set wildmenu
 set tags^=./.tags,./.TAGS,.tags,.TAGS
@@ -120,6 +121,7 @@ nmap <leader>s :source $MYVIMRC<CR>:noh<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>n :set relativenumber!<CR>
 map <leader>p :set paste!<CR>
+map <leader>r :Run<CR>
 nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <leader>c :Copy<CR><CR>
 map <leader>h :if exists("g:syntax_on") <Bar>
@@ -136,13 +138,13 @@ nnoremap ; :
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! Ctags !ctags -R --verbose -f .tags
 command! Copy !cat % | xclip -sel clip && echo "copied to clip board"
-
 " gcc
 command! GccRun !gcc % -o prog.out && chmod +x prog.out && ./prog.out && rm prog.out
 command! -nargs=* GccCat !gcc % -o prog.out && chmod +x prog.out && cat <f-args> | ./prog.out && rm prog.out
 
 " php
 command! Cupdate !composer update
+command! Cautoload !composer dumpautoload
 command! -nargs=* Test !phpunit <f-args>
 command! ViewTests !gnome-open ./bin/report/index.html
 
@@ -150,6 +152,20 @@ command! ViewTests !gnome-open ./bin/report/index.html
 command! Ann !git annotate %
 command! Stat !git status
 command! -nargs=* Diff !git diff <f-args>
+
+" run scripts
+command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
+\ case $ext in
+    \ php)
+        \ php % | less
+        \ ;;
+    \ js)
+        \ node % | less
+        \ ;;
+    \ *)
+        \ echo "i don't know what to do with .$ext files"
+        \ ;;
+\ esac
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLORSCHEME
