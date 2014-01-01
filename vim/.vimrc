@@ -172,15 +172,23 @@ command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme jellybeans
 
-hi ColorColumn ctermbg=235
-hi ExtraWhitespace ctermbg=161 guibg=#808080
-hi IncSearch ctermfg=0 ctermbg=193 cterm=bold
-hi Search ctermfg=0 ctermbg=193 cterm=bold
-hi SpecialKey ctermbg=None
-hi Todo ctermfg=Red ctermbg=None
-hi htmlString ctermfg=Blue
-hi NonText ctermfg=235 ctermbg=none
-hi SpecialKey ctermfg=235 ctermbg=none
+hi Constant                    ctermfg=229
+hi String                      ctermfg=229
+hi Statement                   ctermfg=117
+hi Structure                   ctermfg=111
+
+hi ColorColumn                              ctermbg=235
+hi ExtraWhitespace             ctermfg=161
+hi IncSearch                   ctermfg=0    ctermbg=193  cterm=bold
+hi Search                      ctermfg=0    ctermbg=193  cterm=bold
+hi SpecialKey                               ctermbg=None
+hi Todo                        ctermfg=Red  ctermbg=None
+hi htmlString                  ctermfg=Blue
+hi NonText                     ctermfg=235  ctermbg=None
+hi SpecialKey                  ctermfg=235  ctermbg=None
+
+hi javaScriptReserved          ctermfg=None
+
 hi link phpFunctions phpRegion
 hi link phpMethods phpRegion
 
