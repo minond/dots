@@ -37,9 +37,10 @@ func="dots_${action}_${what}"
 # DESCRIPTION: print usage text with possible actions and what options
 #==============================================================================
 usage() {
-    echo "usage: ./dots [-h|--help] [-u|--update] <action> [<what>] [--all]"
+    echo "usage: ./dots [-h|--help] [-u|--update] [-c|--commit <message>] <action> [<what>] [--all]"
     echo " --help             # view this text output"
     echo " --update           # update this repository (needed for vim plugins)"
+    echo " --commit           # commit and push local changes to github repo"
 
     echo
     echo "actions:"
@@ -266,6 +267,12 @@ else
         -u|--update)
             git pull --rebase origin master
             git submodule update --init
+            ;;
+
+        -c|--commit)
+            message=$2
+            git commit -am "$message"
+            git push origin master
             ;;
 
         install)
