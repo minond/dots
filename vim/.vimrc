@@ -162,6 +162,12 @@ command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
     \ js)
         \ node % | less
         \ ;;
+    \ py)
+        \ python % | less
+        \ ;;
+    \ rb)
+        \ ruby % | less
+        \ ;;
     \ *)
         \ echo "i don't know what to do with .$ext files"
         \ ;;
