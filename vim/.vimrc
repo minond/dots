@@ -58,6 +58,7 @@ let g:ctrlp_max_height = 30
 if !empty($WORK_ENV)
     " is.com env settings
     set listchars=tab:>\ ,eol:¬,trail:.  " special characters for special char
+    let g:Powerline_loaded = 1
 else
     " personal compueter settings
     set listchars=tab:▸\ ,eol:¬,trail:.  " special characters for special char
@@ -98,6 +99,7 @@ hi link javaError None
 map <C-k> <ESC>:GitGutterNextHunk<CR>
 map <C-j> <ESC>:GitGutterPrevHunk<CR>
 map <C-o> <ESC>:CtrlP<CR>
+map <leader>o <ESC>:CtrlPTag<CR>
 map <C-c> <ESC>:TComment<CR>
 xmap <C-c> <ESC>:'<,'>TComment<CR>
 map <C-f> <ESC>:NERDTreeFind<CR>
