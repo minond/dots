@@ -13,8 +13,13 @@ my configuration files
 - <code>vim</code>: vimrc and vim directory
 
 # installing
-```text
+```bash
 ./dots --update
 ./dots install --all
+```
+
+# updating
+```bash
+./dots --commit "this is what I changed"
 ```
 
