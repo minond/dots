@@ -75,7 +75,7 @@ usage() {
 # PARAMETER 2: link
 #==============================================================================
 link() {
-    file=`pwd`/$1
+    file=`pwd`/config/$1
     link=$2
 
     if [ -f $link ] || [ -d $link ]; then
@@ -83,6 +83,7 @@ link() {
     fi
 
     echo "linking $file to $link"
+    [ -f $link ] && rm $link
     ln -s $file $link
 }
 
