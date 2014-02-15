@@ -203,6 +203,7 @@ hi NonText                     ctermfg=235    ctermbg=None
 hi SpecialKey                  ctermfg=235    ctermbg=None
 
 " resets
+hi SignColumn                                 ctermbg=None
 hi VertSplit                                  ctermbg=None
 hi LineNr                                     ctermbg=None
 hi CursorLine                                 ctermbg=None
