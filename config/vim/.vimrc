@@ -206,7 +206,7 @@ hi SpecialKey                  ctermfg=235    ctermbg=None
 hi SignColumn                                 ctermbg=None
 hi VertSplit                                  ctermbg=None
 hi LineNr                                     ctermbg=None
-hi CursorLine                                 ctermbg=None
+" hi CursorLine                                 ctermbg=None
 hi javaScriptReserved          ctermfg=None
 
 hi link phpFunctions phpRegion
