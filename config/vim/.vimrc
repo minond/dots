@@ -163,16 +163,19 @@ command! -nargs=* Diff !git diff <f-args>
 command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
 \ case $ext in
     \ php)
-        \ php % | less
+        \ php % | less --quit-at-eof
         \ ;;
     \ js)
-        \ node % | less
+        \ node % | less --quit-at-eof
         \ ;;
     \ py)
-        \ python % | less
+        \ python % | less --quit-at-eof
+        \ ;;
+    \ lisp)
+        \ clisp % | less --quit-at-eof
         \ ;;
     \ rb)
-        \ ruby % | less
+        \ ruby % | less --quit-at-eof
         \ ;;
     \ *)
         \ echo "i don't know what to do with .$ext files"
@@ -182,23 +185,27 @@ command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLORSCHEME
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme jellybeans
+colorscheme lucius
 
 hi Constant                    ctermfg=229
 hi String                      ctermfg=229
 hi Statement                   ctermfg=117
 hi Structure                   ctermfg=111
 
-hi ColorColumn                              ctermbg=235
+hi ColorColumn                                ctermbg=235
 hi ExtraWhitespace             ctermfg=161
-hi IncSearch                   ctermfg=0    ctermbg=193  cterm=bold
-hi Search                      ctermfg=0    ctermbg=193  cterm=bold
-hi SpecialKey                               ctermbg=None
-hi Todo                        ctermfg=Red  ctermbg=None
+hi IncSearch                   ctermfg=0      ctermbg=193    cterm=bold
+hi Search                      ctermfg=0      ctermbg=193    cterm=bold
+hi SpecialKey                                 ctermbg=None
+hi Todo                        ctermfg=Red    ctermbg=None
 hi htmlString                  ctermfg=Blue
-hi NonText                     ctermfg=235  ctermbg=None
-hi SpecialKey                  ctermfg=235  ctermbg=None
+hi NonText                     ctermfg=235    ctermbg=None
+hi SpecialKey                  ctermfg=235    ctermbg=None
 
+" resets
+hi VertSplit                                  ctermbg=None
+hi LineNr                                     ctermbg=None
+hi CursorLine                                 ctermbg=None
 hi javaScriptReserved          ctermfg=None
 
 hi link phpFunctions phpRegion
