@@ -45,6 +45,7 @@ set wildignore+=*/node_modules/*
 set t_Co=256
 set wildmenu
 set tags^=./.tags,./.TAGS,.tags,.TAGS
+set listchars=tab:>\ ,eol:¬,trail:.      " special characters for special char
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $PLUGIN SETTINGS
@@ -57,11 +58,9 @@ let g:ctrlp_max_height = 30
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if !empty($WORK_ENV)
     " is.com env settings
-    set listchars=tab:>\ ,eol:¬,trail:.  " special characters for special char
     let g:Powerline_loaded = 1
 else
     " personal compueter settings
-    set listchars=tab:▸\ ,eol:¬,trail:.  " special characters for special char
     let g:Powerline_symbols = 'fancy'
 endif
 
@@ -148,10 +147,13 @@ command! Copy !cat % | xclip -sel clip && echo "copied to clip board"
 command! GccRun !gcc % -o prog.out && chmod +x prog.out && ./prog.out && rm prog.out
 command! -nargs=* GccCat !gcc % -o prog.out && chmod +x prog.out && cat <f-args> | ./prog.out && rm prog.out
 
+" lisp
+command! Lisp !clisp -i %
+
 " php
 command! Cupdate !composer update
 command! Cautoload !composer dumpautoload
-command! -nargs=* Test !phpunit <f-args>
+command! -nargs=* Test !clear; phpunit <f-args>
 command! ViewTests !gnome-open ./bin/report/index.html
 
 " git commands
