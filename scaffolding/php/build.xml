@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="MyApplication" default="build">
+    <!-- this is meant to be used as scaffolding configuration for php
+         projects -->
+
+    <!-- IMPORTS............................................setting imports -->
+    <!-- DEFAULTS..........................................default settings -->
+    <!-- JOBS........................job aliases (ie code: lint, loc, etc.) -->
+    <!-- HELPERS...................conditionals, prepare, and clean up jobs -->
+    <!-- DEPENDENCIES...................dependency initializer for all envs -->
+    <!-- TESTS.........................unit tests, integrations tests, etc. -->
+    <!-- CODE.....................................code analysis and linters -->
+    <!-- DOCUMENTATION.........................code documentation generator -->
+    <!-- PACKAGING.......................................build code bundles -->
+    <!-- DEPLOY..................................................deployment -->
+
+    <!-- $IMPORTS -->
+    <property file="build.properties" />
+
+    <!-- $DEFAULTS -->
+    <!-- commands -->
+    <property name="cmd.phpunit" value="phpunit" />
+    <property name="cmd.phpcs" value="phpcs" />
+    <property name="cmd.phploc" value="phploc" />
+    <property name="cmd.composer" value="composer" />
+    <property name="cmd.apigen" value="apigen" />
+
+    <!-- app dir structure -->
+    <property name="dir.build" value="build" />
+    <property name="dir.artifacts" value="build/artifacts" />
+    <property name="dir.cache" value=".cache" />
+    <property name="dir.src" value="src" />
+    <property name="dir.tests" value="tests" />
+    <property name="dir.views" value="views" />
+    <property name="dir.scripts" value="scripts" />
+
+    <!--
+    <condition property="dir.codebase" value="${dir.src} ${dir.tests}" else="${dir.src}">
+        <available file="${dir.tests}" type="dir" />
+    </condition>
+    -->
+
+    <!-- deployment information -->
+    <property name="deploy.exclude" value="${dir.cache}, ${dir.build}, ${dir.tests}, .git, **.swp" />
+    <property name="deploy.file" value="${ant.project.name}" />
+    <property name="deploy.dest" value="${dir.artifacts}/${deploy.file}" />
+
+    <!-- for anything -->
+    <tstamp>
+        <format property="datetimestamp" pattern="yyyy.MM.dd.hh.mm.ss" />
+    </tstamp>
+
+    <!-- $JOBS -->
+    <target name="build" depends="clean, dev-deps, code, test, documentation">
+        <echo message="runs clean, dev-deps, code, test, and documentation" />
+    </target>
+
+    <target name="test" depends="phpunit">
+        <echo message="runs phpunit" />
+    </target>
+
+    <target name="code" depends="phpcs, phploc">
+        <echo message="runs phpcs and phploc" />
+    </target>
+
+    <target name="documentation" depends="apigen">
+        <echo message="runs apigen" />
+    </target>
+
+    <target name="package" depends="clean, build, tar">
+        <echo message="package stored in ${deploy.dest}.${datetimestamp}.tar.gz" />
+        <echo message="extract by running: tar -xvzf ${deploy.file}.${datetimestamp}.tar.gz [-C dest]" />
+        <echo message="then run 'ant install'" />
+    </target>
+
+    <!-- $HELPERS -->
+    <target name="install" description="project setup">
+        <echo message="setting file permission to 755 for bin/ files" />
+        <mkdir dir="bin" />
+        <chmod perm="755" file="bin/*" />
+
+        <echo message="creating cache dir at ${dir.cache}" />
+        <mkdir dir="${dir.cache}" />
+        <chmod perm="777">
+            <dirset dir="${dir.cache}" />
+        </chmod>
+    </target>
+
+    <target name="clean" description="cleanup build artifacts">
+        <echo message="removing artifacts from previous build" />
+        <delete dir="${dir.build}" />
+    </target>
+
+    <!-- $DEPENDENCIES -->
+    <target name="deps" description="prepare application">
+        <exec executable="${cmd.composer}">
+            <arg value="install" />
+            <arg value="--no-dev" />
+        </exec>
+    </target>
+
+    <target name="dev-deps" description="prepare application">
+        <exec executable="${cmd.composer}">
+            <arg value="install" />
+            <arg value="--dev" />
+        </exec>
+    </target>
+
+    <!-- $TESTS -->
+    <target name="phpunit" description="run unit tests with phpunit">
+        <exec executable="${cmd.phpunit}" />
+    </target>
+
+    <!-- $CODE -->
+    <target name="phploc" description="measure size of php code base">
+        <mkdir dir="${dir.build}/code/php"/>
+        <exec executable="${cmd.phploc}">
+            <arg value="--log-xml=${dir.build}/code/php/loc.xml" />
+            <arg value="--count-tests" />
+            <arg path="${dir.src}" />
+            <arg path="${dir.tests}" />
+        </exec>
+    </target>
+
+    <target name="phpcs" description="lint againts psr-2 standards">
+        <mkdir dir="${dir.build}/code/php"/>
+        <exec executable="${cmd.phpcs}">
+            <arg value="--report=summary" />
+            <arg value="--report-full=${dir.build}/code/php/psr2.txt" />
+            <arg value="--standard=PSR2" />
+            <arg path="${dir.src}" />
+            <arg path="${dir.tests}" />
+            <arg path="${dir.views}" />
+            <arg path="${dir.scripts}" />
+        </exec>
+    </target>
+
+    <!-- $DOCUMENTATION -->
+    <target name="apigen" description="generate documentation for php code">
+        <delete dir="${dir.build}/documentation/php" />
+        <mkdir dir="${dir.build}/documentation/php" />
+        <exec executable="${cmd.apigen}">
+            <arg value="-s=${dir.src}" />
+            <arg value="-d=${dir.build}/documentation/php" />
+            <arg value="--todo=yes" />
+            <arg value="--colors=no" />
+            <arg value="--progressbar=no" />
+        </exec>
+    </target>
+
+    <!-- $PACKAGING -->
+    <target name="tar" description="package project in .tar.gz file">
+        <delete dir="${dir.artifacts}" />
+        <mkdir dir="${dir.artifacts}" />
+        <tar destfile="${deploy.dest}.tar" basedir="." excludes="${deploy.exclude}" longfile="gnu" />
+        <gzip destfile="${deploy.dest}.${datetimestamp}.tar.gz" src="${deploy.dest}.tar" />
+        <delete file="${deploy.dest}.tar" />
+    </target>
+
+    <!-- $DEPLOY -->
+    <!-- none -->
+</project>
