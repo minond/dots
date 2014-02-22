@@ -187,4 +187,5 @@ export EDITOR=vim
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/home/marcos/.dots/bin:$PATH"
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'

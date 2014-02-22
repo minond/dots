@@ -1,0 +1,96 @@
+#!/bin/bash
+
+#==============================================================================
+#         FILE: fabrico
+#        USAGE: see usage function
+#  DESCRIPTION: fabrico application helper
+# REQUIREMENTS: composer, bower
+#==============================================================================
+
+cmd=$1
+
+#=== FUNCTION =================================================================
+#        NAME: usage
+# DESCRIPTION: outputs usage information
+#==============================================================================
+usage() {
+    echo "usage: fabrico app <name>"
+}
+
+#=== FUNCTION =================================================================
+#        NAME: run
+# DESCRIPTION: output a task label and then run a command. after the command
+#              is executed a success stated is displayed
+# PARAMETER 1: label - what youre running/doing
+# PARAMETER 2: command - command to execute
+#==============================================================================
+run() {
+    label=$1
+    cmd=$2
+
+    echo -n "$label: "
+    start=`date +%s`
+    eval "$cmd" &> /dev/null
+    status=$?
+    end=`date +%s`
+    diff=$(( $end - $start ))
+    tput bold
+
+    if [ $status == 0 ]; then
+        tput setaf 2
+        echo -n "ok"
+    else
+        tput setaf 1
+        echo -n "error"
+    fi
+
+    tput sgr0
+    echo -n " ("
+    tput setaf 3
+    echo -n "$diff"
+    tput sgr0
+    echo " sec)"
+
+    return $status
+}
+
+#=== FUNCTION =================================================================
+#        NAME: newapp
+# DESCRIPTION: created a new application
+# PARAMETER 1: name - application's name
+#==============================================================================
+newapp() {
+    # template
+    run "downloading fabricor" "composer create-project minond/fabricor $name dev-master --no-interaction --no-install"
+
+    # dependencies
+    cd $name
+    run "installing composer dependencies" "composer install --dev"
+    run "installing bower dependencies" "bower install"
+
+    # initializer
+    run "initializing application" "bin/console init:newapp $name"
+}
+
+#------------------------------------------------------------------------------
+# loop though commands
+#------------------------------------------------------------------------------
+case $cmd in
+    app)
+        name=$2
+
+        if [ -z $name ]; then
+            usage
+            exit 1
+        fi
+
+        newapp $name
+        ;;
+
+    *)
+        usage
+        exit 1
+        ;;
+esac
+
+exit 0
