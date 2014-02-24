@@ -185,6 +185,10 @@ export PATH="/home/marcos/perl5/bin:$PATH";
 export PATH="$PATH:/home/marcos/.composer/bin/";
 export EDITOR=vim
 
+if [ -d ~/code/projects/Build/bin ]; then
+    export PATH="$PATH:~/code/projects/Build/bin"
+fi
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/home/marcos/.dots/bin:$PATH"
