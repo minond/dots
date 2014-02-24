@@ -88,8 +88,7 @@ case $cmd in
         ;;
 
     *)
-        usage
-        exit 1
+        [ -f bin/console ] && bin/console $@
         ;;
 esac
 
