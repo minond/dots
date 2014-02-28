@@ -109,6 +109,12 @@ var SampleApp = {
 
 -------------------------------------------------------------------------------
 
+## Resources
+* [AngularJS style guide](https://github.com/mgechev/angularjs-style-guide)
+* [The Twelve-Factor App](http://12factor.net/)
+
+-------------------------------------------------------------------------------
+
 ## Tools
 * Online [Markdown viewer](http://www.markdownviewer.com/).
 * [Grunt](http://gruntjs.com/installing-grunt).
