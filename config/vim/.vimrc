@@ -72,6 +72,7 @@ au Filetype yaml source ~/.vim/scripts/yml.vim
 au Filetype yml source ~/.vim/scripts/yml.vim
 au Filetype cucumber source ~/.vim/scripts/yml.vim
 au Filetype ruby source ~/.vim/scripts/yml.vim
+au Filetype scss.css source ~/.vim/scripts/yml.vim
 
 " file type remapping for syntax highlighting
 au BufNewFile,BufRead *.md set ft=mkd
