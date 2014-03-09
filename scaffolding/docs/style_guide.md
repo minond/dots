@@ -113,13 +113,3 @@ var SampleApp = {
 * [AngularJS style guide](https://github.com/mgechev/angularjs-style-guide)
 * [The Twelve-Factor App](http://12factor.net/)
 
--------------------------------------------------------------------------------
-
-## Tools
-* Online [Markdown viewer](http://www.markdownviewer.com/).
-* [Grunt](http://gruntjs.com/installing-grunt).
-    * YUIDoc package: [`grunt-contrib-yuidoc`](https://npmjs.org/package/grunt-contrib-yuidoc)
-    * JSHint package: [`grunt-contrib-jshint`](https://npmjs.org/package/grunt-contrib-jshint)
-    * CSS Lint package: [`grunt-contrib-csslint`](https://npmjs.org/package/grunt-contrib-csslint)
-    * Javascript complexity package: [`grunt-complexity`](https://github.com/vigetlabs/grunt-complexity)
-
