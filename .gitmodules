@@ -16,3 +16,6 @@
 [submodule "config/vim/.vim/bundle/vim-less"]
 	path = config/vim/.vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "config/vim/.vim/bundle/scss-syntax.vim"]
+	path = config/vim/.vim/bundle/scss-syntax.vim
+	url = https://github.com/cakebaker/scss-syntax.vim.git
