@@ -5,3 +5,4 @@
 --exclude=resources/js/*
 --exclude=nexus_library/js/*
 --exclude=smartmvc/resources/js/*
+--exclude=node_modules/*

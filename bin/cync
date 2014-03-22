@@ -3,7 +3,7 @@
 message=$1
 branch=`git status | grep "On branch" | head -n1 | sed 's/# On branch //'`
 
-if [ -z $message ]; then
+if [ -z "$message" ]; then
     echo "commit message is required"
     exit 1
 elif [ -z $branch ]; then

@@ -78,7 +78,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -lFa --group-directories-first'
+alias ll='ls -lF --group-directories-first'
 alias la='ls -A'
 alias l='ll'
 # alias l='ls -CF'
@@ -185,11 +185,13 @@ export PATH="/home/marcos/perl5/bin:$PATH";
 export PATH="$PATH:/home/marcos/.composer/bin/";
 export EDITOR=vim
 
-if [ -d ~/code/projects/Build/bin ]; then
-    export PATH="$PATH:~/code/projects/Build/bin"
+if [ -d ~/code/projects/runner/bin ]; then
+    export PATH="$PATH:~/code/projects/runner/bin"
 fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/home/marcos/.dots/bin:$PATH"
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

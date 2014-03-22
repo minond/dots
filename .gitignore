@@ -1,1 +1,4 @@
 .vim/Powerline_default_default_compatible.cache
+
+config/vim/.vim/plugin/python/vdebug/ui/*.pyc
+config/vim/.vim/plugin/python/vdebug/*.pyc
