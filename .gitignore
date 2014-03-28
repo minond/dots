@@ -2,3 +2,4 @@
 
 config/vim/.vim/plugin/python/vdebug/ui/*.pyc
 config/vim/.vim/plugin/python/vdebug/*.pyc
+config/vim/.vim/.netrwhist

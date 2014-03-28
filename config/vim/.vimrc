@@ -42,6 +42,7 @@ set expandtab
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " ignored by vim fs access
 set wildignore+=*/templates_c/*,*/bin/*
 set wildignore+=*/node_modules/*
+set wildignore+=*/build/*
 set t_Co=256
 set wildmenu
 set tags^=./.tags,./.TAGS,.tags,.TAGS
@@ -127,7 +128,7 @@ nmap <leader>s :source $MYVIMRC<CR>:noh<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>n :set relativenumber!<CR>
 map <leader>p :set paste!<CR>
-map <leader>r :Run<CR>
+map <leader>r :w<CR>:Run<CR>
 nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <leader>c :Copy<CR><CR>
 map <leader>h :if exists("g:syntax_on") <Bar>
