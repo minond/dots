@@ -19,3 +19,6 @@
 [submodule "config/vim/.vim/bundle/scss-syntax.vim"]
 	path = config/vim/.vim/bundle/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim.git
+[submodule "config/vim/.vim/bundle/jshint2.vim"]
+	path = config/vim/.vim/bundle/jshint2.vim
+	url = https://github.com/Shutnik/jshint2.vim.git
