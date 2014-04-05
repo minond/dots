@@ -1,0 +1,10 @@
+{
+  "name": "Fabricor",
+  "dependencies": {
+    "angular": "~1.2.13",
+    "normalize.css": "~3.0.0",
+    "modernizr": "~2.7.1",
+    "foundation": "~5.2.0",
+    "lodash": "~2.4.1"
+  }
+}

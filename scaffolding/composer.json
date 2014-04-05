@@ -1,0 +1,35 @@
+{
+    // "name": "minond/fabricor",
+    // "description": "Skeleton for Fabrico projects",
+    // "license": "GPL-2.0+",
+
+    // "autoload": {
+    //     "psr-4": {
+    //         "MyApplication\\Controller\\": "app/controllers/",
+    //         "MyApplication\\Model\\": "app/models/"
+    //     }
+    // },
+
+    // "require": {
+    //     "minond/fabrico": "dev-master"
+    // },
+
+    "require-dev": {
+        "minond/nice_error": "dev-master",
+        "minond/profiler": "dev-master",
+        "phpmd/phpmd" : "1.4.*",
+        "phpunit/phpunit": "4.*",
+        "sebastian/exporter": "1.*",
+        "sebastian/phpcpd": "2.*",
+        "sebastian/phpdcd": "1.*",
+        "squizlabs/php_codesniffer": "1.*",
+        "behat/behat": "2.5.2",
+        "behat/mink-extension": "1.2.0",
+        "behat/mink-goutte-driver": "1.0.9",
+        "behat/mink-selenium2-driver": "1.1.1"
+    },
+
+    "config": {
+        "bin-dir": "bin"
+    }
+}

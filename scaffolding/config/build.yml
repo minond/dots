@@ -1,0 +1,72 @@
+# what goes in here? anything configurable in a grunt task can be saved here
+# and used in a task using the `config` merge field. ie, getting all js files
+# would be done like so:
+#
+# <code>
+# {
+#     files: '<%= config.files.js.all %>'
+# }
+# </code>
+
+# application's file/directory structure. should be broken up into type or
+# foraat of the file
+files:
+  js:
+    dir: app/assets
+    all: app/assets/**/*.js
+  php:
+    dir: app
+    all: app/**/*.php
+  css:
+    all: public/css/**/*.css
+    dest: public/css
+  sass:
+    all: public/scss/**/*.scss
+    dir: public/scss
+    deps:
+      - public/vendor/foundation/scss
+  tests:
+    dir: tests
+    js: tests/**/*.js
+    php: tests/**/*.php
+  tasks:
+    options:
+      dir: ./scripts/tasks/options/
+  configuration:
+    phpunit: config/phpunit.xml
+    jshint: config/jshintrc.json
+
+# output destination of any build task. should be grouped by the type of the
+# task that generates the output (ie. a test, auto documentation, etc.)
+artifacts:
+  linters:
+    jshint: build/code/lint/js/checkstyle.xml
+    complexity: build/code/quality/js/checkstyle.xml
+    scsslint: build/code/lint/scss/linter.xml
+    phpmd: build/code/quality/php/mess.xml
+    phpcs: build/code/lint/php/psr2.txt
+  documentation:
+    apigen: build/code/documentation/php
+    yuidoc: build/code/documentation/js
+  tests:
+    behat:
+      junit: build/tests/integration/junit
+      html: build/tests/integration/html/index.html
+    jasmine:
+      coverage: build/tests/js/converage.json
+      junit: build/tests/js/junit
+      report: build/tests/js/report/
+    # does not check these settings. see config/phpunit.xml
+    phpunit:
+      coverage: ../build/tests/php/coverage.xml
+      junit: ../build/tests/php/junit/junit.xml
+      report: ../build/tests/php/report
+    phpunit:
+  cleanup: build
+  create:
+    - build/code/quality/php
+    - build/code/quality/js
+    - build/code/lint/php
+    - build/code/lint/scss/
+    - build/tests/integration/junit
+    - build/tests/integration/html
