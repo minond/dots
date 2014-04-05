@@ -8,6 +8,7 @@ module.exports = function (grunt) {
     var _, glob, config, tasks, task;
 
     _ = require('lodash');
+    _.defaults = require('merge-defaults');
     glob = require('glob');
     config = grunt.file.readYAML('config/build.yml'),
     tasks = { config: config };
