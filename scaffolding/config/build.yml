@@ -8,6 +8,62 @@
 # }
 # </code>
 
+# extra configuration files
+# the lower in the list the lower in the merge priority
+imports: []
+
+# directories to load imports from
+options:
+  - ./scripts/tasks/options/
+
+# grunt task aliases
+aliases:
+  default:
+    - 'build'
+  prepare:
+    - 'mkdir:build'
+  clean:
+    - 'rm:build'
+  compile:
+    - 'sass:all'
+  server:
+    - 'connect:server'
+  build:
+    - 'prepare'
+    - 'clean'
+    - 'prepare'
+    - 'compile'
+  documentation:
+    - 'yuidoc:all'
+    - 'exec:apigen'
+  ci:
+    - 'quality'
+    - 'test'
+    - 'documentation'
+  test:
+    - 'test:unit'
+    - 'test:integration'
+  test:integration:
+    - 'prepare'
+    - 'exec:behat'
+  test:unit:
+    - 'test:unit:js'
+    - 'test:unit:php'
+  test:unit:js:
+    - 'jasmine:all'
+  test:unit:php:
+    - 'phpunit:all'
+  quality:
+    - 'prepare'
+    - 'complexity:all'
+    - 'jshint:all'
+    - 'jshint:report'
+    - 'exec:scsslint'
+    - 'exec:phpcpd'
+    - 'exec:phpcpd'
+    - 'exec:phpmd'
+    - 'phpcs:all'
+
 # application's file/directory structure. should be broken up into type or
 # foraat of the file
 files:
@@ -29,9 +85,6 @@ files:
     dir: tests
     js: tests/**/*.js
     php: tests/**/*.php
-  tasks:
-    options:
-      dir: ./scripts/tasks/options/
   configuration:
     phpunit: config/phpunit.xml
     jshint: config/jshintrc.json
@@ -61,7 +114,6 @@ artifacts:
       coverage: ../build/tests/php/coverage.xml
       junit: ../build/tests/php/junit/junit.xml
       report: ../build/tests/php/report
-    phpunit:
   cleanup: build
   create:
     - build/code/quality/php
