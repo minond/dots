@@ -78,6 +78,7 @@ au Filetype scss.css source ~/.vim/scripts/yml.vim
 " file type remapping for syntax highlighting
 au BufNewFile,BufRead *.md set ft=mkd
 au BufNewFile,BufRead *.json set ft=javascript
+au BufNewFile,BufRead .arclint,.arcconfig set ft=javascript
 au BufNewFile,BufRead *.twig set ft=htmljinja
 au BufNewFile,BufRead *.dist set ft=xml
 au BufNewFile,BufRead *.pp set ft=ruby
@@ -136,6 +137,9 @@ map <leader>h :if exists("g:syntax_on") <Bar>
     \ else <Bar>
     \syntax on <Bar>
     \ endif <CR>
+
+" format json strings
+nmap =j :%!python -m json.tool<CR>
 
 " colon, semi-colon switch
 nnoremap ; :

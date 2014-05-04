@@ -192,6 +192,7 @@ fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/home/marcos/.dots/bin:$PATH"
+export PATH=$HOME/.cabal/bin:$PATH
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
