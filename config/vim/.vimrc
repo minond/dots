@@ -119,9 +119,6 @@ map <Tab> <C-w><C-w>
 " exit insert mode within insert mode
 inoremap jj <Esc>
 
-" save while in insert mode
-inoremap ww <Esc>:w<CR>i
-
 map <leader><Tab> <C-w><C-w>
 map <leader>t :TagbarToggle<CR>
 map <leader>g :GitGutter<CR>
