@@ -84,6 +84,7 @@ au BufNewFile,BufRead *.dist set ft=xml
 au BufNewFile,BufRead *.pp set ft=ruby
 au BufNewFile,BufRead .domainconfig set ft=dosini
 au BufRead,BufNewFile *.go set ft=go
+au BufRead,BufNewFile *.scala set ft=scala
 
 " work shift
 au BufNewFile,BufRead *.tpl set ft=smarty

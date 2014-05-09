@@ -25,3 +25,6 @@
 [submodule "config/vim/.vim/bundle/go.vim"]
 	path = config/vim/.vim/bundle/go.vim
 	url = https://github.com/vim-scripts/go.vim.git
+[submodule "config/vim/.vim/bundle/scala.vim"]
+	path = config/vim/.vim/bundle/scala.vim
+	url = https://github.com/vim-scripts/scala.vim.git
