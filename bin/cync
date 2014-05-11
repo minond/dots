@@ -1,12 +1,12 @@
 #!/bin/bash
 
 message=$1
-branch=`git status | grep "On branch" | head -n1 | sed 's/# On branch //'`
+branch=`git status | grep "On branch" | head -n1 | sed 's/On branch //'`
 
 if [ -z "$message" ]; then
     echo "commit message is required"
     exit 1
-elif [ -z $branch ]; then
+elif [ -z "$branch" ]; then
     echo "invalid branch"
     exit 2
 else
