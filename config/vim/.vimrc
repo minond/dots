@@ -2,7 +2,6 @@
 " LOAD EXTERNALS.................load external resources, start package manager
 " VIM SETTINGS..................................vim built in setting overwrites
 " PLUGIN SETTINGS.....................................plugin setting overwrites
-" ENV SPECIFIC SETTINGS............settings that are specific to an environment
 " FILE TYPE SETTINGS......................file type specific setting overwrites
 " MAPPINGS..................................................custom key mappings
 " COMMANDS......................................................custom commands
@@ -19,84 +18,67 @@ execute pathogen#infect()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $VIM SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set hidden                               " best. thing. ever. no buffer closed
 set antialias
+set colorcolumn=80,120                   " http://paul-m-jones.com/archives/276
 set cursorline                           " highlight the line cursor is on
+set expandtab
+set hidden                               " best. thing. ever. no buffer closed
 set hlsearch                             " highlight all matches
 set ignorecase                           " case insensitive searches
 set incsearch                            " highlight matches while typing
 set list                                 " display special characters
+set listchars=tab:>\ ,eol:¬,trail:.      " special characters for special char
 set ls=2
 set nocompatible
 set nowrap
 set number                               " show line numbers
+set numberwidth=4                        " set line numbers section width
+set shiftwidth=4                         " shift movement length
 set showmatch                            " jump to search result
 set smartcase                            " case insensitive defaul
 set smartindent                          " block indentation
 set softtabstop=4                        " back character length
+set t_Co=256
 set tabstop=4                            " tab character length
-set numberwidth=4                        " set line numbers section width
-set shiftwidth=4                         " shift movement length
-set colorcolumn=80,120
-set expandtab
+set tags^=./.tags,./.TAGS,.tags,.TAGS
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " ignored by vim fs access
 set wildignore+=*/templates_c/*,*/bin/*
 set wildignore+=*/node_modules/*
 set wildignore+=*/build/*
-set t_Co=256
 set wildmenu
-set tags^=./.tags,./.TAGS,.tags,.TAGS
-set listchars=tab:>\ ,eol:¬,trail:.      " special characters for special char
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $PLUGIN SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDChristmasTree = 1
 let g:ctrlp_max_height = 30
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" $ENV SPECIFIC SETTINGS
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if !empty($WORK_ENV)
-    " is.com env settings
-    let g:Powerline_loaded = 1
-else
-    " personal compueter settings
-    let g:Powerline_symbols = 'fancy'
-endif
+let g:Powerline_symbols = 'fancy'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au Filetype * source ~/.vim/scripts/script.vim
-au Filetype yaml source ~/.vim/scripts/yml.vim
-au Filetype yml source ~/.vim/scripts/yml.vim
 au Filetype cucumber source ~/.vim/scripts/yml.vim
 au Filetype ruby source ~/.vim/scripts/yml.vim
 au Filetype scss.css source ~/.vim/scripts/yml.vim
+au Filetype yaml source ~/.vim/scripts/yml.vim
+au Filetype yml source ~/.vim/scripts/yml.vim
 
 " file type remapping for syntax highlighting
-au BufNewFile,BufRead *.md set ft=mkd
-au BufNewFile,BufRead *.json set ft=javascript
-au BufNewFile,BufRead .arclint,.arcconfig set ft=javascript
-au BufNewFile,BufRead *.twig set ft=htmljinja
+au BufNewFile,BufRead *.cls set ft=java             " apex
 au BufNewFile,BufRead *.dist set ft=xml
+au BufNewFile,BufRead *.go set ft=go
+au BufNewFile,BufRead *.json set ft=javascript
+au BufNewFile,BufRead *.md set ft=mkd
+au BufNewFile,BufRead *.object set ft=xml           " apex
+au BufNewFile,BufRead *.page set ft=html            " apex
 au BufNewFile,BufRead *.pp set ft=ruby
-au BufNewFile,BufRead .domainconfig set ft=dosini
-au BufRead,BufNewFile *.go set ft=go
-au BufRead,BufNewFile *.scala set ft=scala
-
-" work shift
+au BufNewFile,BufRead *.scala set ft=scala
 au BufNewFile,BufRead *.tpl set ft=smarty
-au BufNewFile,BufRead *{.inc,.lan,.view,.act,.get,.controller} set ft=php
-
-" apex shiat
-au BufNewFile,BufRead *.cls set ft=java
-au BufNewFile,BufRead *.page set ft=html
-au BufNewFile,BufRead *.object set ft=xml
-hi link javaCharacter javaString
-hi link javaSpecialCharError javaString
-hi link javaError None
+au BufNewFile,BufRead *.twig set ft=htmljinja
+au BufNewFile,BufRead *.{inc,lan,view,act,get,controller} set ft=php " isui
+au BufNewFile,BufRead .arclint,.arcconfig set ft=javascript
+au BufNewFile,BufRead .domainconfig set ft=dosini
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $MAPPINGS
@@ -106,10 +88,8 @@ map <C-j> <ESC>:GitGutterPrevHunk<CR>
 map <C-o> <ESC>:CtrlP<CR>
 map <leader>o <ESC>:CtrlPTag<CR>
 map <C-c> <ESC>:TComment<CR>
-xmap <C-c> <ESC>:'<,'>TComment<CR>
 map <C-f> <ESC>:NERDTreeFind<CR>
 map <S-f> <ESC>:NERDTreeTabsToggle<CR>
-
 map <C-b> <ESC>:exec("tag ".expand("<cword>"))<CR>
 map <C-l> <ESC>:echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
 map <S-j> <ESC>:bp<CR>
@@ -117,37 +97,38 @@ map <S-k> <ESC>:bn<CR>
 map <S-s> <ESC>:w<CR>
 map <C-s> <ESC>:w<CR>
 map <Tab> <C-w><C-w>
-
-" exit insert mode within insert mode
-inoremap jj <Esc>
-
 map <leader><Tab> <C-w><C-w>
 map <leader>t :TagbarToggle<CR>
 map <leader>g :GitGutter<CR>
-nmap <leader>s :source $MYVIMRC<CR>:noh<CR>
-nmap <leader>l :set list!<CR>
-nmap <leader>n :set relativenumber!<CR>
 map <leader>p :set paste!<CR>
 map <leader>r :w<CR>:Run<CR>
-nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
-nnoremap <leader>c :Copy<CR><CR>
 map <leader>h :if exists("g:syntax_on") <Bar>
     \ syntax off <Bar>
     \ else <Bar>
     \syntax on <Bar>
     \ endif <CR>
 
-" format json strings
-nmap =j :%!python -m json.tool<CR>
+" exit insert mode within insert mode
+inoremap jj <Esc>
 
 " colon, semi-colon switch
 nnoremap ; :
+nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <leader>c :Copy<CR><CR>
+
+" format json strings
+nmap =j :%!python -m json.tool<CR>
+nmap <leader>s :source $MYVIMRC<CR>:noh<CR>
+nmap <leader>l :set list!<CR>
+nmap <leader>n :set relativenumber!<CR>
+xmap <C-c> <ESC>:'<,'>TComment<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! Ctags !ctags -R --verbose -f .tags
 command! Copy !cat % | xclip -sel clip && echo "copied to clip board"
+
 " gcc
 command! GccRun !gcc % -o prog.out && chmod +x prog.out && ./prog.out && rm prog.out
 command! -nargs=* GccCat !gcc % -o prog.out && chmod +x prog.out && cat <f-args> | ./prog.out && rm prog.out
@@ -213,33 +194,56 @@ hi SpecialKey                  ctermfg=235    ctermbg=None
 hi SignColumn                                 ctermbg=None
 hi VertSplit                                  ctermbg=None
 hi LineNr                                     ctermbg=None
-" hi CursorLine                                 ctermbg=None
 hi javaScriptReserved          ctermfg=None
 
-hi link phpFunctions phpRegion
-hi link phpMethods phpRegion
+" https://medium.com/web-dev/6f83add748c9
+hi javaScriptLineComment       ctermfg=192
+hi javaScriptComment           ctermfg=238
 
-match ExtraWhitespace /\s\+\%#\@<!$/
+hi link javaError              None
+hi link javaCharacter          javaString
+hi link javaSpecialCharError   javaString
+hi link phpFunctions           phpRegion
+hi link phpMethods             phpRegion
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SYNTAX
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax keyword phpException finally
+syntax keyword sqlKeyword limit
+syntax keyword sqlType avg
+syntax keyword sqlType count
+syntax keyword sqlType max
+syntax keyword sqlType min
+syntax keyword sqlType sum
+
+match ExtraWhitespace /\s\+\%#\@<!$/
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FUNCTIONS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" todo: get function out of here
-" white space
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
     let c = col(".")
-    " Do the business:
+
+    " Work: match extra whitespace
     %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
+
+    " Cleanup: restore previous search history and cursor position
     let @/=_s
     call cursor(l, c)
 endfunction
 
+function! ShowColors()
+    let num = 255
+
+    " Work: create new highlight rule and pattern matcher
+    while num >= 0
+        exec 'hi col_' . num . ' ctermbg=' . num . ' ctermfg=white'
+        exec 'syn match col_' . num . ' "ctermbg=' . num . ':...." containedIn=ALL'
+        call append(0, 'ctermbg=' . num . ':....')
+        let num = num - 1
+    endwhile
+endfunction
