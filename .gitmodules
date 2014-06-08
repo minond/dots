@@ -28,3 +28,6 @@
 [submodule "config/vim/.vim/bundle/scala.vim"]
 	path = config/vim/.vim/bundle/scala.vim
 	url = https://github.com/vim-scripts/scala.vim.git
+[submodule "config/vim/.vim/bundle/vim-jade"]
+	path = config/vim/.vim/bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git

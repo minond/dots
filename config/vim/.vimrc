@@ -2,6 +2,7 @@
 " LOAD EXTERNALS.................load external resources, start package manager
 " VIM SETTINGS..................................vim built in setting overwrites
 " PLUGIN SETTINGS.....................................plugin setting overwrites
+" ENV SPECIFIC SETTINGS............settings that are specific to an environment
 " FILE TYPE SETTINGS......................file type specific setting overwrites
 " MAPPINGS..................................................custom key mappings
 " COMMANDS......................................................custom commands
@@ -27,7 +28,7 @@ set hlsearch                             " highlight all matches
 set ignorecase                           " case insensitive searches
 set incsearch                            " highlight matches while typing
 set list                                 " display special characters
-set listchars=tab:>\ ,eol:¬,trail:.      " special characters for special char
+set listchars=tab:>\ ,eol:-,trail:.      " special characters for special char
 set ls=2
 set nocompatible
 set nowrap
@@ -52,7 +53,17 @@ set wildmenu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDChristmasTree = 1
 let g:ctrlp_max_height = 30
-let g:Powerline_symbols = 'fancy'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $ENV SPECIFIC SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if !empty($WORK_ENV)
+    " is.com env settings
+    let g:Powerline_loaded = 1
+else
+    " personal compueter settings
+    let g:Powerline_symbols = 'fancy'
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
@@ -97,7 +108,7 @@ map <S-k> <ESC>:bn<CR>
 map <S-s> <ESC>:w<CR>
 map <C-s> <ESC>:w<CR>
 map <Tab> <C-w><C-w>
-map <leader><Tab> <C-w><C-w>
+map <S-Tab> <C-w><S-w>
 map <leader>t :TagbarToggle<CR>
 map <leader>g :GitGutter<CR>
 map <leader>p :set paste!<CR>

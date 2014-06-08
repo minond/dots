@@ -112,7 +112,7 @@
 
     "maxerr"        : 100,      // Maximum errors before stopping.
     "predef"        : [         // Extra globals.
-        // "User",
+        "afterEach",
         "beforeEach",
         "describe",
         "expect",
