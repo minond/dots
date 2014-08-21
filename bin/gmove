@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -x
+
+git fetch --all
+git checkout $1
+git fetch --all
+git pull --rebase origin $1
+git submodule update
+
+echo
+echo
+
+git status
