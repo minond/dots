@@ -165,7 +165,7 @@ command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
         \ php % | less --quit-at-eof
         \ ;;
     \ js)
-        \ node % | less --quit-at-eof
+        \ DEBUG=* node % | less --quit-at-eof
         \ ;;
     \ py)
         \ python % | less --quit-at-eof
