@@ -87,7 +87,8 @@ alias ..='cd ..'
 alias cd..='cd ..'
 alias open='gnome-open'
 alias tmux='tmux -2'
-alias d='git diff'
+alias d='clear; git diff'
+alias s='clear; git status'
 alias server='python -m SimpleHTTPServer'
 
 set -o vi
@@ -201,3 +202,6 @@ export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [ -f ~/.private ] && source ~/.private
+
+# added by travis gem
+[ -f /home/marcos/.travis/travis.sh ] && source /home/marcos/.travis/travis.sh
