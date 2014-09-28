@@ -200,6 +200,7 @@ export PATH=$HOME/.cabal/bin:$PATH
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/code/projects/scaffold/scripts
 
 [ -f ~/.private ] && source ~/.private
 

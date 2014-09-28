@@ -165,7 +165,7 @@ command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
         \ php % | less --quit-at-eof
         \ ;;
     \ js)
-        \ DEBUG=* node % | less --quit-at-eof
+        \ DEBUG_COLORS=1 DEBUG=* node % | less --quit-at-eof
         \ ;;
     \ py)
         \ python % | less --quit-at-eof
@@ -175,6 +175,12 @@ command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
         \ ;;
     \ rb)
         \ ruby % | less --quit-at-eof
+        \ ;;
+    \ yaml|yml)
+        \ yaml2json % | python -m json.tool | less --quit-at-eof
+        \ ;;
+    \ lua)
+        \ lua % | less --quit-at-eof
         \ ;;
     \ *)
         \ echo "i don't know what to do with .$ext files"
@@ -205,14 +211,22 @@ hi SpecialKey                  ctermfg=235    ctermbg=None
 hi SignColumn                                 ctermbg=None
 hi VertSplit                                  ctermbg=None
 hi LineNr                                     ctermbg=None
+hi javaScriptBraces            ctermfg=None
+hi javaScriptEndColons         ctermfg=None
+hi javaScriptFuncArg           ctermfg=None
+hi javaScriptFuncDef           ctermfg=None
+hi javaScriptFuncExp           ctermfg=None
+hi javaScriptOpSymbols         ctermfg=None
+hi javaScriptParens            ctermfg=None
 hi javaScriptReserved          ctermfg=None
 
 " https://medium.com/web-dev/6f83add748c9
 hi javaScriptLineComment       ctermfg=192
 hi javaScriptComment           ctermfg=238
 
-hi link javaError              None
 hi link javaCharacter          javaString
+hi link javaError              None
+hi link javaScriptPrototype    javaScriptFuncKeyword
 hi link javaSpecialCharError   javaString
 hi link phpFunctions           phpRegion
 hi link phpMethods             phpRegion
@@ -227,6 +241,7 @@ syntax keyword sqlType count
 syntax keyword sqlType max
 syntax keyword sqlType min
 syntax keyword sqlType sum
+syntax match javaScriptDocTags contained "@\(\w\+\)\>" nextgroup=javaScriptDocParam,javaScriptDocSeeTag skipwhite
 
 match ExtraWhitespace /\s\+\%#\@<!$/
 

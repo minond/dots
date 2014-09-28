@@ -34,3 +34,6 @@
 [submodule "config/vim/.vim/bundle/flappyvird"]
 	path = config/vim/.vim/bundle/flappyvird
 	url = https://github.com/mattn/flappyvird-vim.git
+[submodule "config/vim/.vim/bundle/vim-javascript-syntax"]
+	path = config/vim/.vim/bundle/vim-javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax.git
