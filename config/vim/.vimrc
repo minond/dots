@@ -129,7 +129,7 @@ nnoremap <leader>c :Copy<CR><CR>
 
 " format json strings
 nmap =j :%!python -m json.tool<CR>
-nmap <leader>s :source $MYVIMRC<CR>:noh<CR>
+nmap <leader>s :source $MYVIMRC<CR>:noh<CR>:call <SID>ForceHighlightChanges()<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>n :set relativenumber!<CR>
 xmap <C-c> <ESC>:'<,'>TComment<CR>
@@ -192,6 +192,8 @@ command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme lucius
 
+" vim-javascript-syntax is adding syntax matches and breaking all of the things
+function! <SID>ForceHighlightChanges()
 hi Constant                    ctermfg=229
 hi String                      ctermfg=229
 hi Statement                   ctermfg=117
@@ -244,6 +246,9 @@ syntax keyword sqlType sum
 syntax match javaScriptDocTags contained "@\(\w\+\)\>" nextgroup=javaScriptDocParam,javaScriptDocSeeTag skipwhite
 
 match ExtraWhitespace /\s\+\%#\@<!$/
+endfunction
+call <SID>ForceHighlightChanges()
+autocmd VimEnter * call <SID>ForceHighlightChanges()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FUNCTIONS
