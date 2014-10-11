@@ -76,6 +76,7 @@ au Filetype yaml source ~/.vim/scripts/yml.vim
 au Filetype yml source ~/.vim/scripts/yml.vim
 
 " file type remapping for syntax highlighting
+au BufNewFile,BufRead * call <SID>ForceHighlightChanges()
 au BufNewFile,BufRead *.cls set ft=java             " apex
 au BufNewFile,BufRead *.dist set ft=xml
 au BufNewFile,BufRead *.go set ft=go
