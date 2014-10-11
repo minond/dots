@@ -244,7 +244,7 @@ syntax keyword sqlType count
 syntax keyword sqlType max
 syntax keyword sqlType min
 syntax keyword sqlType sum
-syntax match javaScriptDocTags contained "@\(\w\+\)\>" nextgroup=javaScriptDocParam,javaScriptDocSeeTag skipwhite
+syntax match javaScriptDocTags contained "@\(\w\+\)\>" nextgroup=javaScriptDocSeeTag skipwhite
 
 match ExtraWhitespace /\s\+\%#\@<!$/
 endfunction
