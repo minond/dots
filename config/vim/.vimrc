@@ -222,6 +222,7 @@ hi javaScriptFuncExp           ctermfg=None
 hi javaScriptOpSymbols         ctermfg=None
 hi javaScriptParens            ctermfg=None
 hi javaScriptReserved          ctermfg=None
+hi javaScriptAjaxMethods       ctermfg=None
 
 " https://medium.com/web-dev/6f83add748c9
 hi javaScriptLineComment       ctermfg=192
