@@ -223,10 +223,14 @@ hi javaScriptOpSymbols         ctermfg=None
 hi javaScriptParens            ctermfg=None
 hi javaScriptReserved          ctermfg=None
 hi javaScriptAjaxMethods       ctermfg=None
+hi javaScriptFuncEq            ctermfg=None
+hi javaScriptLogicSymbols      ctermfg=None
 
 " https://medium.com/web-dev/6f83add748c9
 hi javaScriptLineComment       ctermfg=192
 hi javaScriptComment           ctermfg=238
+hi javaScriptDocTags           ctermfg=2413
+hi javaScriptDocSeeTag         ctermfg=243
 
 hi link javaCharacter          javaString
 hi link javaError              None
