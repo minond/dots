@@ -88,6 +88,7 @@ au BufNewFile,BufRead *.pp set ft=ruby
 au BufNewFile,BufRead *.scala set ft=scala
 au BufNewFile,BufRead *.tpl set ft=smarty
 au BufNewFile,BufRead *.twig set ft=htmljinja
+au BufNewFile,BufRead *.html set ft=htmljinja
 au BufNewFile,BufRead *.{inc,lan,view,act,get,controller} set ft=php " isui
 au BufNewFile,BufRead .arclint,.arcconfig set ft=javascript
 au BufNewFile,BufRead .domainconfig set ft=dosini
