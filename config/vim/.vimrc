@@ -227,6 +227,7 @@ hi javaScriptAjaxMethods       ctermfg=None
 hi javaScriptFuncEq            ctermfg=None
 hi javaScriptLogicSymbols      ctermfg=None
 hi javaScriptHtmlElemProperties               ctermfg=None
+hi javaScriptEventListenerKeywords            ctermfg=None
 
 " https://medium.com/web-dev/6f83add748c9
 hi javaScriptLineComment       ctermfg=192
