@@ -1,39 +1,39 @@
-; [submodule "config/vim/.vim/bundle/vim-gitgutter"]
-; 	path = config/vim/.vim/bundle/vim-gitgutter
+; [submodule "dots/vim/bundle/vim-gitgutter"]
+; 	path = dots/vim/bundle/vim-gitgutter
 ; 	url = git@github.com:airblade/vim-gitgutter
-; [submodule "config/vim/.vim/bundle/ScrollColors"]
-; 	path = config/vim/.vim/bundle/ScrollColors
+; [submodule "dots/vim/bundle/ScrollColors"]
+; 	path = dots/vim/bundle/ScrollColors
 ; 	url = https://github.com/vim-scripts/ScrollColors.git
-[submodule "config/vim/.vim/bundle/vim-gitgutter"]
-	path = config/vim/.vim/bundle/vim-gitgutter
+[submodule "dots/vim/bundle/vim-gitgutter"]
+	path = dots/vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-; [submodule "config/vim/.vim/bundle/ScrollColors"]
-; 	path = config/vim/.vim/bundle/ScrollColors
+; [submodule "dots/vim/bundle/ScrollColors"]
+; 	path = dots/vim/bundle/ScrollColors
 ; 	url = https://github.com/vim-scripts/ScrollColors.git
-[submodule "config/vim/.vim/bundle/vim-coffee-script"]
-	path = config/vim/.vim/bundle/vim-coffee-script
+[submodule "dots/vim/bundle/vim-coffee-script"]
+	path = dots/vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "config/vim/.vim/bundle/vim-less"]
-	path = config/vim/.vim/bundle/vim-less
+[submodule "dots/vim/bundle/vim-less"]
+	path = dots/vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
-[submodule "config/vim/.vim/bundle/scss-syntax.vim"]
-	path = config/vim/.vim/bundle/scss-syntax.vim
+[submodule "dots/vim/bundle/scss-syntax.vim"]
+	path = dots/vim/bundle/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim.git
-[submodule "config/vim/.vim/bundle/jshint2.vim"]
-	path = config/vim/.vim/bundle/jshint2.vim
+[submodule "dots/vim/bundle/jshint2.vim"]
+	path = dots/vim/bundle/jshint2.vim
 	url = https://github.com/Shutnik/jshint2.vim.git
-[submodule "config/vim/.vim/bundle/go.vim"]
-	path = config/vim/.vim/bundle/go.vim
+[submodule "dots/vim/bundle/go.vim"]
+	path = dots/vim/bundle/go.vim
 	url = https://github.com/vim-scripts/go.vim.git
-[submodule "config/vim/.vim/bundle/scala.vim"]
-	path = config/vim/.vim/bundle/scala.vim
+[submodule "dots/vim/bundle/scala.vim"]
+	path = dots/vim/bundle/scala.vim
 	url = https://github.com/vim-scripts/scala.vim.git
-[submodule "config/vim/.vim/bundle/vim-jade"]
-	path = config/vim/.vim/bundle/vim-jade
+[submodule "dots/vim/bundle/vim-jade"]
+	path = dots/vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
-[submodule "config/vim/.vim/bundle/flappyvird"]
-	path = config/vim/.vim/bundle/flappyvird
+[submodule "dots/vim/bundle/flappyvird"]
+	path = dots/vim/bundle/flappyvird
 	url = https://github.com/mattn/flappyvird-vim.git
-[submodule "config/vim/.vim/bundle/vim-javascript-syntax"]
-	path = config/vim/.vim/bundle/vim-javascript-syntax
+[submodule "dots/vim/bundle/vim-javascript-syntax"]
+	path = dots/vim/bundle/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git

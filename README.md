@@ -1,14 +1,6 @@
-# what
 my configuration files
 
-# installing
+# usage
 ```bash
-./dots --update
-./dots install --all
+./configure link [item]
 ```
-
-# updating
-```bash
-./dots --commit "this is what I changed"
-```
-

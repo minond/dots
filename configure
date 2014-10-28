@@ -1,0 +1,58 @@
+#!/bin/bash
+
+dots=`pwd`/dots
+
+#=== FUNCTION =================================================================
+#        NAME: backup
+# DESCRIPTION: backup a file ($1 => $1.bak) if it exists
+# PARAMETER 1: the file you want to backup
+#==============================================================================
+backup() {
+    fname=$1
+    [ -e $fname ] && mv $fname $fname.bak
+}
+
+#=== FUNCTION =================================================================
+#        NAME: link
+# DESCRIPTION: create a symbolic link
+# PARAMETER 1: the file you want to end up pointing to
+# PARAMETER 2: the configuration file from this repo
+#==============================================================================
+link() {
+    dest=$1
+    src=$2
+
+    backup $dest
+    [ -h $dest ] && rm $dest
+    ln -s $src $dest
+}
+
+
+case $1 in
+    link)
+        case $2 in
+            git) link ~/.gitconfig $dots/gitconfig
+                 link ~/.gitignore $dots/gitignore
+                 ;;
+
+            vim) link ~/.vimrc $dots/vimrc
+                 link ~/.vim $dots/vim
+                 ;;
+
+            composer) link ~/.composer/composer.json $dots/composer.json
+                      link ~/.composer/composer.lock $dots/composer.lock
+                      link ~/.composer/config.json $dots/composer-config.json
+                      ;;
+
+            ctags) link ~/.ctags $dots/ctags ;;
+            jshint) link ~/.jshintrc $dots/jshintrc ;;
+            tmux) link ~/.tmux.conf $dots/tmux.conf ;;
+            screen) link ~/.screenrc $dots/screenrc ;;
+            bash) link ~/.bashrc $dots/bashrc ;;
+
+            *) echo invalid object; exit 1 ;;
+        esac
+    	;;
+
+    *) echo invalid action; exit 1 ;;
+esac
