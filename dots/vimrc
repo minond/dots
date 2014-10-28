@@ -1,0 +1,289 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LOAD EXTERNALS.................load external resources, start package manager
+" VIM SETTINGS..................................vim built in setting overwrites
+" PLUGIN SETTINGS.....................................plugin setting overwrites
+" ENV SPECIFIC SETTINGS............settings that are specific to an environment
+" FILE TYPE SETTINGS......................file type specific setting overwrites
+" MAPPINGS..................................................custom key mappings
+" COMMANDS......................................................custom commands
+" COLORSCHEME..................................colorscheme and color overwrites
+" SYNTAX...........................syntax (keyword) rebinding and configuration
+" FUNCTIONS....................................................custom functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $LOAD EXTERNALS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+execute pathogen#infect()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $VIM SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set antialias
+set colorcolumn=80,120                   " http://paul-m-jones.com/archives/276
+set cursorline                           " highlight the line cursor is on
+set expandtab
+set hidden                               " best. thing. ever. no buffer closed
+set hlsearch                             " highlight all matches
+set ignorecase                           " case insensitive searches
+set incsearch                            " highlight matches while typing
+set list                                 " display special characters
+set listchars=tab:>\ ,eol:-,trail:.      " special characters for special char
+set ls=2
+set nocompatible
+set nowrap
+set number                               " show line numbers
+set numberwidth=4                        " set line numbers section width
+set shiftwidth=4                         " shift movement length
+set showmatch                            " jump to search result
+set smartcase                            " case insensitive defaul
+set smartindent                          " block indentation
+set softtabstop=4                        " back character length
+set t_Co=256
+set tabstop=4                            " tab character length
+set tags^=./.tags,./.TAGS,.tags,.TAGS
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip " ignored by vim fs access
+set wildignore+=*/templates_c/*,*/bin/*
+set wildignore+=*/node_modules/*
+set wildignore+=*/build/*
+set wildmenu
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $PLUGIN SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let NERDChristmasTree = 1
+let g:ctrlp_max_height = 30
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $ENV SPECIFIC SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if !empty($WORK_ENV)
+    " is.com env settings
+    let g:Powerline_loaded = 1
+else
+    " personal compueter settings
+    let g:Powerline_symbols = 'fancy'
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $FILE TYPE SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au Filetype * source ~/.vim/scripts/script.vim
+au Filetype cucumber source ~/.vim/scripts/yml.vim
+au Filetype ruby source ~/.vim/scripts/yml.vim
+au Filetype scss.css source ~/.vim/scripts/yml.vim
+au Filetype yaml source ~/.vim/scripts/yml.vim
+au Filetype yml source ~/.vim/scripts/yml.vim
+
+" file type remapping for syntax highlighting
+au BufNewFile,BufRead * call <SID>ForceHighlightChanges()
+au BufNewFile,BufRead *.cls set ft=java             " apex
+au BufNewFile,BufRead *.dist set ft=xml
+au BufNewFile,BufRead *.go set ft=go
+au BufNewFile,BufRead *.json set ft=javascript
+au BufNewFile,BufRead *.md set ft=mkd
+au BufNewFile,BufRead *.object set ft=xml           " apex
+au BufNewFile,BufRead *.page set ft=html            " apex
+au BufNewFile,BufRead *.pp set ft=ruby
+au BufNewFile,BufRead *.scala set ft=scala
+au BufNewFile,BufRead *.tpl set ft=smarty
+au BufNewFile,BufRead *.twig set ft=htmljinja
+au BufNewFile,BufRead *.html set ft=htmljinja
+au BufNewFile,BufRead *.{inc,lan,view,act,get,controller} set ft=php " isui
+au BufNewFile,BufRead .arclint,.arcconfig set ft=javascript
+au BufNewFile,BufRead .domainconfig set ft=dosini
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $MAPPINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-k> <ESC>:GitGutterNextHunk<CR>
+map <C-j> <ESC>:GitGutterPrevHunk<CR>
+map <C-o> <ESC>:CtrlP<CR>
+map <leader>o <ESC>:CtrlPTag<CR>
+map <C-c> <ESC>:TComment<CR>
+map <C-f> <ESC>:NERDTreeFind<CR>
+map <S-f> <ESC>:NERDTreeTabsToggle<CR>
+map <C-b> <ESC>:exec("tag ".expand("<cword>"))<CR>
+map <C-l> <ESC>:echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
+map <S-j> <ESC>:bp<CR>
+map <S-k> <ESC>:bn<CR>
+map <S-s> <ESC>:w<CR>
+map <C-s> <ESC>:w<CR>
+map <Tab> <C-w><C-w>
+map <S-Tab> <C-w><S-w>
+map <leader>t :TagbarToggle<CR>
+map <leader>g :GitGutter<CR>
+map <leader>p :set paste!<CR>
+map <leader>r :w<CR>:Run<CR>
+map <leader>h :if exists("g:syntax_on") <Bar>
+    \ syntax off <Bar>
+    \ else <Bar>
+    \syntax on <Bar>
+    \ endif <CR>
+
+" exit insert mode within insert mode
+inoremap jj <Esc>
+
+" colon, semi-colon switch
+nnoremap ; :
+nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <leader>c :Copy<CR><CR>
+
+" format json strings
+nmap =j :%!python -m json.tool<CR>
+nmap <leader>s :source $MYVIMRC<CR>:noh<CR>:call <SID>ForceHighlightChanges()<CR>
+nmap <leader>l :set list!<CR>
+nmap <leader>n :set relativenumber!<CR>
+xmap <C-c> <ESC>:'<,'>TComment<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $COMMANDS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command! Ctags !ctags -R --verbose -f .tags
+command! Copy !cat % | xclip -sel clip && echo "copied to clip board"
+
+" gcc
+command! GccRun !gcc % -o prog.out && chmod +x prog.out && ./prog.out && rm prog.out
+command! -nargs=* GccCat !gcc % -o prog.out && chmod +x prog.out && cat <f-args> | ./prog.out && rm prog.out
+
+" lisp
+command! Lisp !clisp -i %
+
+" php
+command! Cupdate !composer update
+command! Cautoload !composer dumpautoload
+command! -nargs=* Test !clear; phpunit <f-args>
+command! ViewTests !gnome-open ./bin/report/index.html
+
+" git commands
+command! Ann !git annotate %
+command! Stat !git status
+command! -nargs=* Diff !git diff <f-args>
+
+" run scripts
+command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
+\ case $ext in
+    \ php)
+        \ php % | less --quit-at-eof
+        \ ;;
+    \ js)
+        \ DEBUG_COLORS=1 DEBUG=* node % | less --quit-at-eof
+        \ ;;
+    \ py)
+        \ python % | less --quit-at-eof
+        \ ;;
+    \ lisp)
+        \ clisp % | less --quit-at-eof
+        \ ;;
+    \ rb)
+        \ ruby % | less --quit-at-eof
+        \ ;;
+    \ yaml|yml)
+        \ yaml2json % | python -m json.tool | less --quit-at-eof
+        \ ;;
+    \ lua)
+        \ lua % | less --quit-at-eof
+        \ ;;
+    \ *)
+        \ echo "i don't know what to do with .$ext files"
+        \ ;;
+\ esac
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLORSCHEME
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme lucius
+
+" vim-javascript-syntax is adding syntax matches and breaking all of the things
+function! <SID>ForceHighlightChanges()
+hi Constant                    ctermfg=229
+hi String                      ctermfg=229
+hi Statement                   ctermfg=117
+hi Structure                   ctermfg=111
+
+hi ColorColumn                                ctermbg=235
+hi ExtraWhitespace             ctermfg=161
+hi IncSearch                   ctermfg=0      ctermbg=193    cterm=bold
+hi Search                      ctermfg=0      ctermbg=193    cterm=bold
+hi SpecialKey                                 ctermbg=None
+hi Todo                        ctermfg=Red    ctermbg=None
+hi htmlString                  ctermfg=Blue
+hi NonText                     ctermfg=235    ctermbg=None
+hi SpecialKey                  ctermfg=235    ctermbg=None
+
+" resets
+hi SignColumn                                 ctermbg=None
+hi VertSplit                                  ctermbg=None
+hi LineNr                                     ctermbg=None
+hi javaScriptBraces            ctermfg=None
+hi javaScriptEndColons         ctermfg=None
+hi javaScriptFuncArg           ctermfg=None
+hi javaScriptFuncDef           ctermfg=None
+hi javaScriptFuncExp           ctermfg=None
+hi javaScriptOpSymbols         ctermfg=None
+hi javaScriptParens            ctermfg=None
+hi javaScriptReserved          ctermfg=None
+hi javaScriptAjaxMethods       ctermfg=None
+hi javaScriptFuncEq            ctermfg=None
+hi javaScriptLogicSymbols      ctermfg=None
+hi javaScriptHtmlElemProperties               ctermfg=None
+hi javaScriptEventListenerKeywords            ctermfg=None
+
+" https://medium.com/web-dev/6f83add748c9
+hi javaScriptLineComment       ctermfg=192
+hi javaScriptComment           ctermfg=238
+hi javaScriptDocTags           ctermfg=2413
+hi javaScriptDocSeeTag         ctermfg=243
+
+hi link javaCharacter          javaString
+hi link javaError              None
+hi link javaScriptPrototype    javaScriptFuncKeyword
+hi link javaSpecialCharError   javaString
+hi link phpFunctions           phpRegion
+hi link phpMethods             phpRegion
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SYNTAX
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax keyword phpException finally
+syntax keyword sqlKeyword limit
+syntax keyword sqlType avg
+syntax keyword sqlType count
+syntax keyword sqlType max
+syntax keyword sqlType min
+syntax keyword sqlType sum
+syntax match javaScriptDocTags contained "@\(\w\+\)\>" nextgroup=javaScriptDocSeeTag skipwhite
+
+match ExtraWhitespace /\s\+\%#\@<!$/
+endfunction
+call <SID>ForceHighlightChanges()
+autocmd VimEnter * call <SID>ForceHighlightChanges()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FUNCTIONS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+
+    " Work: match extra whitespace
+    %s/\s\+$//e
+
+    " Cleanup: restore previous search history and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+function! ShowColors()
+    let num = 255
+
+    " Work: create new highlight rule and pattern matcher
+    while num >= 0
+        exec 'hi col_' . num . ' ctermbg=' . num . ' ctermfg=white'
+        exec 'syn match col_' . num . ' "ctermbg=' . num . ':...." containedIn=ALL'
+        call append(0, 'ctermbg=' . num . ':....')
+        let num = num - 1
+    endwhile
+endfunction

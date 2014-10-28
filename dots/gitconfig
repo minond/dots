@@ -1,0 +1,7 @@
+[user]
+	name = Marcos Minond
+	email = minond.marcos@gmail.com
+[color]
+	ui = true
+[core]
+	excludesfile = ~/.gitignore

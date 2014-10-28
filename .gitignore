@@ -1,5 +1,4 @@
-.vim/Powerline_default_default_compatible.cache
-
-config/vim/.vim/plugin/python/vdebug/ui/*.pyc
-config/vim/.vim/plugin/python/vdebug/*.pyc
-config/vim/.vim/.netrwhist
+dots/vim/Powerline_default_default_compatible.cache
+dots/vim/plugin/python/vdebug/ui/*.pyc
+dots/vim/plugin/python/vdebug/*.pyc
+dots/vim/.netrwhist
