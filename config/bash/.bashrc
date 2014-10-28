@@ -90,6 +90,7 @@ alias tmux='tmux -2'
 alias d='clear; git diff'
 alias s='clear; git status'
 alias server='python -m SimpleHTTPServer'
+alias code='cd $HOME/code; tmux'
 
 set -o vi
 
@@ -198,6 +199,10 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/home/marcos/.dots/bin:$PATH"
 export PATH=$HOME/.cabal/bin:$PATH
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
+
+# go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/code/projects/scaffold/scripts
