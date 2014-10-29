@@ -37,28 +37,28 @@ function path! {
 # $ENV SETTINGS
 ###############################################################################
 
-PS1="\[$(tput bold)\]\u@\H:\[$(tput setaf 4)\]\w $\[$(tput sgr0)\] "
-EDITOR=vim
+export PS1="\[$(tput bold)\]\u@\H:\[$(tput setaf 4)\]\w $\[$(tput sgr0)\] "
+export EDITOR=vim
 
 # don't put duplicate lines in the history. See bash(1) for more options or
 # force ignoredups and ignorespace. for setting history length see HISTSIZE and
 # HISTFILESIZE in bash(1)
-HISTCONTROL=ignoredups:ignorespace
-HISTSIZE=1000
-HISTFILESIZE=2000
+export HISTCONTROL=ignoredups:ignorespace
+export HISTSIZE=1000
+export HISTFILESIZE=2000
 
 ###############################################################################
 # $TOOL SETTINGS
 ###############################################################################
 
-ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
-GOPATH=$HOME/go
+export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
+export GOPATH=$HOME/go
 
-PERL5LIB="/home/marcos/perl5/lib/perl5/i686-linux-gnu-thread-multi-64int"
-PERL5LIB="$PERL5LIB:/home/marcos/perl5/lib/perl5"
-PERL_LOCAL_LIB_ROOT="/home/marcos/perl5"
-PERL_MB_OPT="--install_base /home/marcos/perl5"
-PERL_MM_OPT="INSTALL_BASE=/home/marcos/perl5"
+export PERL5LIB="/home/marcos/perl5/lib/perl5/i686-linux-gnu-thread-multi-64int"
+export PERL5LIB="$PERL5LIB:/home/marcos/perl5/lib/perl5"
+export PERL_LOCAL_LIB_ROOT="/home/marcos/perl5"
+export PERL_MB_OPT="--install_base /home/marcos/perl5"
+export PERL_MM_OPT="INSTALL_BASE=/home/marcos/perl5"
 
 ###############################################################################
 # $SETTINGS
