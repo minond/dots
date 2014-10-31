@@ -3,6 +3,7 @@
 --langmap=java:+.cls
 --regex-PHP=/trait ([^ ]*)/\1/c/
 --exclude=resources/js/*
+--exclude=smartmvc/doc/*
 --exclude=nexus_library/js/*
 --exclude=smartmvc/resources/js/*
 --exclude=node_modules/*
