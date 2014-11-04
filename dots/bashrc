@@ -1,5 +1,6 @@
 ###############################################################################
 # DEFINISTIONS......................................helper function definitions
+# PROMPT........................................................prompt settings
 # ENV SETTINGS........................................settings for the bash env
 # VAR SETTINGS...............................................settings for tools
 # SETTINGS...................................settings for commands/applications
@@ -34,10 +35,21 @@ function path! {
 }
 
 ###############################################################################
+# $PROMPT
+###############################################################################
+
+prompt_jobscount() {
+    local stopped=$(jobs -sp | wc -l)
+    local running=$(jobs -rp | wc -l)
+    ((running+stopped)) && echo -n "(${running}r/${stopped}s) "
+}
+
+export PS1='\[$(tput bold)\]\u@\H:\[$(tput setaf 4)\]\w $(prompt_jobscount)$\[$(tput sgr0)\] '
+
+###############################################################################
 # $ENV SETTINGS
 ###############################################################################
 
-export PS1="\[$(tput bold)\]\u@\H:\[$(tput setaf 4)\]\w $\[$(tput sgr0)\] "
 export EDITOR=vim
 
 # don't put duplicate lines in the history. See bash(1) for more options or
