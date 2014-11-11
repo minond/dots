@@ -8,7 +8,7 @@ dots=$(pwd)/dots
 # PARAMETER 1: the file you want to backup
 #==============================================================================
 backup() {
-    fname=$1
+    local fname=$1
     [ -e "$fname" ] && mv "$fname" "$fname.bak"
 }
 
@@ -19,8 +19,8 @@ backup() {
 # PARAMETER 2: the configuration file from this repo
 #==============================================================================
 link() {
-    dest=$1
-    src=$2
+    local dest=$1
+    local src=$2
 
     backup "$dest"
     [ -h "$dest" ] && rm "$dest"
