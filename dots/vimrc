@@ -233,7 +233,7 @@ hi javaScriptEventListenerKeywords            ctermfg=None
 " https://medium.com/web-dev/6f83add748c9
 hi javaScriptLineComment       ctermfg=192
 hi javaScriptComment           ctermfg=238
-hi javaScriptDocTags           ctermfg=2413
+hi javaScriptDocTags           ctermfg=241
 hi javaScriptDocSeeTag         ctermfg=243
 
 hi link javaCharacter          javaString
