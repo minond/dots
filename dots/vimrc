@@ -240,6 +240,7 @@ hi link javaCharacter          javaString
 hi link javaError              None
 hi link javaScriptPrototype    javaScriptFuncKeyword
 hi link javaSpecialCharError   javaString
+hi link javaScriptDocComment   javaScriptComment
 hi link phpFunctions           phpRegion
 hi link phpMethods             phpRegion
 
