@@ -1,3 +1,0 @@
-#!/bin/bash
-
-sudo python /usr/local/bin/galileo --force -d
