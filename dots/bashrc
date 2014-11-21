@@ -136,6 +136,7 @@ path! $HOME/perl5/bin
 path! $HOME/.composer/bin/
 path! $HOME/bin/
 path! $HOME/.dots/bin
+path! $HOME/.dots/vendor/scaffold/scripts
 
 # added by the Heroku Toolbelt
 path! /usr/local/heroku/bin
@@ -144,7 +145,6 @@ path! $HOME/.cabal/bin
 path! /usr/local/go/bin
 path! $GOPATH/bin
 path! $HOME/.rvm/bin
-path! $HOME/code/projects/scaffold/scripts
 
 ###############################################################################
 # $EXTRA SOURCES
