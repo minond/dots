@@ -79,7 +79,7 @@ done
 if [ -z "$1" ]; then
     echo "options:"
 
-    for option in git vim composerctags jshint tmux screen bash
+    for option in git vim composer ctags jshint tmux screen bash
     do
         echo " - $option"
     done
