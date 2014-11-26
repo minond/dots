@@ -72,3 +72,6 @@
 [submodule "vendor/scaffold"]
 	path = vendor/scaffold
 	url = http://github.com/minond/scaffold
+[submodule "dots/vim/bundle/loremipsum"]
+	path = dots/vim/bundle/loremipsum
+	url = https://github.com/vim-scripts/loremipsum.git
