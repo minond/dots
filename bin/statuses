@@ -1,0 +1,17 @@
+#!/bin/bash
+
+for repo in $(ls -d ./*); do
+    if [ -d "$repo/.git" ]; then
+        cd "$repo"
+        echo -n "$repo:"
+
+        git status --porcelain | grep M -q
+        if [ "$?" -eq 1 ]; then
+            echo " clean"
+        else
+            echo " dirty"
+        fi
+
+        cd - &> /dev/null
+    fi
+done
