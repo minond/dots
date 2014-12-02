@@ -121,7 +121,7 @@ alias s='clear; git status'
 
 # nice to haves
 alias server='python -m SimpleHTTPServer'
-alias code='cd $HOME/code/$2; tmux -2'
+alias code='cd $HOME/code/github.com/$GITHUB_USER/$2; tmux -2'
 
 alias alert='notify-send --urgency=low -i \
     "$([ $? = 0 ] && echo terminal || echo error)" \
