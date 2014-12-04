@@ -26,8 +26,8 @@ set hidden                               " best. thing. ever. no buffer closed
 set hlsearch                             " highlight all matches
 set ignorecase                           " case insensitive searches
 set incsearch                            " highlight matches while typing
-set nolist                               " don't display special characters
-set listchars=tab:>\ ,eol:-,trail:.      " special characters for special char
+set list                                 " display special characters
+set listchars=tab:>\ ,trail:.            " special characters for special char
 set ls=2
 set nocompatible
 set nowrap
