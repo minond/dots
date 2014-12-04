@@ -193,6 +193,9 @@ command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme lucius
 
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+
 " vim-javascript-syntax is adding syntax matches and breaking all of the things
 function! <SID>ForceHighlightChanges()
 hi Constant                    ctermfg=229
