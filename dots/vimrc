@@ -52,7 +52,6 @@ set wildmenu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDChristmasTree = 1
 let g:ctrlp_max_height = 30
-let g:Powerline_symbols = 'fancy'
 
 let g:gitgutter_sign_added = '-'
 let g:gitgutter_sign_modified = '-'
@@ -192,6 +191,7 @@ command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
 " COLORSCHEME
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme lucius
+syntax on
 
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
