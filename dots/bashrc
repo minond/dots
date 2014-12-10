@@ -39,8 +39,8 @@ function path! {
 ###############################################################################
 
 prompt_jobscount() {
-    local stopped=$(jobs -sp | wc -l)
-    local running=$(jobs -rp | wc -l)
+    local stopped=$(jobs -sp | wc -l | sed 's/ //g')
+    local running=$(jobs -rp | wc -l | sed 's/ //g')
     ((running+stopped)) && echo -n "(${running}r/${stopped}s) "
 }
 
