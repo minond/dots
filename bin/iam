@@ -1,0 +1,17 @@
+#!/bin/bash
+
+case "$1" in
+    marcos)
+        git config --global user.name "Marcos Minond"
+        git config --global user.email "minond.marcos@gmail.com"
+        ;;
+
+    domo)
+        git config --global user.name "Marcos Minond"
+        git config --global user.email "marcos.minond@domo.com"
+        ;;
+
+    *)
+        echo "who?"
+        exit 1
+esac
