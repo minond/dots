@@ -2,11 +2,13 @@
 
 case "$1" in
     marcos)
+        set -x
         git config --global user.name "Marcos Minond"
         git config --global user.email "minond.marcos@gmail.com"
         ;;
 
     domo)
+        set -x
         git config --global user.name "Marcos Minond"
         git config --global user.email "marcos.minond@domo.com"
         ;;
