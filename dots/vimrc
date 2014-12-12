@@ -83,6 +83,7 @@ au BufNewFile,BufRead *.pp set ft=ruby
 au BufNewFile,BufRead *.scala set ft=scala
 au BufNewFile,BufRead *.tpl set ft=smarty
 au BufNewFile,BufRead *.twig set ft=htmljinja
+au BufNewFile,BufRead *.handlebars set ft=htmljinja
 au BufNewFile,BufRead *.html set ft=htmljinja
 au BufNewFile,BufRead *.{inc,lan,view,act,get,controller} set ft=php " isui
 au BufNewFile,BufRead .arclint,.arcconfig set ft=javascript
@@ -219,7 +220,10 @@ hi IncSearch                   ctermfg=0      ctermbg=193    cterm=bold
 hi Search                      ctermfg=0      ctermbg=193    cterm=bold
 hi SpecialKey                                 ctermbg=None
 hi Todo                        ctermfg=Red    ctermbg=None
-hi htmlString                  ctermfg=Blue
+hi htmlString                  ctermfg=229
+hi htmlTag                     ctermfg=192
+hi htmlEndTag                  ctermfg=192
+hi htmlTagName                 ctermfg=192
 hi NonText                     ctermfg=235    ctermbg=None
 hi SpecialKey                  ctermfg=235    ctermbg=None
 
