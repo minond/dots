@@ -44,16 +44,11 @@ prompt_jobscount() {
     ((running+stopped)) && echo -n "(${running}r/${stopped}s) "
 }
 
-prompt_email() {
-    git config --global user.email
-}
-
 col_reset=$(tput sgr0)
-col_host=$(tput setaf 243)
-col_email=$(tput setaf 229)
+col_host=$(tput setaf 229)
 col_dir=$(tput setaf 5)
 
-export PS1='${col_host}\h${col_reset} ${col_email}$(prompt_email)${col_reset} ${col_dir}\w $(prompt_jobscount)$ ${col_reset}'
+export PS1='${col_host}\h${col_reset} ${col_dir}\w $(prompt_jobscount)$ ${col_reset}'
 
 ###############################################################################
 # $ENV SETTINGS
@@ -109,7 +104,7 @@ fi
 ###############################################################################
 
 # colors!
-alias grep='grep --color=auto'
+alias grep='grep -I --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
