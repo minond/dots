@@ -176,7 +176,7 @@ command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
         \ php % | less --quit-at-eof
         \ ;;
     \ js)
-        \ DEBUG_COLORS=1 DEBUG=* node --harmony --harmony_generators % | less --quit-at-eof
+        \ DEBUG_COLORS=1 DEBUG=* node --harmony % | less --quit-at-eof
         \ ;;
     \ py)
         \ python % | less --quit-at-eof
@@ -224,6 +224,7 @@ hi htmlString                  ctermfg=229
 hi htmlTag                     ctermfg=192
 hi htmlEndTag                  ctermfg=192
 hi htmlTagName                 ctermfg=192
+hi htmlTagN                    ctermfg=192
 hi NonText                     ctermfg=235    ctermbg=None
 hi SpecialKey                  ctermfg=235    ctermbg=None
 
