@@ -63,6 +63,10 @@ export HISTCONTROL=ignoredups:ignorespace
 export HISTSIZE=1000
 export HISTFILESIZE=2000
 
+# colored output on mac
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
 ###############################################################################
 # $TOOL SETTINGS
 ###############################################################################
