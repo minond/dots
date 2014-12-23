@@ -6,6 +6,7 @@
 # SETTINGS...................................settings for commands/applications
 # ALIASES..........................................anything but aliases go here
 # PATHS........................................................path var setters
+# GNU FTW................................................brew install coreutils
 # EXTRA SOURCES....................................load additional source files
 ###############################################################################
 
@@ -66,6 +67,7 @@ export HISTFILESIZE=2000
 # colored output on mac
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
 
 ###############################################################################
 # $TOOL SETTINGS
@@ -113,8 +115,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # some more ls aliases
-alias ll='ls -lF'
-alias la='ls -A'
+alias ll='ls -hlF --group-directories-first --color'
+alias la='ls -hA  --group-directories-first --color'
 alias l='ll'
 
 alias ..='cd ..'
@@ -133,6 +135,12 @@ alias code='cd $HOME/code/github.com/$GITHUB_USER/$2; tmux -2'
 alias alert='notify-send --urgency=low -i \
     "$([ $? = 0 ] && echo terminal || echo error)" \
     "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+###############################################################################
+# $GNU FTW (brew install coreutils)
+###############################################################################
+
+command -v gls &> /dev/null && alias ls='gls'
 
 ###############################################################################
 # $PATHS
