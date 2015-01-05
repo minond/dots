@@ -260,6 +260,8 @@ hi link javaSpecialCharError   javaString
 hi link javaScriptDocComment   javaScriptComment
 hi link phpFunctions           phpRegion
 hi link phpMethods             phpRegion
+hi link cssPseudoClass         cssPseudoClassId
+hi link scssProperty           cssRenderProp
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SYNTAX
