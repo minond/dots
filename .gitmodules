@@ -72,3 +72,6 @@
 [submodule "dots/vim/bundle/loremipsum"]
 	path = dots/vim/bundle/loremipsum
 	url = https://github.com/vim-scripts/loremipsum.git
+[submodule "dots/vim/bundle/ctrlp.vim"]
+	path = dots/vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim
