@@ -84,3 +84,9 @@
 [submodule "dots/vim/bundle/summerfruit256.vim"]
 	path = dots/vim/bundle/summerfruit256.vim
 	url = https://github.com/vim-scripts/summerfruit256.vim.git
+[submodule "dots/vim/bundle/vim-markdown"]
+	path = dots/vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
+[submodule "dots/vim/bundle/vim-jinja"]
+	path = dots/vim/bundle/vim-jinja
+	url = https://github.com/mitsuhiko/vim-jinja
