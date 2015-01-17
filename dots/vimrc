@@ -210,7 +210,7 @@ autocmd WinLeave * setlocal nocursorline
 
 " vim-javascript-syntax is adding syntax matches and breaking all of the things
 function! <SID>ForceHighlightChanges()
-    source ~/.vim/color-summerfruit256-overwrites.vim
+    source ~/.vim/colors/summerfruit256-overwrites.vim
 endfunction
 call <SID>ForceHighlightChanges()
 autocmd VimEnter * call <SID>ForceHighlightChanges()
