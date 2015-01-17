@@ -75,3 +75,9 @@
 [submodule "dots/vim/bundle/ctrlp.vim"]
 	path = dots/vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
+[submodule "dots/vim/bundle/tcomment_vim"]
+	path = dots/vim/bundle/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim
+[submodule "dots/vim/bundle/nerdtree"]
+	path = dots/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
