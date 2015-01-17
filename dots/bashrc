@@ -47,14 +47,14 @@ prompt_jobscount() {
 
 col_host() {
     if [ "$?" -eq 0 ]; then
-        echo "$(tput setaf 229)"
+        echo "$(tput setaf 78)"
     else
-        echo "$(tput setaf 1)"
+        echo "$(tput setaf 196)"
     fi
 }
 
 col_reset="$(tput sgr0)"
-col_dir="$(tput setaf 116)"
+col_dir="$(tput setaf 33)"
 
 export PS1='\[$(col_host)\]\h\[${col_reset}\] \[${col_dir}\]\w $(prompt_jobscount)$ \[${col_reset}\]'
 
