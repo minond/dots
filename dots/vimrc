@@ -63,12 +63,12 @@ let g:gitgutter_sign_modified_removed = '-'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au Filetype *github.com* source ~/.vim/scripts/script.vim
-au Filetype cucumber source ~/.vim/scripts/yml.vim
-au Filetype ruby source ~/.vim/scripts/yml.vim
-au Filetype scss.css source ~/.vim/scripts/yml.vim
-au Filetype yaml source ~/.vim/scripts/yml.vim
-au Filetype yml source ~/.vim/scripts/yml.vim
+au Filetype *github.com* call <SID>SetTabWidth(4)
+au Filetype cucumber call <SID>SetTabWidth(2)
+au Filetype ruby call <SID>SetTabWidth(2)
+au Filetype scss.css call <SID>SetTabWidth(2)
+au Filetype yaml call <SID>SetTabWidth(2)
+au Filetype yml call <SID>SetTabWidth(2)
 
 " file type remapping for syntax highlighting
 au BufNewFile,BufRead * call <SID>ForceHighlightChanges()
@@ -96,10 +96,8 @@ au BufNewFile,BufRead Makefile,*.mk set noexpandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $DOMO
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufNewFile,BufRead /Users/marcosminond/Documents/Domo/Source/* set
-    \ tabstop=2
-    \ shiftwidth=2
-    \ softtabstop=2
+au BufNewFile,BufRead /Users/marcosminond/Documents/Domo/Source/*
+    \ call <SID>SetTabWidth(2)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $MAPPINGS
@@ -256,4 +254,18 @@ function! ShowColors()
         call append(0, 'ctermbg=' . num . ':....')
         let num = num - 1
     endwhile
+endfunction
+
+function! <SID>SetTabWidth(width)
+    if a:width == 2
+        set numberwidth=2
+        set shiftwidth=2
+        set softtabstop=2
+        set tabstop=2
+    elseif a:width == 4
+        set numberwidth=4
+        set shiftwidth=4
+        set softtabstop=4
+        set tabstop=4
+    endif
 endfunction
