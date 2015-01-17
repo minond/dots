@@ -47,9 +47,10 @@ hi NonText                                    ctermbg=None
 hi Search                      ctermfg=Red    ctermbg=11     cterm=bold
 hi SignColumn                                 ctermbg=None
 hi SpecialKey                  ctermfg=254    ctermbg=None
+hi Title                       ctermfg=202
 hi Todo                        ctermfg=Red    ctermbg=None
 hi VertSplit                   ctermfg=11     ctermbg=None   cterm=None
-hi clear vimHiKeyError
 hi javaScriptBraces            ctermfg=None
 hi javaScriptComment           ctermfg=249
 hi javaScriptLineComment       ctermfg=249
+hi vimHiKeyError               ctermfg=Red    ctermbg=Red    cterm=None
