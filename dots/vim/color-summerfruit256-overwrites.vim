@@ -1,5 +1,4 @@
 " hi Constant                    ctermfg=229
-" hi SignColumn                                 ctermbg=None
 " hi SpecialKey                                 ctermbg=None
 " hi Statement                   ctermfg=117
 " hi String                      ctermfg=229
@@ -39,13 +38,18 @@ hi Comment                     ctermfg=249
 hi CursorColumn                ctermfg=None   ctermbg=230    cterm=None
 hi CursorLine                  ctermfg=None   ctermbg=230    cterm=None
 hi ExtraWhitespace             ctermfg=161
+hi GitGutterAddDefault         ctermfg=43     ctermbg=None
+hi GitGutterChangeDefault      ctermfg=27     ctermbg=None
+hi GitGutterDeleteDefault      ctermfg=red    ctermbg=None
 hi IncSearch                   ctermfg=red    ctermbg=193    cterm=bold
 hi LineNr                      ctermfg=244    ctermbg=None
 hi NonText                                    ctermbg=None
 hi Search                      ctermfg=Red    ctermbg=11     cterm=bold
+hi SignColumn                                 ctermbg=None
 hi SpecialKey                  ctermfg=254    ctermbg=None
 hi Todo                        ctermfg=Red    ctermbg=None
 hi VertSplit                   ctermfg=11     ctermbg=None   cterm=None
+hi clear vimHiKeyError
 hi javaScriptBraces            ctermfg=None
 hi javaScriptComment           ctermfg=249
 hi javaScriptLineComment       ctermfg=249
