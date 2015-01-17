@@ -81,3 +81,6 @@
 [submodule "dots/vim/bundle/nerdtree"]
 	path = dots/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
+[submodule "dots/vim/bundle/summerfruit256.vim"]
+	path = dots/vim/bundle/summerfruit256.vim
+	url = https://github.com/vim-scripts/summerfruit256.vim.git
