@@ -13,10 +13,4 @@ run it without arguments to get a list of that it can link for you. once you're
 ready to use a cofiguration, just run the script with the item name(s), like
 so: `./configure vim tmux`
 
-some screenshots of that some of those things look like:
-
-##### vim
-![screenshot of my vim setup](https://raw.github.com/minond/dots/master/screenshots/vim.png)
-
-##### tmux
-![screenshots of my tmux setup](https://raw.github.com/minond/dots/master/screenshots/tmux.png)
+![screenshot](http://i.imgur.com/0ePs5X8.png)
