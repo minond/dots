@@ -33,7 +33,7 @@
 " hi link phpFunctions           phpRegion
 " hi link phpMethods             phpRegion
 " hi link scssProperty           cssRenderProp
-hi ColorColumn                                ctermbg=255
+hi ColorColumn                                ctermbg=230
 hi Comment                     ctermfg=249                   cterm=None
 hi CursorColumn                ctermfg=None   ctermbg=230    cterm=None
 hi CursorLine                  ctermfg=None   ctermbg=230    cterm=None
@@ -50,11 +50,12 @@ hi SpecialKey                  ctermfg=254    ctermbg=None
 hi Title                       ctermfg=202
 hi Todo                        ctermfg=Red    ctermbg=None
 hi VertSplit                   ctermfg=11     ctermbg=None   cterm=None
+hi Visual                                     ctermbg=229
+hi htmlEndTag                  ctermfg=34
+hi htmlTag                     ctermfg=34
+hi htmlTagN                    ctermfg=34
 hi javaScriptBraces            ctermfg=None
 hi javaScriptComment           ctermfg=249
 hi javaScriptLineComment       ctermfg=249
 hi jinjaOperator               ctermfg=Gray
-hi htmlEndTag                  ctermfg=34
-hi htmlTag                     ctermfg=34
-hi htmlTagN                    ctermfg=34
 hi vimHiKeyError               ctermfg=Red    ctermbg=Red    cterm=None
