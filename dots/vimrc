@@ -15,6 +15,7 @@
 " $LOAD EXTERNALS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 execute pathogen#infect()
+Helptags
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $VIM SETTINGS
@@ -139,8 +140,6 @@ nnoremap ; :
 nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <leader>c :Copy<CR><CR>
 
-" format json strings
-nmap =j :%!python -m json.tool<CR>
 nmap <leader>s :source $MYVIMRC<CR>:noh<CR>:call <SID>ForceHighlightChanges()<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>n :set relativenumber!<CR>

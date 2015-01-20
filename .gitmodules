@@ -49,3 +49,6 @@
 [submodule "dots/vim/bundle/vim-jinja"]
 	path = dots/vim/bundle/vim-jinja
 	url = https://github.com/mitsuhiko/vim-jinja
+[submodule "dots/vim/bundle/vim-jdaddy"]
+	path = dots/vim/bundle/vim-jdaddy
+	url = https://github.com/tpope/vim-jdaddy.git
