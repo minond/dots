@@ -59,3 +59,4 @@ hi javaScriptComment           ctermfg=249
 hi javaScriptLineComment       ctermfg=249
 hi jinjaOperator               ctermfg=Gray
 hi vimHiKeyError               ctermfg=Red    ctermbg=Red    cterm=None
+hi cssTableAttr                ctermfg=None

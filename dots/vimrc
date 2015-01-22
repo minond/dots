@@ -67,12 +67,12 @@ let g:gitgutter_sign_modified_removed = '-'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au Filetype *github.com* call <SID>SetTabWidth(4)
-au Filetype cucumber call <SID>SetTabWidth(2)
-au Filetype ruby call <SID>SetTabWidth(2)
-au Filetype scss.css call <SID>SetTabWidth(2)
-au Filetype yaml call <SID>SetTabWidth(2)
-au Filetype yml call <SID>SetTabWidth(2)
+au Filetype *github.com* call SetTabWidth(4)
+au Filetype cucumber call SetTabWidth(2)
+au Filetype ruby call SetTabWidth(2)
+au Filetype scss.css call SetTabWidth(2)
+au Filetype yaml call SetTabWidth(2)
+au Filetype yml call SetTabWidth(2)
 
 " file type remapping for syntax highlighting
 au BufNewFile,BufRead * call <SID>ForceHighlightChanges()
@@ -101,7 +101,7 @@ au BufNewFile,BufRead Makefile,*.mk set noexpandtab
 " $DOMO
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead /Users/marcosminond/Documents/Domo/Source/*
-    \ call <SID>SetTabWidth(2)
+    \ call SetTabWidth(2)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $MAPPINGS
@@ -122,7 +122,6 @@ map <S-s> <ESC>:w<CR>
 map <C-s> <ESC>:w<CR>
 map <Tab> <C-w><C-w>
 map <S-Tab> <C-w><S-w>
-map <leader>t :TagbarToggle<CR>
 map <leader>g :GitGutter<CR>
 map <leader>p :set paste!<CR>
 map <leader>r :w<CR>:Run<CR>
@@ -258,7 +257,7 @@ function! ShowColors()
     endwhile
 endfunction
 
-function! <SID>SetTabWidth(width)
+function! SetTabWidth(width)
     if a:width == 2
         set numberwidth=2
         set shiftwidth=2
