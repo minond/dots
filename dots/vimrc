@@ -47,6 +47,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip " ignored by vim fs access
 set wildignore+=*/templates_c/*,*/bin/*
 set wildignore+=*/node_modules/*
 set wildignore+=*/build/*
+set wildignore+=*/public-built/*
 set wildmenu
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
