@@ -56,9 +56,6 @@ set wildmenu
 let NERDChristmasTree = 1
 let g:ctrlp_max_height = 30
 
-" jinja plugins is using an undefined var;
-let b:did_jinja_autodetect = 0
-
 let g:gitgutter_sign_added = '-'
 let g:gitgutter_sign_modified = '-'
 let g:gitgutter_sign_removed = '-'
@@ -165,9 +162,9 @@ command! -nargs=* Test !clear; phpunit <f-args>
 command! ViewTests !gnome-open ./bin/report/index.html
 
 " git commands
-command! Ann !git annotate %
-command! Stat !git status
-command! -nargs=* Diff !git diff <f-args>
+command! Ann !clear; git annotate %
+command! Stat !clear; git status
+command! -nargs=* Diff !clear; git diff <f-args>
 
 " run scripts
 command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
