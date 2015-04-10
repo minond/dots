@@ -52,3 +52,9 @@
 [submodule "dots/vim/bundle/vim-jdaddy"]
 	path = dots/vim/bundle/vim-jdaddy
 	url = https://github.com/tpope/vim-jdaddy.git
+[submodule "dots/vim/bundle/yajs.vim"]
+	path = dots/vim/bundle/yajs.vim
+	url = https://github.com/othree/yajs.vim.git
+[submodule "dots/vim/bundle/mozjs-syntax"]
+	path = dots/vim/bundle/mozjs-syntax
+	url = https://github.com/gijsk/mozjs-syntax.git
