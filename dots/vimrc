@@ -53,7 +53,10 @@ set wildmenu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $PLUGIN SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let NERDChristmasTree = 1
+let NERDTreeShowHidden = 1
+let NERDTreeIgnore = ['\.swp$', '\~$', '.git', '.sass-cache', '.scaffold']
+let NERDTreeWinPos = 'right'
+let NERDTreeCascadeOpenSingleChildDir = 1
 let g:ctrlp_max_height = 30
 
 let g:gitgutter_sign_added = '-'
@@ -61,6 +64,9 @@ let g:gitgutter_sign_modified = '-'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '-'
 let g:gitgutter_sign_modified_removed = '-'
+
+call tcomment#DefineType('htmljinja', g:tcommentInlineXML)
+call tcomment#DefineType('htmljinja_block', g:tcommentBlockXML)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
@@ -166,8 +172,20 @@ command! Ann !clear; git annotate %
 command! Stat !clear; git status
 command! -nargs=* Diff !clear; git diff <f-args>
 
+" linters
+command! Lint !file=$(basename %);ext="${file\#\#*.}"; clear;
+\ case $ext in
+    \ js)
+        \ jshint -c ~/.jshintrc % | less --quit-at-eof
+        \ ;;
+    \ *)
+        \ echo "i don't know what to do with .$ext files"
+        \ ;;
+\ esac
+
+
 " run scripts
-command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
+command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; clear;
 \ case $ext in
     \ php)
         \ php % | less --quit-at-eof
@@ -189,6 +207,9 @@ command! Run !file=$(basename %);ext="${file\#\#*.}"; clear;
         \ ;;
     \ lua)
         \ lua % | less --quit-at-eof
+        \ ;;
+    \ md|markdown)
+        \ ghmd %; open %:h/$filename.html; sleep 1; rm %:h/$filename.html;
         \ ;;
     \ *)
         \ echo "i don't know what to do with .$ext files"

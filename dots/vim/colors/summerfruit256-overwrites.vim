@@ -33,6 +33,9 @@
 " hi link phpFunctions           phpRegion
 " hi link phpMethods             phpRegion
 " hi link scssProperty           cssRenderProp
+hi link scssSelector           cssTagName
+hi link javaScriptGlobal       Normal
+hi link javaScriptMember       Normal
 hi ColorColumn                                ctermbg=230
 hi Comment                     ctermfg=249                   cterm=None
 hi CursorColumn                ctermfg=None   ctermbg=230    cterm=None
@@ -55,6 +58,7 @@ hi Visual                                     ctermbg=229
 hi cssTableAttr                ctermfg=None
 hi htmlEndTag                  ctermfg=34
 hi htmlLink                                                  cterm=None
+hi htmlItalic                                                cterm=None
 hi htmlTag                     ctermfg=34
 hi htmlTagN                    ctermfg=34
 hi javaScriptBraces            ctermfg=None
