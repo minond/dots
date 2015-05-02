@@ -55,7 +55,6 @@ set wildmenu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore = ['\.swp$', '\~$', '.git', '.sass-cache', '.scaffold']
-let NERDTreeWinPos = 'right'
 let NERDTreeCascadeOpenSingleChildDir = 1
 let g:ctrlp_max_height = 30
 
