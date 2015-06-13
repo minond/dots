@@ -95,7 +95,6 @@ au BufNewFile,BufRead *.html set ft=htmljinja
 au BufNewFile,BufRead *.{inc,lan,view,act,get,controller} set ft=php " isui
 au BufNewFile,BufRead .arclint,.arcconfig set ft=javascript
 au BufNewFile,BufRead .domainconfig set ft=dosini
-au BufNewFile,BufReadPost *.ino set ft=cpp
 
 " spaces instead of tabs on everything but make files
 au BufNewFile,BufRead * set expandtab
