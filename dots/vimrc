@@ -136,6 +136,7 @@ map <leader>h :if exists("g:syntax_on") <Bar>
 
 " exit insert mode within insert mode
 inoremap jj <Esc>
+inoremap jw <Esc>:w<CR>
 
 " colon, semi-colon switch
 nnoremap ; :
@@ -210,6 +211,9 @@ command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; cle
     \ md|markdown)
         \ ghmd %; open %:h/$filename.html; sleep 1; rm %:h/$filename.html;
         \ ;;
+    \ go)
+        \ go run % | less --quit-at-eof
+        \ ;;
     \ *)
         \ echo "i don't know what to do with .$ext files"
         \ ;;
@@ -244,6 +248,7 @@ syntax keyword sqlType min
 syntax keyword sqlType sum
 syntax match javaScriptDocTags contained "@\(\w\+\)\>" nextgroup=javaScriptDocSeeTag skipwhite
 
+hi ExtraWhitespace             ctermfg=161
 match ExtraWhitespace /\s\+\%#\@<!$/
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

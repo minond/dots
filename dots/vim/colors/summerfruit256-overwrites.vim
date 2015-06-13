@@ -36,8 +36,11 @@
 hi link scssSelector           cssTagName
 hi link javaScriptGlobal       Normal
 hi link javaScriptMember       Normal
+hi link javaScriptTemplateString javaScriptString
 hi ColorColumn                                ctermbg=230
 hi Comment                     ctermfg=249                   cterm=None
+hi javaScriptTemplateVar       ctermfg=32                    cterm=Bold
+hi javaScriptTemplateDelim     ctermfg=32                    cterm=Bold
 hi CursorColumn                ctermfg=None   ctermbg=230    cterm=None
 hi CursorLine                  ctermfg=None   ctermbg=230    cterm=None
 hi Error                       ctermfg=124    ctermbg=None   cterm=underline
@@ -64,5 +67,9 @@ hi htmlTagN                    ctermfg=34
 hi javaScriptBraces            ctermfg=None
 hi javaScriptComment           ctermfg=249
 hi javaScriptLineComment       ctermfg=249
+hi javaScriptEndColons         ctermfg=None
+hi javaScriptOpSymbols         ctermfg=None
+hi javaScriptLogicSymbols      ctermfg=None
+hi javaScriptParens            ctermfg=None
 hi jinjaOperator               ctermfg=Gray
 hi vimHiKeyError               ctermfg=Red    ctermbg=Red    cterm=None
