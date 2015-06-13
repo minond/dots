@@ -61,3 +61,6 @@
 [submodule "dots/vim/bundle/swift.vim"]
 	path = dots/vim/bundle/swift.vim
 	url = git@github.com:keith/swift.vim.git
+[submodule "dots/vim/bundle/vim-javascript-syntax"]
+	path = dots/vim/bundle/vim-javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax.git
