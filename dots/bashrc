@@ -133,6 +133,7 @@ alias tmux='tmux -2'
 # git aliases
 alias d='clear; git diff'
 alias s='clear; git status'
+alias show='clear; git show'
 
 # nice to haves
 alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
@@ -140,6 +141,10 @@ alias unswp='find . | grep swp | xargs rm'
 alias server='python -m SimpleHTTPServer'
 alias code='iam marcos; cd $HOME/code/github.com/$GITHUB_USER/$2; tmux -2'
 alias work='iam domo; cd $HOME/Documents/Domo/Source/$2; tmux -2'
+
+alias fresh_chrome='exec open -na "Google Chrome" --args \
+    "--user-data-dir=/Users/marcosminond/.freshchrome" --enable-precise-memory-info \
+    --js-flags="--nocrankshaft --nouse-ic --expose-gc"'
 
 alias alert='notify-send --urgency=low -i \
     "$([ $? = 0 ] && echo terminal || echo error)" \
