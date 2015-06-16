@@ -70,6 +70,7 @@ hi javaScriptLineComment       ctermfg=249
 hi javaScriptEndColons         ctermfg=None
 hi javaScriptOpSymbols         ctermfg=None
 hi javaScriptLogicSymbols      ctermfg=None
+hi javaScriptHtmlElemProperties ctermfg=None
 hi javaScriptParens            ctermfg=None
 hi jinjaOperator               ctermfg=Gray
 hi vimHiKeyError               ctermfg=Red    ctermbg=Red    cterm=None
