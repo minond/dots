@@ -72,5 +72,7 @@ hi javaScriptOpSymbols         ctermfg=None
 hi javaScriptLogicSymbols      ctermfg=None
 hi javaScriptHtmlElemProperties ctermfg=None
 hi javaScriptParens            ctermfg=None
+hi javaScriptFuncExp           ctermfg=None
+hi javaScriptFuncEq            ctermfg=None
 hi jinjaOperator               ctermfg=Gray
 hi vimHiKeyError               ctermfg=Red    ctermbg=Red    cterm=None

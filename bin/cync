@@ -1,6 +1,6 @@
 #!/bin/bash
 
-message=$1
+message="$@"
 branch=`git status | grep "On branch" | head -n1 | sed 's/On branch //'`
 
 if [ -z "$message" ]; then

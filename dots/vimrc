@@ -40,6 +40,8 @@ set showmatch                            " jump to search result
 set smartcase                            " case insensitive defaul
 set smartindent                          " block indentation
 set softtabstop=4                        " back character length
+set splitbelow
+set splitright
 set t_Co=256
 set tabstop=4                            " tab character length
 set tags^=./.tags,./.TAGS,.tags,.TAGS
@@ -172,6 +174,7 @@ command! ViewTests !gnome-open ./bin/report/index.html
 " git commands
 command! Ann !clear; git annotate %
 command! Stat !clear; git status
+command! Reset !clear; git checkout %
 command! -nargs=* Diff !clear; git diff <f-args>
 
 " linters
