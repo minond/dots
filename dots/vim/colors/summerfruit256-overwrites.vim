@@ -10,8 +10,8 @@
 " hi htmlTagN                    ctermfg=192
 " hi htmlTagName                 ctermfg=192
 " hi javaScriptAjaxMethods       ctermfg=None
-" hi javaScriptDocSeeTag         ctermfg=243
-" hi javaScriptDocTags           ctermfg=241
+hi javaScriptDocSeeTag         ctermfg=241
+hi javaScriptDocTags           ctermfg=242
 " hi javaScriptEndColons         ctermfg=None
 " hi javaScriptEventListenerKeywords            ctermfg=None
 " hi javaScriptFuncArg           ctermfg=None
