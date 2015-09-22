@@ -37,6 +37,15 @@ hi link scssSelector           cssTagName
 hi link javaScriptGlobal       Normal
 hi link javaScriptMember       Normal
 hi link javaScriptTemplateString javaScriptString
+hi link typescriptReserved typescriptIdentifier
+hi link javascriptReserved javascriptIdentifier
+hi Identifier                  ctermfg=32
+hi Function                    ctermfg=32
+hi Statement                   ctermfg=32
+hi Operator                    ctermfg=0
+hi String                      ctermfg=204
+hi Type                        ctermfg=27
+hi Special                     ctermfg=203
 hi ColorColumn                                ctermbg=230
 hi Comment                     ctermfg=249                   cterm=None
 hi javaScriptTemplateVar       ctermfg=32                    cterm=Bold
@@ -59,11 +68,14 @@ hi Todo                        ctermfg=Red    ctermbg=None
 hi VertSplit                   ctermfg=11     ctermbg=None   cterm=None
 hi Visual                                     ctermbg=229
 hi cssTableAttr                ctermfg=None
-hi htmlEndTag                  ctermfg=34
 hi htmlLink                                                  cterm=None
 hi htmlItalic                                                cterm=None
-hi htmlTag                     ctermfg=34
-hi htmlTagN                    ctermfg=34
+hi htmlEndTag                  ctermfg=39
+hi htmlTag                     ctermfg=39
+hi htmlTagN                    ctermfg=39
+hi htmlTagName                 ctermfg=39
+hi htmlSpecialTagName          ctermfg=39
+hi htmlH1                      ctermfg=None
 hi javaScriptBraces            ctermfg=None
 hi javaScriptComment           ctermfg=249
 hi javaScriptLineComment       ctermfg=249
