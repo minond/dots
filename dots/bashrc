@@ -136,6 +136,7 @@ alias s='clear; git status'
 alias show='clear; git show'
 alias save='git stash save'
 alias pop='git stash pop'
+alias c='cync'
 
 # nice to haves
 alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
