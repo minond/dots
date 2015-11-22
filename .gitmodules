@@ -73,3 +73,6 @@
 [submodule "dots/vim/bundle/typescript-vim"]
 	path = dots/vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "dots/vim/bundle/php.vim"]
+	path = dots/vim/bundle/php.vim
+	url = https://github.com/StanAngeloff/php.vim.git
