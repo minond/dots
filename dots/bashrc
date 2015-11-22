@@ -82,6 +82,8 @@ export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
 
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 export GOPATH=$HOME/go
+export SCALA_HOME=$HOME/scala-2.11.7
+export NVM_DIR=$HOME/.nvm
 
 export PERL5LIB="/home/marcos/perl5/lib/perl5/i686-linux-gnu-thread-multi-64int"
 export PERL5LIB="$PERL5LIB:/home/marcos/perl5/lib/perl5"
@@ -124,11 +126,13 @@ alias egrep='egrep --color=auto'
 # some more ls aliases
 alias ll='ls -hlF --group-directories-first --color'
 alias la='ls -hA  --group-directories-first --color'
-alias l='ll'
+alias l='less'
+alias g='grep'
 
 alias ..='cd ..'
 alias cd..='cd ..'
 alias tmux='tmux -2'
+alias copy='pbcopy'
 
 # git aliases
 alias d='clear; git diff'
@@ -179,6 +183,8 @@ path! /usr/local/go/bin
 path! $GOPATH/bin
 path! $HOME/.rvm/bin
 
+path! $SCALA_HOME/bin/
+
 ###############################################################################
 # $EXTRA SOURCES
 ###############################################################################
@@ -186,6 +192,7 @@ path! $HOME/.rvm/bin
 source? ~/.private
 source? ~/.bashrc_local
 source? /home/marcos/.travis/travis.sh
+source? $NVM_DIR/nvm.sh
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -193,3 +200,6 @@ source? /home/marcos/.travis/travis.sh
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# wtf this doesn't persist?
+ulimit -n 1024
