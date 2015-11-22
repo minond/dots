@@ -75,7 +75,8 @@ hi htmlTag                     ctermfg=39
 hi htmlTagN                    ctermfg=39
 hi htmlTagName                 ctermfg=39
 hi htmlSpecialTagName          ctermfg=39
-hi htmlH1                      ctermfg=None
+" hi htmlH1                      ctermfg=None
+hi htmlItalic                                                cterm=underline
 hi javaScriptBraces            ctermfg=None
 hi javaScriptComment           ctermfg=249
 hi javaScriptLineComment       ctermfg=249
@@ -91,3 +92,5 @@ hi javaScriptFuncExp           ctermfg=None
 hi javaScriptFuncEq            ctermfg=None
 hi jinjaOperator               ctermfg=Gray
 hi vimHiKeyError               ctermfg=Red    ctermbg=Red    cterm=None
+hi makeIdent                   ctermfg=202                   cterm=Bold
+hi makeTarget                  ctermfg=27

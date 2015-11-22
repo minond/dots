@@ -155,8 +155,10 @@ xmap <C-c> <ESC>:'<,'>TComment<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command! Done qa
 command! Ctags !ctags -R --verbose -f .tags
-command! Copy !cat % | xclip -sel clip && echo "copied to clip board"
+command! Copy w !cat | pbcopy && echo "copied to clip board"
+" command! Copy !cat % | xclip -sel clip && echo "copied to clip board"
 
 " gcc
 command! GccRun !gcc % -o prog.out && chmod +x prog.out && ./prog.out && rm prog.out
