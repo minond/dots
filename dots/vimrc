@@ -60,6 +60,7 @@ let mapleader = "\<Space>"
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore = ['\.swp$', '\~$', '.git', '.sass-cache', '.scaffold']
 let NERDTreeCascadeOpenSingleChildDir = 1
+let NERDTreeCaseSensitiveSort = 1
 let g:ctrlp_max_height = 30
 
 let g:gitgutter_sign_added = '-'

@@ -84,6 +84,7 @@ export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 export GOPATH=$HOME/go
 export SCALA_HOME=$HOME/scala-2.11.7
 export NVM_DIR=$HOME/.nvm
+export PGDATA=/usr/local/var/postgres
 
 export PERL5LIB="/home/marcos/perl5/lib/perl5/i686-linux-gnu-thread-multi-64int"
 export PERL5LIB="$PERL5LIB:/home/marcos/perl5/lib/perl5"
