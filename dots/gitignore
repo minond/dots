@@ -3,3 +3,5 @@ tags
 *.swp
 *.swo
 *.patch
+*.DS_Store*
+npm-debug.log

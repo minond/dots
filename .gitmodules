@@ -76,3 +76,9 @@
 [submodule "dots/vim/bundle/php.vim"]
 	path = dots/vim/bundle/php.vim
 	url = https://github.com/StanAngeloff/php.vim.git
+[submodule "dots/vim/bundle/vim-gradle"]
+	path = dots/vim/bundle/vim-gradle
+	url = https://github.com/tfnico/vim-gradle.git
+[submodule "dots/vim/bundle/elm.vim"]
+	path = dots/vim/bundle/elm.vim
+	url = https://github.com/lambdatoast/elm.vim.git

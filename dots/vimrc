@@ -20,36 +20,44 @@ Helptags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $VIM SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set antialias
 set colorcolumn=80,120                   " http://paul-m-jones.com/archives/276
 set cursorline                           " highlight the line cursor is on
-set expandtab
-set hidden                               " best. thing. ever. no buffer closed
+
 set hlsearch                             " highlight all matches
 set ignorecase                           " case insensitive searches
 set incsearch                            " highlight matches while typing
+set showmatch                            " jump to search result
+set smartcase                            " case insensitive defaul
+
 set list                                 " display special characters
 set listchars=tab:>\ ,trail:.            " special characters for special char
 set ls=2
 set nocompatible
 set nowrap
 set number                               " show line numbers
+
 set numberwidth=4                        " set line numbers section width
+set expandtab
 set shiftwidth=4                         " shift movement length
-set showmatch                            " jump to search result
-set smartcase                            " case insensitive defaul
-set smartindent                          " block indentation
 set softtabstop=4                        " back character length
+set tabstop=4                            " tab character length
+
+set smartindent                          " block indentation
 set splitbelow
 set splitright
+
+set hidden                               " best. thing. ever. no buffer closed
+set antialias
 set t_Co=256
-set tabstop=4                            " tab character length
 set tags^=./.tags,./.TAGS,.tags,.TAGS
+set statusline=%f\ [line:\ %l,\ col:\ %c\ -\ %P\]\ %m\ %r
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " ignored by vim fs access
 set wildignore+=*/templates_c/*,*/bin/*
 set wildignore+=*/node_modules/*
 set wildignore+=*/build/*
 set wildignore+=*/public-built/*
+set wildignore+=*/out/*
 set wildmenu
 
 let mapleader = "\<Space>"
@@ -61,6 +69,7 @@ let NERDTreeShowHidden = 1
 let NERDTreeIgnore = ['\.swp$', '\~$', '.git', '.sass-cache', '.scaffold']
 let NERDTreeCascadeOpenSingleChildDir = 1
 let NERDTreeCaseSensitiveSort = 1
+
 let g:ctrlp_max_height = 30
 
 let g:gitgutter_sign_added = '-'
@@ -108,7 +117,7 @@ au BufNewFile,BufRead Makefile,*.mk set noexpandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $DOMO
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufNewFile,BufRead /Users/marcosminond/Documents/Domo/Source/*
+au BufNewFile,BufRead /Users/marcosminond/Documents/Domo/Source/DomoWeb/*
     \ call SetTabWidth(2)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -120,8 +129,8 @@ map <C-o> <ESC>:CtrlP<CR>
 map <leader>o <ESC>:CtrlPTag<CR>
 map <leader>b <ESC>:CtrlPBuffer<CR>
 map <C-c> <ESC>:TComment<CR>
-map <C-f> <ESC>:NERDTreeFind<CR>
-map <S-f> <ESC>:NERDTreeToggle<CR>
+map <leader>f <ESC>:NERDTreeFind<CR>
+map <leader><S-f> <ESC>:NERDTreeToggle<CR>
 map <C-b> <ESC>:exec("tag ".expand("<cword>"))<CR>
 map <C-l> <ESC>:echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
 map <S-j> <ESC>:bp<CR>
@@ -195,6 +204,9 @@ command! Lint !file=$(basename %);ext="${file\#\#*.}"; clear;
 " run scripts
 command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; clear;
 \ case $ext in
+    \ scala)
+        \ scala % | less --quit-at-eof
+        \ ;;
     \ php)
         \ php % | less --quit-at-eof
         \ ;;
@@ -238,6 +250,7 @@ autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
 " vim-javascript-syntax is adding syntax matches and breaking all of the things
+" wtf?
 function! <SID>ForceHighlightChanges()
     syntax match javaScriptDocTags contained "@\(\w\+\)\>" nextgroup=javaScriptDocSeeTag skipwhite
     source ~/.vim/colors/summerfruit256-overwrites.vim

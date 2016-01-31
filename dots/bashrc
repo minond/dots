@@ -46,17 +46,19 @@ prompt_jobscount() {
 }
 
 col_host() {
-    if [ "$?" -eq 0 ]; then
-        echo "$(tput setaf 78)"
+    local last_exit="$?"
+    if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ]; then
+        echo "$(tput setaf 10)"
     else
-        echo "$(tput setaf 196)"
+        echo "$(tput setaf 9)"
     fi
 }
 
 col_reset="$(tput sgr0)"
-col_dir="$(tput setaf 33)"
+col_dir="$(tput setaf 39)"
+col_meta="$(tput setaf 171)"
 
-export PS1='\[$(col_host)\]\h\[${col_reset}\] \[${col_dir}\]\w $(prompt_jobscount)$ \[${col_reset}\]'
+export PS1='\[$(col_host)\]\h\[${col_reset}\] \[${col_dir}\]\w\[${col_meta}\] $(prompt_jobscount)\[${col_reset}\]$ '
 
 ###############################################################################
 # $ENV SETTINGS
@@ -73,7 +75,10 @@ export HISTFILESIZE=2000
 
 # colored output on mac
 export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+# http://geoff.greer.fm/lscolors/
+# export LSCOLORS='exfxcxdxbxegedabagacad'
+# export LS_COLORS='di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+export LSCOLORS=axBxhxDxfxhxhxhxhxcxcx
 export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
 
 ###############################################################################
@@ -82,6 +87,7 @@ export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
 
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 export GOPATH=$HOME/go
+export NODE_PATH=$HOME/.node
 export SCALA_HOME=$HOME/scala-2.11.7
 export NVM_DIR=$HOME/.nvm
 export PGDATA=/usr/local/var/postgres
@@ -128,7 +134,7 @@ alias egrep='egrep --color=auto'
 alias ll='ls -hlF --group-directories-first --color'
 alias la='ls -hA  --group-directories-first --color'
 alias l='less'
-alias g='grep'
+alias g='grep -r'
 
 alias ..='cd ..'
 alias cd..='cd ..'
@@ -149,6 +155,10 @@ alias unswp='find . | grep swp | xargs rm'
 alias server='python -m SimpleHTTPServer'
 alias code='iam marcos; cd $HOME/code/github.com/$GITHUB_USER/$2; tmux -2'
 alias work='iam domo; cd $HOME/Documents/Domo/Source/$2; tmux -2'
+
+# work specific
+alias domo-play='cd /Users/marcosminond/Documents/Domo/Source/DomoWeb/DomoWeb; \
+    play run --http.port=19000 -Ddomoweb.use.domovm=true'
 
 alias fresh_chrome='exec open -na "Google Chrome" --args \
     "--user-data-dir=/Users/marcosminond/.freshchrome" --enable-precise-memory-info \
@@ -185,6 +195,7 @@ path! $GOPATH/bin
 path! $HOME/.rvm/bin
 
 path! $SCALA_HOME/bin/
+path! $NODE_PATH/bin/
 
 ###############################################################################
 # $EXTRA SOURCES
