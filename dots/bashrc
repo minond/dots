@@ -48,9 +48,11 @@ prompt_jobscount() {
 col_host() {
     local last_exit="$?"
     if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ]; then
-        echo "$(tput setaf 10)"
+        # echo "$(tput setaf 10)"
+        echo "👾 "
     else
-        echo "$(tput setaf 9)"
+        echo "😡 "
+        # echo "$(tput setaf 9)"
     fi
 }
 
@@ -58,7 +60,8 @@ col_reset="$(tput sgr0)"
 col_dir="$(tput setaf 39)"
 col_meta="$(tput setaf 171)"
 
-export PS1='\[$(col_host)\]\h\[${col_reset}\] \[${col_dir}\]\w\[${col_meta}\] $(prompt_jobscount)\[${col_reset}\]$ '
+export PS1='\[$(col_host)\]\[${col_reset}\] \[${col_dir}\]\w\[${col_meta}\] $(prompt_jobscount)\[${col_reset}\]$ '
+# export PS1='\[$(col_host)\]\h\[${col_reset}\] \[${col_dir}\]\w\[${col_meta}\] $(prompt_jobscount)\[${col_reset}\]$ '
 
 ###############################################################################
 # $ENV SETTINGS
