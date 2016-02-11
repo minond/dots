@@ -3,6 +3,9 @@ hi link javaScriptDOMObjects   Normal
 hi link javaScriptDeprecated   Normal
 hi link javaScriptGlobal       Normal
 hi link javaScriptMember       Normal
+hi link javaScriptWebAPI       Normal
+hi link javaScriptMessage      Normal
+hi link typescriptLogicSymbols Normal
 hi link javaScriptTemplateString javaScriptString
 hi link javascriptReserved javascriptIdentifier
 
@@ -63,8 +66,8 @@ hi javaScriptLineComment       ctermfg=249
 hi javaScriptLogicSymbols      ctermfg=None
 hi javaScriptOpSymbols         ctermfg=None
 hi javaScriptParens            ctermfg=None
-hi javaScriptTemplateDelim     ctermfg=32                    cterm=Bold
-hi javaScriptTemplateVar       ctermfg=32                    cterm=Bold
+hi javaScriptTemplateDelim     ctermfg=204                   cterm=Bold
+hi javaScriptTemplateVar       ctermfg=204                   cterm=Bold
 
 hi jinjaOperator               ctermfg=Gray
 

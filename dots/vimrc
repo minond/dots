@@ -253,6 +253,9 @@ autocmd WinLeave * setlocal nocursorline
 " wtf?
 function! <SID>ForceHighlightChanges()
     syntax match javaScriptDocTags contained "@\(\w\+\)\>" nextgroup=javaScriptDocSeeTag skipwhite
+    syntax match javaScriptTemplateDelim     "\${\|}" contained
+    syntax region javaScriptTemplateVar      start=+${+ end=+}+                        contains=javaScriptTemplateDelim keepend
+    syntax region javaScriptTemplateString   start=+`+  skip=+\\\(`\|$\)+  end=+`+     contains=javaScriptTemplateVar,javaScriptSpecial keepend
     source ~/.vim/colors/summerfruit256-overwrites.vim
 endfunction
 call <SID>ForceHighlightChanges()
