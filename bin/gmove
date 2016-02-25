@@ -1,19 +1,21 @@
 #!/bin/bash
 
-set -x
+# set -x
+
+log() {
+    local message=$1
+    echo -e "\n- $message:"
+}
 
 branch=$1
 [ -z "$branch" ] && branch=master
-echo "updating $branch..."
 
-git fetch --all
-git checkout $1
+log "updating $branch"
 git fetch --all
 git fetch --prune
-git pull --rebase origin $1
+git checkout $branch
+git pull --rebase origin $branch
 git submodule update
 
-echo
-echo
-
+log "status $branch for"
 git status
