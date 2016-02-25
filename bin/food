@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+
+import requests
+import time
+
+class bcolors:
+    PINK = '\033[95m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    RED = '\033[91m'
+    END = '\033[0m'
+
+def fail(msg):
+    print (bcolors.RED + msg + bcolors.END);
+    exit()
+
+query = "q=SELECT * FROM base"
+url = "http://prod2.maestro.domosoftware.net:8200/query/domo/a1b23cd1-927d-4616-873b-921b15bd3c71"
+iso8601date = "%Y-%m-%d"
+today = time.localtime()
+
+try:
+    response = requests.post(url, query, timeout=3)
+except requests.ConnectionError:
+    fail ("Couldn't connect to server; are you in the Domo VPC?");
+if response.status_code == 401:
+    fail ("Got 401 from server; did ice start requiring authentication?");
+if response.status_code / 100 != 2:
+    fail ("Got bad response from server; did the ice API change?");
+for row in response.json()["rows"]:
+    row_time = time.strptime(row[0], iso8601date)
+    if (today.tm_year == row_time.tm_year) & (today.tm_mon == row_time.tm_mon) & (today.tm_mday == row_time.tm_mday):
+        lunch = row[1]
+        lunch_items = row[2:8]
+        dinner = row[8]
+        print (bcolors.PINK + "LUNCH:\t" + bcolors.END + bcolors.GREEN + lunch + bcolors.END)
+        for item in lunch_items:
+            if item != "":
+                print ("\t" + item)
+        print
+        print (bcolors.PINK + "DINNER:\t" + bcolors.END + bcolors.BLUE + dinner + bcolors.END)
+        print
