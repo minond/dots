@@ -39,29 +39,32 @@ function path! {
 # $PROMPT
 ###############################################################################
 
-prompt_jobscount() {
+ps1_prompt_jobscount() {
     local stopped=$(jobs -sp | wc -l | sed 's/ //g')
     local running=$(jobs -rp | wc -l | sed 's/ //g')
     ((running+stopped)) && echo -n "(${running}r/${stopped}s) "
 }
 
-col_host() {
+ps1_nice_exit_code() {
     local last_exit="$?"
-    if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ]; then
-        # echo "$(tput setaf 10)"
+
+    # 0   ok
+    # 130 manually cancelled (ctrl-c)
+    # 146 sent process to background
+    if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 130 ]; then
         echo "👾 "
     else
         echo "😡 "
-        # echo "$(tput setaf 9)"
     fi
 }
 
-col_reset="$(tput sgr0)"
-col_dir="$(tput setaf 39)"
-col_meta="$(tput setaf 171)"
-
-export PS1='\[$(col_host)\]\[${col_reset}\] \[${col_dir}\]\w\[${col_meta}\] $(prompt_jobscount)\[${col_reset}\]$ '
-# export PS1='\[$(col_host)\]\h\[${col_reset}\] \[${col_dir}\]\w\[${col_meta}\] $(prompt_jobscount)\[${col_reset}\]$ '
+export PS1='$(ps1_nice_exit_code) \
+$(tput setaf 214)$(whoami)$(tput sgr0) \
+$(tput setaf 12)@$(tput sgr0) \
+$(tput setaf 214)$(hostname)$(tput sgr0) \
+$(tput setaf 39)\w$(tput sgr0) \
+$(tput setaf 171)$(ps1_prompt_jobscount)$(tput sgr0) \
+\n$ '
 
 ###############################################################################
 # $ENV SETTINGS
@@ -160,6 +163,7 @@ alias code='iam marcos; cd $HOME/code/github.com/$GITHUB_USER/$2; tmux -2'
 alias work='iam domo; cd $HOME/Documents/Domo/Source/$2; tmux -2'
 
 # work specific
+alias ldomo="$HOME/code/github.com/DomoApps/domoapps-cli/bin/runner"
 alias domo-play='cd /Users/marcosminond/Documents/Domo/Source/DomoWeb/DomoWeb; \
     play run --http.port=19000 -Ddomoweb.use.domovm=true'
 
