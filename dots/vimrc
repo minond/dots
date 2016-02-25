@@ -149,7 +149,7 @@ map <leader>h :if exists("g:syntax_on") <Bar>
     \ endif <CR>
 
 " exit insert mode within insert mode
-inoremap jj <Esc>
+inoremap jj <Esc>:w<CR><RIGHT>
 inoremap jw <Esc>:w<CR>
 
 " colon, semi-colon switch
@@ -252,10 +252,10 @@ autocmd WinLeave * setlocal nocursorline
 " vim-javascript-syntax is adding syntax matches and breaking all of the things
 " wtf?
 function! <SID>ForceHighlightChanges()
-    syntax match javaScriptDocTags contained "@\(\w\+\)\>" nextgroup=javaScriptDocSeeTag skipwhite
-    syntax match javaScriptTemplateDelim     "\${\|}" contained
-    syntax region javaScriptTemplateVar      start=+${+ end=+}+                        contains=javaScriptTemplateDelim keepend
-    syntax region javaScriptTemplateString   start=+`+  skip=+\\\(`\|$\)+  end=+`+     contains=javaScriptTemplateVar,javaScriptSpecial keepend
+    " syntax match javaScriptDocTags contained "@\(\w\+\)\>" nextgroup=javaScriptDocSeeTag skipwhite
+    " syntax match javaScriptTemplateDelim     "\${\|}" contained
+    " syntax region javaScriptTemplateVar      start=+${+ end=+}+                        contains=javaScriptTemplateDelim keepend
+    " syntax region javaScriptTemplateString   start=+`+  skip=+\\\(`\|$\)+  end=+`+     contains=javaScriptTemplateVar,javaScriptSpecial keepend
     source ~/.vim/colors/summerfruit256-overwrites.vim
 endfunction
 call <SID>ForceHighlightChanges()
