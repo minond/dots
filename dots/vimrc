@@ -60,6 +60,9 @@ set wildignore+=*/public-built/*
 set wildignore+=*/out/*
 set wildmenu
 
+set makeprg=make
+set errorformat=%+A\ %#%f\ %#(%l\\\,%c):\ %m,%C%m
+
 let mapleader = "\<Space>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
