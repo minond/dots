@@ -153,6 +153,7 @@ alias s='clear; git status'
 alias show='clear; git show'
 alias save='git stash save'
 alias pop='git stash pop'
+alias add='git add'
 alias c='cync'
 
 # nice to haves
