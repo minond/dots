@@ -82,3 +82,6 @@
 [submodule "dots/vim/bundle/elm.vim"]
 	path = dots/vim/bundle/elm.vim
 	url = https://github.com/lambdatoast/elm.vim.git
+[submodule "dots/vim/bundle/Dockerfile.vim"]
+	path = dots/vim/bundle/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
