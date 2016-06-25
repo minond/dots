@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ -z "$ALEXA_CSRF" ] || [ -z "$ALEXA_COOKIES" ]; then
+    echo ALEXA_COOKIES and ALEXA_CSRF required values
+    exit 1;
+fi
+
+command() {
+    local type="$1"
+
+    curl 'https://pitangui.amazon.com/api/np/command?deviceSerialNumber=G0B0H50660950027&deviceType=AKNO1N0KSFN8L' \
+        -H 'Pragma: no-cache' \
+        -H "csrf: $ALEXA_CSRF" \
+        -H 'Accept-Encoding: gzip, deflate, br' \
+        -H 'Accept-Language: en-US,en;q=0.8' \
+        -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36' \
+        -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
+        -H 'Accept: application/json, text/javascript, */*; q=0.01' \
+        -H 'Cache-Control: no-cache' \
+        -H 'Referer: http://alexa.amazon.com/' \
+        -H "Cookie: $ALEXA_COOKIES" \
+        -H 'Connection: keep-alive' \
+        -H 'Origin: http://alexa.amazon.com' \
+        --data '{"type":"'$type'"}' \
+        --compressed
+}
+
+case "$1" in
+    play) command PlayCommand ;;
+    pause) command PauseCommand ;;
+esac
