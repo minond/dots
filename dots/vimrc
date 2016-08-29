@@ -193,7 +193,10 @@ command! ViewTests !gnome-open ./bin/report/index.html
 command! Ann !clear; git annotate %
 command! Stat !clear; git status
 command! Reset !clear; git checkout %
+command! Add execute ':silent !clear; git add %' | execute ':redraw!' | execute ':GitGutter'
+command! AddP execute '!clear; git add -p %' | execute ':GitGutter'
 command! -nargs=* Diff !clear; git diff <f-args>
+command! -nargs=* Pull !clear; git pull origin <f-args>
 
 " linters
 command! Lint !file=$(basename %);ext="${file\#\#*.}"; clear;
