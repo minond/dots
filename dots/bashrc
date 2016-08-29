@@ -171,8 +171,9 @@ alias work='iam domo; cd $HOME/Documents/Domo/Source/$2; tmux -2'
 
 # work specific
 alias ldomo="$HOME/code/github.com/DomoApps/domoapps-cli/bin/runner"
-alias domo-play='cd /Users/marcosminond/Documents/Domo/Source/DomoWeb/DomoWeb; \
-    play run --http.port=19000 -Ddomoweb.use.domovm=true'
+alias domo-play='JAVA_HOME=`/usr/libexec/java_home -v 1.7` play run --http.port=19000 -Ddomoweb.use.domovm=true'
+alias domo-server='getupstandupdontgiveupthefight grunt server --domovm=true'
+alias domo-vm-ssh='ssh -i ~/.vagrant.d/insecure_private_key vagrant@192.168.33.10'
 
 alias fresh_chrome='exec open -na "Google Chrome" --args \
     "--user-data-dir=/Users/marcosminond/.freshchrome" --enable-precise-memory-info \
