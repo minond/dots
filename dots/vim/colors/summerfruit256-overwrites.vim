@@ -8,6 +8,7 @@ hi link javaScriptMessage      Normal
 hi link typescriptLogicSymbols Normal
 hi link typescriptDeprecated   Normal
 hi link typescriptDOMMethods   Normal
+hi link phpParent              Normal
 hi link javaScriptTemplateString javaScriptString
 hi link javascriptReserved javascriptIdentifier
 
