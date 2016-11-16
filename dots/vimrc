@@ -41,6 +41,7 @@ set expandtab
 set shiftwidth=4                         " shift movement length
 set softtabstop=4                        " back character length
 set tabstop=4                            " tab character length
+set backspace=indent,eol,start
 
 set smartindent                          " block indentation
 set splitbelow
@@ -83,6 +84,9 @@ let g:gitgutter_sign_modified_removed = '-'
 
 call tcomment#DefineType('htmljinja', g:tcommentInlineXML)
 call tcomment#DefineType('htmljinja_block', g:tcommentBlockXML)
+
+let g:vimshell_prompt_expr = 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
+let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
@@ -161,6 +165,7 @@ inoremap jw <Esc>:w<CR>
 nnoremap ; :
 nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <leader>c :Copy<CR><CR>
+nnoremap <leader><S-c> :CopyFilename<CR><CR>
 
 nmap <leader>s :source $MYVIMRC<CR>:noh<CR>:call <SID>ForceHighlightChanges()<CR>
 nmap <leader>l :set list!<CR>
@@ -170,10 +175,12 @@ xmap <C-c> <ESC>:'<,'>TComment<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command! S VimShell
 command! Done qa
 " ctags-exuberant
 command! Ctags !ctags -R --verbose -f .tags
 command! Copy w !cat | pbcopy && echo "copied to clip board"
+command! CopyFilename !echo -n % | pbcopy && echo "copied filename to clip board"
 " command! Copy !cat % | xclip -sel clip && echo "copied to clip board"
 
 " gcc
