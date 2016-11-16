@@ -94,3 +94,9 @@
 [submodule "dots/vim/bundle/nginx-vim-syntax"]
 	path = dots/vim/bundle/nginx-vim-syntax
 	url = https://github.com/evanmiller/nginx-vim-syntax.git
+[submodule "dots/vim/bundle/vimshell"]
+	path = dots/vim/bundle/vimshell
+	url = https://github.com/Shougo/vimshell.vim.git
+[submodule "dots/vim/bundle/vimproc"]
+	path = dots/vim/bundle/vimproc
+	url = https://github.com/Shougo/vimproc.vim.git
