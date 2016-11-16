@@ -152,6 +152,7 @@ alias cd..='cd ..'
 alias tmux='tmux -2'
 alias copy='pbcopy'
 alias oneline='xargs echo'
+alias dm='eval $(docker-machine env default)'
 
 # git aliases
 alias d='clear; git diff'
@@ -168,6 +169,8 @@ alias unswp='find . | grep swp | xargs rm'
 alias server='python -m SimpleHTTPServer'
 alias code='iam marcos; cd $HOME/code/github.com/$GITHUB_USER/$2; tmux -2'
 alias work='iam domo; cd $HOME/Documents/Domo/Source/$2; tmux -2'
+
+alias heroku-database='heroku pg:psql DATABASE'
 
 # work specific
 alias ldomo="$HOME/code/github.com/DomoApps/domoapps-cli/bin/runner"
