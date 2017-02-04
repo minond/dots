@@ -72,7 +72,7 @@ $(tput setaf 171)$(ps1_prompt_jobscount)$(tput sgr0) \
 # $ENV SETTINGS
 ###############################################################################
 
-export EDITOR=vim
+export EDITOR=/usr/local/Cellar/vim/HEAD-84dbd49/bin/vim
 
 # don't put duplicate lines in the history. See bash(1) for more options or
 # force ignoredups and ignorespace. for setting history length see HISTSIZE and
@@ -136,6 +136,8 @@ fi
 # $ALIASES
 ###############################################################################
 
+alias vim='/usr/local/Cellar/vim/HEAD-84dbd49/bin/vim'
+
 # colors!
 alias grep='grep -I --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -161,6 +163,7 @@ alias show='clear; git show'
 alias save='git stash save'
 alias pop='git stash pop'
 alias add='git add'
+alias addp='git add -p'
 alias c='cync'
 
 # nice to haves
