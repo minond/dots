@@ -37,3 +37,4 @@
 --exclude=build/*
 --exclude=public/javascripts/vendor
 --exclude=public-built/*
+--exclude=public
