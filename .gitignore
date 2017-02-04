@@ -4,3 +4,4 @@ dots/vim/plugin/python/vdebug/*.pyc
 dots/vim/.netrwhist
 
 bin/chromedriver
+bin/hmac
