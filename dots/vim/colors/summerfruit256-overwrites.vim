@@ -1,20 +1,21 @@
-hi link javaScriptAjaxMethods  Normal
-hi link javaScriptDOMObjects   Normal
-hi link javaScriptDeprecated   Normal
-hi link javaScriptGlobal       Normal
-hi link javaScriptMember       Normal
-hi link javaScriptWebAPI       Normal
-hi link javaScriptMessage      Normal
-hi link typescriptLogicSymbols Normal
-hi link typescriptDeprecated   Normal
-hi link typescriptDOMMethods   Normal
-hi link phpParent              Normal
-hi link javaScriptTemplateString javaScriptString
-hi link javascriptReserved javascriptIdentifier
-
-hi link scssSelector           cssTagName
-
-hi link typescriptReserved typescriptIdentifier
+hi link javaScriptAjaxMethods         Normal
+hi link javaScriptDOMObjects          Normal
+hi link javaScriptDeprecated          Normal
+hi link javaScriptGlobal              Normal
+hi link javaScriptMember              Normal
+hi link javaScriptMessage             Normal
+hi link javaScriptTemplateString      javaScriptString
+hi link javaScriptWebAPI              Normal
+hi link javascriptReserved            javascriptIdentifier
+hi link phpParent                     Normal
+hi link scssSelector                  cssTagName
+hi link typescriptDOMMethods          Normal
+hi link typescriptDOMObjects          Normal
+hi link typescriptDeprecated          Normal
+hi link typescriptHtmlElemProperties  Normal
+hi link typescriptHtmlEvents          Normal
+hi link typescriptLogicSymbols        Normal
+hi link typescriptReserved            typescriptIdentifier
 
 hi ColorColumn                                ctermbg=230
 hi Comment                     ctermfg=249                   cterm=None
