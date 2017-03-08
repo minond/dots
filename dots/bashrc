@@ -157,7 +157,8 @@ alias oneline='xargs echo'
 alias dm='eval $(docker-machine env default)'
 
 # git aliases
-alias d='clear; git diff'
+# alias d='clear; { git -c color.status=always status; git diff --color=always; } | less  -r -X'
+alias d='clear; git diff --color=always'
 alias s='clear; git status'
 alias show='clear; git show'
 alias save='git stash save'

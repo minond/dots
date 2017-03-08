@@ -2,5 +2,8 @@
 
 until $@; do
     echo "process died, restarting in 2 seconds" >&2
-    sleep 2
+    sleep 1
+    echo "process died, restarting in 1 second" >&2
+    sleep 1
+    echo "process died, restarting now" >&2
 done
