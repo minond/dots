@@ -1,6 +1,5 @@
---langmap=php:+.inc.lan.view.act.get.controller.isui
---langmap=html:+.tpl.page
 --langmap=java:+.cls
+
 --regex-PHP=/trait ([^ ]*)/\1/c/
 
 --langdef=typescript
@@ -28,13 +27,9 @@
 --regex-scala=/^[ \t]*((abstract|final|sealed|implicit|lazy|private[^ ]*|protected)[ \t]*)*var[ \t]+([a-zA-Z0-9_]+)/\3/l,variables/
 --regex-scala=/^[ \t]*package[ \t]+([a-zA-Z0-9_.]+)/\1/p,packages/
 
---exclude=resources/js/*
---exclude=smartmvc/doc/*
---exclude=nexus_library/js/*
---exclude=smartmvc/resources/js/*
---exclude=node_modules/*
+--exclude=node_modules
 --exclude=*/node_modules/*
---exclude=build/*
+--exclude=build
 --exclude=public/javascripts/vendor
---exclude=public-built/*
---exclude=public
+--exclude=public-built
+--exclude=out
