@@ -103,6 +103,7 @@ au BufNewFile,BufRead *.cls set ft=java             " apex
 au BufNewFile,BufRead *.dist set ft=xml
 au BufNewFile,BufRead *.go set ft=go
 au BufNewFile,BufRead *.json set ft=javascript
+au BufNewFile,BufRead *.js set ft=typescript
 au BufNewFile,BufRead *.md set ft=mkd
 au BufNewFile,BufRead *.object set ft=xml           " apex
 au BufNewFile,BufRead *.page set ft=html            " apex
@@ -318,12 +319,10 @@ endfunction
 
 function! SetTabWidth(width)
     if a:width == 2
-        set numberwidth=2
         set shiftwidth=2
         set softtabstop=2
         set tabstop=2
     elseif a:width == 4
-        set numberwidth=4
         set shiftwidth=4
         set softtabstop=4
         set tabstop=4
