@@ -58,6 +58,8 @@ set wildignore+=*/node_modules/*
 set wildignore+=*/build/*
 set wildignore+=*/public-built/*
 set wildignore+=*/out/*
+set wildignore+=*/target/*
+set wildignore+=*/dist/*
 set wildmenu
 
 set makeprg=make
@@ -83,6 +85,14 @@ let g:gitgutter_sign_removed_first_line = '-'
 
 call tcomment#DefineType('htmljinja', g:tcommentInlineXML)
 call tcomment#DefineType('htmljinja_block', g:tcommentBlockXML)
+call tcomment#DefineType('javascript', "// %s")
+call tcomment#DefineType('javascript_block', "// %s")
+call tcomment#DefineType('javascript_inline', "// %s")
+call tcomment#DefineType('typescript', "// %s")
+call tcomment#DefineType('typescript_block', "// %s")
+call tcomment#DefineType('typescript_inline', "// %s")
+call tcomment#DefineType('graphql', "# %s")
+call tcomment#DefineType('make', "# %s")
 
 let g:vimshell_prompt_expr = 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
 let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
@@ -109,6 +119,7 @@ au BufNewFile,BufRead *.object set ft=xml           " apex
 au BufNewFile,BufRead *.page set ft=html            " apex
 au BufNewFile,BufRead *.pp set ft=ruby
 au BufNewFile,BufRead *.scala set ft=scala
+au BufNewFile,BufRead *.plt set ft=prolog
 au BufNewFile,BufRead *.tpl set ft=smarty
 au BufNewFile,BufRead *.twig set ft=htmljinja
 au BufNewFile,BufRead *.handlebars set ft=htmljinja
@@ -204,6 +215,7 @@ command! ViewTests !gnome-open ./bin/report/index.html
 
 " git commands
 command! Ann !clear; git annotate %
+command! History !clear; git log -p -- %
 command! Stat !clear; git status
 command! Reset !clear; git checkout %
 command! Add execute ':silent !clear; git add %' | execute ':redraw!' | execute ':GitGutter'
@@ -238,6 +250,12 @@ command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; cle
     \ py)
         \ python % | less --quit-at-eof
         \ ;;
+    \ pm)
+        \ perl5 % | less --quit-at-eof
+        \ ;;
+    \ pm6)
+        \ perl6 % | less --quit-at-eof
+        \ ;;
     \ lisp)
         \ clisp % | less --quit-at-eof
         \ ;;
@@ -251,7 +269,7 @@ command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; cle
         \ lua % | less --quit-at-eof
         \ ;;
     \ md|markdown)
-        \ ghmd %; open %:h/$filename.html; sleep 1; rm %:h/$filename.html;
+        \ ghmd % --dest %:h/$filename.html; open %:h/$filename.html; sleep 1; rm %:h/$filename.html;
         \ ;;
     \ go)
         \ go run % | less --quit-at-eof
