@@ -1,5 +1,5 @@
 ###############################################################################
-# DEFINISTIONS......................................helper function definitions
+# DEFINITIONS.......................................helper function definitions
 # PROMPT........................................................prompt settings
 # ENV SETTINGS........................................settings for the bash env
 # VAR SETTINGS...............................................settings for tools
@@ -14,7 +14,7 @@
 [ -z "$PS1" ] && return
 
 ###############################################################################
-# $DEFINISTIONS
+# $DEFINITIONS
 ###############################################################################
 
 #=== FUNCTION =================================================================
@@ -33,6 +33,15 @@ function source? {
 #==============================================================================
 function path! {
     [ -d $1 ] && export PATH="$PATH:$1"
+}
+
+#=== FUNCTION =================================================================
+#        NAME: weather
+# DESCRIPTION: gets the weather
+# PARAMETER 1: City or Moon
+#==============================================================================
+function weather {
+    curl "wttr.in/$1"
 }
 
 ###############################################################################
@@ -168,6 +177,7 @@ alias addp='git add -p'
 alias c='cync'
 
 # nice to haves
+alias ipr="open *.ipr"
 alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
 alias unswp='find . | grep swp | xargs rm'
 alias server='python -m SimpleHTTPServer'
