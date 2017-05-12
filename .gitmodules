@@ -16,9 +16,6 @@
 [submodule "dots/vim/bundle/go.vim"]
 	path = dots/vim/bundle/go.vim
 	url = https://github.com/vim-scripts/go.vim.git
-[submodule "dots/vim/bundle/scala.vim"]
-	path = dots/vim/bundle/scala.vim
-	url = https://github.com/vim-scripts/scala.vim.git
 [submodule "dots/vim/bundle/vim-jade"]
 	path = dots/vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
@@ -100,3 +97,21 @@
 [submodule "dots/vim/bundle/vim-graphql"]
 	path = dots/vim/bundle/vim-graphql
 	url = https://github.com/jparise/vim-graphql.git
+[submodule "dots/vim/bundle/vim-bats"]
+	path = dots/vim/bundle/vim-bats
+	url = https://github.com/markcornick/vim-bats.git
+[submodule "dots/vim/bundle/vim-fireplace"]
+	path = dots/vim/bundle/vim-fireplace
+	url = https://github.com/tpope/vim-fireplace.git
+[submodule "dots/vim/bundle/vim-salve"]
+	path = dots/vim/bundle/vim-salve
+	url = https://github.com/tpope/vim-salve.git
+[submodule "dots/vim/bundle/vim-jsx-typescript"]
+	path = dots/vim/bundle/vim-jsx-typescript
+	url = https://github.com/peitalin/vim-jsx-typescript.git
+[submodule "dots/vim/bundle/vim-perl"]
+	path = dots/vim/bundle/vim-perl
+	url = https://github.com/vim-perl/vim-perl.git
+[submodule "dots/vim/bundle/vim-scala"]
+	path = dots/vim/bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
