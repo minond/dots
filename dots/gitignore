@@ -2,6 +2,7 @@ tags
 .tags
 *.swp
 *.swo
+*.sw*
 *.patch
 *.DS_Store*
 npm-debug.log

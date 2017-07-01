@@ -48,6 +48,12 @@ function weather {
 # $PROMPT
 ###############################################################################
 
+COL_ERR=$(tput setaf 9)
+COL_WHOAMI=$(tput setaf 214)
+COL_PWD=$(tput setaf 39)
+COL_JOBS=$(tput setaf 171)
+COL_RESET=$(tput sgr0)
+
 ps1_prompt_jobscount() {
     local stopped=$(jobs -sp | wc -l | sed 's/ //g')
     local running=$(jobs -rp | wc -l | sed 's/ //g')
@@ -62,26 +68,27 @@ ps1_nice_exit_code() {
     # 146 sent process to background
     # 146 (git?) less exit
     if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
-        # echo "👾 "
         return
     else
-        echo "😡  "
+        echo "$(tput setaf 9)! $(tput sgr0)"
     fi
 }
 
+# export PS1='$(ps1_nice_exit_code)\
+# $(tput setaf 214)$(whoami)$(tput sgr0) \
+# $(tput setaf 39)\w$(tput sgr0) \
+# $(tput setaf 171)$(ps1_prompt_jobscount)$(tput sgr0)$ '
+
 export PS1='$(ps1_nice_exit_code)\
 $(tput setaf 214)$(whoami)$(tput sgr0) \
-$(tput setaf 12)@$(tput sgr0) \
-$(tput setaf 214)$(hostname)$(tput sgr0) \
 $(tput setaf 39)\w$(tput sgr0) \
-$(tput setaf 171)$(ps1_prompt_jobscount)$(tput sgr0) \
-\n$ '
+$(tput setaf 171)$(ps1_prompt_jobscount)$(tput sgr0)\n$ '
 
 ###############################################################################
 # $ENV SETTINGS
 ###############################################################################
 
-export EDITOR=/usr/local/Cellar/vim/HEAD-84dbd49/bin/vim
+export EDITOR=vim
 
 # don't put duplicate lines in the history. See bash(1) for more options or
 # force ignoredups and ignorespace. for setting history length see HISTSIZE and
@@ -145,16 +152,14 @@ fi
 # $ALIASES
 ###############################################################################
 
-alias vim='/usr/local/Cellar/vim/HEAD-84dbd49/bin/vim'
-
 # colors!
 alias grep='grep -I --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # some more ls aliases
-alias ll='ls -hlF --group-directories-first --color'
-alias la='ls -hA  --group-directories-first --color'
+alias ll='ls -hlF --color'
+alias la='ls -hA  --color'
 alias l='less'
 alias g='grep -r'
 

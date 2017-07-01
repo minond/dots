@@ -37,9 +37,9 @@ set number                               " show line numbers
 
 set numberwidth=4                        " set line numbers section width
 set expandtab
-set shiftwidth=4                         " shift movement length
-set softtabstop=4                        " back character length
-set tabstop=4                            " tab character length
+set shiftwidth=2                         " shift movement length
+set softtabstop=2                        " back character length
+set tabstop=2                            " tab character length
 set backspace=indent,eol,start
 
 set smartindent                          " block indentation
@@ -75,6 +75,7 @@ let NERDTreeCaseSensitiveSort = 1
 let NERDTreeIgnore = ['\.swp$', '\~$', '.git', '.sass-cache', '.scaffold']
 let NERDTreeShowHidden = 0
 
+let g:calendar_google_calendar = 1
 let g:ctrlp_max_height = 30
 
 let g:gitgutter_sign_added = '-'
@@ -85,6 +86,9 @@ let g:gitgutter_sign_removed_first_line = '-'
 
 call tcomment#DefineType('htmljinja', g:tcommentInlineXML)
 call tcomment#DefineType('htmljinja_block', g:tcommentBlockXML)
+call tcomment#DefineType('c', "// %s")
+call tcomment#DefineType('c_block', "// %s")
+call tcomment#DefineType('c_inline', "// %s")
 call tcomment#DefineType('javascript', "// %s")
 call tcomment#DefineType('javascript_block', "// %s")
 call tcomment#DefineType('javascript_inline', "// %s")
@@ -100,15 +104,17 @@ let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au Filetype *github.com* call SetTabWidth(4)
-au Filetype cucumber call SetTabWidth(2)
-au Filetype ruby call SetTabWidth(2)
-au Filetype scss.css call SetTabWidth(2)
-au Filetype yaml call SetTabWidth(2)
-au Filetype yml call SetTabWidth(2)
-au Filetype scala call SetTabWidth(2)
-au Filetype clojure call SetTabWidth(2)
+" au Filetype *github.com* call SetTabWidth(4)
+" au Filetype cucumber call SetTabWidth(2)
+" au Filetype ruby call SetTabWidth(2)
+" au Filetype scss.css call SetTabWidth(2)
+" au Filetype yaml call SetTabWidth(2)
+" au Filetype yml call SetTabWidth(2)
+" au Filetype scala call SetTabWidth(2)
+" au Filetype clojure call SetTabWidth(2)
+" au Filetype c call SetTabWidth(2)
 
+au BufNewFile,BufRead *.b set ft=brainfuck
 au BufNewFile,BufRead *.cls set ft=java             " apex
 au BufNewFile,BufRead *.dist set ft=xml
 au BufNewFile,BufRead *.go set ft=go
@@ -124,6 +130,7 @@ au BufNewFile,BufRead *.tpl set ft=smarty
 au BufNewFile,BufRead *.twig set ft=htmljinja
 au BufNewFile,BufRead *.handlebars set ft=htmljinja
 au BufNewFile,BufRead *.html set ft=htmljinja
+" au BufNewFile,BufRead *.html call SetTabWidth(4)
 au BufNewFile,BufRead *.{inc,lan,view,act,get,controller} set ft=php " isui
 au BufNewFile,BufRead .arclint,.arcconfig set ft=javascript
 au BufNewFile,BufRead .domainconfig set ft=dosini
@@ -245,7 +252,7 @@ command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; cle
         \ php % | less --quit-at-eof
         \ ;;
     \ js)
-        \ DEBUG_COLORS=1 DEBUG=* node --harmony % | less --quit-at-eof
+        \ DEBUG_COLORS=1 node --harmony % | less --quit-at-eof
         \ ;;
     \ py)
         \ python % | less --quit-at-eof

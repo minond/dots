@@ -115,3 +115,9 @@
 [submodule "dots/vim/bundle/vim-scala"]
 	path = dots/vim/bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "dots/vim/bundle/vim-brainfuck"]
+	path = dots/vim/bundle/vim-brainfuck
+	url = https://github.com/Beerstorm/vim-brainfuck.git
+[submodule "dots/vim/bundle/calendar.vim"]
+	path = dots/vim/bundle/calendar.vim
+	url = https://github.com/itchyny/calendar.vim.git
