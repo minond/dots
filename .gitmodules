@@ -121,3 +121,6 @@
 [submodule "dots/vim/bundle/calendar.vim"]
 	path = dots/vim/bundle/calendar.vim
 	url = https://github.com/itchyny/calendar.vim.git
+[submodule "dots/vim/bundle/vim-io"]
+	path = dots/vim/bundle/vim-io
+	url = https://github.com/andreimaxim/vim-io.git
