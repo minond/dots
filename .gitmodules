@@ -127,3 +127,6 @@
 [submodule "dots/vim/bundle/vim-jison"]
 	path = dots/vim/bundle/vim-jison
 	url = https://github.com/wizicer/vim-jison.git
+[submodule "dots/vim/bundle/vim-toml"]
+	path = dots/vim/bundle/vim-toml
+	url = https://github.com/cespare/vim-toml.git

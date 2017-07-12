@@ -232,6 +232,7 @@ path! $HOME/.rvm/bin
 path! $HOME/.cabal/bin
 path! $HOME/torch/install/bin
 path! $HOME/Applications/play-1.2.7.2
+path! $HOME/.cargo/bin
 
 ###############################################################################
 # $EXTRA SOURCES
