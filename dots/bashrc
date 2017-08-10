@@ -208,6 +208,10 @@ server() {
   python -m SimpleHTTPServer $port
 }
 
+cm() {
+  git commit -m "$*"
+}
+
 ###############################################################################
 # $GNU FTW (brew install coreutils)
 ###############################################################################
@@ -235,6 +239,7 @@ path! $HOME/.cabal/bin
 path! $HOME/torch/install/bin
 path! $HOME/Applications/play-1.2.7.2
 path! $HOME/.cargo/bin
+path! /Applications/love.app/Contents/MacOS/
 
 ###############################################################################
 # $EXTRA SOURCES
