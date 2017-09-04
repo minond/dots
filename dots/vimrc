@@ -28,6 +28,9 @@ set incsearch                            " highlight matches while typing
 set showmatch                            " jump to search result
 set smartcase                            " case insensitive defaul
 
+set modeline
+set modelines=5
+
 set list                                 " display special characters
 set listchars=tab:>\ ,trail:.            " special characters for special char
 set ls=2
@@ -97,6 +100,7 @@ call tcomment#DefineType('typescript_block', "// %s")
 call tcomment#DefineType('typescript_inline', "// %s")
 call tcomment#DefineType('graphql', "# %s")
 call tcomment#DefineType('make', "# %s")
+call tcomment#DefineType('elm', "-- %s")
 
 let g:vimshell_prompt_expr = 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
 let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
@@ -130,7 +134,7 @@ au BufNewFile,BufRead *.tpl set ft=smarty
 au BufNewFile,BufRead *.twig set ft=htmljinja
 au BufNewFile,BufRead *.handlebars set ft=htmljinja
 au BufNewFile,BufRead *.html set ft=htmljinja
-" au BufNewFile,BufRead *.html call SetTabWidth(4)
+au BufNewFile,BufRead *.elm call SetTabWidth(4)
 au BufNewFile,BufRead *.{inc,lan,view,act,get,controller} set ft=php " isui
 au BufNewFile,BufRead .arclint,.arcconfig set ft=javascript
 au BufNewFile,BufRead .domainconfig set ft=dosini

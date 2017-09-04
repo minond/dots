@@ -113,6 +113,7 @@ export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
+export MONO_IOMAP='case'
 export NODE_PATH=$HOME/.node
 export SCALA_HOME=$HOME/scala-2.11.7
 export NVM_DIR=$HOME/.nvm
@@ -260,3 +261,4 @@ fi
 
 # wtf this doesn't persist?
 ulimit -n 1024
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
