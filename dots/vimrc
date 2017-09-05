@@ -108,41 +108,15 @@ let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" au Filetype *github.com* call SetTabWidth(4)
-" au Filetype cucumber call SetTabWidth(2)
-" au Filetype ruby call SetTabWidth(2)
-" au Filetype scss.css call SetTabWidth(2)
-" au Filetype yaml call SetTabWidth(2)
-" au Filetype yml call SetTabWidth(2)
-" au Filetype scala call SetTabWidth(2)
-" au Filetype clojure call SetTabWidth(2)
-" au Filetype c call SetTabWidth(2)
 
 au BufNewFile,BufRead *.b set ft=brainfuck
-au BufNewFile,BufRead *.cls set ft=java             " apex
-au BufNewFile,BufRead *.dist set ft=xml
-au BufNewFile,BufRead *.go set ft=go
-au BufNewFile,BufRead *.json set ft=javascript
-au BufNewFile,BufRead *.js set ft=typescript
 au BufNewFile,BufRead *.md set ft=mkd
-au BufNewFile,BufRead *.object set ft=xml           " apex
-au BufNewFile,BufRead *.page set ft=html            " apex
-au BufNewFile,BufRead *.pp set ft=ruby
-au BufNewFile,BufRead *.scala set ft=scala
-au BufNewFile,BufRead *.plt set ft=prolog
-au BufNewFile,BufRead *.tpl set ft=smarty
-au BufNewFile,BufRead *.twig set ft=htmljinja
-au BufNewFile,BufRead *.handlebars set ft=htmljinja
 au BufNewFile,BufRead *.html set ft=htmljinja
-au BufNewFile,BufRead *.elm call SetTabWidth(4)
-au BufNewFile,BufRead *.{inc,lan,view,act,get,controller} set ft=php " isui
-au BufNewFile,BufRead .arclint,.arcconfig set ft=javascript
-au BufNewFile,BufRead .domainconfig set ft=dosini
-au BufNewFile,BufRead Procfile set filetype=ruby
 
 " spaces instead of tabs on everything but make files
-au BufNewFile,BufRead * set expandtab
-au BufNewFile,BufRead Makefile,*.mk set noexpandtab
+au BufNewFile,BufRead *.elm call SetTabWidth(4)
+au BufNewFile,BufRead Makefile,*.mk call SetTabWidth(4)
+au BufNewFile,BufRead Makefile,*.mk setlocal noexpandtab
 
 au WinEnter * setlocal cursorline
 au WinLeave * setlocal nocursorline
