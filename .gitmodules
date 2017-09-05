@@ -130,3 +130,6 @@
 [submodule "dots/vim/bundle/vim-toml"]
 	path = dots/vim/bundle/vim-toml
 	url = https://github.com/cespare/vim-toml.git
+[submodule "dots/vim/bundle/vim-better-sml"]
+	path = dots/vim/bundle/vim-better-sml
+	url = https://github.com/jez/vim-better-sml.git
