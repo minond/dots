@@ -135,8 +135,8 @@ map <leader>b <ESC>:CtrlPBuffer<CR>
 map <C-c> <ESC>:TComment<CR>
 map <leader>f <ESC>:NERDTreeFind<CR>
 map <leader><S-f> <ESC>:NERDTreeToggle<CR>
-map <C-b> <ESC>:exec("tag ".expand("<cword>"))<CR>
-map <C-l> <ESC>:echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
+map <C-b> <ESC>:exec('tag '.expand('<cword>'))<CR>
+map <C-l> <ESC>:echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
 map <S-j> <ESC>:bp<CR>
 map <S-k> <ESC>:bn<CR>
 map <S-s> <ESC>:w<CR>
@@ -146,7 +146,7 @@ map <S-Tab> <C-w><S-w>
 map <leader>g :GitGutter<CR>
 map <leader>p :set paste!<CR>
 map <leader>r :w<CR>:Run<CR>
-map <leader>h :if exists("g:syntax_on") <Bar>
+map <leader>h :if exists('g:syntax_on') <Bar>
     \ syntax off <Bar>
     \ else <Bar>
     \syntax on <Bar>
@@ -178,13 +178,13 @@ command! Format !scalariform %
 " ctags-exuberant
 command! Ctags !ctags -R --verbose -f .tags
 
-" linux: xclip -sel clip && echo "copied to clip board"
-command! Copy w !cat | pbcopy && echo "copied to clip board"
-command! CopyFilename !echo -n % | pbcopy && echo "copied filename to clip board"
+" linux: xclip -sel clip && echo 'copied to clip board'
+command! Copy w !cat | pbcopy && echo 'copied to clip board'
+command! CopyFilename !echo -n % | pbcopy && echo 'copied filename to clip board'
 command! -range=% -nargs=0 C :<line1>,<line2>call CopySelection()
 
 function! CopySelection() range
-  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).'| pbcopy')
+  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\r')).'| pbcopy')
 endfunction
 
 " gcc
@@ -299,8 +299,8 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
-    let l = line(".")
-    let c = col(".")
+    let l = line('.')
+    let c = col('.')
 
     " Work: match extra whitespace
     %s/\s\+$//e
