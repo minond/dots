@@ -230,17 +230,18 @@ path! $HOME/.composer/bin/
 path! $HOME/bin/
 path! $HOME/.dots/bin
 path! $HOME/.dots/vendor/scaffold/scripts
-path! /usr/local/heroku/bin
-path! /usr/local/go/bin
-path! $GOPATH/bin/
-path! $SCALA_HOME/bin/
-path! $NODE_PATH/bin/
 path! $HOME/.rvm/bin
 path! $HOME/.cabal/bin
 path! $HOME/torch/install/bin
-path! $HOME/Applications/play-1.2.7.2
 path! $HOME/.cargo/bin
-path! /Applications/love.app/Contents/MacOS/
+
+path! $GOPATH/bin/
+path! $SCALA_HOME/bin/
+path! $NODE_PATH/bin/
+
+path! /usr/local/smlnj/bin
+path! /usr/local/heroku/bin
+path! /usr/local/go/bin
 
 ###############################################################################
 # $EXTRA SOURCES
