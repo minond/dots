@@ -324,12 +324,12 @@ endfunction
 
 function! SetTabWidth(width)
     if a:width == 2
-        set shiftwidth=2
-        set softtabstop=2
-        set tabstop=2
+        setlocal shiftwidth=2
+        setlocal softtabstop=2
+        setlocal tabstop=2
     elseif a:width == 4
-        set shiftwidth=4
-        set softtabstop=4
-        set tabstop=4
+        setlocal shiftwidth=4
+        setlocal softtabstop=4
+        setlocal tabstop=4
     endif
 endfunction
