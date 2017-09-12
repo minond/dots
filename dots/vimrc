@@ -117,8 +117,8 @@ au BufNewFile,BufRead *.html set ft=htmljinja
 
 " spaces instead of tabs on everything but make files
 au BufNewFile,BufRead *.elm call SetTabWidth(4)
-au BufNewFile,BufRead Makefile,*.mk call SetTabWidth(4)
-au BufNewFile,BufRead Makefile,*.mk setlocal noexpandtab
+au BufNewFile,BufRead Makefile,*.mk,*.go call SetTabWidth(4)
+au BufNewFile,BufRead Makefile,*.mk,*.go setlocal noexpandtab
 
 au WinEnter * setlocal cursorline
 au WinLeave * setlocal nocursorline
