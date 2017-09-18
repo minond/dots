@@ -1,6 +1,0 @@
-#!/bin/bash
-
-until $@; do
-    echo "process died, restarting" >&2
-    sleep .2
-done
