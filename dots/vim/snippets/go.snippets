@@ -1,0 +1,4 @@
+snippet e "fatal error" !b
+	if err != nil {
+		return fmt.Errorf("${1:failure}: %v", err)
+	}$0

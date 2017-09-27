@@ -133,3 +133,6 @@
 [submodule "dots/vim/bundle/vim-better-sml"]
 	path = dots/vim/bundle/vim-better-sml
 	url = https://github.com/jez/vim-better-sml.git
+[submodule "dots/vim/bundle/ultisnips"]
+	path = dots/vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git

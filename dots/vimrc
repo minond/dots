@@ -87,6 +87,10 @@ let g:gitgutter_sign_modified_removed = '-'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '-'
 
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<c-j>'
+let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+
 call tcomment#DefineType('htmljinja', g:tcommentInlineXML)
 call tcomment#DefineType('htmljinja_block', g:tcommentBlockXML)
 call tcomment#DefineType('sml', { 'commentstring': '(* %s *)' })
@@ -117,8 +121,8 @@ au BufNewFile,BufRead *.html set ft=htmljinja
 
 " spaces instead of tabs on everything but make files
 au BufNewFile,BufRead *.elm call SetTabWidth(4)
-au BufNewFile,BufRead Makefile,*.mk,*.go call SetTabWidth(4)
-au BufNewFile,BufRead Makefile,*.mk,*.go setlocal noexpandtab
+au BufNewFile,BufRead Makefile,*.mk,*.go,*.snippets call SetTabWidth(4)
+au BufNewFile,BufRead Makefile,*.mk,*.go,*.snippets setlocal noexpandtab
 
 au WinEnter * setlocal cursorline
 au WinLeave * setlocal nocursorline
