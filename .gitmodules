@@ -115,3 +115,6 @@
 [submodule "dots/vim/bundle/ultisnips"]
 	path = dots/vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "dots/vim/bundle/vim-llvm"]
+	path = dots/vim/bundle/vim-llvm
+	url = https://github.com/rhysd/vim-llvm.git
