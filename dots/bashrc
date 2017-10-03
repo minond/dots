@@ -118,15 +118,16 @@ export NODE_PATH=$HOME/.node
 export SCALA_HOME=$HOME/scala-2.11.7
 export NVM_DIR=$HOME/.nvm
 export PGDATA=/usr/local/var/postgres
-export GHC_DOT_APP='/Applications/ghc-7.10.3.app'
+export GHC_DOT_APP=/Applications/ghc-7.10.3.app
+export SMLNJ_HOME=/usr/local/smlnj
 
-export PERL5LIB="/home/marcos/perl5/lib/perl5/i686-linux-gnu-thread-multi-64int"
-export PERL5LIB="$PERL5LIB:/home/marcos/perl5/lib/perl5"
-export PERL_LOCAL_LIB_ROOT="/home/marcos/perl5"
+export PERL5LIB=/home/marcos/perl5/lib/perl5/i686-linux-gnu-thread-multi-64int
+export PERL5LIB=$PERL5LIB:/home/marcos/perl5/lib/perl5
+export PERL_LOCAL_LIB_ROOT=/home/marcos/perl5
 export PERL_MB_OPT="--install_base /home/marcos/perl5"
 export PERL_MM_OPT="INSTALL_BASE=/home/marcos/perl5"
 
-export HDF5_DIR="/usr/local/hdf5/"
+export HDF5_DIR=/usr/local/hdf5/
 
 ###############################################################################
 # $SETTINGS
