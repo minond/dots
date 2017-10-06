@@ -9,6 +9,11 @@ snippet import "import statement" !b
 	)
 
 snippet func "function statement" !b
-	func $1($2) {
-		$3
+	func $1($2) $3 {
+		$4
+	}
+
+snippet main "main function statement" !b
+	func main() {
+		$1
 	}
