@@ -39,6 +39,16 @@ snippet for "for statement" !b
 		$2
 	}
 
+snippet range "for statement looping over range" !b
+	for i, v := range $1 {
+		$2
+	}
+
+snippet if "if statement" !b
+	if $1 {
+		$2
+	}
+
 snippet struct "struct type" !b
 	type $1 struct {
 		$2
