@@ -2,3 +2,13 @@ snippet err "fatal error" !b
 	if err != nil {
 		return fmt.Errorf("${1:failure}: %v", err)
 	}$0
+
+snippet import "import statement" !b
+	import (
+		"$1"
+	)
+
+snippet func "function statement" !b
+	func $1($2) {
+		$3
+	}
