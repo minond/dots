@@ -5,7 +5,7 @@ snippet err "fatal error" !b
 
 snippet import "import statement" !b
 	import (
-		"$1"
+		"$1
 	)
 
 snippet func "function statement" !b
@@ -16,4 +16,30 @@ snippet func "function statement" !b
 snippet main "main function statement" !b
 	func main() {
 		$1
+	}
+
+snippet var "variable declarations" !b
+	var (
+		$1
+	)
+
+snippet const "constant declarations" !b
+	const (
+		$1
+	)
+
+snippet switch "switch statement" !b
+	switch $1 {
+	case $2:
+		$3
+	}
+
+snippet for "for statement" !b
+	for i := 0; i < $1; i++ {
+		$2
+	}
+
+snippet struct "struct type" !b
+	type $1 struct {
+		$2
 	}
