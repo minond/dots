@@ -118,3 +118,6 @@
 [submodule "dots/vim/bundle/vim-go"]
 	path = dots/vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "dots/vim/bundle/kotlin-vim"]
+	path = dots/vim/bundle/kotlin-vim
+	url = http://github.com/udalov/kotlin-vim

@@ -120,6 +120,7 @@ export NVM_DIR=$HOME/.nvm
 export PGDATA=/usr/local/var/postgres
 export GHC_DOT_APP=/Applications/ghc-7.10.3.app
 export SMLNJ_HOME=/usr/local/smlnj
+export SDKMAN_DIR=/Users/marcos/.sdkman
 
 export PERL5LIB=/home/marcos/perl5/lib/perl5/i686-linux-gnu-thread-multi-64int
 export PERL5LIB=$PERL5LIB:/home/marcos/perl5/lib/perl5
@@ -260,6 +261,7 @@ source? $HOME/.private
 source? $HOME/.bashrc_local
 source? $HOME/.travis/travis.sh
 source? $HOME/torch/install/bin/torch-activate
+source? $HOME/.sdkman/bin/sdkman-init.sh
 source? $NVM_DIR/nvm.sh
 
 # enable programmable completion features (you don't need to enable

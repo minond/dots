@@ -120,7 +120,7 @@ au BufNewFile,BufRead *.md set ft=mkd
 au BufNewFile,BufRead *.html set ft=htmljinja
 
 " spaces instead of tabs on everything but make files
-au BufNewFile,BufRead *.elm call SetTabWidth(4)
+au BufNewFile,BufRead *.elm,*.kt call SetTabWidth(4)
 au BufNewFile,BufRead Makefile,*.mk,*.go,*.snippets call SetTabWidth(4)
 au BufNewFile,BufRead Makefile,*.mk,*.go,*.snippets setlocal noexpandtab
 
