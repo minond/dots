@@ -118,6 +118,7 @@ let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
 au BufNewFile,BufRead *.b set ft=brainfuck
 au BufNewFile,BufRead *.md set ft=mkd
 au BufNewFile,BufRead *.html set ft=htmljinja
+au BufRead,BufNewFile *.g4 set filetype=antlr4
 
 " spaces instead of tabs on everything but make files
 au BufNewFile,BufRead *.elm,*.kt call SetTabWidth(4)
