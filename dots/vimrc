@@ -55,8 +55,13 @@ set t_Co=256
 set tags^=./.tags,./.TAGS,.tags,.TAGS
 set statusline=%f\ [line:\ %l,\ col:\ %c\ -\ %P\]\ %m\ %r
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip " ignored by vim fs access
-set wildignore+=*/templates_c/*,*/bin/*
+set wildignore+=*.so
+set wildignore+=*.swp
+set wildignore+=*.zip
+set wildignore+=*.class
+set wildignore+=*/tmp/*
+set wildignore+=*/templates_c/*
+set wildignore+=*/bin/*
 set wildignore+=*/node_modules/*
 set wildignore+=*/build/*
 set wildignore+=*/public-built/*
