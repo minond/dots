@@ -2,58 +2,47 @@ snippet err "fatal error" !b
 	if err != nil {
 		return fmt.Errorf("${1:failure}: %v", err)
 	}$0
-
 snippet import "import statement" !b
 	import (
 		"$1
 	)
-
 snippet func "function statement" !b
 	func $1($2) $3 {
 		$4
 	}
-
 snippet main "main function statement" !b
 	func main() {
 		$1
 	}
-
 snippet var "variable declarations" !b
 	var (
 		$1
 	)
-
 snippet const "constant declarations" !b
 	const (
 		$1
 	)
-
 snippet switch "switch statement" !b
 	switch $1 {
 	case $2:
 		$3
 	}
-
 snippet for "for statement" !b
 	for i := 0; i < $1; i++ {
 		$2
 	}
-
 snippet range "for statement looping over range" !b
 	for i, v := range $1 {
 		$2
 	}
-
 snippet if "if statement" !b
 	if $1 {
 		$2
 	}
-
 snippet struct "struct type" !b
 	type $1 struct {
 		$2
 	}
-
 snippet interface "interface type" !b
 	type $1 interface {
 		$2

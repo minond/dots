@@ -32,7 +32,7 @@ set modeline
 set modelines=5
 
 set list                                 " display special characters
-set listchars=tab:>\ ,trail:.            " special characters for special char
+set listchars=tab:\ \ ,trail:.            " special characters for special char
 set ls=2
 set nocompatible
 set nowrap
