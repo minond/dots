@@ -6,3 +6,7 @@ snippet main "main method class" br
 	}
 snippet println "print statement" br
 	System.out.println("${1}")
+snippet for "for statement" !b
+	for (int i = 0, len = $1; i < len; i++) {
+		$2
+	}

@@ -126,7 +126,7 @@ au BufNewFile,BufRead *.html set ft=htmljinja
 au BufRead,BufNewFile *.g4 set filetype=antlr4
 
 " spaces instead of tabs on everything but make files
-au BufNewFile,BufRead *.elm,*.kt call SetTabWidth(4)
+au BufNewFile,BufRead *.elm,*.kt,*.php call SetTabWidth(4)
 au BufNewFile,BufRead Makefile,*.mk,*.go,*.snippets call SetTabWidth(4)
 au BufNewFile,BufRead Makefile,*.mk,*.go,*.snippets setlocal noexpandtab
 
