@@ -127,3 +127,9 @@
 [submodule "dots/vim/bundle/prolog.vim"]
 	path = dots/vim/bundle/prolog.vim
 	url = https://github.com/adimit/prolog.vim.git
+[submodule "dots/vim/bundle/auto-pairs"]
+	path = dots/vim/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "dots/vim/bundle/vim-racket"]
+	path = dots/vim/bundle/vim-racket
+	url = https://github.com/wlangstroth/vim-racket.git
