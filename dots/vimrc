@@ -263,6 +263,9 @@ command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; cle
     \ yaml|yml)
         \ yaml2json % | python -m json.tool | less --quit-at-eof
         \ ;;
+    \ rkt)
+        \ racket % | less --quit-at-eof
+        \ ;;
     \ lua)
         \ lua % | less --quit-at-eof
         \ ;;

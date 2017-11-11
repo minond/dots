@@ -33,7 +33,7 @@ function source? {
 # PARAMETER 1: dir
 #==============================================================================
 function path! {
-    [ -d $1 ] && export PATH="$PATH:$1"
+    [ -d "$1" ] && export PATH="$PATH:$1"
 }
 
 #=== FUNCTION =================================================================
@@ -252,6 +252,7 @@ path! /usr/local/go/bin
 path! ${HOME}/.local/bin
 path! ${HOME}/.cabal/bin
 path! ${GHC_DOT_APP}/Contents/bin
+path! '/Applications/Racket v6.11/bin/'
 
 ###############################################################################
 # $EXTRA SOURCES
