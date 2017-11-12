@@ -1,0 +1,18 @@
+snippet racket "lang racket" !b
+	#lang racket
+
+
+snippet let "let expression" !b
+	(let ([${1}])
+	  ${2})
+snippet if "if statement" !b
+	(if (${1})
+	    ${2}
+	    ${3})
+snippet lambda "lambda expression" !b
+	(lambda (${1})
+	  ${2})
+snippet cond "cond expression" !b
+	(cond [${1}]
+	      [${2}]
+	      [${3}])
