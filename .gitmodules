@@ -67,9 +67,6 @@
 [submodule "dots/vim/bundle/vim-protobuf"]
 	path = dots/vim/bundle/vim-protobuf
 	url = https://github.com/uarun/vim-protobuf.git
-[submodule "dots/vim/bundle/nginx-vim-syntax"]
-	path = dots/vim/bundle/nginx-vim-syntax
-	url = https://github.com/evanmiller/nginx-vim-syntax.git
 [submodule "dots/vim/bundle/vimproc"]
 	path = dots/vim/bundle/vimproc
 	url = https://github.com/Shougo/vimproc.vim.git
