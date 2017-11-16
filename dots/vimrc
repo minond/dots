@@ -113,6 +113,7 @@ call tcomment#DefineType('typescript_inline', '// %s')
 call tcomment#DefineType('graphql', '# %s')
 call tcomment#DefineType('make', '# %s')
 call tcomment#DefineType('elm', '-- %s')
+call tcomment#DefineType('perl6', '# %s')
 
 let g:vimshell_prompt_expr = 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
 let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '

@@ -191,6 +191,7 @@ alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
 alias unswp='find . | grep swp | xargs rm'
 alias code='iam marcos; cd $HOME/code/github.com/$GITHUB_USER/$2; tmux -2'
 alias heroku-database='heroku pg:psql DATABASE'
+alias marp='/Applications/Marp.app/Contents/MacOS/Marp'
 
 alias fresh_chrome='exec open -na "Google Chrome" --args \
     "--user-data-dir=/Users/marcosminond/.freshchrome" --enable-precise-memory-info \
@@ -253,6 +254,7 @@ path! ${HOME}/.local/bin
 path! ${HOME}/.cabal/bin
 path! ${GHC_DOT_APP}/Contents/bin
 path! '/Applications/Racket v6.11/bin/'
+path! '/Applications/Rakudo/bin/'
 
 ###############################################################################
 # $EXTRA SOURCES
@@ -262,8 +264,8 @@ source? $HOME/.private
 source? $HOME/.bashrc_local
 source? $HOME/.travis/travis.sh
 source? $HOME/torch/install/bin/torch-activate
-source? $HOME/.sdkman/bin/sdkman-init.sh
-source? $NVM_DIR/nvm.sh
+# source? $HOME/.sdkman/bin/sdkman-init.sh
+# source? $NVM_DIR/nvm.sh
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
