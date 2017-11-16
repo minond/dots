@@ -37,9 +37,6 @@
 [submodule "dots/vim/bundle/mozjs-syntax"]
 	path = dots/vim/bundle/mozjs-syntax
 	url = https://github.com/gijsk/mozjs-syntax.git
-[submodule "dots/vim/bundle/swift.vim"]
-	path = dots/vim/bundle/swift.vim
-	url = git@github.com:keith/swift.vim.git
 [submodule "dots/vim/bundle/vim-arduino-syntax.git"]
 	path = dots/vim/bundle/vim-arduino-syntax.git
 	url = https://github.com/sudar/vim-arduino-syntax.git
