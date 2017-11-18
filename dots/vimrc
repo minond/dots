@@ -238,6 +238,9 @@ command! Lint !file=$(basename %);ext="${file\#\#*.}"; clear;
 " run scripts
 command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; clear;
 \ case $ext in
+    \ d)
+        \ rdmd % | less --quit-at-eof
+        \ ;;
     \ scala)
         \ scala % | less --quit-at-eof
         \ ;;
