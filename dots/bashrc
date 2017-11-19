@@ -184,6 +184,7 @@ alias copy='pbcopy'
 alias oneline='xargs echo'
 alias dm='eval $(docker-machine env default)'
 
+alias dfmt='dub run dfmt -- -i --brace_style=stroustrup --indent_size=2'
 alias nethack='telnet nethack.alt.org'
 alias gw="./gradlew"
 alias ipr="open *.ipr"
