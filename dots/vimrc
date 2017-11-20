@@ -32,7 +32,7 @@ set modeline
 set modelines=5
 
 set list                                 " display special characters
-set listchars=tab:\ \ ,trail:.            " special characters for special char
+set listchars=tab:\ \ ,trail:.           " special characters for special char
 set ls=2
 set nocompatible
 set nowrap
@@ -68,6 +68,7 @@ set wildignore+=*/public-built/*
 set wildignore+=*/out/*
 set wildignore+=*/target/*
 set wildignore+=*/dist/*
+
 set wildmenu
 
 set makeprg=make
@@ -114,9 +115,6 @@ call tcomment#DefineType('graphql', '# %s')
 call tcomment#DefineType('make', '# %s')
 call tcomment#DefineType('elm', '-- %s')
 call tcomment#DefineType('perl6', '# %s')
-
-let g:vimshell_prompt_expr = 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
-let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS

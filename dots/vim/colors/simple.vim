@@ -54,3 +54,4 @@ hi NERDTreeDir                                                 ctermfg=240
 hi NERDTreeDirSlash                                            ctermfg=252
 hi NERDTreeExecFile                                            ctermfg=none
 hi NERDTreeOpenable                                            ctermfg=236
+hi NERDTreeExecFile                   ctermbg=white            ctermfg=black
