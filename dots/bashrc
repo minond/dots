@@ -165,7 +165,6 @@ alias save='git stash save'
 alias pop='git stash pop'
 alias add='git add'
 alias addp='git add -p'
-alias c='cync'
 
 # colors!
 alias grep='grep -I --color=auto'
@@ -217,6 +216,12 @@ server() {
   python3 -m http.server $port
 }
 
+colors() {
+  for i in {0..255}; do
+      echo $(tput setaf $i)########################$(tput sgr0) - $i
+  done
+}
+
 cm() {
   git commit -m "$*"
 }
@@ -231,6 +236,26 @@ ca() {
 
   git add "$fm"
   git commit -m "$fm" "$fm"
+}
+
+c() {
+  git commit -am "$@"
+}
+
+gmove() {
+  local branch=$1
+  [ -z "$branch" ] && branch=master
+
+  echo "updating $branch"
+
+  git fetch --all
+  git fetch --prune
+  git checkout $branch
+  git pull --rebase origin $branch
+  git submodule update
+
+  echo "status $branch for"
+  git status
 }
 
 ###############################################################################
@@ -248,7 +273,6 @@ path! $HOME/code/projects/runner/bin
 path! $HOME/perl5/bin
 path! $HOME/.composer/bin/
 path! $HOME/bin/
-path! $HOME/.dots/bin
 path! $HOME/.dots/vendor/scaffold/scripts
 path! $HOME/.rvm/bin
 path! $HOME/.cabal/bin

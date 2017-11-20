@@ -1,5 +1,0 @@
-#!/bin/bash
-
-for i in {0..255}; do
-    echo $(tput setaf $i)########################$(tput sgr0) - $i
-done
