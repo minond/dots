@@ -294,8 +294,7 @@ syntax on
 if &diff
     colo torte
 else
-    colo summerfruit256
-    source ~/.vim/colors/summerfruit256-overwrites.vim
+    source ~/.vim/colors/simple.vim
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
