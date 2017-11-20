@@ -238,7 +238,8 @@ ca() {
   git commit -m "$fm" "$fm"
 }
 
-c() {
+alias c='cync'
+cync() {
   git commit -am "$*"
 }
 
@@ -258,6 +259,7 @@ gmove() {
   git status
 }
 
+alias p='push'
 push() {
   git push origin $(git b)
 }
