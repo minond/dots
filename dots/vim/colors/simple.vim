@@ -24,7 +24,7 @@ hi Visual                             ctermbg=229              ctermfg=none     
 
 " Code
 hi Todo                               ctermbg=none             ctermfg=red
-hi Title                              ctermbg=black            ctermfg=black
+hi Title                              ctermbg=none             ctermfg=black
 hi Special                            ctermbg=none             ctermfg=99
 hi SpecialKey                         ctermbg=none             ctermfg=99
 hi String                             ctermbg=none             ctermfg=99
