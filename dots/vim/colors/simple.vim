@@ -17,7 +17,7 @@ hi Pmenu                              ctermbg=black            ctermfg=white
 hi LineNr                             ctermbg=none             ctermfg=248
 hi SignColumn                         ctermbg=none             ctermfg=black
 hi WildMenu                           ctermbg=none             ctermfg=black
-hi ColorColumn                        ctermbg=229
+hi ColorColumn                        ctermbg=none             ctermfg=240          cterm=underline
 hi CursorColumn                       ctermbg=229              ctermfg=none         cterm=none
 hi CursorLine                         ctermbg=229              ctermfg=none         cterm=none
 hi Visual                             ctermbg=229              ctermfg=none         cterm=none

@@ -43,6 +43,7 @@ set expandtab
 set shiftwidth=2                         " shift movement length
 set softtabstop=2                        " back character length
 set tabstop=2                            " tab character length
+set nuw=4                                " make line number column wider
 set backspace=indent,eol,start
 
 set smartindent                          " block indentation
