@@ -20,7 +20,7 @@ hi WildMenu                           ctermbg=none             ctermfg=black
 hi ColorColumn                        ctermbg=229
 hi CursorColumn                       ctermbg=229              ctermfg=none         cterm=none
 hi CursorLine                         ctermbg=229              ctermfg=none         cterm=none
-hi Visual                             ctermbg=229              ctermfg=none         cterm=underline
+hi Visual                             ctermbg=229              ctermfg=none         cterm=none
 
 " Code
 hi Todo                               ctermbg=none             ctermfg=red

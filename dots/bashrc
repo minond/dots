@@ -239,7 +239,7 @@ ca() {
 }
 
 c() {
-  git commit -am "$@"
+  git commit -am "$*"
 }
 
 gmove() {
