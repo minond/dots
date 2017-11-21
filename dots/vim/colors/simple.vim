@@ -14,6 +14,7 @@ hi StatusLine                         ctermbg=black            ctermfg=253
 hi StatusLineNC                       ctermbg=black            ctermfg=255
 hi VertSplit                          ctermbg=248              ctermfg=white
 hi Pmenu                              ctermbg=black            ctermfg=white
+hi MatchParen                         ctermbg=black            ctermfg=white
 hi LineNr                             ctermbg=none             ctermfg=248
 hi SignColumn                         ctermbg=none             ctermfg=black
 hi WildMenu                           ctermbg=none             ctermfg=black
