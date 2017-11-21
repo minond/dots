@@ -116,6 +116,7 @@ call tcomment#DefineType('graphql', '# %s')
 call tcomment#DefineType('make', '# %s')
 call tcomment#DefineType('elm', '-- %s')
 call tcomment#DefineType('perl6', '# %s')
+call tcomment#DefineType('d', '// %s')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS

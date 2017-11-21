@@ -42,8 +42,8 @@ hi Statement                          ctermbg=none             ctermfg=33
 hi Operator                           ctermbg=none             ctermfg=33
 hi Constant                           ctermbg=none             ctermfg=33
 hi Conditional                        ctermbg=none             ctermfg=33
+hi Label                              ctermbg=none             ctermfg=33
 hi Error                              ctermbg=red              ctermfg=black
-hi Label                              ctermbg=none             ctermfg=black
 
 " Plugins
 hi GitGutterAddDefault                ctermbg=none             ctermfg=43

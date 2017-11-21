@@ -231,7 +231,7 @@ ca() {
 
   if [ ! -f "$fm" ]; then
     echo "$fm does not exist!"
-    exit 1
+    return 1
   fi
 
   git add "$fm"
