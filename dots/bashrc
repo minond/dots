@@ -158,13 +158,16 @@ fi
 ###############################################################################
 
 # git aliases
-alias d='clear; git diff --color=always'
-alias s='clear; git status'
 alias show='clear; git show'
 alias save='git stash save'
 alias pop='git stash pop'
 alias add='git add'
 alias addp='git add -p'
+alias d='clear; git diff --color=always'
+alias s='clear; git status'
+alias l='git l'
+alias c='cync'
+alias p='push'
 
 # colors!
 alias grep='grep -I --color=auto'
@@ -173,8 +176,6 @@ alias egrep='egrep --color=auto'
 
 alias ll='ls -hlF --color'
 alias la='ls -hA  --color'
-alias l='less'
-alias g='grep -r'
 
 alias ..='cd ..'
 alias cd..='cd ..'
@@ -192,6 +193,9 @@ alias unswp='find . | grep swp | xargs rm'
 alias code='iam marcos; cd $HOME/code/github.com/$GITHUB_USER/$2; tmux -2'
 alias heroku-database='heroku pg:psql DATABASE'
 alias marp='/Applications/Marp.app/Contents/MacOS/Marp'
+
+# https://github.com/google/google-java-format
+alias google-java-format='java -jar $HOME/.jars/google-java-format-1.5-all-deps.jar -r'
 
 alias fresh_chrome='exec open -na "Google Chrome" --args \
     "--user-data-dir=/Users/marcosminond/.freshchrome" --enable-precise-memory-info \
@@ -238,7 +242,6 @@ ca() {
   git commit -m "$fm" "$fm"
 }
 
-alias c='cync'
 cync() {
   git commit -am "$*"
 }
@@ -259,7 +262,6 @@ gmove() {
   git status
 }
 
-alias p='push'
 push() {
   git push origin $(git b)
 }

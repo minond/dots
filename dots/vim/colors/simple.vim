@@ -36,6 +36,7 @@ hi Identifier                         ctermbg=none             ctermfg=black
 hi Function                           ctermbg=none             ctermfg=black
 hi Comment                            ctermbg=none             ctermfg=248
 hi Type                               ctermbg=none             ctermfg=33
+hi Exception                          ctermbg=none             ctermfg=33
 hi Keyword                            ctermbg=none             ctermfg=33
 hi PreProc                            ctermbg=none             ctermfg=33
 hi Statement                          ctermbg=none             ctermfg=33
