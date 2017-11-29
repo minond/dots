@@ -309,6 +309,7 @@ source? $HOME/.private
 source? $HOME/.bashrc_local
 source? $HOME/.travis/travis.sh
 source? $HOME/torch/install/bin/torch-activate
+source? $HOME/.nvm/versions/node/v8.9.1/bin/
 # source? $HOME/.sdkman/bin/sdkman-init.sh
 # source? $NVM_DIR/nvm.sh
 
