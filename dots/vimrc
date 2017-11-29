@@ -247,8 +247,14 @@ command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; cle
     \ php)
         \ php % | less --quit-at-eof
         \ ;;
+    \ ts)
+        \ DEBUG_COLORS=1 ts-node % | less --quit-at-eof
+        \ ;;
     \ js)
         \ DEBUG_COLORS=1 node --harmony % | less --quit-at-eof
+        \ ;;
+    \ sml)
+        \ DEBUG_COLORS=1 sml %
         \ ;;
     \ py)
         \ python % | less --quit-at-eof
