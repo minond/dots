@@ -33,13 +33,13 @@ hi Statement                          ctermbg=none             ctermfg=black
 hi Identifier                         ctermbg=none             ctermfg=black
 hi Function                           ctermbg=none             ctermfg=black
 hi Operator                           ctermbg=none             ctermfg=black
-hi Error                              ctermbg=red              ctermfg=black
+hi Special                            ctermbg=none             ctermfg=black
+hi SpecialKey                         ctermbg=none             ctermfg=black
+hi Error                              ctermbg=none             ctermfg=red
 hi Comment                            ctermbg=none             ctermfg=248
 hi String                             ctermbg=none             ctermfg=90
 hi Character                          ctermbg=none             ctermfg=90
 hi SpecialChar                        ctermbg=none             ctermfg=90
-hi Special                            ctermbg=none             ctermfg=90
-hi SpecialKey                         ctermbg=none             ctermfg=90
 hi Type                               ctermbg=none             ctermfg=33
 hi Exception                          ctermbg=none             ctermfg=33
 hi Keyword                            ctermbg=none             ctermfg=33
@@ -62,3 +62,6 @@ hi NERDTreeDirSlash                                            ctermfg=252
 hi NERDTreeExecFile                                            ctermfg=none
 hi NERDTreeOpenable                                            ctermfg=236
 hi NERDTreeExecFile                   ctermbg=white            ctermfg=black
+
+" Overrides
+hi link typescriptSpecial SpecialChar
