@@ -124,3 +124,6 @@
 [submodule "dots/vim/bundle/vim-racket"]
 	path = dots/vim/bundle/vim-racket
 	url = https://github.com/wlangstroth/vim-racket.git
+[submodule "dots/vim/bundle/nim.vim"]
+	path = dots/vim/bundle/nim.vim
+	url = https://github.com/zah/nim.vim.git

@@ -294,6 +294,7 @@ path! $NODE_PATH/bin/
 path! /usr/local/smlnj/bin
 path! /usr/local/heroku/bin
 path! /usr/local/go/bin
+path! /usr/local/nim/bin
 
 path! ${HOME}/.local/bin
 path! ${HOME}/.cabal/bin
