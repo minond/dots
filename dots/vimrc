@@ -281,7 +281,7 @@ command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; cle
         \ lua % | less --quit-at-eof
         \ ;;
     \ nim)
-        \ nim c --out:autogennimexec --run % | less --quit-at-eof; rm autogennimexec
+        \ nim c --nimcache:/tmp/autogennimcache --out:autogennimexec --run % | less --quit-at-eof; rm autogennimexec
         \ ;;
     \ md|markdown)
         \ ghmd % --dest %:h/$filename.html; open %:h/$filename.html; sleep 1; rm %:h/$filename.html;
