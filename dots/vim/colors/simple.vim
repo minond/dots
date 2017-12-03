@@ -23,6 +23,12 @@ hi CursorColumn                       ctermbg=229              ctermfg=none     
 hi CursorLine                         ctermbg=229              ctermfg=none         cterm=none
 hi Visual                             ctermbg=229              ctermfg=none         cterm=none
 
+" Diff
+hi DiffAdd                            ctermbg=none             ctermfg=37           cterm=none
+hi DiffDelete                         ctermbg=none             ctermfg=124          cterm=none
+hi DiffChange                         ctermbg=none             ctermfg=203          cterm=none
+hi DiffText                           ctermbg=none             ctermfg=203          cterm=none
+
 " Code
 hi Todo                               ctermbg=none             ctermfg=red
 hi Title                              ctermbg=none             ctermfg=black
@@ -65,3 +71,4 @@ hi NERDTreeExecFile                   ctermbg=white            ctermfg=black
 
 " Overrides
 hi link typescriptSpecial SpecialChar
+hi link typescriptEndColons typescriptOpSymbols
