@@ -127,6 +127,7 @@ au BufNewFile,BufRead *.md set ft=mkd
 au BufNewFile,BufRead *.html set ft=htmljinja
 au BufNewFile,BufRead *.pl set ft=prolog
 au BufRead,BufNewFile *.g4 set ft=antlr4
+au BufRead,BufNewFile *.js set ft=typescript
 
 " spaces instead of tabs on everything but make files
 au BufNewFile,BufRead *.elm,*.kt,*.php call SetTabWidth(4)

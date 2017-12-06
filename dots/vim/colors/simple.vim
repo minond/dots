@@ -1,3 +1,7 @@
+" Changelog:
+" - 33  -> 236
+" - 90  -> 240
+
 set background=light
 syntax reset
 
@@ -43,19 +47,20 @@ hi Special                            ctermbg=none             ctermfg=black
 hi SpecialKey                         ctermbg=none             ctermfg=black
 hi Error                              ctermbg=none             ctermfg=red
 hi Comment                            ctermbg=none             ctermfg=248
-hi String                             ctermbg=none             ctermfg=90
-hi Character                          ctermbg=none             ctermfg=90
-hi SpecialChar                        ctermbg=none             ctermfg=90
-hi Type                               ctermbg=none             ctermfg=33
-hi Exception                          ctermbg=none             ctermfg=33
-hi Keyword                            ctermbg=none             ctermfg=33
-hi PreProc                            ctermbg=none             ctermfg=33
-hi Statement                          ctermbg=none             ctermfg=33
-hi Constant                           ctermbg=none             ctermfg=33
-hi Conditional                        ctermbg=none             ctermfg=33
-hi Label                              ctermbg=none             ctermfg=33
-hi Structure                          ctermbg=none             ctermfg=33
-hi StorageClass                       ctermbg=none             ctermfg=33
+hi String                             ctermbg=none             ctermfg=240
+hi Character                          ctermbg=none             ctermfg=240
+hi SpecialChar                        ctermbg=none             ctermfg=240          cterm=bold
+hi Type                               ctermbg=none             ctermfg=236
+hi Exception                          ctermbg=none             ctermfg=236
+hi Keyword                            ctermbg=none             ctermfg=236
+hi PreProc                            ctermbg=none             ctermfg=236          cterm=bold
+hi Include                            ctermbg=none             ctermfg=236          cterm=none
+hi Statement                          ctermbg=none             ctermfg=236
+hi Constant                           ctermbg=none             ctermfg=236
+hi Conditional                        ctermbg=none             ctermfg=236
+hi Label                              ctermbg=none             ctermfg=236
+hi Structure                          ctermbg=none             ctermfg=236
+hi StorageClass                       ctermbg=none             ctermfg=236
 
 " Plugins
 hi GitGutterAddDefault                ctermbg=none             ctermfg=43
@@ -70,5 +75,8 @@ hi NERDTreeOpenable                                            ctermfg=236
 hi NERDTreeExecFile                   ctermbg=white            ctermfg=black
 
 " Overrides
-hi link typescriptSpecial SpecialChar
-hi link typescriptEndColons typescriptOpSymbols
+hi link typescriptEndColons                                    typescriptOpSymbols
+hi link typescriptExceptions                                   Exception
+hi link typescriptInterpolation                                SpecialChar
+hi link typescriptInterpolationDelimiter                       SpecialChar
+hi link typescriptSpecial                                      SpecialChar
