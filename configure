@@ -29,6 +29,24 @@ link() {
     ln -s "$src" "$dest"
 }
 
+#=== FUNCTION =================================================================
+#        NAME: usage
+# DESCRIPTION: prints help output
+#==============================================================================
+usage() {
+    echo "Options:"
+
+    for option in git vim ctags tmux screen bash
+    do
+        echo " - $option"
+    done
+}
+
+#=== MAIN =====================================================================
+if [ -z "$1" ]; then
+  usage
+  exit 1
+fi
 
 for arg in "$@"
 do
@@ -44,18 +62,8 @@ do
             link ~/.vim "$dots/vim"
             ;;
 
-        composer)
-            link ~/.composer/composer.json "$dots/composer.json"
-            link ~/.composer/composer.lock "$dots/composer.lock"
-            link ~/.composer/config.json "$dots/composer-config.json"
-            ;;
-
         ctags)
             link ~/.ctags "$dots/ctags"
-            ;;
-
-        jshint)
-            link ~/.jshintrc "$dots/jshintrc"
             ;;
 
         tmux)
@@ -70,17 +78,15 @@ do
             link ~/.bashrc "$dots/bashrc"
             ;;
 
+        -h|--help)
+            usage
+            ;;
+
         *)
-            echo "invalid argument $arg"
+            echo "Invalid argument $arg"
+            echo
+            usage
+            exit 1
             ;;
     esac
 done
-
-if [ -z "$1" ]; then
-    echo "options:"
-
-    for option in git vim composer ctags jshint tmux screen bash
-    do
-        echo " - $option"
-    done
-fi

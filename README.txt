@@ -6,4 +6,4 @@ The `configure` script in the repo can be used to create those links. You can ru
 
   cd
   git clone http://github.com/minond/dots .dots
-  ./configure
+  ./configure --help
