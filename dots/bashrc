@@ -24,7 +24,7 @@
 # PARAMETER 1: file
 #==============================================================================
 function source? {
-    [ -f $1 ] && source $1
+    [ -f "$1" ] && source "$1"
 }
 
 #=== FUNCTION =================================================================
@@ -286,6 +286,7 @@ path! $HOME/.rvm/bin
 path! $HOME/.cabal/bin
 path! $HOME/torch/install/bin
 path! $HOME/.cargo/bin
+path! $HOME/.nvm/versions/node/v8.9.1/bin
 
 path! $GOPATH/bin/
 path! $SCALA_HOME/bin/
@@ -310,7 +311,6 @@ source? $HOME/.private
 source? $HOME/.bashrc_local
 source? $HOME/.travis/travis.sh
 source? $HOME/torch/install/bin/torch-activate
-source? $HOME/.nvm/versions/node/v8.9.1/bin/
 # source? $HOME/.sdkman/bin/sdkman-init.sh
 # source? $NVM_DIR/nvm.sh
 
