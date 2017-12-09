@@ -127,3 +127,6 @@
 [submodule "dots/vim/bundle/nim.vim"]
 	path = dots/vim/bundle/nim.vim
 	url = https://github.com/zah/nim.vim.git
+[submodule "dots/vim/bundle/parrot.vim"]
+	path = dots/vim/bundle/parrot.vim
+	url = https://github.com/vim-scripts/parrot.vim.git
