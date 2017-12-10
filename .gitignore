@@ -2,6 +2,7 @@ dots/vim/Powerline_default_default_compatible.cache
 dots/vim/plugin/python/vdebug/ui/*.pyc
 dots/vim/plugin/python/vdebug/*.pyc
 dots/vim/.netrwhist
+dots/vim/view
 
 bin/chromedriver
 bin/hmac

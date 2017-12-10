@@ -14,6 +14,11 @@
 " $LOAD EXTERNALS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 execute pathogen#infect()
+execute pathogen#incubate()
+
+filetype off
+filetype plugin indent on
+
 Helptags
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
