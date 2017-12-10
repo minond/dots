@@ -1,6 +1,7 @@
 " Changelog:
 " - 33  -> 236
 " - 90  -> 240
+" - 240 -> 242
 
 set background=light
 syntax reset
@@ -47,9 +48,9 @@ hi Special                            ctermbg=none             ctermfg=black
 hi SpecialKey                         ctermbg=none             ctermfg=black
 hi Error                              ctermbg=none             ctermfg=red
 hi Comment                            ctermbg=none             ctermfg=248
-hi String                             ctermbg=none             ctermfg=240
-hi Character                          ctermbg=none             ctermfg=240
-hi SpecialChar                        ctermbg=none             ctermfg=240          cterm=bold
+hi String                             ctermbg=none             ctermfg=242
+hi Character                          ctermbg=none             ctermfg=242
+hi SpecialChar                        ctermbg=none             ctermfg=242          cterm=bold
 hi Type                               ctermbg=none             ctermfg=236
 hi Exception                          ctermbg=none             ctermfg=236
 hi Keyword                            ctermbg=none             ctermfg=236
