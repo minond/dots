@@ -52,9 +52,6 @@
 [submodule "dots/vim/bundle/vim-gradle"]
 	path = dots/vim/bundle/vim-gradle
 	url = https://github.com/tfnico/vim-gradle.git
-[submodule "dots/vim/bundle/elm.vim"]
-	path = dots/vim/bundle/elm.vim
-	url = https://github.com/minond/elm.vim.git
 [submodule "dots/vim/bundle/Dockerfile.vim"]
 	path = dots/vim/bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
