@@ -2,6 +2,7 @@
 " - 33  -> 236
 " - 90  -> 240
 " - 240 -> 242
+" - 242 -> 19
 
 set background=light
 syntax reset
@@ -23,7 +24,7 @@ hi MatchParen                         ctermbg=243              ctermfg=white
 hi LineNr                             ctermbg=none             ctermfg=248
 hi SignColumn                         ctermbg=none             ctermfg=black
 hi WildMenu                           ctermbg=none             ctermfg=black
-hi ColorColumn                        ctermbg=none             ctermfg=240          cterm=underline
+hi ColorColumn                        ctermbg=none             ctermfg=none         cterm=underline
 hi CursorColumn                       ctermbg=229              ctermfg=none         cterm=none
 hi CursorLine                         ctermbg=229              ctermfg=none         cterm=none
 hi Visual                             ctermbg=229              ctermfg=none         cterm=none
@@ -48,9 +49,9 @@ hi Special                            ctermbg=none             ctermfg=black
 hi SpecialKey                         ctermbg=none             ctermfg=black
 hi Error                              ctermbg=none             ctermfg=red
 hi Comment                            ctermbg=none             ctermfg=248
-hi String                             ctermbg=none             ctermfg=242
-hi Character                          ctermbg=none             ctermfg=242
-hi SpecialChar                        ctermbg=none             ctermfg=242          cterm=bold
+hi String                             ctermbg=none             ctermfg=19
+hi Character                          ctermbg=none             ctermfg=19
+hi SpecialChar                        ctermbg=none             ctermfg=19           cterm=bold
 hi Type                               ctermbg=none             ctermfg=236
 hi Exception                          ctermbg=none             ctermfg=236
 hi Keyword                            ctermbg=none             ctermfg=236
