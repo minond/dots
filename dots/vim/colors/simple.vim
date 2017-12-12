@@ -40,7 +40,6 @@ hi Todo                               ctermbg=none             ctermfg=red
 hi Title                              ctermbg=none             ctermfg=black
 hi Delimiter                          ctermbg=none             ctermfg=black
 hi Boolean                            ctermbg=none             ctermfg=black
-hi Number                             ctermbg=none             ctermfg=black
 hi Statement                          ctermbg=none             ctermfg=black
 hi Identifier                         ctermbg=none             ctermfg=black
 hi Function                           ctermbg=none             ctermfg=black
@@ -49,6 +48,7 @@ hi Special                            ctermbg=none             ctermfg=black
 hi SpecialKey                         ctermbg=none             ctermfg=black
 hi Error                              ctermbg=none             ctermfg=red
 hi Comment                            ctermbg=none             ctermfg=248
+hi Number                             ctermbg=none             ctermfg=17
 hi String                             ctermbg=none             ctermfg=19
 hi Character                          ctermbg=none             ctermfg=19
 hi SpecialChar                        ctermbg=none             ctermfg=19           cterm=bold
