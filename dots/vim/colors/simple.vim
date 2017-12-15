@@ -48,6 +48,7 @@ hi Special                            ctermbg=none             ctermfg=black
 hi SpecialKey                         ctermbg=none             ctermfg=black
 hi Error                              ctermbg=none             ctermfg=red
 hi Comment                            ctermbg=none             ctermfg=248
+hi SpecialComment                     ctermbg=none             ctermfg=248          cterm=bold
 hi Number                             ctermbg=none             ctermfg=17
 hi String                             ctermbg=none             ctermfg=19
 hi Character                          ctermbg=none             ctermfg=19
