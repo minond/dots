@@ -130,17 +130,15 @@ call tcomment#DefineType('d', '// %s')
 " $FILE TYPE SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-au BufNewFile,BufRead *.b set ft=brainfuck
-au BufNewFile,BufRead *.md set ft=mkd
-au BufNewFile,BufRead *.html set ft=htmljinja
-au BufNewFile,BufRead *.pl set ft=prolog
-au BufRead,BufNewFile *.g4 set ft=antlr4
-au BufRead,BufNewFile *.js set ft=typescript
-au BufRead,BufNewFile *.pasm,*.pir set ft=parrot
-au FileType pir set ft=parrot
+au BufNewFile,BufRead *.html        setlocal ft=htmljinja
+au BufNewFile,BufRead *.pl          setlocal ft=prolog
+au BufNewFile,BufRead *.g4          setlocal ft=antlr4
+au BufNewFile,BufRead *.js          setlocal ft=typescript
+au BufNewFile,BufRead *.pasm,*.pir  setlocal ft=parrot
+au FileType pir                     setlocal ft=parrot
 
 " spaces instead of tabs on everything but make files
-au BufNewFile,BufRead *.elm,*.kt,*.php call SetTabWidth(4)
+au BufNewFile,BufRead *.elm,*.kt,*.php              call SetTabWidth(4)
 au BufNewFile,BufRead Makefile,*.mk,*.go,*.snippets call SetTabWidth(4)
 au BufNewFile,BufRead Makefile,*.mk,*.go,*.snippets setlocal noexpandtab
 
@@ -244,7 +242,6 @@ command! Lint !file=$(basename %);ext="${file\#\#*.}"; clear;
         \ echo "i don't know what to do with .$ext files"
         \ ;;
 \ esac
-
 
 " run scripts
 command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; clear;
