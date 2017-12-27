@@ -32,6 +32,7 @@ set ignorecase                           " case insensitive searches
 set incsearch                            " highlight matches while typing
 set showmatch                            " jump to search result
 set smartcase                            " case insensitive defaul
+set nojoinspaces                         " just one space after a period!
 
 set modeline
 set modelines=5
