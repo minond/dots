@@ -194,8 +194,11 @@ alias code='iam marcos; cd $HOME/code/github.com/$GITHUB_USER/$2; tmux -2'
 alias heroku-database='heroku pg:psql DATABASE'
 alias marp='/Applications/Marp.app/Contents/MacOS/Marp'
 
-# https://github.com/google/google-java-format
-alias google-java-format='java -jar $HOME/.jars/google-java-format-1.5-all-deps.jar -r'
+# Formatters
+# Java: https://github.com/google/google-java-format
+# JavaScript: https://github.com/prettier/prettier
+alias javafmt='java -jar $HOME/.jars/google-java-format-1.5-all-deps.jar -r'
+alias jsfmt='prettier --no-semi --write'
 
 alias fresh_chrome='exec open -na "Google Chrome" --args \
     "--user-data-dir=/Users/marcosminond/.freshchrome" --enable-precise-memory-info \
