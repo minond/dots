@@ -80,6 +80,7 @@ set wildmenu
 
 set makeprg=make
 set errorformat=%+A\ %#%f\ %#(%l\\\,%c):\ %m,%C%m
+set formatoptions-=t                     " disable automatic wrapping of lines
 
 let mapleader = "\<Space>"
 

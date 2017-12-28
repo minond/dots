@@ -83,3 +83,5 @@ hi link typescriptExceptions                                   Exception
 hi link typescriptInterpolation                                SpecialChar
 hi link typescriptInterpolationDelimiter                       SpecialChar
 hi link typescriptSpecial                                      SpecialChar
+
+hi htmlItalic                         ctermfg=none             ctermbg=none         cterm=none
