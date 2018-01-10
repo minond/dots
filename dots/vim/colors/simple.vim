@@ -17,8 +17,8 @@ hi Search                             ctermbg=blue             ctermfg=white
 hi IncSearch                          ctermbg=blue             ctermfg=white
 
 " Interface
-hi StatusLine                         ctermbg=black            ctermfg=253
-hi StatusLineNC                       ctermbg=black            ctermfg=255
+hi StatusLine                         ctermfg=white            ctermbg=33           cterm=bold
+hi StatusLineNC                       ctermfg=black            ctermbg=251          cterm=bold
 hi VertSplit                          ctermbg=248              ctermfg=white
 hi Pmenu                              ctermbg=black            ctermfg=white
 hi MatchParen                         ctermbg=243              ctermfg=white
