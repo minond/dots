@@ -3,6 +3,7 @@
 " - 90  -> 240
 " - 240 -> 242
 " - 242 -> 19
+" - 19  -> 27
 
 set background=light
 syntax reset
@@ -50,14 +51,14 @@ hi Error                              ctermbg=none             ctermfg=red
 hi Comment                            ctermbg=none             ctermfg=248
 hi SpecialComment                     ctermbg=none             ctermfg=248          cterm=bold
 hi Number                             ctermbg=none             ctermfg=17
-hi String                             ctermbg=none             ctermfg=19
-hi Character                          ctermbg=none             ctermfg=19
-hi SpecialChar                        ctermbg=none             ctermfg=19           cterm=bold
+hi String                             ctermbg=none             ctermfg=27
+hi Character                          ctermbg=none             ctermfg=27
+hi SpecialChar                        ctermbg=none             ctermfg=27           cterm=bold
 hi Type                               ctermbg=none             ctermfg=236
 hi Exception                          ctermbg=none             ctermfg=236
 hi Keyword                            ctermbg=none             ctermfg=236
 hi PreProc                            ctermbg=none             ctermfg=236          cterm=bold
-hi Include                            ctermbg=none             ctermfg=236          cterm=none
+hi Include                            ctermbg=none             ctermfg=236          cterm=bold
 hi Statement                          ctermbg=none             ctermfg=236
 hi Constant                           ctermbg=none             ctermfg=236
 hi Conditional                        ctermbg=none             ctermfg=236
@@ -78,10 +79,16 @@ hi NERDTreeOpenable                                            ctermfg=236
 hi NERDTreeExecFile                   ctermbg=white            ctermfg=black
 
 " Overrides
+hi link goSpecialString                                        SpecialChar
 hi link typescriptEndColons                                    typescriptOpSymbols
 hi link typescriptExceptions                                   Exception
 hi link typescriptInterpolation                                SpecialChar
 hi link typescriptInterpolationDelimiter                       SpecialChar
 hi link typescriptSpecial                                      SpecialChar
 
+hi htmlH2                             ctermfg=black            ctermbg=none         cterm=bold
 hi htmlItalic                         ctermfg=none             ctermbg=none         cterm=none
+hi makeTarget                         ctermfg=27               ctermbg=none         cterm=bold
+hi mkdInlineURL                       ctermfg=blue             ctermbg=none         cterm=bold
+hi mkdLink                            ctermfg=blue             ctermbg=none         cterm=bold
+hi mkdListItem                        ctermfg=red              ctermbg=none         cterm=bold
