@@ -92,3 +92,4 @@ hi makeTarget                         ctermfg=27               ctermbg=none     
 hi mkdInlineURL                       ctermfg=blue             ctermbg=none         cterm=bold
 hi mkdLink                            ctermfg=blue             ctermbg=none         cterm=bold
 hi mkdListItem                        ctermfg=red              ctermbg=none         cterm=bold
+hi vimInsert                          ctermfg=black            ctermbg=none         cterm=bold
