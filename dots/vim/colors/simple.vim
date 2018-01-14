@@ -79,17 +79,26 @@ hi NERDTreeOpenable                                            ctermfg=236
 hi NERDTreeExecFile                   ctermbg=white            ctermfg=black
 
 " Overrides
+hi link cssAttributeSelector                                   cssTagName
+hi link cssClassName                                           cssTagName
+hi link cssIdentifier                                          cssTagName
+hi link cssPseudoClassId                                       cssTagName
+hi link cssSelectorOp                                          cssTagName
+hi link cssTagName                                             makeTarget
+hi link cssVendor                                              cssTagName
 hi link goSpecialString                                        SpecialChar
+hi link mkdLink                                                htmlLink
 hi link typescriptEndColons                                    typescriptOpSymbols
 hi link typescriptExceptions                                   Exception
 hi link typescriptInterpolation                                SpecialChar
 hi link typescriptInterpolationDelimiter                       SpecialChar
 hi link typescriptSpecial                                      SpecialChar
 
+hi cssInclude                         ctermfg=black            ctermbg=none         cterm=none
 hi htmlH2                             ctermfg=black            ctermbg=none         cterm=bold
 hi htmlItalic                         ctermfg=none             ctermbg=none         cterm=none
+hi htmlLink                           ctermfg=blue             ctermbg=none         cterm=bold
 hi makeTarget                         ctermfg=27               ctermbg=none         cterm=bold
 hi mkdInlineURL                       ctermfg=blue             ctermbg=none         cterm=bold
-hi mkdLink                            ctermfg=blue             ctermbg=none         cterm=bold
 hi mkdListItem                        ctermfg=red              ctermbg=none         cterm=bold
 hi vimInsert                          ctermfg=black            ctermbg=none         cterm=bold
