@@ -183,7 +183,7 @@ inoremap jw <Esc>:w<CR>
 " colon, semi-colon switch
 nnoremap ; :<C-F>i
 
-nnoremap <leader>w :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <leader>w :call StripTrailingWhitespaces()<CR>
 nnoremap <leader>c :Copy<CR><CR>
 nnoremap <leader><S-c> :CopyFilename<CR><CR>
 
@@ -322,26 +322,9 @@ syntax keyword sqlType max
 syntax keyword sqlType min
 syntax keyword sqlType sum
 
-hi ExtraWhitespace             ctermfg=161
-match ExtraWhitespace /\s\+\%#\@<!$/
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FUNCTIONS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line('.')
-    let c = col('.')
-
-    " Work: match extra whitespace
-    %s/\s\+$//e
-
-    " Cleanup: restore previous search history and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-
 function! ShowColors()
     let num = 255
 
