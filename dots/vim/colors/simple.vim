@@ -93,6 +93,7 @@ hi link typescriptExceptions                                   Exception
 hi link typescriptInterpolation                                SpecialChar
 hi link typescriptInterpolationDelimiter                       SpecialChar
 hi link typescriptSpecial                                      SpecialChar
+hi link htmlSpecialChar                                        SpecialChar
 
 hi cssInclude                         ctermfg=black            ctermbg=none         cterm=none
 hi htmlH2                             ctermfg=black            ctermbg=none         cterm=bold
