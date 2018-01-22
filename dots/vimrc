@@ -91,6 +91,7 @@ let NERDTreeCascadeOpenSingleChildDir = 1
 let NERDTreeCaseSensitiveSort = 1
 let NERDTreeIgnore = ['\.swp$', '\~$', '.git', '.sass-cache', '.scaffold', '.class']
 let NERDTreeShowHidden = 0
+let NERDTreeMinimalUI = 1
 
 let g:calendar_google_calendar = 1
 let g:ctrlp_max_height = 30

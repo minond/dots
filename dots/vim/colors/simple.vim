@@ -38,28 +38,26 @@ hi DiffChange                         ctermbg=none             ctermfg=203      
 hi DiffDelete                         ctermbg=none             ctermfg=124          cterm=none
 hi DiffText                           ctermbg=none             ctermfg=203          cterm=none
 
-" Code : color 1
+" Code
+hi Conditional                        ctermbg=none             ctermfg=black
+hi Constant                           ctermbg=none             ctermfg=black
 hi Delimiter                          ctermbg=none             ctermfg=black
+hi Exception                          ctermbg=none             ctermfg=black
 hi Function                           ctermbg=none             ctermfg=black
 hi Identifier                         ctermbg=none             ctermfg=black
+hi Include                            ctermbg=none             ctermfg=black        cterm=bold
+hi Keyword                            ctermbg=none             ctermfg=black
+hi Label                              ctermbg=none             ctermfg=black
 hi Operator                           ctermbg=none             ctermfg=black
+hi PreProc                            ctermbg=none             ctermfg=black        cterm=bold
 hi Special                            ctermbg=none             ctermfg=black
 hi SpecialKey                         ctermbg=none             ctermfg=black
 hi Statement                          ctermbg=none             ctermfg=black
+hi Statement                          ctermbg=none             ctermfg=black
+hi StorageClass                       ctermbg=none             ctermfg=black
+hi Structure                          ctermbg=none             ctermfg=black
 hi Title                              ctermbg=none             ctermfg=black
-
-" Code : color 2
-hi Conditional                        ctermbg=none             ctermfg=236
-hi Constant                           ctermbg=none             ctermfg=236
-hi Exception                          ctermbg=none             ctermfg=236
-hi Include                            ctermbg=none             ctermfg=236          cterm=bold
-hi Keyword                            ctermbg=none             ctermfg=236
-hi Label                              ctermbg=none             ctermfg=236
-hi PreProc                            ctermbg=none             ctermfg=236          cterm=bold
-hi Statement                          ctermbg=none             ctermfg=236
-hi StorageClass                       ctermbg=none             ctermfg=236
-hi Structure                          ctermbg=none             ctermfg=236
-hi Type                               ctermbg=none             ctermfg=236
+hi Type                               ctermbg=none             ctermfg=black
 
 " Code : highlights
 hi Todo                               ctermbg=none             ctermfg=red
@@ -82,12 +80,12 @@ hi SpecialChar                        ctermbg=none             ctermfg=26       
 hi GitGutterAddDefault                ctermbg=none             ctermfg=43
 hi GitGutterChangeDefault             ctermbg=none             ctermfg=26
 hi GitGutterDeleteDefault             ctermbg=none             ctermfg=red
-hi NERDTreeClosable                                            ctermfg=236
+hi NERDTreeClosable                                            ctermfg=black
 hi NERDTreeDir                                                 ctermfg=240
 hi NERDTreeDirSlash                                            ctermfg=252
 hi NERDTreeExecFile                                            ctermfg=none
 hi NERDTreeExecFile                   ctermbg=white            ctermfg=black
-hi NERDTreeOpenable                                            ctermfg=236
+hi NERDTreeOpenable                                            ctermfg=black
 
 " Overrides
 hi cssInclude                         ctermfg=black            ctermbg=none         cterm=none
