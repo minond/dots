@@ -171,6 +171,7 @@ map <S-Tab> <C-w><S-w>
 map <leader>g :GitGutter<CR>
 map <leader>p :set paste!<CR>
 map <leader>r :w<CR>:Run<CR>
+map <leader>= <C-w><S-_><C-w><S-\|>
 map <leader>h :if exists('g:syntax_on') <Bar>
     \ syntax off <Bar>
     \ else <Bar>
