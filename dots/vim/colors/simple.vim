@@ -10,112 +10,124 @@
 set background=light
 syntax reset
 
+fun <SID>X(group, fg, bg, attr)
+  if a:fg != ""
+    exec "hi " . a:group . " guifg=" . a:fg . " ctermfg=" . a:fg
+  endif
+  if a:bg != ""
+    exec "hi " . a:group . " guibg=" . a:bg . " ctermbg=" . a:bg
+  endif
+  if a:attr != ""
+    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
+  endif
+endfun
+
 " Global
-hi NonText                            ctermbg=none             ctermfg=243
-hi Normal                             ctermbg=none             ctermfg=black
+call <SID>X("NonText", "243", "none", "")
+call <SID>X("Normal", "black", "none", "")
 
 " Search
-hi IncSearch                          ctermbg=blue             ctermfg=white
-hi Search                             ctermbg=blue             ctermfg=white
+call <SID>X("IncSearch", "white", "blue", "")
+call <SID>X("Search", "white", "blue", "")
 
 " Interface
-hi ColorColumn                        ctermbg=none             ctermfg=none         cterm=underline
-hi CursorColumn                       ctermbg=229              ctermfg=none         cterm=none
-hi CursorLine                         ctermbg=229              ctermfg=none         cterm=none
-hi LineNr                             ctermbg=none             ctermfg=248
-hi MatchParen                         ctermbg=243              ctermfg=white
-hi Pmenu                              ctermbg=black            ctermfg=white
-hi SignColumn                         ctermbg=none             ctermfg=black
-hi StatusLine                         ctermfg=white            ctermbg=33           cterm=bold
-hi StatusLineNC                       ctermfg=black            ctermbg=251          cterm=bold
-hi VertSplit                          ctermbg=248              ctermfg=white
-hi Visual                             ctermbg=229              ctermfg=none         cterm=none
-hi WildMenu                           ctermbg=none             ctermfg=black
+call <SID>X("ColorColumn", "none", "none", "underline")
+call <SID>X("CursorColumn", "none", "229", "none")
+call <SID>X("CursorLine", "none", "229", "none")
+call <SID>X("LineNr", "248", "none", "")
+call <SID>X("MatchParen", "white", "243", "")
+call <SID>X("Pmenu", "white", "black", "")
+call <SID>X("SignColumn", "black", "none", "")
+call <SID>X("StatusLine", "white", "33", "bold")
+call <SID>X("StatusLineNC", "black", "251", "bold")
+call <SID>X("VertSplit", "white", "248", "")
+call <SID>X("Visual", "none", "229", "none")
+call <SID>X("WildMenu", "black", "none", "")
 
 " Diff
-hi DiffAdd                            ctermbg=none             ctermfg=37           cterm=none
-hi DiffChange                         ctermbg=none             ctermfg=203          cterm=none
-hi DiffDelete                         ctermbg=none             ctermfg=124          cterm=none
-hi DiffText                           ctermbg=none             ctermfg=203          cterm=none
+call <SID>X("DiffAdd", "37", "none", "none")
+call <SID>X("DiffChange", "203", "none", "none")
+call <SID>X("DiffDelete", "124", "none", "none")
+call <SID>X("DiffText", "203", "none", "none")
 
 " Code
-hi Conditional                        ctermbg=none             ctermfg=black
-hi Constant                           ctermbg=none             ctermfg=black
-hi Delimiter                          ctermbg=none             ctermfg=black
-hi Exception                          ctermbg=none             ctermfg=black
-hi Function                           ctermbg=none             ctermfg=black
-hi Identifier                         ctermbg=none             ctermfg=black
-hi Include                            ctermbg=none             ctermfg=black        cterm=bold
-hi Keyword                            ctermbg=none             ctermfg=black
-hi Label                              ctermbg=none             ctermfg=black
-hi Operator                           ctermbg=none             ctermfg=black
-hi PreProc                            ctermbg=none             ctermfg=black        cterm=bold
-hi Special                            ctermbg=none             ctermfg=black
-hi SpecialKey                         ctermbg=none             ctermfg=black
-hi Statement                          ctermbg=none             ctermfg=black
-hi Statement                          ctermbg=none             ctermfg=black
-hi StorageClass                       ctermbg=none             ctermfg=black
-hi Structure                          ctermbg=none             ctermfg=black
-hi Title                              ctermbg=none             ctermfg=black
-hi Type                               ctermbg=none             ctermfg=black
+call <SID>X("Conditional", "black", "none", "")
+call <SID>X("Constant", "black", "none", "")
+call <SID>X("Delimiter", "black", "none", "")
+call <SID>X("Exception", "black", "none", "")
+call <SID>X("Function", "black", "none", "")
+call <SID>X("Identifier", "black", "none", "")
+call <SID>X("Include", "black", "none", "bold")
+call <SID>X("Keyword", "black", "none", "")
+call <SID>X("Label", "black", "none", "")
+call <SID>X("Operator", "black", "none", "")
+call <SID>X("PreProc", "black", "none", "bold")
+call <SID>X("Special", "black", "none", "")
+call <SID>X("SpecialKey", "black", "none", "")
+call <SID>X("Statement", "black", "none", "")
+call <SID>X("StorageClass", "black", "none", "")
+call <SID>X("Structure", "black", "none", "")
+call <SID>X("Title", "black", "none", "")
+call <SID>X("Type", "black", "none", "")
 
 " Code : highlights
-hi Todo                               ctermbg=none             ctermfg=red
-hi Error                              ctermbg=none             ctermfg=red
+call <SID>X("Error", "red", "none", "")
+call <SID>X("Todo", "red", "none", "")
 
 " Code : comments
-hi Comment                            ctermbg=none             ctermfg=248
-hi SpecialComment                     ctermbg=none             ctermfg=248          cterm=bold
+call <SID>X("Comment", "248", "none", "")
+call <SID>X("SpecialComment", "248", "none", "bold")
 
 " Code : primitives
-hi Boolean                            ctermbg=none             ctermfg=21
-hi Number                             ctermbg=none             ctermfg=21
+call <SID>X("Boolean", "21", "none", "")
+call <SID>X("Number", "21", "none", "")
 
 " Code : user types
-hi String                             ctermbg=none             ctermfg=26
-hi Character                          ctermbg=none             ctermfg=26
-hi SpecialChar                        ctermbg=none             ctermfg=26           cterm=bold
+call <SID>X("Character", "26", "none", "")
+call <SID>X("SpecialChar", "26", "none", "bold")
+call <SID>X("String", "26", "none", "")
 
 " Plugins
-hi GitGutterAddDefault                ctermbg=none             ctermfg=43
-hi GitGutterChangeDefault             ctermbg=none             ctermfg=26
-hi GitGutterDeleteDefault             ctermbg=none             ctermfg=red
-hi NERDTreeClosable                                            ctermfg=black
-hi NERDTreeDir                                                 ctermfg=240
-hi NERDTreeDirSlash                                            ctermfg=252
-hi NERDTreeExecFile                                            ctermfg=none
-hi NERDTreeExecFile                   ctermbg=white            ctermfg=black
-hi NERDTreeOpenable                                            ctermfg=black
+call <SID>X("GitGutterAddDefault", "43", "none", "")
+call <SID>X("GitGutterChangeDefault", "26", "none", "")
+call <SID>X("GitGutterDeleteDefault", "red", "none", "")
+call <SID>X("NERDTreeClosable", "black", "", "")
+call <SID>X("NERDTreeDir", "240", "", "")
+call <SID>X("NERDTreeDirSlash", "252", "", "")
+call <SID>X("NERDTreeExecFile", "black", "white", "")
+call <SID>X("NERDTreeOpenable", "black", "", "")
 
 " Overrides
-hi cssInclude                         ctermfg=black            ctermbg=none         cterm=none
-hi htmlH1                             ctermfg=26               ctermbg=none         cterm=bold
-hi htmlItalic                         ctermfg=none             ctermbg=none         cterm=none
-hi htmlLink                           ctermfg=blue             ctermbg=none         cterm=bold
-hi makeTarget                         ctermfg=26               ctermbg=none         cterm=bold
-hi mkdInlineURL                       ctermfg=blue             ctermbg=none         cterm=bold
-hi mkdListItem                        ctermfg=red              ctermbg=none         cterm=bold
-hi vimInsert                          ctermfg=black            ctermbg=none         cterm=bold
+call <SID>X("cssInclude", "black", "none", "none")
+call <SID>X("htmlH1", "26", "none", "bold")
+call <SID>X("htmlItalic", "none", "none", "none")
+call <SID>X("htmlLink", "blue", "none", "bold")
+call <SID>X("makeTarget", "26", "none", "bold")
+call <SID>X("mkdInlineURL", "blue", "none", "bold")
+call <SID>X("mkdListItem", "red", "none", "bold")
+call <SID>X("vimInsert", "black", "none", "bold")
 
 " Overrides : re-linking
-hi link cssAttributeSelector                                   cssTagName
-hi link cssClassName                                           cssTagName
-hi link cssIdentifier                                          cssTagName
-hi link cssPseudoClassId                                       cssTagName
-hi link cssSelectorOp                                          cssTagName
-hi link cssTagName                                             makeTarget
-hi link cssVendor                                              cssTagName
-hi link goSpecialString                                        SpecialChar
-hi link htmlH2                                                 htmlH1
-hi link htmlH3                                                 htmlH1
-hi link htmlH4                                                 htmlH1
-hi link htmlH5                                                 htmlH1
-hi link htmlH5                                                 htmlH1
-hi link htmlSpecialChar                                        SpecialChar
-hi link makeCommands                                           none
-hi link mkdLink                                                htmlLink
-hi link typescriptEndColons                                    typescriptOpSymbols
-hi link typescriptExceptions                                   Exception
-hi link typescriptInterpolation                                SpecialChar
-hi link typescriptInterpolationDelimiter                       SpecialChar
-hi link typescriptSpecial                                      SpecialChar
+hi link cssAttributeSelector              cssTagName
+hi link cssClassName                      cssTagName
+hi link cssIdentifier                     cssTagName
+hi link cssPseudoClassId                  cssTagName
+hi link cssSelectorOp                     cssTagName
+hi link cssTagName                        makeTarget
+hi link cssVendor                         cssTagName
+hi link goSpecialString                   SpecialChar
+hi link htmlH2                            htmlH1
+hi link htmlH3                            htmlH1
+hi link htmlH4                            htmlH1
+hi link htmlH5                            htmlH1
+hi link htmlH5                            htmlH1
+hi link htmlSpecialChar                   SpecialChar
+hi link makeCommands                      none
+hi link mkdLink                           htmlLink
+hi link typescriptEndColons               typescriptOpSymbols
+hi link typescriptExceptions              Exception
+hi link typescriptInterpolation           SpecialChar
+hi link typescriptInterpolationDelimiter  SpecialChar
+hi link typescriptSpecial                 SpecialChar
+
+delf <SID>X
