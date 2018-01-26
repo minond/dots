@@ -45,6 +45,43 @@ function weather {
     curl "wttr.in/$1"
 }
 
+#=== FUNCTION =================================================================
+#        NAME: run
+# DESCRIPTION: Should do whatever needed in order to execute a given file.
+# PARAMETER 1: Any file name with an extension.
+#==============================================================================
+function run {
+  if [ -z "$1" ]; then
+    echo "Usage: cr <filename>"
+    return 1
+  elif [ ! -f "$1" ]; then
+    echo "Could not find `$1` file."
+    echo "Usage: cr <filename>"
+    return 1
+  fi
+
+  local file=$(basename "$1")
+  local type="${file##*.}"
+  local name="${file%.*}"
+
+  case "$type" in
+    java)
+      javac $file
+      java $name
+      ;;
+
+    *)
+      echo "Unknown extension `$type`."
+      echo "Dumping name extract:"
+      echo
+      echo " - file: $file"
+      echo " - type: $type"
+      echo " - name: $name"
+      return 1
+      ;;
+  esac
+}
+
 ###############################################################################
 # $PROMPT
 ###############################################################################
