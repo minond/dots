@@ -99,7 +99,7 @@ call <SID>X("NERDTreeOpenable", "black", "", "")
 
 " Overrides
 call <SID>X("cssInclude", "black", "none", "none")
-call <SID>X("htmlH1", "26", "none", "bold")
+call <SID>X("htmlH1", "black", "none", "bold")
 call <SID>X("htmlItalic", "none", "none", "none")
 call <SID>X("htmlLink", "blue", "none", "bold")
 call <SID>X("makeTarget", "26", "none", "bold")

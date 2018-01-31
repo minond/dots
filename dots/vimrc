@@ -138,6 +138,7 @@ au BufNewFile,BufRead *.pl          setlocal ft=prolog
 au BufNewFile,BufRead *.g4          setlocal ft=antlr4
 au BufNewFile,BufRead *.js          setlocal ft=typescript
 au BufNewFile,BufRead *.pasm,*.pir  setlocal ft=parrot
+au BufNewFile,BufRead README,*.txt  setlocal ft=markdown
 au FileType pir                     setlocal ft=parrot
 
 " spaces instead of tabs on everything but make files
