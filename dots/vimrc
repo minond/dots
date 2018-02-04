@@ -135,6 +135,7 @@ call tcomment#DefineType('d', '// %s')
 
 au BufNewFile,BufRead *.html        setlocal ft=htmljinja
 au BufNewFile,BufRead *.pl          setlocal ft=prolog
+au BufNewFile,BufRead *.tst,*.hdl   setlocal ft=c
 au BufNewFile,BufRead *.g4          setlocal ft=antlr4
 au BufNewFile,BufRead *.js          setlocal ft=typescript
 au BufNewFile,BufRead *.pasm,*.pir  setlocal ft=parrot
