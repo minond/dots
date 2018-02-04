@@ -105,7 +105,7 @@ call <SID>X("htmlItalic", "none", "none", "none")
 call <SID>X("htmlLink", s:colURL, "none", "bold")
 call <SID>X("makeTarget", s:colScalar, "none", "bold")
 call <SID>X("mkdInlineURL", s:colURL, "none", "bold")
-call <SID>X("mkdListItem", "red", "none", "bold")
+call <SID>X("mkdListItem", s:colError, "none", "bold")
 call <SID>X("vimInsert", "black", "none", "bold")
 
 " Overrides : re-linking
@@ -124,7 +124,9 @@ hi link htmlH5                            htmlH1
 hi link htmlH5                            htmlH1
 hi link htmlSpecialChar                   SpecialChar
 hi link makeCommands                      none
+hi link mkdCode                           SpecialChar
 hi link mkdLink                           htmlLink
+hi link mkdSnippetEBNF                    mkdCode
 hi link typescriptEndColons               typescriptOpSymbols
 hi link typescriptExceptions              Exception
 hi link typescriptInterpolation           SpecialChar
