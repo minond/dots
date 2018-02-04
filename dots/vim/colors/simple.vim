@@ -8,8 +8,7 @@ syntax reset
 let s:colBackground = "248"
 let s:colError = "196"
 let s:colLine = "230"
-let s:colScalar = "21"
-let s:colString = "26"
+let s:colScalar = "27"
 let s:colURL = "blue"
 
 fun <SID>X(group, fg, bg, attr)
@@ -85,13 +84,13 @@ call <SID>X("Boolean", s:colScalar, "none", "")
 call <SID>X("Number", s:colScalar, "none", "")
 
 " Code : user types
-call <SID>X("Character", s:colString, "none", "")
-call <SID>X("SpecialChar", s:colString, "none", "bold")
-call <SID>X("String", s:colString, "none", "")
+call <SID>X("Character", s:colScalar, "none", "")
+call <SID>X("SpecialChar", s:colScalar, "none", "bold")
+call <SID>X("String", s:colScalar, "none", "")
 
 " Plugins
 call <SID>X("GitGutterAddDefault", "70", "none", "")
-call <SID>X("GitGutterChangeDefault", s:colString, "none", "")
+call <SID>X("GitGutterChangeDefault", s:colScalar, "none", "")
 call <SID>X("GitGutterDeleteDefault", s:colError, "none", "")
 call <SID>X("NERDTreeClosable", "black", "", "")
 call <SID>X("NERDTreeDir", "240", "", "")
@@ -104,7 +103,7 @@ call <SID>X("cssInclude", "black", "none", "none")
 call <SID>X("htmlH1", "black", "none", "bold")
 call <SID>X("htmlItalic", "none", "none", "none")
 call <SID>X("htmlLink", s:colURL, "none", "bold")
-call <SID>X("makeTarget", s:colString, "none", "bold")
+call <SID>X("makeTarget", s:colScalar, "none", "bold")
 call <SID>X("mkdInlineURL", s:colURL, "none", "bold")
 call <SID>X("mkdListItem", "red", "none", "bold")
 call <SID>X("vimInsert", "black", "none", "bold")
