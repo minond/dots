@@ -1,14 +1,16 @@
-" Changelog:
-" - 33  -> 236
-" - 90  -> 240
-" - 240 -> 242
-" - 242 -> 19
-" - 19  -> 27
-" - 27  -> 26
-" - 17  -> 21
+" Vim color file
+" Maintainer: Marcos Minond
+" Last Change: 2018-02-04
 
 set background=light
 syntax reset
+
+let s:colBackground = "248"
+let s:colError = "196"
+let s:colLine = "230"
+let s:colScalar = "21"
+let s:colString = "26"
+let s:colURL = "blue"
 
 fun <SID>X(group, fg, bg, attr)
   if a:fg != ""
@@ -27,21 +29,21 @@ call <SID>X("NonText", "243", "none", "")
 call <SID>X("Normal", "black", "none", "")
 
 " Search
-call <SID>X("IncSearch", "white", "blue", "")
-call <SID>X("Search", "white", "blue", "")
+call <SID>X("IncSearch", "black", "226", "bold")
+call <SID>X("Search", "black", "226", "bold")
 
 " Interface
 call <SID>X("ColorColumn", "none", "none", "underline")
-call <SID>X("CursorColumn", "none", "229", "none")
-call <SID>X("CursorLine", "none", "229", "none")
-call <SID>X("LineNr", "248", "none", "")
-call <SID>X("MatchParen", "white", "243", "")
+call <SID>X("CursorColumn", "none", s:colLine, "none")
+call <SID>X("CursorLine", "none", s:colLine, "none")
+call <SID>X("LineNr", s:colBackground, "none", "")
+call <SID>X("MatchParen", "black", "251", "")
 call <SID>X("Pmenu", "white", "black", "")
 call <SID>X("SignColumn", "black", "none", "")
 call <SID>X("StatusLine", "white", "33", "bold")
 call <SID>X("StatusLineNC", "black", "251", "bold")
-call <SID>X("VertSplit", "white", "248", "")
-call <SID>X("Visual", "none", "229", "none")
+call <SID>X("VertSplit", "white", s:colBackground, "")
+call <SID>X("Visual", "none", s:colLine, "none")
 call <SID>X("WildMenu", "black", "none", "")
 
 " Diff
@@ -71,26 +73,26 @@ call <SID>X("Title", "black", "none", "")
 call <SID>X("Type", "black", "none", "")
 
 " Code : highlights
-call <SID>X("Error", "red", "none", "")
-call <SID>X("Todo", "red", "none", "")
+call <SID>X("Error", s:colError, "none", "")
+call <SID>X("Todo", s:colError, "none", "")
 
 " Code : comments
-call <SID>X("Comment", "248", "none", "")
-call <SID>X("SpecialComment", "248", "none", "bold")
+call <SID>X("Comment", s:colBackground, "none", "")
+call <SID>X("SpecialComment", s:colBackground, "none", "bold")
 
 " Code : primitives
-call <SID>X("Boolean", "21", "none", "")
-call <SID>X("Number", "21", "none", "")
+call <SID>X("Boolean", s:colScalar, "none", "")
+call <SID>X("Number", s:colScalar, "none", "")
 
 " Code : user types
-call <SID>X("Character", "26", "none", "")
-call <SID>X("SpecialChar", "26", "none", "bold")
-call <SID>X("String", "26", "none", "")
+call <SID>X("Character", s:colString, "none", "")
+call <SID>X("SpecialChar", s:colString, "none", "bold")
+call <SID>X("String", s:colString, "none", "")
 
 " Plugins
-call <SID>X("GitGutterAddDefault", "43", "none", "")
-call <SID>X("GitGutterChangeDefault", "26", "none", "")
-call <SID>X("GitGutterDeleteDefault", "red", "none", "")
+call <SID>X("GitGutterAddDefault", "70", "none", "")
+call <SID>X("GitGutterChangeDefault", s:colString, "none", "")
+call <SID>X("GitGutterDeleteDefault", s:colError, "none", "")
 call <SID>X("NERDTreeClosable", "black", "", "")
 call <SID>X("NERDTreeDir", "240", "", "")
 call <SID>X("NERDTreeDirSlash", "252", "", "")
@@ -101,9 +103,9 @@ call <SID>X("NERDTreeOpenable", "black", "", "")
 call <SID>X("cssInclude", "black", "none", "none")
 call <SID>X("htmlH1", "black", "none", "bold")
 call <SID>X("htmlItalic", "none", "none", "none")
-call <SID>X("htmlLink", "blue", "none", "bold")
-call <SID>X("makeTarget", "26", "none", "bold")
-call <SID>X("mkdInlineURL", "blue", "none", "bold")
+call <SID>X("htmlLink", s:colURL, "none", "bold")
+call <SID>X("makeTarget", s:colString, "none", "bold")
+call <SID>X("mkdInlineURL", s:colURL, "none", "bold")
 call <SID>X("mkdListItem", "red", "none", "bold")
 call <SID>X("vimInsert", "black", "none", "bold")
 
