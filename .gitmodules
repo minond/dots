@@ -136,3 +136,6 @@
 [submodule "dots/vim/bundle/vim-serv"]
 	path = dots/vim/bundle/vim-serv
 	url = https://github.com/minond/vim-serv.git
+[submodule "dots/vim/bundle/vim-simple"]
+	path = dots/vim/bundle/vim-simple
+	url = https://github.com/minond/vim-simple.git
