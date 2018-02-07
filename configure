@@ -34,11 +34,17 @@ link() {
 # DESCRIPTION: prints help output
 #==============================================================================
 usage() {
-    echo "Options:"
+    echo "USAGE: ./configuration <flag|tool>"
+    echo
+    echo "  Flags:"
+    echo "  --help: view this help text"
+    echo "  --update: update dependencies (like Vim plugins)"
+    echo
+    echo "  Tools:"
 
     for option in git vim ctags tmux screen bash
     do
-        echo " - $option"
+        echo "  * $option"
     done
 }
 
@@ -76,6 +82,20 @@ do
 
         bash)
             link ~/.bashrc "$dots/bashrc"
+            ;;
+
+        -u|--update)
+            for p in dots/vim/bundle/*;
+            do
+              pushd "$p" &> /dev/null
+              echo "updating $p..."
+              git pull --rebase origin master &> /dev/null &
+              popd &> /dev/null
+            done
+
+            wait
+            echo "done updating $(echo $(wc -w <<< "$(ls ./dots/vim/bundle/)")) packages"
+
             ;;
 
         -h|--help)
