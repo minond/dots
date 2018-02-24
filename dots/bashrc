@@ -70,8 +70,17 @@ function run {
       java $name
       ;;
 
+    pde)
+      local sketch=$(pwd)
+      local name=$(basename $sketch)
+      local output="/tmp/processing-java/$name"
+      echo "Running sketch located in $sketch"
+      echo "Seting output to $output"
+      processing-java --sketch="$sketch" --output="$output" --force --run &
+      ;;
+
     *)
-      echo "Unknown extension `$type`."
+      echo "Unknown extension '$type'."
       echo "Dumping name extract:"
       echo
       echo " - file: $file"
