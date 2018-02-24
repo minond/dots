@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eo pipefail
+
 dots=$(pwd)/dots
 
 #=== FUNCTION =================================================================
@@ -34,18 +36,30 @@ link() {
 # DESCRIPTION: prints help output
 #==============================================================================
 usage() {
-    echo "USAGE: ./configuration <flag|tool>"
+    echo "Usage: ./configuration <flag|command|tool>"
     echo
     echo "  Flags:"
-    echo "  --help: view this help text"
-    echo "  --update: update dependencies (like Vim plugins)"
+    echo "  --help, -h                # View this help text"
+    echo "  --update, -u              # Update dependencies (like Vim plugins)"
     echo
-    echo "  Tools:"
+    echo "  Commands:"
+    echo "  install, i                # Install a git submodule as a Pathogen plugin"
+    echo
+    echo -n "  Tools:                    # "
 
+    local i=0
     for option in git vim ctags tmux screen bash
     do
-        echo "  * $option"
+        i=$((i+1))
+
+        if [[ "$i" != "1" ]]; then
+          echo -n ", "
+        fi
+
+        echo -n "$option"
     done
+
+    echo
 }
 
 #=== MAIN =====================================================================
@@ -84,22 +98,48 @@ do
             link ~/.bashrc "$dots/bashrc"
             ;;
 
+        i|install)
+            url="$2"
+            dir="$3"
+
+            if [ -z "$dir" ]; then
+                dir=$(echo $2 | iconv -t ascii//TRANSLIT | sed -E s/[^a-zA-Z0-9]+/-/g | sed -E s/^-+\|-+$//g | tr A-Z a-z)
+            fi
+
+            if [[ "$dir" != dots* ]]; then
+                dir="dots/vim/bundle/$dir"
+            fi
+
+            echo -n "I'm going to install $url at $dir, is this ok? [y/n] "
+            read ans
+
+            if [ "$ans" == "y" ]; then
+                git submodule add "$url" "$dir"
+            else
+                echo "Bailing out"
+            fi
+
+            exit 0
+            ;;
+
         -u|--update)
             for p in dots/vim/bundle/*;
             do
-              pushd "$p" &> /dev/null
-              echo "updating $p..."
-              git pull --rebase origin master &> /dev/null &
-              popd &> /dev/null
+                pushd "$p" &> /dev/null
+                echo "updating $p..."
+                git pull --rebase origin master &> /dev/null &
+                popd &> /dev/null
             done
 
             wait
             echo "done updating $(echo $(wc -w <<< "$(ls ./dots/vim/bundle/)")) packages"
+            exit 0
 
             ;;
 
         -h|--help)
             usage
+            exit 0
             ;;
 
         *)
