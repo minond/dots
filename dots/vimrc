@@ -352,3 +352,7 @@ function! SetTabWidth(width)
         setlocal tabstop=4
     endif
 endfunction
+
+function! ProcessingMode()
+  map <leader>r :w<CR>:RunProcessing<CR>
+endfunction
