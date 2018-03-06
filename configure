@@ -11,7 +11,9 @@ dots=$(pwd)/dots
 #==============================================================================
 backup() {
     local fname=$1
-    [ -e "$fname" ] && mv "$fname" "$fname.bak"
+    if [ -e "$fname" ]; then
+        mv "$fname" "$fname.bak"
+    fi
 }
 
 #=== FUNCTION =================================================================
@@ -25,7 +27,9 @@ link() {
     local src=$2
 
     backup "$dest"
-    [ -h "$dest" ] && rm "$dest"
+    if [ -h "$dest" ]; then
+        rm "$dest"
+    fi
 
     echo "linking $src with $dest"
     ln -s "$src" "$dest"
@@ -78,6 +82,7 @@ do
 
         vim)
             git submodule update --init
+            link ~/.gvimrc "$dots/gvimrc"
             link ~/.vimrc "$dots/vimrc"
             link ~/.vim "$dots/vim"
             ;;
