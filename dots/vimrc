@@ -313,7 +313,10 @@ command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; cle
 " http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
-colo simple
+
+if ! has("gui_running")
+  colo simple
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SYNTAX
