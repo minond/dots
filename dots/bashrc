@@ -213,6 +213,10 @@ export PERL_LOCAL_LIB_ROOT=/home/marcos/perl5
 export PERL_MB_OPT="--install_base /home/marcos/perl5"
 export PERL_MM_OPT="INSTALL_BASE=/home/marcos/perl5"
 
+export LUA_ROCKS="$HOME/.luarocks"
+export LUA_CPATH="$LUA_ROCKS/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/loadall.so;./?.so"
+export LUA_PATH="$LUA_ROCKS/share/lua/5.3/?.lua;$LUA_ROCKS/share/lua/5.3/?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua;/usr/local/Cellar/lua/5.3.4_2/libexec/share/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua"
+
 export HDF5_DIR=/usr/local/hdf5/
 
 ###############################################################################
