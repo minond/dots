@@ -136,3 +136,6 @@
 [submodule "dots/vim/bundle/vim-processing"]
 	path = dots/vim/bundle/vim-processing
 	url = https://github.com/sophacles/vim-processing.git
+[submodule "dots/vim/bundle/vim-autoformat"]
+	path = dots/vim/bundle/vim-autoformat
+	url = https://github.com/Chiel92/vim-autoformat.git
