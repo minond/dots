@@ -36,6 +36,221 @@ function path! {
     [ -d "$1" ] && export PATH="$PATH:$1"
 }
 
+###############################################################################
+# $PROMPT
+###############################################################################
+
+COL_ERR=$(tput setaf 9)
+COL_WHOAMI=$(tput setaf 214)
+COL_PWD=$(tput setaf 39)
+COL_JOBS=$(tput setaf 171)
+COL_RESET=$(tput sgr0)
+
+ps1_prompt_jobscount() {
+    local stopped=$(jobs -sp | wc -l | sed 's/ //g')
+    local running=$(jobs -rp | wc -l | sed 's/ //g')
+    ((running+stopped)) && echo -n "(${running}r/${stopped}s) "
+}
+
+ps1_nice_exit_code() {
+    local last_exit="$?"
+
+    # 0   ok
+    # 130 manually cancelled (ctrl-c)
+    # 146 sent process to background
+    # 146 (git?) less exit
+    if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
+        return
+    else
+        echo "$(tput setaf 9)! $(tput sgr0)"
+    fi
+}
+
+# export PS1='$(ps1_nice_exit_code)\
+# $(tput setaf 214)$(whoami)$(tput sgr0) \
+# $(tput setaf 39)\w$(tput sgr0) \
+# $(tput setaf 171)$(ps1_prompt_jobscount)$(tput sgr0)$ '
+
+export PS1='$(ps1_nice_exit_code)\
+$(tput setaf 214)$(whoami)$(tput sgr0) \
+$(tput setaf 39)\w$(tput sgr0) \
+$(tput setaf 171)$(ps1_prompt_jobscount)$(tput sgr0)\n$ '
+
+###############################################################################
+# $ENV SETTINGS
+###############################################################################
+
+export EDITOR=vim
+
+# don't put duplicate lines in the history. See bash(1) for more options or
+# force ignoredups and ignorespace. for setting history length see HISTSIZE and
+# HISTFILESIZE in bash(1)
+export HISTCONTROL=ignoredups:ignorespace
+export HISTSIZE=1000
+export HISTFILESIZE=2000
+
+# colored output on mac
+export CLICOLOR=1
+# http://geoff.greer.fm/lscolors/
+# export LSCOLORS='exfxcxdxbxegedabagacad'
+# export LS_COLORS='di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+export LSCOLORS=axBxhxDxfxhxhxhxhxcxcx
+export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
+
+###############################################################################
+# $TOOL SETTINGS
+###############################################################################
+
+export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
+export GHC_DOT_APP=/Applications/ghc-7.10.3.app
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+export GRADLE_HOME=$HOME/.sdkman/candidates/gradle/current
+export HDF5_DIR=/usr/local/hdf5/
+export LUA_CPATH="$HOME/.luarocks/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/loadall.so;./?.so"
+export LUA_PATH="$HOME/.luarocks/share/lua/5.3/?.lua;$HOME/.luarocks/share/lua/5.3/?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua;/usr/local/Cellar/lua/5.3.4_2/libexec/share/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua"
+export LUA_ROCKS=$HOME/.luarocks
+export MONO_IOMAP='case'
+export NODE_PATH=$HOME/.node
+export NVM_DIR=$HOME/.nvm
+export PERL5LIB=$PERL5LIB:/home/marcos/perl5/lib/perl5
+export PERL5LIB=/home/marcos/perl5/lib/perl5/i686-linux-gnu-thread-multi-64int
+export PERL_LOCAL_LIB_ROOT=/home/marcos/perl5
+export PERL_MB_OPT="--install_base /home/marcos/perl5"
+export PERL_MM_OPT="INSTALL_BASE=/home/marcos/perl5"
+export PGDATA=/usr/local/var/postgres
+export SDKMAN_DIR=$HOME/.sdkman
+export SMLNJ_HOME=/usr/local/smlnj
+
+###############################################################################
+# $SETTINGS
+###############################################################################
+
+# vi mode
+set -o vi
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" ||
+        eval "$(dircolors -b)"
+fi
+
+###############################################################################
+# $ALIASES
+###############################################################################
+
+# git aliases
+alias show='clear; git show'
+alias save='git stash save'
+alias pop='git stash pop'
+alias add='git add'
+alias addp='git add -p'
+alias d='clear; git diff --color=always'
+alias s='clear; git status'
+alias l='git l'
+alias c='cync'
+alias p='push'
+
+# colors!
+alias grep='grep -I --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias ll='ls -hlF --color'
+alias la='ls -hA  --color'
+
+alias ..='cd ..'
+alias cd..='cd ..'
+alias tmux='tmux -2'
+alias copy='pbcopy'
+alias dm='eval $(docker-machine env default)'
+alias gw="./gradlew"
+alias ipr="open *.ipr"
+alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
+alias unswp='find . | grep swp | xargs rm'
+alias code='iam marcos; cd $HOME/code/github.com/$GITHUB_USER/$2; tmux -2'
+alias marp='/Applications/Marp.app/Contents/MacOS/Marp'
+
+# Formatters
+#  - Java: https://github.com/google/google-java-format
+#  - JavaScript: https://github.com/prettier/prettier
+#  - C/C++: http://clang.llvm.org/docs/ClangFormat.html
+#  - D: https://github.com/dlang-community/dfmt
+alias javafmt='java -jar $HOME/.jars/google-java-format-1.5-all-deps.jar -r'
+alias jsfmt='prettier --no-semi --write'
+alias cfmt='clang-format -i -style Google'
+alias dfmt='dub run dfmt -- -i --brace_style=stroustrup --indent_size=2'
+
+###############################################################################
+# $FUNCTIONS
+###############################################################################
+
+server() {
+  local port=8000
+  [ ! -z "$1" ] && port="$1"
+  open http://localhost:$port
+  # v2
+  # python -m SimpleHTTPServer $port
+  # v3
+  python3 -m http.server $port
+}
+
+colors() {
+  for i in {0..255}; do
+      echo $(tput setaf $i)########################$(tput sgr0) - $i
+  done
+}
+
+cm() {
+  git commit -m "$*"
+}
+
+ca() {
+  local fm="$1"
+
+  if [ ! -f "$fm" ]; then
+    echo "$fm does not exist!"
+    return 1
+  fi
+
+  git add "$fm"
+  git commit -m "$fm" "$fm"
+}
+
+cync() {
+  git commit -am "$*"
+}
+
+gmove() {
+  local branch=$1
+  [ -z "$branch" ] && branch=master
+
+  echo "updating $branch"
+
+  git fetch --all
+  git fetch --prune
+  git checkout $branch
+  git pull --rebase origin $branch
+  git submodule update
+
+  echo "status $branch for"
+  git status
+}
+
+push() {
+  git push origin $(git b)
+}
+
 #=== FUNCTION =================================================================
 #        NAME: weather
 # DESCRIPTION: gets the weather
@@ -132,235 +347,6 @@ HTML
 }
 
 ###############################################################################
-# $PROMPT
-###############################################################################
-
-COL_ERR=$(tput setaf 9)
-COL_WHOAMI=$(tput setaf 214)
-COL_PWD=$(tput setaf 39)
-COL_JOBS=$(tput setaf 171)
-COL_RESET=$(tput sgr0)
-
-ps1_prompt_jobscount() {
-    local stopped=$(jobs -sp | wc -l | sed 's/ //g')
-    local running=$(jobs -rp | wc -l | sed 's/ //g')
-    ((running+stopped)) && echo -n "(${running}r/${stopped}s) "
-}
-
-ps1_nice_exit_code() {
-    local last_exit="$?"
-
-    # 0   ok
-    # 130 manually cancelled (ctrl-c)
-    # 146 sent process to background
-    # 146 (git?) less exit
-    if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
-        return
-    else
-        echo "$(tput setaf 9)! $(tput sgr0)"
-    fi
-}
-
-# export PS1='$(ps1_nice_exit_code)\
-# $(tput setaf 214)$(whoami)$(tput sgr0) \
-# $(tput setaf 39)\w$(tput sgr0) \
-# $(tput setaf 171)$(ps1_prompt_jobscount)$(tput sgr0)$ '
-
-export PS1='$(ps1_nice_exit_code)\
-$(tput setaf 214)$(whoami)$(tput sgr0) \
-$(tput setaf 39)\w$(tput sgr0) \
-$(tput setaf 171)$(ps1_prompt_jobscount)$(tput sgr0)\n$ '
-
-###############################################################################
-# $ENV SETTINGS
-###############################################################################
-
-export EDITOR=vim
-
-# don't put duplicate lines in the history. See bash(1) for more options or
-# force ignoredups and ignorespace. for setting history length see HISTSIZE and
-# HISTFILESIZE in bash(1)
-export HISTCONTROL=ignoredups:ignorespace
-export HISTSIZE=1000
-export HISTFILESIZE=2000
-
-# colored output on mac
-export CLICOLOR=1
-# http://geoff.greer.fm/lscolors/
-# export LSCOLORS='exfxcxdxbxegedabagacad'
-# export LS_COLORS='di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
-export LSCOLORS=axBxhxDxfxhxhxhxhxcxcx
-export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
-
-###############################################################################
-# $TOOL SETTINGS
-###############################################################################
-
-export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
-export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec
-export MONO_IOMAP='case'
-export NODE_PATH=$HOME/.node
-export NVM_DIR=$HOME/.nvm
-export PGDATA=/usr/local/var/postgres
-export GHC_DOT_APP=/Applications/ghc-7.10.3.app
-export SMLNJ_HOME=/usr/local/smlnj
-export SDKMAN_DIR=/Users/marcos/.sdkman
-
-export PERL5LIB=/home/marcos/perl5/lib/perl5/i686-linux-gnu-thread-multi-64int
-export PERL5LIB=$PERL5LIB:/home/marcos/perl5/lib/perl5
-export PERL_LOCAL_LIB_ROOT=/home/marcos/perl5
-export PERL_MB_OPT="--install_base /home/marcos/perl5"
-export PERL_MM_OPT="INSTALL_BASE=/home/marcos/perl5"
-
-export LUA_ROCKS="$HOME/.luarocks"
-export LUA_CPATH="$LUA_ROCKS/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/loadall.so;./?.so"
-export LUA_PATH="$LUA_ROCKS/share/lua/5.3/?.lua;$LUA_ROCKS/share/lua/5.3/?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua;/usr/local/Cellar/lua/5.3.4_2/libexec/share/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua"
-
-export HDF5_DIR=/usr/local/hdf5/
-
-###############################################################################
-# $SETTINGS
-###############################################################################
-
-# vi mode
-set -o vi
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" ||
-        eval "$(dircolors -b)"
-fi
-
-###############################################################################
-# $ALIASES
-###############################################################################
-
-# git aliases
-alias show='clear; git show'
-alias save='git stash save'
-alias pop='git stash pop'
-alias add='git add'
-alias addp='git add -p'
-alias d='clear; git diff --color=always'
-alias s='clear; git status'
-alias l='git l'
-alias c='cync'
-alias p='push'
-
-# colors!
-alias grep='grep -I --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-alias ll='ls -hlF --color'
-alias la='ls -hA  --color'
-
-alias ..='cd ..'
-alias cd..='cd ..'
-alias tmux='tmux -2'
-alias copy='pbcopy'
-alias oneline='xargs echo'
-alias dm='eval $(docker-machine env default)'
-
-alias dfmt='dub run dfmt -- -i --brace_style=stroustrup --indent_size=2'
-alias nethack='telnet nethack.alt.org'
-alias gw="./gradlew"
-alias ipr="open *.ipr"
-alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
-alias unswp='find . | grep swp | xargs rm'
-alias code='iam marcos; cd $HOME/code/github.com/$GITHUB_USER/$2; tmux -2'
-alias heroku-database='heroku pg:psql DATABASE'
-alias marp='/Applications/Marp.app/Contents/MacOS/Marp'
-
-# Formatters
-# Java: https://github.com/google/google-java-format
-# JavaScript: https://github.com/prettier/prettier
-# C/C++: http://clang.llvm.org/docs/ClangFormat.html
-alias javafmt='java -jar $HOME/.jars/google-java-format-1.5-all-deps.jar -r'
-alias jsfmt='prettier --no-semi --write'
-alias cfmt='clang-format -i -style Google'
-
-alias fresh_chrome='exec open -na "Google Chrome" --args \
-    "--user-data-dir=/Users/marcosminond/.freshchrome" --enable-precise-memory-info \
-    --js-flags="--nocrankshaft --nouse-ic --expose-gc"'
-
-alias alert='notify-send --urgency=low -i \
-    "$([ $? = 0 ] && echo terminal || echo error)" \
-    "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-
-###############################################################################
-# $FUNCTIONS
-###############################################################################
-
-server() {
-  local port=8000
-  [ ! -z "$1" ] && port="$1"
-  open http://localhost:$port
-  # v2
-  # python -m SimpleHTTPServer $port
-  # v3
-  python3 -m http.server $port
-}
-
-colors() {
-  for i in {0..255}; do
-      echo $(tput setaf $i)########################$(tput sgr0) - $i
-  done
-}
-
-cm() {
-  git commit -m "$*"
-}
-
-ca() {
-  local fm="$1"
-
-  if [ ! -f "$fm" ]; then
-    echo "$fm does not exist!"
-    return 1
-  fi
-
-  git add "$fm"
-  git commit -m "$fm" "$fm"
-}
-
-cync() {
-  git commit -am "$*"
-}
-
-gmove() {
-  local branch=$1
-  [ -z "$branch" ] && branch=master
-
-  echo "updating $branch"
-
-  git fetch --all
-  git fetch --prune
-  git checkout $branch
-  git pull --rebase origin $branch
-  git submodule update
-
-  echo "status $branch for"
-  git status
-}
-
-push() {
-  git push origin $(git b)
-}
-
-###############################################################################
 # $GNU FTW (brew install coreutils)
 ###############################################################################
 
@@ -371,33 +357,26 @@ command -v gls &> /dev/null && alias ls='gls'
 # $PATHS
 ###############################################################################
 
-path! $HOME/code/projects/runner/bin
-path! $HOME/perl5/bin
 path! $HOME/.composer/bin/
-path! $HOME/bin/
-path! $HOME/.dots/vendor/scaffold/scripts
 path! $HOME/.rvm/bin
 path! $HOME/.cabal/bin
-path! $HOME/torch/install/bin
 path! $HOME/.cargo/bin
 path! $HOME/.nvm/versions/node/v8.9.1/bin
-path! $HOME/.nvm/versions/node/v8.4.0/bin
-
-path! $GOPATH/bin/
-path! $NODE_PATH/bin/
+path! $HOME/.llvm/5.0.1/bin
+path! $HOME/.sdkman/candidates/ant/current/bin
+path! $HOME/.sdkman/candidates/gradle/current/bin
+path! $HOME/.sdkman/candidates/sbt/current/bin
+path! $HOME/.sdkman/candidates/scala/current/bin
 
 path! /usr/local/smlnj/bin
 path! /usr/local/heroku/bin
 path! /usr/local/go/bin
 path! /usr/local/nim/bin
 
-path! $HOME/.local/bin
-path! $HOME/.cabal/bin
-path! $HOME/.sdkman/candidates/scala/current/bin
-path! $HOME/.sdkman/candidates/ant/current/bin
-path! $HOME/.sdkman/candidates/sbt/current/bin
-path! $HOME/.llvm/5.0.1/bin
+path! $GOPATH/bin/
+path! $NODE_PATH/bin/
 path! $GHC_DOT_APP/Contents/bin
+
 path! '/Applications/Racket v6.11/bin/'
 path! '/Applications/Rakudo/bin/'
 
@@ -409,6 +388,8 @@ source? $HOME/.private
 source? $HOME/.bashrc_local
 source? $HOME/.travis/travis.sh
 source? $HOME/torch/install/bin/torch-activate
+
+# These two slow down a session's start time but are still useful:
 # source? $HOME/.sdkman/bin/sdkman-init.sh
 # source? $NVM_DIR/nvm.sh
 
