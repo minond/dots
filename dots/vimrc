@@ -358,3 +358,6 @@ endfunction
 function! ProcessingMode()
   map <leader>r :w<CR>:RunProcessing<CR>
 endfunction
+
+
+" ~ Marcos Minond

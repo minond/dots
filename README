@@ -17,3 +17,7 @@ The `configure` script in the repo can be used to create those links. You can ru
       install, i <repo> [path]      # Install a git submodule as a Pathogen plugin
 
       Tools:                        # git, vim, ctags, tmux, screen, bash
+
+
+
+~ Marcos Minond
