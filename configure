@@ -43,13 +43,13 @@ usage() {
     echo "Usage: ./configuration <flag|command|tool>"
     echo
     echo "  Flags:"
-    echo "  --help, -h                # View this help text"
-    echo "  --update, -u              # Update dependencies (like Vim plugins)"
+    echo "  --help, -h                    # View this help text"
+    echo "  --update, -u                  # Update dependencies (like Vim plugins)"
     echo
     echo "  Commands:"
-    echo "  install, i                # Install a git submodule as a Pathogen plugin"
+    echo "  install, i <repo> [path]      # Install a git submodule as a Pathogen plugin"
     echo
-    echo -n "  Tools:                    # "
+    echo -n "  Tools:                        # "
 
     local i=0
     for option in git vim ctags tmux screen bash
