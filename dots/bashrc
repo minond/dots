@@ -399,7 +399,3 @@ source? $HOME/torch/install/bin/torch-activate
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-# wtf this doesn't persist?
-ulimit -n 1024
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
