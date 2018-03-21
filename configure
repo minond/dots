@@ -52,7 +52,7 @@ usage() {
     echo -n "  Tools:                        # "
 
     local i=0
-    for option in git vim ctags tmux screen bash
+    for option in git vim ctags tmux screen bash scala
     do
         i=$((i+1))
 
@@ -101,6 +101,10 @@ do
 
         bash)
             link ~/.bashrc "$dots/bashrc"
+            ;;
+
+        scala)
+            link ~/.scalafmt.conf "$dots/scalafmt.conf"
             ;;
 
         i|install)

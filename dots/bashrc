@@ -190,6 +190,7 @@ alias javafmt='java -jar $HOME/.jars/google-java-format-1.5-all-deps.jar -r'
 alias jsfmt='prettier --no-semi --write'
 alias cfmt='clang-format -i -style Google'
 alias dfmt='dub run dfmt -- -i --brace_style=stroustrup --indent_size=2'
+alias scalafmt='scalafmt -c ~/.scalafmt.conf'
 
 ###############################################################################
 # $FUNCTIONS
