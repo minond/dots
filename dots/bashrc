@@ -186,11 +186,14 @@ alias marp='/Applications/Marp.app/Contents/MacOS/Marp'
 #  - JavaScript: https://github.com/prettier/prettier
 #  - C/C++: http://clang.llvm.org/docs/ClangFormat.html
 #  - D: https://github.com/dlang-community/dfmt
+#  - Scala Fmt: http://scalameta.org/scalafmt/
+#  - Scala Style: http://www.scalastyle.org/
 alias javafmt='java -jar $HOME/.jars/google-java-format-1.5-all-deps.jar -r'
 alias jsfmt='prettier --no-semi --write'
 alias cfmt='clang-format -i -style Google'
 alias dfmt='dub run dfmt -- -i --brace_style=stroustrup --indent_size=2'
 alias scalafmt='scalafmt -c ~/.scalafmt.conf'
+alias scalastyle='scalastyle -c ~/.scalastyle.xml'
 
 ###############################################################################
 # $FUNCTIONS

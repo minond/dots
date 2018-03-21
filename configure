@@ -105,6 +105,7 @@ do
 
         scala)
             link ~/.scalafmt.conf "$dots/scalafmt.conf"
+            link ~/.scalastyle.xml "$dots/scalastyle.xml"
             ;;
 
         i|install)
