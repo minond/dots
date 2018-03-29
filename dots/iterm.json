@@ -13,7 +13,7 @@
     "Red Component" : 0.3333333432674408
   },
   "Guid" : "0A7F41EB-FDB6-45B7-B879-FA8F45C2786D",
-  "Normal Font" : "DejaVuSansMono 14",
+  "Normal Font" : "IBMPlexMono-Text 14",
   "Bold Color" : {
     "Green Component" : 0,
     "Blue Component" : 0,
@@ -88,7 +88,7 @@
   "Custom Command" : "No",
   "ASCII Anti Aliased" : true,
   "Non Ascii Font" : "Monaco 12",
-  "Vertical Spacing" : 1.0039003670933735,
+  "Vertical Spacing" : 1,
   "Use Bold Font" : true,
   "Option Key Sends" : 0,
   "Selected Text Color" : {
