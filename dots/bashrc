@@ -317,7 +317,11 @@ function run {
 #==============================================================================
 create() {
   if [ -z "$1" ]; then
-    echo "Usage: create <extension>"
+    echo "Usage: create <extension> [options]"
+    echo
+    echo "  Extensions:"
+    echo "    - html"
+    echo "    - flutter"
     return 1
   fi
 
@@ -340,6 +344,11 @@ create() {
     </body>
 </html>
 HTML
+      ;;
+
+    flutter)
+      shift
+      flutter create --org xyz.minond --ios-language swift --android-language kotlin $*
       ;;
 
     *)
