@@ -204,9 +204,9 @@ server() {
   [ ! -z "$1" ] && port="$1"
   open http://localhost:$port
   # v2
-  # python -m SimpleHTTPServer $port
+  python -m SimpleHTTPServer $port
   # v3
-  python3 -m http.server $port
+  # python3 -m http.server $port
 }
 
 colors() {
@@ -368,6 +368,7 @@ path! $HOME/.cargo/bin
 path! $HOME/.nvm/versions/node/v8.9.1/bin
 path! $HOME/.llvm/5.0.1/bin
 path! $HOME/.protoc/3.5.1/bin
+path! $HOME/.flutter-lib/bin
 path! $HOME/.sdkman/candidates/ant/current/bin
 path! $HOME/.sdkman/candidates/gradle/current/bin
 path! $HOME/.sdkman/candidates/sbt/current/bin
