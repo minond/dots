@@ -37,6 +37,7 @@ set nojoinspaces                         " just one space after a period!
 set modeline
 set modelines=5
 
+set foldlevel=100                        " no folds below level of 100 at start
 set list                                 " display special characters
 set listchars=tab:\ \ ,trail:.           " special characters for special char
 set ls=2
