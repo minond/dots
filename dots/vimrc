@@ -88,13 +88,14 @@ let mapleader = "\<Space>"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $PLUGIN SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_max_height = 30
+
 let NERDTreeCascadeOpenSingleChildDir = 1
 let NERDTreeCaseSensitiveSort = 1
-let NERDTreeIgnore = ['\.swp$', '\~$', '.git', '.sass-cache', '.scaffold', '.class']
+let NERDTreeIgnore = ['\.swp$', '\~$', '.git', '.sass-cache', '.class']
 let NERDTreeShowHidden = 0
 let NERDTreeMinimalUI = 1
 
-let g:ctrlp_max_height = 30
 let g:go_fmt_command = "goimports"
 let g:go_doc_keywordprg_enabled = 0
 let g:go_def_mapping_enabled = 0
@@ -132,7 +133,6 @@ call tcomment#DefineType('d', '// %s')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 au BufNewFile,BufRead *.html        setlocal ft=htmljinja
 au BufNewFile,BufRead *.pl          setlocal ft=prolog
 au BufNewFile,BufRead *.tst,*.hdl   setlocal ft=c
@@ -186,9 +186,10 @@ inoremap jw <Esc>:w<CR>
 " colon, semi-colon switch
 nnoremap ; :<C-F>i
 
-nnoremap <leader>w :call StripTrailingWhitespaces()<CR>
-nnoremap <leader>c :Copy<CR><CR>
-nnoremap <leader><S-c> :CopyFilename<CR><CR>
+map <leader>w :call StripTrailingWhitespaces()<CR>
+map <leader>c :Copy<CR><CR>
+map <leader><S-c> :CopyFilename<CR><CR>
+xmap <leader>c :call CopySelection()<CR>
 
 nmap <leader>s :source $MYVIMRC<CR>:noh<CR>
 nmap <leader>l :set list!<CR>
@@ -198,55 +199,23 @@ xmap <C-c> <ESC>:'<,'>TComment<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-command! S VimShell
-command! Done qa
-command! Format !scalariform %
-
-" ctags-exuberant
 command! Ctags !ctags -R --verbose -f .tags
-
-" linux: xclip -sel clip && echo 'copied to clip board'
 command! Copy w !cat | pbcopy && echo 'copied to clip board'
 command! CopyFilename !echo -n % | pbcopy && echo 'copied filename to clip board'
 command! -range=% -nargs=0 C :<line1>,<line2>call CopySelection()
 
-function! CopySelection() range
-  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), '\r')).'| pbcopy')
-endfunction
-
-" gcc
 command! GccRun !gcc % -o prog.out && chmod +x prog.out && ./prog.out && rm prog.out
 command! -nargs=* GccCat !gcc % -o prog.out && chmod +x prog.out && cat <f-args> | ./prog.out && rm prog.out
-
-" lisp
 command! Lisp !clisp -i %
-
-" php
-command! Cupdate !composer update
-command! Cautoload !composer dumpautoload
-command! -nargs=* Test !clear; phpunit <f-args>
-command! ViewTests !gnome-open ./bin/report/index.html
 
 " git commands
 command! Ann !clear; git annotate %
 command! History !clear; git log -p -- %
 command! Stat !clear; git status
-command! Reset !clear; git checkout %
 command! Add execute ':silent !clear; git add %' | execute ':redraw!' | execute ':GitGutter'
 command! AddP execute '!clear; git add -p %' | execute ':GitGutter'
 command! -nargs=* Diff !clear; git diff <f-args>
 command! -nargs=* Pull !clear; git pull origin <f-args>
-
-" linters
-command! Lint !file=$(basename %);ext="${file\#\#*.}"; clear;
-\ case $ext in
-    \ js)
-        \ jshint -c ~/.jshintrc % | less --quit-at-eof
-        \ ;;
-    \ *)
-        \ echo "i don't know what to do with .$ext files"
-        \ ;;
-\ esac
 
 " run scripts
 command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; clear;
@@ -333,8 +302,6 @@ syntax keyword sqlType sum
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! ShowColors()
     let num = 255
-
-    " Work: create new highlight rule and pattern matcher
     while num >= 0
         exec 'hi col_' . num . ' ctermbg=' . num . ' ctermfg=white'
         exec 'syn match col_' . num . ' "ctermbg=' . num . ':...." containedIn=ALL'
@@ -357,6 +324,22 @@ endfunction
 
 function! ProcessingMode()
   map <leader>r :w<CR>:RunProcessing<CR>
+endfunction
+
+function! CopySelection() range
+  echo system('echo ' . shellescape(GetVisualSelection()) . '| pbcopy')
+endfunction
+
+function! GetVisualSelection()
+  let [line_start, column_start] = getpos("'<")[1:2]
+  let [line_end, column_end] = getpos("'>")[1:2]
+  let lines = getline(line_start, line_end)
+  if len(lines) == 0
+    return ''
+  endif
+  let lines[-1] = lines[-1][: column_end - 2]
+  let lines[0] = lines[0][column_start - 1:]
+  return join(lines, "\n")
 endfunction
 
 
