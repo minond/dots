@@ -45,6 +45,17 @@ software() {
   echo Brew
   echo Tmux
   echo Dropbox
+  echo Spotify
+  # brew installs:
+  # coreutils
+  # findutils
+  # gawk
+  # gnu-getopt
+  # gnu-indent
+  # gnu-sed
+  # gnu-tar
+  # gnutls
+  # reattach-to-user-namespace
 }
 
 #=== FUNCTION =================================================================
