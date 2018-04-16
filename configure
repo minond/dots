@@ -4,6 +4,21 @@ set -eo pipefail
 
 dots=$(pwd)/dots
 
+warn() {
+  local msg=$1
+  echo "WARN: $msg"
+}
+
+info() {
+  local msg=$1
+  echo "INFO: $msg"
+}
+
+confirm() {
+  echo -n "ok? "
+  read
+}
+
 #=== FUNCTION =================================================================
 #        NAME: backup
 # DESCRIPTION: backup a file ($1 => $1.bak) if it exists
@@ -93,6 +108,11 @@ do
 
         tmux)
             link ~/.tmux.conf "$dots/tmux.conf"
+            warn "Current tmux configuration requires that 'reattach-to-user-namespace'"
+            warn "be installed. Tmux will not be able to start up without it. To"
+            warn "install, run the following command:"
+            info "brew install reattach-to-user-namespace"
+            confirm
             ;;
 
         screen)
