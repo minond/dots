@@ -1,11 +1,14 @@
 [user]
-	name = Marcos Minond
-	email = minond.marcos@gmail.com
+  name = Marcos Minond
+  email = minond.marcos@gmail.com
 [color]
-	ui = true
+  ui = true
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
+
+[url "git@gitlab.mx.com:"]
+  insteadOf = https://gitlab.mx.com/
 
 [alias]
-    b = !git branch | cut -d ' ' -f2
-    l = log --graph --pretty --stat --decorate
+  b = !git branch | cut -d ' ' -f2
+  l = log --graph --pretty --stat --decorate
