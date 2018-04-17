@@ -39,23 +39,73 @@ confirm() {
 #        TODO: check for, install, and load missing programs
 #==============================================================================
 software() {
-  echo Simplenote
-  echo Todoist
-  echo 1password
-  echo Brew
-  echo Tmux
-  echo Dropbox
-  echo Spotify
-  # brew installs:
-  # coreutils
-  # findutils
-  # gawk
-  # gnu-getopt
-  # gnu-indent
-  # gnu-sed
-  # gnu-tar
-  # gnutls
-  # reattach-to-user-namespace
+  info "Simplenote ()"
+  info "Todoist ()"
+  info "1password ()"
+  info "Dropbox ()"
+  info "Spotify ()"
+
+  installed cmd tmux
+  installed cmd brew
+
+  installed brew coreutils
+  installed brew findutils
+  installed brew gawk
+  installed brew gnu-getopt
+  installed brew gnu-indent
+  installed brew gnu-sed
+  installed brew gnu-tar
+  installed brew gnutls
+  installed brew reattach-to-user-namespace
+}
+
+#=== FUNCTION =================================================================
+#        NAME: installed
+# DESCRIPTION: check if something is installed
+# PARAMETER 1: label used to figure out how to find the app
+# PARAMETER 2: name of the program
+#==============================================================================
+installed() {
+  local type=$1
+  local name=$2
+
+  local warning=""
+  local suggestion=""
+  local found=1
+
+  case "$type" in
+    cmd)
+      which "$name" &> /dev/null
+      found=$?
+      ;;
+
+    brew)
+      suggestion="brew install $name"
+      which brew &> /dev/null
+      if [ $? -ne 0 ]; then
+        warning="brew is required to check for this program."
+      else
+        brew list "$name" &> /dev/null
+        found=$?
+      fi
+      ;;
+
+    *)
+      warning="Invalid program type: $type"
+      ;;
+  esac
+
+  if [ "$warning" != "" ]; then
+    warn "$name $warning"
+  fi
+
+  if [ $found -eq 0 ]; then
+    info "$name was found"
+  else
+    warn "$name was not found. $suggestion"
+  fi
+
+  return $found
 }
 
 #=== FUNCTION =================================================================
@@ -85,7 +135,7 @@ link() {
         rm "$dest"
     fi
 
-    echo "linking $src with $dest"
+    info "linking $src with $dest"
     ln -s "$src" "$dest"
 }
 
@@ -148,11 +198,14 @@ do
 
         tmux)
             link ~/.tmux.conf "$dots/tmux.conf"
-            warn "Current tmux configuration requires that 'reattach-to-user-namespace'"
-            warn "be installed. Tmux will not be able to start up without it. To"
-            warn "install, run the following command:"
-            info "brew install reattach-to-user-namespace"
-            confirm
+            installed brew reattach-to-user-namespace
+
+            if [ $? -ne 0 ]; then
+              warn "Current tmux configuration requires that 'reattach-to-user-namespace'"
+              warn "be installed. Tmux will not be able to start up without it. To"
+              warn "install, run the following command:"
+              confirm
+            fi
             ;;
 
         screen)
@@ -200,13 +253,13 @@ do
             for p in dots/vim/bundle/*;
             do
                 pushd "$p" &> /dev/null
-                echo "updating $p..."
+                info "updating $p..."
                 git pull --rebase origin master &> /dev/null &
                 popd &> /dev/null
             done
 
             wait
-            echo "done updating $(echo $(wc -w <<< "$(ls ./dots/vim/bundle/)")) packages"
+            info "done updating $(echo $(wc -w <<< "$(ls ./dots/vim/bundle/)")) packages"
             exit 0
 
             ;;
