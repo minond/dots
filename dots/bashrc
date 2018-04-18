@@ -195,6 +195,11 @@ alias dfmt='dub run dfmt -- -i --brace_style=stroustrup --indent_size=2'
 alias scalafmt='scalafmt -c ~/.scalafmt.conf'
 alias scalastyle='scalastyle -c ~/.scalastyle.xml'
 
+ # Work
+alias derp="PB_IGNORE_DEPRECATIONS=1"
+alias nats="PB_CLIENT_TYPE=protobuf/nats/client PB_SERVER_TYPE=protobuf/nats/runner"
+alias bx="bundle exec"
+
 ###############################################################################
 # $FUNCTIONS
 ###############################################################################
