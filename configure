@@ -41,11 +41,11 @@ confirm() {
 software() {
   info "Checking installs"
 
-  info "Simplenote (https://simplenote.com)"
-  info "Todoist (https://en.todoist.com/downloads)"
-  info "1password (https://1password.com/downloads)"
-  info "Dropbox (https://www.dropbox.com/install)"
-  info "Spotify (https://www.spotify.com/us/download)"
+  info "Simplenote .............................. https://simplenote.com"
+  info "Todoist ................................. https://en.todoist.com/downloads"
+  info "1password ............................... https://1password.com/downloads"
+  info "Dropbox ................................. https://www.dropbox.com/install"
+  info "Spotify ................................. https://www.spotify.com/us/download"
 
   installed cmd tmux
   installed cmd brew
@@ -103,12 +103,17 @@ installed() {
 
   if [ "$warning" != "" ]; then
     warn "$name $warning"
+    return
   fi
 
+  echo -n "INFO: $name "
+  printf '%*.*s' 0 $((40 - ${#name})) \
+    "........................................."
+
   if [ $found -eq 0 ]; then
-    info "$name was found"
+    echo " ok"
   else
-    warn "$name was not found. $suggestion"
+    echo " missing $suggestion"
   fi
 
   return $found
