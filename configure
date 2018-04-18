@@ -39,6 +39,8 @@ confirm() {
 #        TODO: check for, install, and load missing programs
 #==============================================================================
 software() {
+  info "Checking installs"
+
   info "Simplenote ()"
   info "Todoist ()"
   info "1password ()"
@@ -49,6 +51,7 @@ software() {
   installed cmd brew
 
   installed brew coreutils
+  installed brew ctags
   installed brew findutils
   installed brew gawk
   installed brew gnu-getopt
@@ -57,6 +60,8 @@ software() {
   installed brew gnu-tar
   installed brew gnutls
   installed brew reattach-to-user-namespace
+
+  info done
 }
 
 #=== FUNCTION =================================================================
@@ -66,6 +71,7 @@ software() {
 # PARAMETER 2: name of the program
 #==============================================================================
 installed() {
+  # XXX this is exiting on pipefails
   local type=$1
   local name=$2
 
