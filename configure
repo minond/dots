@@ -47,6 +47,8 @@ software() {
   info "Dropbox ................................. https://www.dropbox.com/install"
   info "Spotify ................................. https://www.spotify.com/us/download"
 
+  set +eo pipefail
+
   installed cmd tmux
   installed cmd brew
 
@@ -61,6 +63,8 @@ software() {
   installed brew gnutls
   installed brew reattach-to-user-namespace
 
+  set -eo pipefail
+
   info done
 }
 
@@ -71,7 +75,6 @@ software() {
 # PARAMETER 2: name of the program
 #==============================================================================
 installed() {
-  # XXX this is exiting on pipefails
   local type=$1
   local name=$2
 
@@ -86,7 +89,7 @@ installed() {
       ;;
 
     brew)
-      suggestion="brew install $name"
+      suggestion=", 'brew install $name'"
       which brew &> /dev/null
       if [ $? -ne 0 ]; then
         warning="brew is required to check for this program."
@@ -113,7 +116,7 @@ installed() {
   if [ $found -eq 0 ]; then
     echo " ok"
   else
-    echo " missing $suggestion"
+    echo " missing$suggestion"
   fi
 
   return $found
