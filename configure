@@ -39,15 +39,13 @@ confirm() {
 #        TODO: check for, install, and load missing programs
 #==============================================================================
 software() {
-  info "Checking installs"
-
-  info "Simplenote .............................. https://simplenote.com"
-  info "Todoist ................................. https://en.todoist.com/downloads"
-  info "1password ............................... https://1password.com/downloads"
-  info "Dropbox ................................. https://www.dropbox.com/install"
-  info "Spotify ................................. https://www.spotify.com/us/download"
-
   set +eo pipefail
+
+  installed macapp Simplenote https://simplenote.com
+  installed macapp Todoist https://en.todoist.com/downloads
+  installed macapp 1Password\ 6 https://1password.com/downloads
+  installed macapp Dropbox https://www.dropbox.com/install
+  installed macapp Spotify https://www.spotify.com/us/download
 
   installed cmd tmux
   installed cmd brew
@@ -63,9 +61,9 @@ software() {
   installed brew gnutls
   installed brew reattach-to-user-namespace
 
-  set -eo pipefail
-
   info done
+
+  set -eo pipefail
 }
 
 #=== FUNCTION =================================================================
@@ -73,13 +71,14 @@ software() {
 # DESCRIPTION: check if something is installed
 # PARAMETER 1: label used to figure out how to find the app
 # PARAMETER 2: name of the program
+# PARAMETER 3: suggestion to show when not found
 #==============================================================================
 installed() {
   local type=$1
   local name=$2
+  local suggestion=$3
 
   local warning=""
-  local suggestion=""
   local found=1
 
   case "$type" in
@@ -89,7 +88,7 @@ installed() {
       ;;
 
     brew)
-      suggestion=", 'brew install $name'"
+      suggestion="'brew install $name'"
       which brew &> /dev/null
       if [ $? -ne 0 ]; then
         warning="brew is required to check for this program."
@@ -97,6 +96,11 @@ installed() {
         brew list "$name" &> /dev/null
         found=$?
       fi
+      ;;
+
+    macapp)
+      test -d "/Applications/$name.app"
+      found=$?
       ;;
 
     *)
@@ -116,7 +120,7 @@ installed() {
   if [ $found -eq 0 ]; then
     echo " ok"
   else
-    echo " missing$suggestion"
+    echo " missing $suggestion"
   fi
 
   return $found
