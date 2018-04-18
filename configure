@@ -41,11 +41,11 @@ confirm() {
 software() {
   info "Checking installs"
 
-  info "Simplenote ()"
-  info "Todoist ()"
-  info "1password ()"
-  info "Dropbox ()"
-  info "Spotify ()"
+  info "Simplenote (https://simplenote.com)"
+  info "Todoist (https://en.todoist.com/downloads)"
+  info "1password (https://1password.com/downloads)"
+  info "Dropbox (https://www.dropbox.com/install)"
+  info "Spotify (https://www.spotify.com/us/download)"
 
   installed cmd tmux
   installed cmd brew
