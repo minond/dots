@@ -142,3 +142,6 @@
 [submodule "dots/vim/bundle/vim-javascript"]
 	path = dots/vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "dots/vim/bundle/purescript-vim"]
+	path = dots/vim/bundle/purescript-vim
+	url = https://github.com/raichoo/purescript-vim.git
