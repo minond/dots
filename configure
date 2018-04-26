@@ -60,6 +60,7 @@ software() {
   installed brew gnu-tar
   installed brew gnutls
   installed brew reattach-to-user-namespace
+  installed brew rlwrap
 
   info done
 

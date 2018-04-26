@@ -209,9 +209,9 @@ server() {
   [ ! -z "$1" ] && port="$1"
   open http://localhost:$port
   # v2
-  python -m SimpleHTTPServer $port
+  # python -m SimpleHTTPServer $port
   # v3
-  # python3 -m http.server $port
+  python3 -m http.server $port
 }
 
 colors() {
@@ -397,8 +397,10 @@ path! $GOROOT/bin/
 path! $GOPATH/bin
 path! $NODE_PATH/bin/
 path! $GHC_DOT_APP/Contents/bin
+path! $HOME/.bin
 
 path! '/Applications/Racket v6.11/bin/'
+path! '/Applications/Racket v6.12/bin/'
 path! '/Applications/Rakudo/bin/'
 
 ###############################################################################
