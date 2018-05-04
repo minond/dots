@@ -40,16 +40,10 @@ function path! {
 # $PROMPT
 ###############################################################################
 
-COL_ERR=$(tput setaf 9)
-COL_WHOAMI=$(tput setaf 214)
-COL_PWD=$(tput setaf 39)
-COL_JOBS=$(tput setaf 171)
-COL_RESET=$(tput sgr0)
-
 ps1_prompt_jobscount() {
     local stopped=$(jobs -sp | wc -l | sed 's/ //g')
     local running=$(jobs -rp | wc -l | sed 's/ //g')
-    ((running+stopped)) && echo -n "(${running}r/${stopped}s) "
+    ((running+stopped)) && echo -n " (${running}r/${stopped}s)"
 }
 
 ps1_nice_exit_code() {
@@ -62,19 +56,18 @@ ps1_nice_exit_code() {
     if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
         return
     else
-        echo "$(tput setaf 9)! $(tput sgr0)"
+        echo "! "
     fi
 }
 
-# export PS1='$(ps1_nice_exit_code)\
-# $(tput setaf 214)$(whoami)$(tput sgr0) \
-# $(tput setaf 39)\w$(tput sgr0) \
-# $(tput setaf 171)$(ps1_prompt_jobscount)$(tput sgr0)$ '
+export PS1='$(ps1_nice_exit_code)\w$(ps1_prompt_jobscount) > '
 
-export PS1='$(ps1_nice_exit_code)\
-$(tput setaf 214)$(whoami)$(tput sgr0) \
-$(tput setaf 39)\w$(tput sgr0) \
-$(tput setaf 171)$(ps1_prompt_jobscount)$(tput sgr0)\n$ '
+if [[ "$TERM" =~ 256color ]]; then
+  export PS1='\
+\[\033[01;31m\]$(ps1_nice_exit_code)\[\033[0m\]\
+\[\033[01;21m\]\w\[\033[0m\]\
+\[\033[01;35m\]$(ps1_prompt_jobscount)\[\033[0m\] > '
+fi
 
 ###############################################################################
 # $ENV SETTINGS
