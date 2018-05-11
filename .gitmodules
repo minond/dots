@@ -145,3 +145,6 @@
 [submodule "dots/vim/bundle/purescript-vim"]
 	path = dots/vim/bundle/purescript-vim
 	url = https://github.com/raichoo/purescript-vim.git
+[submodule "dots/vim/bundle/dash.vim"]
+	path = dots/vim/bundle/dash.vim
+	url = https://github.com/rizzatti/dash.vim.git
