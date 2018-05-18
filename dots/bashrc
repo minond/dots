@@ -156,22 +156,13 @@ alias p='push'
 
 # colors!
 alias grep='grep -I --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
 alias ll='ls -hlF --color'
 alias la='ls -hA  --color'
 
-alias ..='cd ..'
-alias cd..='cd ..'
 alias tmux='tmux -2'
 alias copy='pbcopy'
-alias dm='eval $(docker-machine env default)'
-alias gw="./gradlew"
-alias ipr="open *.ipr"
 alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
 alias unswp='find . | grep swp | xargs rm'
-alias code='cd $HOME/code/github.com/$GITHUB_USER/$2; tmux -2'
 alias marp='/Applications/Marp.app/Contents/MacOS/Marp'
 
 # Formatters
