@@ -1,6 +1,6 @@
 snippet err "fatal error" !b
 	if err != nil {
-		return fmt.Errorf("${1:failure}: %v", err)
+		return err
 	}$0
 snippet import "import statement" !b
 	import (
