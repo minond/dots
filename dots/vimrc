@@ -133,21 +133,11 @@ call tcomment#DefineType('d', '// %s')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufNewFile,BufRead *.html        setlocal ft=htmljinja
-au BufNewFile,BufRead *.pl          setlocal ft=prolog
-au BufNewFile,BufRead *.tst,*.hdl   setlocal ft=c
-au BufNewFile,BufRead *.g4          setlocal ft=antlr4
-au BufNewFile,BufRead *.pasm,*.pir  setlocal ft=parrot
-au BufNewFile,BufRead README,*.txt  setlocal ft=markdown
-au FileType pir                     setlocal ft=parrot
-
-" spaces instead of tabs on everything but make files
-au BufNewFile,BufRead *.elm,*.kt,*.php              call SetTabWidth(4)
-au BufNewFile,BufRead Makefile,*.mk,*.go,*.snippets call SetTabWidth(4)
-au BufNewFile,BufRead Makefile,*.mk,*.go,*.snippets setlocal noexpandtab
-
-au WinEnter * setlocal cursorline
-au WinLeave * setlocal nocursorline
+augroup vimrc
+  autocmd!
+  au WinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $MAPPINGS
@@ -191,7 +181,6 @@ map <leader>c :Copy<CR><CR>
 map <leader><S-c> :CopyFilename<CR><CR>
 xmap <leader>c :call CopySelection()<CR>
 
-nmap <leader>s :source $MYVIMRC<CR>:noh<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>n :set relativenumber!<CR>
 xmap <C-c> <ESC>:'<,'>TComment<CR>
