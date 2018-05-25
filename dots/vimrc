@@ -6,7 +6,6 @@
 " MAPPINGS..................................................custom key mappings
 " COMMANDS......................................................custom commands
 " COLORSCHEME..................................colorscheme and color overwrites
-" SYNTAX...........................syntax (keyword) rebinding and configuration
 " FUNCTIONS....................................................custom functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -65,14 +64,11 @@ set statusline=%f\ [line:\ %l,\ col:\ %c\ -\ %P\]\ %m\ %r
 
 set wildignore+=*.so
 set wildignore+=*.swp
-set wildignore+=*.zip
 set wildignore+=*.class
 set wildignore+=*/tmp/*
-set wildignore+=*/templates_c/*
 set wildignore+=*/bin/*
 set wildignore+=*/node_modules/*
 set wildignore+=*/build/*
-set wildignore+=*/public-built/*
 set wildignore+=*/out/*
 set wildignore+=*/target/*
 set wildignore+=*/dist/*
@@ -95,11 +91,6 @@ let NERDTreeCaseSensitiveSort = 1
 let NERDTreeIgnore = ['\.swp$', '\~$', '.git', '.sass-cache', '.class']
 let NERDTreeShowHidden = 0
 let NERDTreeMinimalUI = 1
-
-let g:go_fmt_command = "goimports"
-let g:go_doc_keywordprg_enabled = 0
-let g:go_def_mapping_enabled = 0
-let g:go_textobj_enabled = 0
 
 let g:gitgutter_sign_added = '-'
 let g:gitgutter_sign_modified = '-'
@@ -142,48 +133,40 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap ; :<C-F>i
+inoremap jj <Esc>:w<CR><RIGHT>
+
 map <C-k> <ESC>:GitGutterNextHunk<CR>
 map <C-j> <ESC>:GitGutterPrevHunk<CR>
-map <C-o> <ESC>:CtrlP<CR>
+
 map <leader>m <ESC>/=======\\|<<<<<<<\\|>>>>>>><CR>
+
+map <C-o> <ESC>:CtrlP<CR>
 map <leader>o <ESC>:CtrlPTag<CR>
 map <leader>b <ESC>:CtrlPBuffer<CR>
+
 map <C-c> <ESC>:TComment<CR>
+xmap <C-c> <ESC>:'<,'>TComment<CR>
+
 map <leader>f <ESC>:NERDTreeFind<CR>
 map <leader><S-f> <ESC>:NERDTreeToggle<CR>
+
 map <C-b> <ESC>:exec('tag '.expand('<cword>'))<CR>
 map <C-l> <ESC>:echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
+
 map <S-j> <ESC>:bp<CR>
 map <S-k> <ESC>:bn<CR>
-map <S-s> <ESC>:w<CR>
-map <C-s> <ESC>:w<CR>
 map <Tab> <C-w><C-w>
 map <S-Tab> <C-w><S-w>
-map <leader>g :GitGutter<CR>
+
 map <leader>p :set paste!<CR>
 map <leader>r :w<CR>:Run<CR>
 map <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
-map <leader>h :if exists('g:syntax_on') <Bar>
-    \syntax off <Bar>
-    \else <Bar>
-    \syntax on <Bar>
-    \endif <CR>
-
-" exit insert mode within insert mode
-inoremap jj <Esc>:w<CR><RIGHT>
-inoremap jw <Esc>:w<CR>
-
-" colon, semi-colon switch
-nnoremap ; :<C-F>i
-
 map <leader>w :call StripTrailingWhitespaces()<CR>
+
 map <leader>c :Copy<CR><CR>
 map <leader><S-c> :CopyFilename<CR><CR>
 xmap <leader>c :call CopySelection()<CR>
-
-nmap <leader>l :set list!<CR>
-nmap <leader>n :set relativenumber!<CR>
-xmap <C-c> <ESC>:'<,'>TComment<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS
@@ -200,11 +183,9 @@ command! Lisp !clisp -i %
 " git commands
 command! Ann !clear; git annotate %
 command! History !clear; git log -p -- %
-command! Stat !clear; git status
 command! Add execute ':silent !clear; git add %' | execute ':redraw!' | execute ':GitGutter'
 command! AddP execute '!clear; git add -p %' | execute ':GitGutter'
 command! -nargs=* Diff !clear; git diff <f-args>
-command! -nargs=* Pull !clear; git pull origin <f-args>
 
 " run scripts
 command! Run !file=$(basename %);ext="${file\#\#*.}";filename="${file\%.*}"; clear;
@@ -276,17 +257,6 @@ if ! has("gui_running")
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SYNTAX
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax keyword phpException finally
-syntax keyword sqlKeyword limit
-syntax keyword sqlType avg
-syntax keyword sqlType count
-syntax keyword sqlType max
-syntax keyword sqlType min
-syntax keyword sqlType sum
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FUNCTIONS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! ShowColors()
@@ -297,22 +267,6 @@ function! ShowColors()
         call append(0, 'ctermbg=' . num . ':....')
         let num = num - 1
     endwhile
-endfunction
-
-function! SetTabWidth(width)
-    if a:width == 2
-        setlocal shiftwidth=2
-        setlocal softtabstop=2
-        setlocal tabstop=2
-    elseif a:width == 4
-        setlocal shiftwidth=4
-        setlocal softtabstop=4
-        setlocal tabstop=4
-    endif
-endfunction
-
-function! ProcessingMode()
-  map <leader>r :w<CR>:RunProcessing<CR>
 endfunction
 
 function! CopySelection() range
