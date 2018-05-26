@@ -3,6 +3,7 @@ setlocal shiftwidth=4
 setlocal softtabstop=4
 setlocal tabstop=4
 
+nnoremap <buffer> <leader>r :w<cr>:!clear<cr>:GoRun<cr>
 nnoremap <buffer> <leader>b :GoBuild<cr>
 nnoremap <buffer> <leader>d :GoDoc<cr>
 nnoremap <buffer> <leader>g :GoDef<cr>
