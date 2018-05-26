@@ -109,6 +109,7 @@ augroup vimrc
   autocmd!
   au WinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
+  au BufWritePost * :GitGutter
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
