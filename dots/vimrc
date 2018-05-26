@@ -15,8 +15,8 @@
 execute pathogen#infect()
 execute pathogen#incubate()
 
-filetype off
-filetype plugin indent on
+filetype on
+filetype plugin on
 
 Helptags
 
