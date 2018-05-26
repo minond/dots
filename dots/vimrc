@@ -61,6 +61,7 @@ set antialias
 set t_Co=256
 set tags^=./.tags,./.TAGS,.tags,.TAGS
 set statusline=%f\ [line:\ %l,\ col:\ %c\ -\ %P\]\ %m\ %r
+set signcolumn=yes
 
 set wildignore+=*.so
 set wildignore+=*.swp
