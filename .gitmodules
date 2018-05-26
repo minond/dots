@@ -1,12 +1,6 @@
 [submodule "dots/vim/bundle/vim-gitgutter"]
 	path = dots/vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "dots/vim/bundle/scss-syntax.vim"]
-	path = dots/vim/bundle/scss-syntax.vim
-	url = https://github.com/cakebaker/scss-syntax.vim.git
-[submodule "dots/vim/bundle/vim-jade"]
-	path = dots/vim/bundle/vim-jade
-	url = https://github.com/digitaltoad/vim-jade.git
 [submodule "dots/vim/bundle/vim-elixir"]
 	path = dots/vim/bundle/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
@@ -25,9 +19,6 @@
 [submodule "dots/vim/bundle/vim-markdown"]
 	path = dots/vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
-[submodule "dots/vim/bundle/vim-jinja"]
-	path = dots/vim/bundle/vim-jinja
-	url = https://github.com/minond/vim-jinja.git
 [submodule "dots/vim/bundle/yajs.vim"]
 	path = dots/vim/bundle/yajs.vim
 	url = https://github.com/othree/yajs.vim.git
@@ -52,18 +43,9 @@
 [submodule "dots/vim/bundle/vim-protobuf"]
 	path = dots/vim/bundle/vim-protobuf
 	url = https://github.com/uarun/vim-protobuf.git
-[submodule "dots/vim/bundle/vimproc"]
-	path = dots/vim/bundle/vimproc
-	url = https://github.com/Shougo/vimproc.vim.git
 [submodule "dots/vim/bundle/vim-bats"]
 	path = dots/vim/bundle/vim-bats
 	url = https://github.com/markcornick/vim-bats.git
-[submodule "dots/vim/bundle/vim-fireplace"]
-	path = dots/vim/bundle/vim-fireplace
-	url = https://github.com/tpope/vim-fireplace.git
-[submodule "dots/vim/bundle/vim-salve"]
-	path = dots/vim/bundle/vim-salve
-	url = https://github.com/tpope/vim-salve.git
 [submodule "dots/vim/bundle/vim-jsx-typescript"]
 	path = dots/vim/bundle/vim-jsx-typescript
 	url = https://github.com/peitalin/vim-jsx-typescript.git
@@ -133,9 +115,6 @@
 [submodule "dots/vim/bundle/vim-processing"]
 	path = dots/vim/bundle/vim-processing
 	url = https://github.com/sophacles/vim-processing.git
-[submodule "dots/vim/bundle/vim-autoformat"]
-	path = dots/vim/bundle/vim-autoformat
-	url = https://github.com/Chiel92/vim-autoformat.git
 [submodule "dots/vim/bundle/dart-vim-plugin"]
 	path = dots/vim/bundle/dart-vim-plugin
 	url = https://github.com/dart-lang/dart-vim-plugin.git
@@ -145,6 +124,3 @@
 [submodule "dots/vim/bundle/purescript-vim"]
 	path = dots/vim/bundle/purescript-vim
 	url = https://github.com/raichoo/purescript-vim.git
-[submodule "dots/vim/bundle/dash.vim"]
-	path = dots/vim/bundle/dash.vim
-	url = https://github.com/rizzatti/dash.vim.git
