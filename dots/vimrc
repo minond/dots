@@ -73,6 +73,7 @@ set wildignore+=*/build/*
 set wildignore+=*/out/*
 set wildignore+=*/target/*
 set wildignore+=*/dist/*
+set wildignore+=*/vendor/*
 
 set wildmenu
 
