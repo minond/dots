@@ -158,6 +158,7 @@ command! Ctags !ctags -R --verbose -f .tags
 command! Copy w !cat | pbcopy && echo 'copied to clip board'
 command! CopyFilename !echo -n % | pbcopy && echo 'copied filename to clip board'
 command! -range=% -nargs=0 C :<line1>,<line2>call CopySelection()
+command! Spell setlocal spell! spelllang=en_us
 
 " git commands
 command! Ann !clear; git annotate %
