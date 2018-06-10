@@ -1,1 +1,1 @@
-nnoremap <buffer> <leader>r :w<cr>:!clear<cr>:!racket %;<cr>
+nnoremap <buffer> <leader>r :w<cr>:!clear; racket %;<cr>

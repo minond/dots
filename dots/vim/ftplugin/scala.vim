@@ -1,1 +1,1 @@
-nnoremap <buffer> <leader>r :w<cr>:!clear<cr>:!scala %;<cr>
+nnoremap <buffer> <leader>r :w<cr>:!clear; scala %;<cr>

@@ -1,1 +1,1 @@
-map <leader>r :w<CR>:RunProcessing<CR>
+nnoremap <buffer> <leader>r :RunProcessing<cr>

@@ -1,1 +1,1 @@
-nnoremap <buffer> <leader>r :w<cr>:!clear<cr>:!node %;<cr>
+nnoremap <buffer> <leader>r :w<cr>:!clear; node %;<cr>
