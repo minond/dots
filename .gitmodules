@@ -85,9 +85,6 @@
 [submodule "dots/vim/bundle/vim-antlr"]
 	path = dots/vim/bundle/vim-antlr
 	url = https://github.com/dylon/vim-antlr.git
-[submodule "dots/vim/bundle/prolog.vim"]
-	path = dots/vim/bundle/prolog.vim
-	url = https://github.com/adimit/prolog.vim.git
 [submodule "dots/vim/bundle/vim-racket"]
 	path = dots/vim/bundle/vim-racket
 	url = https://github.com/wlangstroth/vim-racket.git
@@ -124,3 +121,6 @@
 [submodule "dots/vim/bundle/purescript-vim"]
 	path = dots/vim/bundle/purescript-vim
 	url = https://github.com/raichoo/purescript-vim.git
+[submodule "dots/vim/bundle/prolog-vim"]
+	path = dots/vim/bundle/prolog-vim
+	url = https://github.com/soli/prolog-vim.git
