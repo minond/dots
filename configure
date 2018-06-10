@@ -43,7 +43,7 @@ software() {
 
   installed macapp Simplenote https://simplenote.com
   installed macapp Todoist https://en.todoist.com/downloads
-  installed macapp 1Password\ 6 https://1password.com/downloads
+  installed macapp 1Password\ 7 https://1password.com/downloads
   installed macapp Dropbox https://www.dropbox.com/install
   installed macapp Spotify https://www.spotify.com/us/download
 
@@ -249,14 +249,16 @@ do
             dir="$3"
 
             if [ -z "$dir" ]; then
-                dir=$(echo $2 | iconv -t ascii//TRANSLIT | sed -E s/[^a-zA-Z0-9]+/-/g | sed -E s/^-+\|-+$//g | tr A-Z a-z)
+                dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git//')
             fi
 
             if [[ "$dir" != dots* ]]; then
                 dir="dots/vim/bundle/$dir"
             fi
 
-            echo -n "I'm going to install $url at $dir, is this ok? [y/n] "
+            info "repo: $url"
+            info "dest: $dir"
+            echo -n "ok? [y/N] "
             read ans
 
             if [ "$ans" == "y" ]; then
