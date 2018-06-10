@@ -51,7 +51,9 @@ set softtabstop=2                        " back character length
 set tabstop=2                            " tab character length
 set nuw=4                                " make line number column wider
 set backspace=indent,eol,start
+set matchpairs=<:>,‘:’
 
+set autoindent                           " copy indent from current line to next
 set smartindent                          " block indentation
 set splitbelow
 set splitright
@@ -107,11 +109,20 @@ let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup vimrc
-  autocmd!
-  au WinEnter * setlocal cursorline
-  au WinLeave * setlocal nocursorline
-  au BufWritePost * :GitGutter
+augroup Git
+  au!
+  au BufWritePost * :GitGutterAll
+augroup END
+
+augroup CursorLine
+  au!
+  au WinEnter     * setlocal cursorline
+  au WinLeave     * setlocal nocursorline
+augroup END
+
+augroup VimReload
+  au!
+  au BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -150,6 +161,8 @@ map <leader>w :call StripTrailingWhitespaces()<CR>
 map <leader>c :Copy<CR><CR>
 map <leader><S-c> :CopyFilename<CR><CR>
 xmap <leader>c :call CopySelection()<CR>
+
+nnoremap <Space> <PageDown>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS

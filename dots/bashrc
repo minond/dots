@@ -94,6 +94,7 @@ export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
 # $TOOL SETTINGS
 ###############################################################################
 
+export DISPLAY=/private/tmp/com.apple.launchd.4KIKi7sC73/org.macosforge.xquartz:0
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 export GHC_DOT_APP=/Applications/ghc-7.10.3.app
 export GOPATH=$HOME/code/go
