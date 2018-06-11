@@ -1,0 +1,1 @@
+let NERDTreeRespectWildIgnore = 0
