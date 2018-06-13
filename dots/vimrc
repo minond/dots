@@ -165,8 +165,6 @@ map <leader>c :Copy<CR><CR>
 map <leader><S-c> :CopyFilename<CR><CR>
 xmap <leader>c :call CopySelection()<CR>
 
-nnoremap <Space> <PageDown>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
