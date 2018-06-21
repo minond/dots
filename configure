@@ -256,15 +256,17 @@ do
                 dir="dots/vim/bundle/$dir"
             fi
 
-            info "repo: $url"
-            info "dest: $dir"
-            echo -n "ok? [y/N] "
+            info "repository url is $url"
+            info "install directory will be $dir"
+            echo -n "CONFIRM: ok? [y/N] "
             read ans
 
             if [ "$ans" == "y" ]; then
+                info "saving git submodule"
                 git submodule add "$url" "$dir"
+                info "saved git submodule"
             else
-                echo "Bailing out"
+                info "not installing plugin"
             fi
 
             exit 0
