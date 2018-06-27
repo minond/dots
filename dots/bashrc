@@ -185,8 +185,6 @@ alias scalastyle='scalastyle -c ~/.scalastyle.xml'
 alias derp="PB_IGNORE_DEPRECATIONS=1"
 alias nats="PB_CLIENT_TYPE=protobuf/nats/client PB_SERVER_TYPE=protobuf/nats/runner"
 alias bx="bundle exec"
-alias cmx="cd ~/code/mx"
-alias gmx="cd ~/code/go/src/gitlab.mx.com/mx"
 
 ###############################################################################
 # $FUNCTIONS
@@ -393,6 +391,7 @@ path! '/Applications/Rakudo/bin/'
 
 source? $HOME/.private
 source? $HOME/.bashrc_local
+source? /usr/local/etc/profile.d/z.sh
 
 # These following slow down a session's start time and are not often used, so
 # they're in a function instead:
