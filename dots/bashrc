@@ -393,12 +393,16 @@ path! '/Applications/Rakudo/bin/'
 
 source? $HOME/.private
 source? $HOME/.bashrc_local
-source? $HOME/.travis/travis.sh
-source? $HOME/torch/install/bin/torch-activate
 
-# These two slow down a session's start time but are still useful:
-# source? $HOME/.sdkman/bin/sdkman-init.sh
-# source? $NVM_DIR/nvm.sh
+# These following slow down a session's start time and are not often used, so
+# they're in a function instead:
+load-extras() {
+  source? $HOME/.sdkman/bin/sdkman-init.sh
+  source? $NVM_DIR/nvm.sh
+  source? $HOME/.travis/travis.sh
+  source? $HOME/torch/install/bin/torch-activate
+  source? /usr/local/bin/virtualenvwrapper.sh
+}
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
