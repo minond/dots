@@ -165,6 +165,7 @@ alias copy='pbcopy'
 alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
 alias unswp='find . | grep swp | xargs rm'
 alias marp='/Applications/Marp.app/Contents/MacOS/Marp'
+alias https='http --default-scheme=https'
 
 # Formatters
 #  - Java: https://github.com/google/google-java-format
