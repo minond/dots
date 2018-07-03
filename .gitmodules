@@ -124,3 +124,6 @@
 [submodule "dots/vim/bundle/prolog-vim"]
 	path = dots/vim/bundle/prolog-vim
 	url = https://github.com/soli/prolog-vim.git
+[submodule "dots/vim/bundle/simplenote.vim"]
+	path = dots/vim/bundle/simplenote.vim
+	url = https://github.com/mrtazz/simplenote.vim.git

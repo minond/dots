@@ -20,6 +20,10 @@ filetype plugin on
 
 Helptags
 
+if filereadable(expand("~/.private.vim"))
+  source ~/.private.vim
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $VIM SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
