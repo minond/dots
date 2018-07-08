@@ -157,8 +157,8 @@ alias p='push'
 
 # colors!
 alias grep='grep -I --color=auto'
-alias ll='ls -hlF --color'
-alias la='ls -hA  --color'
+alias ll='ls -hlF --color --group-directories-first'
+alias la='ls -hA  --color --group-directories-first'
 
 alias tmux='tmux -2'
 alias copy='pbcopy'
