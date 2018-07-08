@@ -147,8 +147,8 @@ map <C-o> <ESC>:CtrlP<CR>
 map <leader>o <ESC>:CtrlPTag<CR>
 map <leader>b <ESC>:CtrlPBuffer<CR>
 
-map <C-c> <ESC>:TComment<CR>
-xmap <C-c> <ESC>:'<,'>TComment<CR>
+map <leader>c <ESC>:TComment<CR>
+xmap <leader>c <ESC>:'<,'>TComment<CR>
 
 map <leader>f <ESC>:NERDTreeFind<CR>
 map <leader><S-f> <ESC>:NERDTreeToggle<CR>
@@ -165,10 +165,6 @@ map <leader>p :set paste!<CR>
 map <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
 map <leader>w :call StripTrailingWhitespaces()<CR>
 
-map <leader>c :Copy<CR><CR>
-map <leader><S-c> :CopyFilename<CR><CR>
-xmap <leader>c :call CopySelection()<CR>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -176,6 +172,7 @@ command! Ctags !ctags -R --verbose -f .tags
 command! Copy w !cat | pbcopy && echo 'copied to clip board'
 command! CopyFilename !echo -n % | pbcopy && echo 'copied filename to clip board'
 command! -range=% -nargs=0 C :<line1>,<line2>call CopySelection()
+command! -range=% -nargs=0 CopySelection :<line1>,<line2>call CopySelection()
 command! Spell setlocal spell! spelllang=en_us
 
 " git commands
