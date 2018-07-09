@@ -155,8 +155,8 @@ map <C-o> <ESC>:CtrlP<CR>
 map <leader>o <ESC>:CtrlPTag<CR>
 map <leader>b <ESC>:CtrlPBuffer<CR>
 
-map <leader>c <ESC>:TComment<CR>
-xmap <leader>c <ESC>:'<,'>TComment<CR>
+map <C-c> <ESC>:TComment<CR>
+xmap <C-c> <ESC>:'<,'>TComment<CR>
 
 map <leader>f <ESC>:NERDTreeFind<CR>
 map <leader><S-f> <ESC>:NERDTreeToggle<CR>
