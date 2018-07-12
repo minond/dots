@@ -130,3 +130,6 @@
 [submodule "dots/vim/bundle/vim-slime"]
 	path = dots/vim/bundle/vim-slime
 	url = https://github.com/jpalardy/vim-slime.git
+[submodule "dots/vim/bundle/vim-surround"]
+	path = dots/vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
