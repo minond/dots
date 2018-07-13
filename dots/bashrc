@@ -56,7 +56,7 @@ ps1_nice_exit_code() {
     if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
         return
     else
-        echo $(tput bold)$(tput setaf 1)Error$(tput sgr0): $last_exit
+        echo $(tput bold)$(tput setaf 1)\(error $last_exit\)$(tput sgr0)
     fi
 }
 
