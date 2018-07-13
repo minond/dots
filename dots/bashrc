@@ -50,21 +50,22 @@ ps1_nice_exit_code() {
     local last_exit="$?"
 
     # 0   ok
-    # 130 manually cancelled (ctrl-c)
     # 146 sent process to background
-    # 146 (git?) less exit
+    # 141 git less exit
+    # 130 manually cancelled (ctrl-c)
     if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
         return
     else
-        echo "! "
+        echo $(tput bold)$(tput setaf 1)Error$(tput sgr0): $last_exit
     fi
 }
+
+export PROMPT_COMMAND='ps1_nice_exit_code'
 
 export PS1='$(ps1_nice_exit_code)\w$(ps1_prompt_jobscount) > '
 
 if [[ "$TERM" =~ 256color ]]; then
   export PS1='\
-\[\033[01;31m\]$(ps1_nice_exit_code)\[\033[0m\]\
 \[\033[01;21m\]\w\[\033[0m\]\
 \[\033[01;35m\]$(ps1_prompt_jobscount)\[\033[0m\] > '
 fi
