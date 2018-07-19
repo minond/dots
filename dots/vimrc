@@ -107,9 +107,10 @@ let g:ctrlp_custom_ignore = {
 
 let NERDTreeCascadeOpenSingleChildDir = 1
 let NERDTreeCaseSensitiveSort = 1
-let NERDTreeRespectWildIgnore = 1
 let NERDTreeShowHidden = 0
 let NERDTreeMinimalUI = 1
+let NERDTreeRespectWildIgnore = 0
+let NERDTreeIgnore = []
 
 let g:gitgutter_sign_added = '-'
 let g:gitgutter_sign_modified = '-'
