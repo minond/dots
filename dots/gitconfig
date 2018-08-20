@@ -12,3 +12,5 @@
 [alias]
   b = !git branch | cut -d ' ' -f2
   l = log --graph --pretty --stat --decorate
+[http]
+	cookiefile = /Users/marcosmindon/.gitcookies
