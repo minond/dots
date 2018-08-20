@@ -56,15 +56,19 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>991 768 620 392 0 0 2560 1417 </string>
+	<string>551 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>269 177 770 429 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>291 37 1740 1359 0 0 2560 1417 </string>
+	<string>42 0 1638 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>224 0 1347 1027 0 0 2560 1417 </string>
+	<string>115 15 1384 1009 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>364 158 1915 996 0 0 2560 1417 </string>
+	<string>42 525 650 502 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>449 250 650 502 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>42 330 650 502 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_0A7F41EB-FDB6-45B7-B879-FA8F45C2786D</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_0A7F41EB-FDB6-45B7-B879-FA8F45C2786D_selection</key>
@@ -772,9 +776,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-04-23T15:24:18Z</date>
+	<date>2018-07-31T22:16:10Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUSkippedVersion</key>
+	<string>3.1.7</string>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -791,6 +797,8 @@
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>

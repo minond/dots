@@ -384,6 +384,8 @@ path! $GHC_DOT_APP/Contents/bin
 path! $HOME/.dots/bin
 path! $HOME/.bin
 
+path! $GOPATH/src/github.com/uber/go-torch/FlameGraph
+
 path! '/Applications/Racket v6.11/bin/'
 path! '/Applications/Racket v6.12/bin/'
 path! '/Applications/Rakudo/bin/'
