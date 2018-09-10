@@ -33,7 +33,7 @@ function source? {
 # PARAMETER 1: dir
 #==============================================================================
 function path! {
-    [ -d "$1" ] && export PATH="$PATH:$1"
+    [ -d "$1" ] && export PATH="$1:$PATH"
 }
 
 ###############################################################################
@@ -99,7 +99,7 @@ export DISPLAY=/private/tmp/com.apple.launchd.4KIKi7sC73/org.macosforge.xquartz:
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 export GHC_DOT_APP=/Applications/ghc-7.10.3.app
 export GOPATH=$HOME/code/go
-export GOROOT=$HOME/.go1.10.1
+export GOROOT=$HOME/.go1.11
 export GRADLE_HOME=$HOME/.sdkman/candidates/gradle/current
 export HDF5_DIR=/usr/local/hdf5/
 export LUA_CPATH="$HOME/.luarocks/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/loadall.so;./?.so"
@@ -377,7 +377,7 @@ path! /usr/local/heroku/bin
 path! /usr/local/go/bin
 path! /usr/local/nim/bin
 
-path! $GOROOT/bin/
+path! $GOROOT/bin
 path! $GOPATH/bin
 path! $NODE_PATH/bin/
 path! $GHC_DOT_APP/Contents/bin
