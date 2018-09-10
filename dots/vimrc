@@ -162,7 +162,7 @@ xmap <C-c> <ESC>:'<,'>TComment<CR>
 map <leader>f <ESC>:NERDTreeFind<CR>
 map <leader><S-f> <ESC>:NERDTreeToggle<CR>
 
-map <C-b> <ESC>:exec('tag '.expand('<cword>'))<CR>
+map <leader>g <ESC>:exec('tag '.expand('<cword>'))<CR>
 map <C-l> <ESC>:echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
 
 map <S-j> <ESC>:bp<CR>
