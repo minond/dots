@@ -49,6 +49,7 @@ software() {
 
   installed cmd tmux
   installed cmd brew
+  installed cmd protoc
 
   installed brew coreutils
   installed brew ctags
