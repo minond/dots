@@ -1,7 +1,9 @@
 snippet err "fatal error" !b
 	if err != nil {
-		return err
-	}$0
+		$1
+	}
+
+	$2
 snippet import "import statement" !b
 	import (
 		"$1
@@ -12,6 +14,10 @@ snippet func "function statement" !b
 	}
 snippet main "main function statement" !b
 	func main() {
+		$1
+	}
+snippet init "init function statement" !b
+	func init() {
 		$1
 	}
 snippet var "variable declarations" !b
@@ -32,8 +38,8 @@ snippet for "for statement" !b
 		$2
 	}
 snippet range "for statement looping over range" !b
-	for i, v := range $1 {
-		$2
+	for $1, v := range $2 {
+		$3
 	}
 snippet if "if statement" !b
 	if $1 {
