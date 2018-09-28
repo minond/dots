@@ -17,7 +17,7 @@ nnoremap <buffer> <leader>T :GoCoverageBrowser<cr>
 let g:go_fmt_command = "gofmt"
 let g:go_fmt_options = {
   \ 'gofmt': '-s',
-  \ 'goimports': '-local gitlab.mx.com',
+  \ 'goimports': '-local gitlab.mx.com, github.com/minond',
   \ }
 
 let g:go_doc_keywordprg_enabled = 0
