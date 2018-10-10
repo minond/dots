@@ -278,8 +278,8 @@ function run {
 
   case "$type" in
     tex)
-      xelatex $file
-      open $name.pdf
+      xelatex "$file"
+      open "$name.pdf"
       ;;
 
     java)
