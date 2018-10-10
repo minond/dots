@@ -279,7 +279,7 @@ function run {
   case "$type" in
     tex)
       xelatex "$file"
-      open "$name.pdf"
+      [ $? -eq 0 ] && open "$name.pdf"
       ;;
 
     java)
