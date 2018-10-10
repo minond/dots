@@ -277,6 +277,11 @@ function run {
   local name="${file%.*}"
 
   case "$type" in
+    tex)
+      xelatex $file
+      open $name.pdf
+      ;;
+
     java)
       javac $file
       java $name

@@ -1,4 +1,64 @@
-snippet begin "block" !b
+snippet begin "begin" !b
 	\begin{$1}
 	$2
 	\end{$1}
+snippet equation "equation*" !b
+	\begin{equation*}
+	$1
+	\end{equation*}
+snippet align "align*" !b
+	\begin{align*}
+	$1
+	\end{align*}
+snippet align "align*" !b
+	\begin{align*}
+	$1
+	\end{align*}
+snippet newcommand "newcommand" !b
+	\newcommand{\$1}[$2] {
+	  $3
+	}
+snippet alist "ordered list" !b
+	\begin{enumerate}[label=\alph*)]
+		\item $1
+	\end{enumerate}
+snippet MATH "math commands" !b
+	\newcommand{\bigO} { big-$\mathcal{O}$ }
+	\newcommand{\bigOmega} { big-$\Omega$ }
+	\newcommand{\bigTheta} { big-$\Theta$ }
+snippet HOMEWORK "homework commands" !b
+	\newcommand{\booksection}[1] {
+	  \vspace{.4in}
+	  \textbf{\Large{Section #1}}
+	  \vspace{.2in}
+	}
+
+	\newcommand{\question}[2] {
+	  \vspace{.2in}
+	  \textbf{#1.} #2
+	  \vspace{.1in}
+	}
+snippet ARTICLE "new article" !b
+	\documentclass[fleqn]{article}
+
+	\RequirePackage{fontspec}
+
+	\usepackage{graphicx}
+	\usepackage[colorlinks]{hyperref}
+	\usepackage{enumitem}
+	\usepackage{multicol}
+	\usepackage{amsmath}
+	\setlength{\mathindent}{0pt}
+	\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
+
+	\setmonofont[BoldFont={IBM Plex Mono}, ItalicFont={IBM Plex Mono}, BoldItalicFont={IBM Plex Mono}]{IBM Plex Mono}
+	\setmainfont[BoldFont={Baskerville Bold}, ItalicFont={Baskerville Italic}, BoldItalicFont={Baskerville Bold Italic}]{Baskerville}
+
+	\begin{document}
+	\begin{flushright}
+	Marcos Minond
+	\end{flushright}
+	\begin{flushleft}
+
+	\end{flushleft}
+	\end{document}
