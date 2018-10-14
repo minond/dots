@@ -19,22 +19,22 @@ snippet alist "ordered list" !b
 		\item $1
 	\end{enumerate}
 snippet MATH "math commands" !b
-	\newcommand{\bigO} { big-$\mathcal{O}$ }
-	\newcommand{\bigOmega} { big-$\Omega$ }
-	\newcommand{\bigTheta} { big-$\Theta$ }
-snippet HOMEWORK "homework commands" !b
-	\newcommand{\booksection}[1] {
+	\newcommand{\BigO} { big-$\mathcal{O}$ }
+	\newcommand{\BigOmega} { big-$\Omega$ }
+	\newcommand{\BigTheta} { big-$\Theta$ }
+snippet QUESTIONS "homework commands" !b
+	\newcommand{\QuestionGroup}[1] {
 	  \vspace{.4in}
 	  \textbf{\Large{Section #1}}
 	  \vspace{.2in}
 	}
 
-	\newcommand{\question}[2] {
+	\newcommand{\Question}[2] {
 	  \vspace{.2in}
 	  \textbf{#1.} #2
 	  \vspace{.1in}
 	}
-snippet ARTICLE "new article" !b
+snippet HOMEWORK "new article" !b
 	\documentclass[fleqn]{article}
 
 	\RequirePackage{fontspec}
