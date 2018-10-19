@@ -1,3 +1,12 @@
+snippet HELP "show help information" !b
+	snippet begin "begin" !b
+	snippet equation "equation*" !b
+	snippet align "align*" !b
+	snippet newcommand "newcommand" !b
+	snippet alist "ordered list" !b
+	snippet MATH "math commands" !b
+	snippet QUESTIONS "homework commands" !b
+	snippet HOMEWORK "new article" !b
 snippet begin "begin" !b
 	\begin{$1}
 	$2
@@ -19,9 +28,13 @@ snippet alist "ordered list" !b
 		\item $1
 	\end{enumerate}
 snippet MATH "math commands" !b
-	\newcommand{\BigO} { big-$\mathcal{O}$ }
-	\newcommand{\BigOmega} { big-$\Omega$ }
-	\newcommand{\BigTheta} { big-$\Theta$ }
+	\newcommand{\BigOOf}[1] {$\mathcal{O}(#1)$}
+	\newcommand{\BigOmegaOf}[1] {$\Omega(#1)$}
+	\newcommand{\BigThetaOf}[1] {$\Theta(#1)$}
+
+	\newcommand{\BigO} {big-$\mathcal{O}$}
+	\newcommand{\BigOmega} {big-$\Omega$}
+	\newcommand{\BigTheta} {big-$\Theta$}
 snippet QUESTIONS "homework commands" !b
 	\newcommand{\QuestionGroup}[1] {
 	  \vspace{.4in}
