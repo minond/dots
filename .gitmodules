@@ -1,9 +1,6 @@
 [submodule "dots/vim/bundle/vim-gitgutter"]
 	path = dots/vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "dots/vim/bundle/vim-elixir"]
-	path = dots/vim/bundle/vim-elixir
-	url = https://github.com/elixir-lang/vim-elixir.git
 [submodule "dots/vim/bundle/ctrlp.vim"]
 	path = dots/vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
@@ -13,27 +10,9 @@
 [submodule "dots/vim/bundle/nerdtree"]
 	path = dots/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule "dots/vim/bundle/summerfruit256.vim"]
-	path = dots/vim/bundle/summerfruit256.vim
-	url = https://github.com/vim-scripts/summerfruit256.vim.git
 [submodule "dots/vim/bundle/vim-markdown"]
 	path = dots/vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
-[submodule "dots/vim/bundle/yajs.vim"]
-	path = dots/vim/bundle/yajs.vim
-	url = https://github.com/othree/yajs.vim.git
-[submodule "dots/vim/bundle/mozjs-syntax"]
-	path = dots/vim/bundle/mozjs-syntax
-	url = https://github.com/gijsk/mozjs-syntax.git
-[submodule "dots/vim/bundle/typescript-vim"]
-	path = dots/vim/bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "dots/vim/bundle/php.vim"]
-	path = dots/vim/bundle/php.vim
-	url = https://github.com/StanAngeloff/php.vim.git
-[submodule "dots/vim/bundle/vim-gradle"]
-	path = dots/vim/bundle/vim-gradle
-	url = https://github.com/tfnico/vim-gradle.git
 [submodule "dots/vim/bundle/Dockerfile.vim"]
 	path = dots/vim/bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
@@ -43,30 +22,9 @@
 [submodule "dots/vim/bundle/vim-protobuf"]
 	path = dots/vim/bundle/vim-protobuf
 	url = https://github.com/uarun/vim-protobuf.git
-[submodule "dots/vim/bundle/vim-bats"]
-	path = dots/vim/bundle/vim-bats
-	url = https://github.com/markcornick/vim-bats.git
-[submodule "dots/vim/bundle/vim-jsx-typescript"]
-	path = dots/vim/bundle/vim-jsx-typescript
-	url = https://github.com/peitalin/vim-jsx-typescript.git
-[submodule "dots/vim/bundle/vim-perl"]
-	path = dots/vim/bundle/vim-perl
-	url = https://github.com/vim-perl/vim-perl.git
 [submodule "dots/vim/bundle/vim-scala"]
 	path = dots/vim/bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
-[submodule "dots/vim/bundle/vim-brainfuck"]
-	path = dots/vim/bundle/vim-brainfuck
-	url = https://github.com/Beerstorm/vim-brainfuck.git
-[submodule "dots/vim/bundle/vim-io"]
-	path = dots/vim/bundle/vim-io
-	url = https://github.com/andreimaxim/vim-io.git
-[submodule "dots/vim/bundle/vim-jison"]
-	path = dots/vim/bundle/vim-jison
-	url = https://github.com/wizicer/vim-jison.git
-[submodule "dots/vim/bundle/vim-toml"]
-	path = dots/vim/bundle/vim-toml
-	url = https://github.com/cespare/vim-toml.git
 [submodule "dots/vim/bundle/vim-better-sml"]
 	path = dots/vim/bundle/vim-better-sml
 	url = https://github.com/jez/vim-better-sml.git
@@ -79,21 +37,9 @@
 [submodule "dots/vim/bundle/vim-go"]
 	path = dots/vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule "dots/vim/bundle/kotlin-vim"]
-	path = dots/vim/bundle/kotlin-vim
-	url = http://github.com/udalov/kotlin-vim
-[submodule "dots/vim/bundle/vim-antlr"]
-	path = dots/vim/bundle/vim-antlr
-	url = https://github.com/dylon/vim-antlr.git
 [submodule "dots/vim/bundle/vim-racket"]
 	path = dots/vim/bundle/vim-racket
 	url = https://github.com/wlangstroth/vim-racket.git
-[submodule "dots/vim/bundle/nim.vim"]
-	path = dots/vim/bundle/nim.vim
-	url = https://github.com/zah/nim.vim.git
-[submodule "dots/vim/bundle/parrot.vim"]
-	path = dots/vim/bundle/parrot.vim
-	url = https://github.com/vim-scripts/parrot.vim.git
 [submodule "dots/vim/bundle/elm-vim"]
 	path = dots/vim/bundle/elm-vim
 	url = https://github.com/ElmCast/elm-vim.git
@@ -106,21 +52,9 @@
 [submodule "dots/vim/bundle/vim-simple"]
 	path = dots/vim/bundle/vim-simple
 	url = https://github.com/minond/vim-simple.git
-[submodule "dots/vim/bundle/st.vim"]
-	path = dots/vim/bundle/st.vim
-	url = https://github.com/vim-scripts/st.vim.git
 [submodule "dots/vim/bundle/vim-processing"]
 	path = dots/vim/bundle/vim-processing
 	url = https://github.com/sophacles/vim-processing.git
-[submodule "dots/vim/bundle/dart-vim-plugin"]
-	path = dots/vim/bundle/dart-vim-plugin
-	url = https://github.com/dart-lang/dart-vim-plugin.git
-[submodule "dots/vim/bundle/vim-javascript"]
-	path = dots/vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
-[submodule "dots/vim/bundle/purescript-vim"]
-	path = dots/vim/bundle/purescript-vim
-	url = https://github.com/raichoo/purescript-vim.git
 [submodule "dots/vim/bundle/prolog-vim"]
 	path = dots/vim/bundle/prolog-vim
 	url = https://github.com/soli/prolog-vim.git
