@@ -6,17 +6,19 @@ The `configure` script in the repo can be used to create those links. You can ru
 
     $ cd
     $ git clone http://github.com/minond/dots .dots
+    $ cd .dots
     $ ./configure --help
     Usage: ./configuration <flag|command|tool>
 
       Flags:
       --help, -h                    # View this help text
-      --update, -u                  # Update dependencies (like Vim plugins)
 
       Commands:
       install, i <repo> [path]      # Install a git submodule as a Pathogen plugin
+      update, u                     # Update dependencies (like Vim plugins)
+      check, c                      # Display optional software information
 
-      Tools:                        # git, vim, ctags, tmux, screen, bash
+      Tools:                        # git, vim, ctags, tmux, screen, bash, scala
 
 
 
