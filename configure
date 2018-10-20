@@ -134,10 +134,10 @@ installed() {
 # PARAMETER 1: the file you want to backup
 #==============================================================================
 backup() {
-    local fname=$1
-    if [ -e "$fname" ]; then
-        mv "$fname" "$fname.bak"
-    fi
+  local fname=$1
+  if [ -e "$fname" ]; then
+    mv "$fname" "$fname.bak"
+  fi
 }
 
 #=== FUNCTION =================================================================
@@ -147,16 +147,16 @@ backup() {
 # PARAMETER 2: the configuration file from this repo
 #==============================================================================
 link() {
-    local dest=$1
-    local src=$2
+  local dest=$1
+  local src=$2
 
-    backup "$dest"
-    if [ -h "$dest" ]; then
-        rm "$dest"
-    fi
+  backup "$dest"
+  if [ -h "$dest" ]; then
+    rm "$dest"
+  fi
 
-    info "linking $src with $dest"
-    ln -s "$src" "$dest"
+  info "linking $src with $dest"
+  ln -s "$src" "$dest"
 }
 
 #=== FUNCTION =================================================================
@@ -164,31 +164,31 @@ link() {
 # DESCRIPTION: prints help output
 #==============================================================================
 usage() {
-    echo "Usage: ./configuration <flag|command|tool>"
-    echo
-    echo "  Flags:"
-    echo "  --help, -h                    # View this help text"
-    echo
-    echo "  Commands:"
-    echo "  install, i <repo> [path]      # Install a git submodule as a Pathogen plugin"
-    echo "  update, u                     # Update dependencies (like Vim plugins)"
-    echo "  check, c                      # Display optional software information"
-    echo
-    echo -n "  Tools:                        # "
+  echo "Usage: ./configuration <flag|command|tool>"
+  echo
+  echo "  Flags:"
+  echo "  --help, -h                    # View this help text"
+  echo
+  echo "  Commands:"
+  echo "  install, i <repo> [path]      # Install a git submodule as a Pathogen plugin"
+  echo "  update, u                     # Update dependencies (like Vim plugins)"
+  echo "  check, c                      # Display optional software information"
+  echo
+  echo -n "  Tools:                        # "
 
-    local i=0
-    for option in git vim ctags tmux screen bash scala
-    do
-        i=$((i+1))
+  local i=0
+  for option in git vim ctags tmux screen bash scala
+  do
+    i=$((i+1))
 
-        if [[ "$i" != "1" ]]; then
-          echo -n ", "
-        fi
+    if [[ "$i" != "1" ]]; then
+      echo -n ", "
+    fi
 
-        echo -n "$option"
-    done
+    echo -n "$option"
+  done
 
-    echo
+  echo
 }
 
 #=== MAIN =====================================================================
@@ -199,105 +199,105 @@ fi
 
 for arg in "$@"
 do
-    case $arg in
-        git)
-            link ~/.gitconfig "$dots/gitconfig"
-            link ~/.gitignore "$dots/gitignore"
-            ;;
+  case $arg in
+    git)
+      link ~/.gitconfig "$dots/gitconfig"
+      link ~/.gitignore "$dots/gitignore"
+      ;;
 
-        vim)
-            git submodule update --init
-            link ~/.gvimrc "$dots/gvimrc"
-            link ~/.vimrc "$dots/vimrc"
-            link ~/.vim "$dots/vim"
-            ;;
+    vim)
+      git submodule update --init
+      link ~/.gvimrc "$dots/gvimrc"
+      link ~/.vimrc "$dots/vimrc"
+      link ~/.vim "$dots/vim"
+      ;;
 
-        ctags)
-            link ~/.ctags "$dots/ctags"
-            ;;
+    ctags)
+      link ~/.ctags "$dots/ctags"
+      ;;
 
-        tmux)
-            link ~/.tmux.conf "$dots/tmux.conf"
-            installed brew reattach-to-user-namespace
+    tmux)
+      link ~/.tmux.conf "$dots/tmux.conf"
+      installed brew reattach-to-user-namespace
 
-            if [ $? -ne 0 ]; then
-              warn "Current tmux configuration requires that 'reattach-to-user-namespace'"
-              warn "be installed. Tmux will not be able to start up without it. To"
-              warn "install, run the following command:"
-              confirm
-            fi
-            ;;
+      if [ $? -ne 0 ]; then
+        warn "Current tmux configuration requires that 'reattach-to-user-namespace'"
+        warn "be installed. Tmux will not be able to start up without it. To"
+        warn "install, run the following command:"
+        confirm
+      fi
+      ;;
 
-        screen)
-            link ~/.screenrc "$dots/screenrc"
-            ;;
+    screen)
+      link ~/.screenrc "$dots/screenrc"
+      ;;
 
-        bash)
-            link ~/.bashrc "$dots/bashrc"
-            ;;
+    bash)
+      link ~/.bashrc "$dots/bashrc"
+      ;;
 
-        scala)
-            link ~/.scalafmt.conf "$dots/scalafmt.conf"
-            link ~/.scalastyle.xml "$dots/scalastyle.xml"
-            ;;
+    scala)
+      link ~/.scalafmt.conf "$dots/scalafmt.conf"
+      link ~/.scalastyle.xml "$dots/scalastyle.xml"
+      ;;
 
-        c|check)
-            software
-            ;;
+    c|check)
+      software
+      ;;
 
-        i|install)
-            url="$2"
-            dir="$3"
+    i|install)
+      url="$2"
+      dir="$3"
 
-            if [ -z "$dir" ]; then
-                dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git//')
-            fi
+      if [ -z "$dir" ]; then
+        dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git//')
+      fi
 
-            if [[ "$dir" != dots* ]]; then
-                dir="dots/vim/bundle/$dir"
-            fi
+      if [[ "$dir" != dots* ]]; then
+        dir="dots/vim/bundle/$dir"
+      fi
 
-            info "repository url is $url"
-            info "install directory will be $dir"
-            echo -n "CONFIRM: ok? [y/N] "
-            read ans
+      info "repository url is $url"
+      info "install directory will be $dir"
+      echo -n "CONFIRM: ok? [y/N] "
+      read ans
 
-            if [ "$ans" == "y" ]; then
-                info "saving git submodule"
-                git submodule add "$url" "$dir"
-                info "saved git submodule"
-            else
-                info "not installing plugin"
-            fi
+      if [ "$ans" == "y" ]; then
+        info "saving git submodule"
+        git submodule add "$url" "$dir"
+        info "saved git submodule"
+      else
+        info "not installing plugin"
+      fi
 
-            exit 0
-            ;;
+      exit 0
+      ;;
 
-        u|update)
-            for p in dots/vim/bundle/*;
-            do
-                pushd "$p" &> /dev/null
-                info "updating $p..."
-                git pull --rebase origin master &> /dev/null &
-                popd &> /dev/null
-            done
+    u|update)
+      for p in dots/vim/bundle/*;
+      do
+        pushd "$p" &> /dev/null
+        info "updating $p..."
+        git pull --rebase origin master &> /dev/null &
+        popd &> /dev/null
+      done
 
-            wait
-            info "done updating $(echo $(wc -w <<< "$(ls ./dots/vim/bundle/)")) packages"
-            exit 0
+      wait
+      info "done updating $(echo $(wc -w <<< "$(ls ./dots/vim/bundle/)")) packages"
+      exit 0
 
-            ;;
+      ;;
 
-        -h|--help)
-            usage
-            exit 0
-            ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
 
-        *)
-            echo "Invalid argument $arg"
-            echo
-            usage
-            exit 1
-            ;;
-    esac
+    *)
+      echo "Invalid argument $arg"
+      echo
+      usage
+      exit 1
+      ;;
+  esac
 done
