@@ -152,9 +152,9 @@ alias add='git add'
 alias addp='clear; git add -p'
 alias d='clear; git diff --color=always --word-diff'
 alias s='clear; git status'
-alias l='git l'
-alias c='cync'
-alias p='push'
+alias l='clear; git l'
+alias c='gcamstar'
+alias p='git push origin $(git b)'
 
 # colors!
 alias grep='grep -I --color=auto'
@@ -192,13 +192,12 @@ alias bx="bundle exec"
 # $FUNCTIONS
 ###############################################################################
 
+# v2: python -m SimpleHTTPServer $port
+# v3: python3 -m http.server $port
 server() {
   local port=8000
   [ ! -z "$1" ] && port="$1"
   open http://localhost:$port
-  # v2
-  # python -m SimpleHTTPServer $port
-  # v3
   python3 -m http.server $port
 }
 
@@ -224,7 +223,7 @@ ca() {
   git commit -m "$fm" "$fm"
 }
 
-cync() {
+gcamstar() {
   git commit -am "$*"
 }
 
@@ -244,8 +243,19 @@ gmove() {
   git status
 }
 
-push() {
-  git push origin $(git b)
+use-local-go-powerpak() {
+  (_use-local-go-powerpak)
+}
+
+_use-local-go-powerpak() {
+  set -eo pipefail
+
+  cd vendor/gitlab.mx.com/mx/
+  test ! -L go-powerpak
+  rm -r go-powerpak/
+  ln -s /Users/marcosmindon/code/go/src/gitlab.mx.com/mx/go-powerpak go-powerpak
+
+  echo ok
 }
 
 #=== FUNCTION =================================================================
