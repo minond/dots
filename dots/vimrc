@@ -176,13 +176,15 @@ map <leader>p :set paste!<CR>
 map <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
 map <leader>w :call StripTrailingWhitespaces()<CR>
 map <leader>c :Copy<CR><CR>
+map <leader>C :CopyFilename<CR><CR>
+map <leader>R :SlimeSend0 "!!\n"<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! Ctags !ctags -R --verbose -f .tags
 command! Copy w !cat | pbcopy
-command! CopyFilename !echo -n % | pbcopy && echo 'copied filename to clip board'
+command! CopyFilename !echo -n % | pbcopy
 command! -range=% -nargs=0 C :<line1>,<line2>call CopySelection()
 command! -range=% -nargs=0 CopySelection :<line1>,<line2>call CopySelection()
 command! Spell setlocal spell! spelllang=en_us

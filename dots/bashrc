@@ -243,6 +243,10 @@ _use-local-go-powerpak() {
   echo ok
 }
 
+lgrep() {
+  grep --color=always $* | less -r
+}
+
 #=== FUNCTION =================================================================
 #        NAME: weather
 # DESCRIPTION: gets the weather
