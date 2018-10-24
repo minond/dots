@@ -1,7 +1,6 @@
 tags
 .tags
-*.swp
-*.swo
+.ctags
 *.sw*
 *.patch
 *.DS_Store*

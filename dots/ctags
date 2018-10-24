@@ -43,10 +43,16 @@
 --regex-scala=/^[ \t]*((abstract|final|sealed|implicit|lazy|private[^ ]*|protected)[ \t]*)*var[ \t]+([a-zA-Z0-9_]+)/\3/l,variables/
 --regex-scala=/^[ \t]*package[ \t]+([a-zA-Z0-9_.]+)/\1/p,packages/
 
+--langdef=protobuf
+--langmap=protobuf:.proto
+--regex-protobuf=/^message[ \t]*([a-zA-Z0-9_]+)/\1/m,message/
+--regex-protobuf=/^[ \t]*(optional|required|repeated)[ \t]*([a-zA-Z0-9_]+)[ \t]*([a-zA-Z0-9_]+)/\3/v,variable/
+
 --exclude=node_modules
 --exclude=*/node_modules/*
 --exclude=build
 --exclude=app/assets/javascripts/lib/
+--exclude=vendor/*
 --exclude=public/javascripts/vendor
 --exclude=public/assets
 --exclude=public-built
