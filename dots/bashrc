@@ -378,8 +378,8 @@ path! $HOME/.sdkman/candidates/gradle/current/bin
 path! $HOME/.sdkman/candidates/sbt/current/bin
 path! $HOME/.sdkman/candidates/scala/current/bin
 
-path! $GOROOT/bin
 path! $GOPATH/bin
+path! $GOROOT/bin
 path! $NODE_PATH/bin/
 path! $GHC_DOT_APP/Contents/bin
 path! $HOME/.dots/bin
