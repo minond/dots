@@ -5,9 +5,8 @@
 # VAR SETTINGS...............................................settings for tools
 # SETTINGS...................................settings for commands/applications
 # ALIASES..........................................anything but aliases go here
-# FUNCTIONS..................because we may need an arg not at the end at times
-# PATHS........................................................path var setters
 # GNU FTW................................................brew install coreutils
+# PATHS........................................................path var setters
 # EXTRA SOURCES....................................load additional source files
 ###############################################################################
 
@@ -140,6 +139,8 @@ alias d='clear; git diff --color=always'
 alias s='clear; git status'
 alias l='clear; git l'
 alias c='gcamstar'
+alias cm='gcmstar'
+alias ca='gacmstar'
 alias p='git push origin $(git b)'
 
 # colors!
@@ -173,185 +174,6 @@ alias derp="PB_IGNORE_DEPRECATIONS=1"
 alias localgo="SUBSCRIPTION_PREFIX=marcos-local-go. NATS_HOSTS=nats://sb-sand-gnatsd1:4222 go"
 alias nats="PB_CLIENT_TYPE=protobuf/nats/client PB_SERVER_TYPE=protobuf/nats/runner"
 alias bx="bundle exec"
-
-###############################################################################
-# $FUNCTIONS
-###############################################################################
-
-# v2: python -m SimpleHTTPServer $port
-# v3: python3 -m http.server $port
-server() {
-  local port=8000
-  [ ! -z "$1" ] && port="$1"
-  open http://localhost:$port
-  python3 -m http.server $port
-}
-
-colors() {
-  for i in {0..255}; do
-      echo $(tput setaf $i)########################$(tput sgr0) - $i
-  done
-}
-
-cm() {
-  git commit -m "$*"
-}
-
-ca() {
-  local fm="$1"
-
-  if [ ! -f "$fm" ]; then
-    echo "$fm does not exist!"
-    return 1
-  fi
-
-  git add "$fm"
-  git commit -m "$fm" "$fm"
-}
-
-gcamstar() {
-  git commit -am "$*"
-}
-
-gmove() {
-  local branch=$1
-  [ -z "$branch" ] && branch=master
-
-  echo "updating $branch"
-
-  git fetch --all
-  git fetch --prune
-  git checkout $branch
-  git pull --rebase origin $branch
-  git submodule update
-
-  echo "status $branch for"
-  git status
-}
-
-use-local-go-powerpak() {
-  (_use-local-go-powerpak)
-}
-
-_use-local-go-powerpak() {
-  set -eo pipefail
-
-  cd vendor/gitlab.mx.com/mx/
-  test ! -L go-powerpak
-  rm -r go-powerpak/
-  ln -s /Users/marcosmindon/code/go/src/gitlab.mx.com/mx/go-powerpak go-powerpak
-
-  echo ok
-}
-
-lgrep() {
-  grep --color=always $* | less -r
-}
-
-#=== FUNCTION =================================================================
-#        NAME: weather
-# DESCRIPTION: gets the weather
-# PARAMETER 1: City or Moon
-#==============================================================================
-function weather {
-    curl "wttr.in/$1"
-}
-
-#=== FUNCTION =================================================================
-#        NAME: run
-# DESCRIPTION: Should do whatever needed in order to execute a given file.
-# PARAMETER 1: Any file name with an extension.
-#==============================================================================
-function run {
-  if [ -z "$1" ]; then
-    echo "Usage: run <filename>"
-    return 1
-  elif [ ! -f "$1" ]; then
-    echo "Could not find `$1` file."
-    echo "Usage: run <filename>"
-    return 1
-  fi
-
-  local file=$(basename "$1")
-  local type="${file##*.}"
-  local name="${file%.*}"
-
-  case "$type" in
-    tex)
-      xelatex "$file"
-      [ $? -eq 0 ] && open "$name.pdf"
-      ;;
-
-    java)
-      javac $file
-      java $name
-      ;;
-
-    pde)
-      local sketch=$(pwd)
-      local name=$(basename $sketch)
-      local output="/tmp/processing-java/$name"
-      echo "Running sketch located in $sketch"
-      echo "Seting output to $output"
-      processing-java --sketch="$sketch" --output="$output" --force --run &
-      ;;
-
-    *)
-      echo "Unknown extension '$type'."
-      echo "Dumping name extract:"
-      echo
-      echo " - file: $file"
-      echo " - type: $type"
-      echo " - name: $name"
-      return 1
-      ;;
-  esac
-}
-
-#=== FUNCTION =================================================================
-#        NAME: create
-# DESCRIPTION: Outputs template content for different file types.
-# PARAMETER 1: Any known file extension.
-#==============================================================================
-create() {
-  if [ -z "$1" ]; then
-    echo "Usage: create <extension> [options]"
-    echo
-    echo "  Extensions:"
-    echo "    - html"
-    echo "    - flutter"
-    return 1
-  fi
-
-  case "$1" in
-    html)
-      cat <<HTML
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-</body>
-</html>
-HTML
-      ;;
-
-    flutter)
-      shift
-      flutter create --org xyz.minond --ios-language swift --android-language kotlin $*
-      ;;
-
-    *)
-      echo "Invalid extension '$1', options include:"
-      echo "  - html"
-      return 1
-      ;;
-  esac
-}
 
 ###############################################################################
 # $GNU FTW (brew install coreutils)

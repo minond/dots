@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -eo pipefail
+
+branch=$1
+[ -z "$branch" ] && branch=master
+
+echo "updating $branch"
+
+git fetch --all
+git fetch --prune
+git checkout $branch
+git pull --rebase origin $branch
+git submodule update
+
+echo "status $branch for"
+git status

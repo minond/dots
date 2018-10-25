@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -eo pipefail
+
+fm="$1"
+
+if [ ! -f "$fm" ]; then
+  echo "$fm does not exist!"
+  exit 1
+fi
+
+git add "$fm"
+git commit -m "$fm" "$fm"

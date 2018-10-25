@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#==============================================================================
+#        USAGE: create [extension]
+#  DESCRIPTION: Outputs template content for different file types.
+#  PARAMETER 1: extension: any known file extension.
+#==============================================================================
+
+set -eo pipefail
+
+if [ -z "$1" ]; then
+  echo "Usage: create <extension> [options]"
+  echo
+  echo "  Extensions:"
+  echo "    - html"
+  echo "    - flutter"
+  exit 1
+fi
+
+case "$1" in
+  html)
+    cat <<HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+</body>
+</html>
+HTML
+    ;;
+
+  flutter)
+    shift
+    flutter create --org xyz.minond --ios-language swift --android-language kotlin $*
+    ;;
+
+  *)
+    echo "Invalid extension '$1', options include:"
+    echo "  - html"
+    exit 1
+    ;;
+esac
