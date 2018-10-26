@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#==============================================================================
+#        USAGE: project-is-of-type <type>
+#  DESCRIPTION: Is this a project of a given type?
+#  PARAMETER 1: Required type label. Example: go, golang, rb, ruby, etc.
+#==============================================================================
+
+set -eo pipefail
+
+expects() {
+  exit $(test $*)
+}
+
+case "$1" in
+  go|golang)
+    expects -f main.go -o \
+            -f go.mod -o \
+            -f Gopkg.toml ;;
+esac
+
+exit 1

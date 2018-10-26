@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#==============================================================================
+#        USAGE: test-it [resource]
+#  DESCRIPTION: Figure out how to test something and do it.
+#  PARAMETER 1: Optional path to resource. Test everything by default.
+#==============================================================================
+
+set -eo pipefail
+
+if project-is-of-type go; then
+  [ -z "$1" ] && args=./... || args=${@:1}
+  echo go test $args
+  go test $args
+fi
