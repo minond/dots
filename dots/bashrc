@@ -143,6 +143,9 @@ alias cm='gcmstar'
 alias ca='gacmstar'
 alias p='git push origin $(git b)'
 
+alias b='build-it'
+alias t='test-it'
+
 # colors!
 alias grep='grep -I --color=auto'
 alias ll='ls -hlF --color --group-directories-first'
