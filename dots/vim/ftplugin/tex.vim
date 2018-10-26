@@ -1,1 +1,1 @@
-nnoremap <buffer> <leader>r :SlimeSend0 "\nrun " . fnameescape(expand('%')) . "\n"<CR>
+nnoremap <buffer> <leader>r :SlimeSend0 "\nrun-it " . fnameescape(expand('%')) . "\n"<CR>
