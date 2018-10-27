@@ -32,7 +32,7 @@ function source? {
 # PARAMETER 1: dir
 #==============================================================================
 function path! {
-    [ -d "$1" ] && export PATH="$1:$PATH"
+    [ -d "$1" ] && export PATH="$PATH:$1"
 }
 
 ###############################################################################
@@ -90,8 +90,8 @@ export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
 
 export DISPLAY=/private/tmp/com.apple.launchd.4KIKi7sC73/org.macosforge.xquartz:0
 export GOPATH=$HOME/code/go
-export GOROOT=$HOME/.go1.11.1
-export GOBIN=$GOROOT/bin
+export GOROOT=$HOME/.gov/go
+export GOBIN=$HOME/.gov/bin
 export GRADLE_HOME=$HOME/.sdkman/candidates/gradle/current
 export LUA_CPATH="$HOME/.luarocks/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/loadall.so;./?.so"
 export LUA_PATH="$HOME/.luarocks/share/lua/5.3/?.lua;$HOME/.luarocks/share/lua/5.3/?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua;/usr/local/Cellar/lua/5.3.4_2/libexec/share/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua"
@@ -191,6 +191,7 @@ command -v gls &> /dev/null && alias ls='gls'
 
 path! /usr/local/smlnj/bin
 path! $GOPATH/src/github.com/uber/go-torch/FlameGraph
+path! $HOME/code/gov
 
 path! $HOME/.rvm/bin
 path! $HOME/.cargo/bin
@@ -203,8 +204,8 @@ path! $HOME/.sdkman/candidates/gradle/current/bin
 path! $HOME/.sdkman/candidates/sbt/current/bin
 path! $HOME/.sdkman/candidates/scala/current/bin
 
-path! $GOPATH/bin
 path! $GOROOT/bin
+path! $GOBIN
 path! $NODE_PATH/bin/
 path! $GHC_DOT_APP/Contents/bin
 path! $HOME/.dots/bin
