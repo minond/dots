@@ -12,4 +12,8 @@ if project-is-of-type go; then
   [ -z "$1" ] && args=./... || args=${@:1}
   echo go test $args
   go test $args
+elif project-is-of-type rb; then
+  [ -z "$1" ] && cmd='rake spec' || cmd="rspec ${@:1}"
+  echo bundle exec $cmd
+  bundle exec $cmd
 fi

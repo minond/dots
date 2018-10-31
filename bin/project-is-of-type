@@ -17,6 +17,9 @@ case "$1" in
     expects -f main.go -o \
             -f go.mod -o \
             -f Gopkg.toml ;;
+
+  rb|ruby)
+    expects -f Gemfile ;;
 esac
 
 exit 1
