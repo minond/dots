@@ -8,7 +8,7 @@ branch=$1
 echo "updating $branch"
 
 git fetch --all
-git fetch --prune
+git fetch --prune --prune-tags
 git checkout $branch
 git pull --rebase origin $branch
 git submodule update
