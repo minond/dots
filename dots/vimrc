@@ -149,10 +149,17 @@ augroup END
 nnoremap ; :<C-F>i
 inoremap jj <Esc>:w<CR><RIGHT>
 
-map <C-k> <ESC>:GitGutterNextHunk<CR>
-map <C-j> <ESC>:GitGutterPrevHunk<CR>
+" Movement: next and prev buffers
+map <S-j> <ESC>:bp<CR>
+map <S-k> <ESC>:bn<CR>
 
-map <leader>m <ESC>/=======\\|<<<<<<<\\|>>>>>>><CR>
+" Movement: tag through windows
+map <Tab>   <C-w><C-w>
+map <S-Tab> <C-w><S-w>
+
+" Movement: next git diff chunk
+map <leader>j <ESC>:GitGutterNextHunk<CR>
+map <leader>k <ESC>:GitGutterPrevHunk<CR>
 
 map <C-o> <ESC>:CtrlP<CR>
 map <leader>o <ESC>:CtrlPTag<CR>
@@ -165,13 +172,6 @@ map <leader>f <ESC>:NERDTreeFind<CR>
 map <leader><S-f> <ESC>:NERDTreeToggle<CR>
 
 map <leader>g <ESC>:exec('tag '.expand('<cword>'))<CR>
-map <C-l> <ESC>:echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
-
-map <S-j> <ESC>:bp<CR>
-map <S-k> <ESC>:bn<CR>
-map <Tab> <C-w><C-w>
-map <S-Tab> <C-w><S-w>
-
 map <leader>p :set paste!<CR>
 map <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
 map <leader>w :call StripTrailingWhitespaces()<CR>
@@ -233,6 +233,14 @@ function! GetVisualSelection()
   let lines[-1] = lines[-1][: column_end - 2]
   let lines[0] = lines[0][column_start - 1:]
   return join(lines, "\n")
+endfunction
+
+function! CommentMergeConflicts()
+  exec '/=======\\|<<<<<<<\\|>>>>>>>'
+endfunction
+
+function! WhatIsThis()
+  exec "echo synIDattr(synID(line('.'), col('.'), 1), 'name')"
 endfunction
 
 
