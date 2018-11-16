@@ -13,7 +13,6 @@
 " $LOAD EXTERNALS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 execute pathogen#infect()
-execute pathogen#incubate()
 
 filetype on
 filetype plugin on
