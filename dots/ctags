@@ -51,9 +51,14 @@
 --exclude=node_modules
 --exclude=*/node_modules/*
 --exclude=build
---exclude=app/assets/javascripts/lib/
---exclude=vendor/*
---exclude=public/javascripts/vendor
+--exclude=app/assets/javascripts/lib
+--exclude=vendor
+--exclude=public/javascripts
 --exclude=public/assets
+--exclude=public/fonts
+--exclude=public/images
 --exclude=public-built
 --exclude=out
+--exclude=log
+--exclude=tmp
+--exclude=coverage
