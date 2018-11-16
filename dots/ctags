@@ -1,7 +1,3 @@
---langmap=java:+.cls
-
---regex-PHP=/trait ([^ ]*)/\1/c/
-
 --langdef=Go
 --langmap=Go:.go
 --regex-Go=/func([ \t]+\([^)]+\))?[ \t]+([a-zA-Z0-9_]+)/\2/d,func/
@@ -48,17 +44,14 @@
 --regex-protobuf=/^message[ \t]*([a-zA-Z0-9_]+)/\1/m,message/
 --regex-protobuf=/^[ \t]*(optional|required|repeated)[ \t]*([a-zA-Z0-9_]+)[ \t]*([a-zA-Z0-9_]+)/\3/v,variable/
 
---exclude=node_modules
---exclude=*/node_modules/*
 --exclude=build
---exclude=app/assets/javascripts/lib
---exclude=vendor
---exclude=public/javascripts
+--exclude=coverage
+--exclude=log
+--exclude=node_modules
+--exclude=out
 --exclude=public/assets
 --exclude=public/fonts
 --exclude=public/images
---exclude=public-built
---exclude=out
---exclude=log
+--exclude=public/javascripts
 --exclude=tmp
---exclude=coverage
+--exclude=vendor
