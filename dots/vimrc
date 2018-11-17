@@ -68,16 +68,23 @@ set tags^=./.tags,./.TAGS,.tags,.TAGS
 set statusline=%f\ [line:\ %l,\ col:\ %c\ -\ %P\]\ %m\ %r
 set signcolumn=yes
 
+set wildignore+=*.class
 set wildignore+=*.so
 set wildignore+=*.swp
-set wildignore+=*.class
-set wildignore+=*/tmp/*
 set wildignore+=*/bin/*
-set wildignore+=*/node_modules/*
 set wildignore+=*/build/*
-set wildignore+=*/out/*
-set wildignore+=*/target/*
+set wildignore+=*/coverage/*
 set wildignore+=*/dist/*
+set wildignore+=*/log/*
+set wildignore+=*/node_modules/*
+set wildignore+=*/out/*
+set wildignore+=*/public/assets/*
+set wildignore+=*/public/fonts/*
+set wildignore+=*/public/images/*
+set wildignore+=*/public/javascripts/*
+set wildignore+=*/target/*
+set wildignore+=*/tmp/*
+set wildignore+=*/vendor/*
 
 set wildmenu
 

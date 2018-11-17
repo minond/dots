@@ -44,8 +44,10 @@
 --regex-protobuf=/^message[ \t]*([a-zA-Z0-9_]+)/\1/m,message/
 --regex-protobuf=/^[ \t]*(optional|required|repeated)[ \t]*([a-zA-Z0-9_]+)[ \t]*([a-zA-Z0-9_]+)/\3/v,variable/
 
+--exclude=bin
 --exclude=build
 --exclude=coverage
+--exclude=dist
 --exclude=log
 --exclude=node_modules
 --exclude=out
@@ -53,5 +55,6 @@
 --exclude=public/fonts
 --exclude=public/images
 --exclude=public/javascripts
+--exclude=target
 --exclude=tmp
 --exclude=vendor
