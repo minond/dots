@@ -259,7 +259,7 @@ do
 
       info "repository url is $url"
       info "install directory will be $dir"
-      echo -n "CONFIRM: ok? [y/N] "
+      echo -n "confirm: ok? [y/N] "
       read ans
 
       if [ "$ans" == "y" ]; then
