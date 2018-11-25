@@ -28,8 +28,9 @@ case "$type" in
     ;;
 
   java)
+    shift
     javac $file
-    java $name
+    java $name $@
     ;;
 
   pde)
