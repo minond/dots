@@ -36,8 +36,8 @@ snippet for "for statement" !b
 		$2
 	}
 snippet range "for statement looping over range" !b
-	for $1, v := range $2 {
-		$3
+	for $1, $2 := range $3 {
+		$4
 	}
 snippet if "if statement" !b
 	if $1 {
