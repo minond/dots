@@ -234,6 +234,7 @@ do
 
     bash)
       link ~/.bashrc "$dots/bashrc"
+      link ~/.bash_aliases "$dots/bash_aliases"
       ;;
 
     scala)

@@ -129,55 +129,7 @@ fi
 # $ALIASES
 ###############################################################################
 
-# git aliases
-alias show='clear; git show'
-alias save='git stash save'
-alias pop='git stash pop'
-alias add='git add'
-alias addp='clear; git add -p'
-alias d='clear; git diff --color=always'
-alias s='clear; git status'
-alias l='clear; git l'
-alias c='gcamstar'
-alias cm='gcmstar'
-alias ca='gacmstar'
-alias p='git push origin $(git b)'
-
-alias b='build-it'
-alias t='test-it'
-
-# colors!
-alias grep='grep -I --color=auto'
-alias ll='ls -hlF --color --group-directories-first'
-alias la='ls -hA  --color --group-directories-first'
-
-alias tmux='tmux -2'
-alias copy='pbcopy'
-alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
-alias unswp='find . | grep swp | xargs rm'
-alias marp='/Applications/Marp.app/Contents/MacOS/Marp'
-alias https='http --default-scheme=https'
-alias gomod='GO111MODULE=on go'
-
-# Formatters:
-#  - Java: https://github.com/google/google-java-format
-#  - JavaScript: https://github.com/prettier/prettier
-#  - C/C++: http://clang.llvm.org/docs/ClangFormat.html
-#  - D: https://github.com/dlang-community/dfmt
-#  - Scala Fmt: http://scalameta.org/scalafmt/
-#  - Scala Style: http://www.scalastyle.org/
-alias javafmt='java -jar $HOME/.jars/google-java-format-1.5-all-deps.jar -r'
-alias jsfmt='prettier --no-semi --write'
-alias cfmt='clang-format -i -style Google'
-alias dfmt='dub run dfmt -- -i --brace_style=stroustrup --indent_size=2'
-alias scalafmt='scalafmt -c ~/.scalafmt.conf'
-alias scalastyle='scalastyle -c ~/.scalastyle.xml'
-
- # Work
-alias derp="PB_IGNORE_DEPRECATIONS=1"
-alias localgo="SUBSCRIPTION_PREFIX=marcos-local-go. NATS_HOSTS=nats://sb-sand-gnatsd1:4222 go"
-alias nats="PB_CLIENT_TYPE=protobuf/nats/client PB_SERVER_TYPE=protobuf/nats/runner"
-alias bx="bundle exec"
+source? ~/.bash_aliases
 
 ###############################################################################
 # $GNU FTW (brew install coreutils)
