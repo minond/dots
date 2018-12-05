@@ -2,6 +2,10 @@ snippet err "fatal error" !b
 	if err != nil {
 		$1
 	}$2
+snippet panic "panic on error" !b
+	if err != nil {
+		panic(err)
+	}$1
 snippet import "import statement" !b
 	import (
 		"$1
