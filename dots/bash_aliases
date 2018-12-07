@@ -10,7 +10,7 @@ alias l='clear; git l'
 alias c='gcamstar'
 alias cm='gcmstar'
 alias ca='gacmstar'
-alias p='git push origin $(git b)'
+alias p='git push origin $(git b) 2>&1'
 
 alias b='build-it'
 alias t='test-it'
@@ -47,5 +47,6 @@ alias derp="PB_IGNORE_DEPRECATIONS=1"
 alias localgo="SUBSCRIPTION_PREFIX=marcos-local-go. NATS_HOSTS=nats://sb-sand-gnatsd1:4222 go"
 alias nats="PB_CLIENT_TYPE=protobuf/nats/client PB_SERVER_TYPE=protobuf/nats/runner"
 alias bx="bundle exec"
+alias mx="cd ~/code/mx/"
 
 # vi: ft=sh
