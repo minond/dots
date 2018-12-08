@@ -51,6 +51,7 @@ software() {
   installed cmd brew
   installed cmd protoc
 
+  installed brew ack
   installed brew coreutils
   installed brew ctags
   installed brew findutils

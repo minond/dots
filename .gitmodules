@@ -79,3 +79,6 @@
 [submodule "dots/vim/bundle/vim-mix-format"]
 	path = dots/vim/bundle/vim-mix-format
 	url = https://github.com/mhinz/vim-mix-format.git
+[submodule "dots/vim/bundle/ack.vim"]
+	path = dots/vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
