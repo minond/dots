@@ -117,6 +117,7 @@ let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeRespectWildIgnore = 0
 let NERDTreeIgnore = ['\.sw.$', '.git$']
+let NERDTreeNodeDelimiter="\u00a0"
 
 let g:gitgutter_sign_added = '-'
 let g:gitgutter_sign_modified = '-'
