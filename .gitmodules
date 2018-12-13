@@ -85,3 +85,6 @@
 [submodule "dots/vim/bundle/VisIncr"]
 	path = dots/vim/bundle/VisIncr
 	url = https://github.com/vim-scripts/VisIncr.git
+[submodule "dots/vim/bundle/vim-dispatch"]
+	path = dots/vim/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
