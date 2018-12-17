@@ -27,6 +27,7 @@ alias unswp='find . | grep swp | xargs rm'
 alias marp='/Applications/Marp.app/Contents/MacOS/Marp'
 alias https='http --default-scheme=https'
 alias gomod='GO111MODULE=on go'
+alias spotify="CLIENT_ID=$SPOTIFY_CLIENT_ID CLIENT_SECRET=SPOTIFY_CLIENT_SECRET spotify"
 
 # Formatters:
 #  - Java: https://github.com/google/google-java-format

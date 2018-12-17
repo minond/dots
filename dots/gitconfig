@@ -10,6 +10,7 @@
   insteadOf = https://gitlab.mx.com/
 
 [alias]
+  open = !git-open
   b = !git branch | cut -d ' ' -f2
   l = log --graph --pretty --stat --decorate
 [http]
