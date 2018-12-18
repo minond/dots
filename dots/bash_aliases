@@ -21,10 +21,8 @@ alias ll='ls -hlF --color --group-directories-first'
 alias la='ls -hA  --color --group-directories-first'
 
 alias tmux='tmux -2'
-alias copy='pbcopy'
 alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
 alias unswp='find . | grep swp | xargs rm'
-alias marp='/Applications/Marp.app/Contents/MacOS/Marp'
 alias https='http --default-scheme=https'
 alias gomod='GO111MODULE=on go'
 alias spotify="CLIENT_ID=$SPOTIFY_CLIENT_ID CLIENT_SECRET=SPOTIFY_CLIENT_SECRET spotify"
