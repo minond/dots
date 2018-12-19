@@ -88,3 +88,6 @@
 [submodule "dots/vim/bundle/vim-dispatch"]
 	path = dots/vim/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+[submodule "dots/vim/bundle/vim-schlepp"]
+	path = dots/vim/bundle/vim-schlepp
+	url = https://github.com/zirrostig/vim-schlepp.git
