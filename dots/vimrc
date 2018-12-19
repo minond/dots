@@ -162,34 +162,34 @@ vmap <S-h> <Plug>SchleppLeft
 vmap <S-l> <Plug>SchleppRight
 
 " Movement: next and prev buffers
-map <S-j> <ESC>:bp<CR>
-map <S-k> <ESC>:bn<CR>
+nnoremap <S-j> <ESC>:bp<CR>
+nnoremap <S-k> <ESC>:bn<CR>
 
 " Movement: tag through windows
-map <Tab>   <C-w><C-w>
-map <S-Tab> <C-w><S-w>
+nnoremap <Tab>   <C-w><C-w>
+nnoremap <S-Tab> <C-w><S-w>
 
 " Movement: next git diff chunk
-map <leader>j <ESC>:GitGutterNextHunk<CR>
-map <leader>k <ESC>:GitGutterPrevHunk<CR>
+nnoremap <leader>j <ESC>:GitGutterNextHunk<CR>
+nnoremap <leader>k <ESC>:GitGutterPrevHunk<CR>
 
-map <C-o> <ESC>:CtrlP<CR>
-map <leader>o <ESC>:CtrlPTag<CR>
-map <leader>b <ESC>:CtrlPBuffer<CR>
+nnoremap <C-o> <ESC>:CtrlP<CR>
+nnoremap <leader>o <ESC>:CtrlPTag<CR>
+nnoremap <leader>b <ESC>:CtrlPBuffer<CR>
 
-map <C-c> <ESC>:TComment<CR>
-xmap <C-c> <ESC>:'<,'>TComment<CR>
+nnoremap <C-c> <ESC>:TComment<CR>
+xnoremap <C-c> <ESC>:'<,'>TComment<CR>
 
-map <leader>f <ESC>:NERDTreeFind<CR>
-map <leader><S-f> <ESC>:NERDTreeToggle<CR>
+nnoremap <leader>f <ESC>:NERDTreeFind<CR>
+nnoremap <leader><S-f> <ESC>:NERDTreeToggle<CR>
 
-map <leader>g <ESC>:exec('tag '.expand('<cword>'))<CR>
-map <leader>p :set paste!<CR>
-map <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
-map <leader>w :call StripTrailingWhitespaces()<CR>
-map <leader>c :Copy<CR><CR>
-map <leader>C :CopyFilename<CR><CR>
-map <leader>R :SlimeSend0 "!!\n"<CR>
+nnoremap <leader>g <ESC>:exec('tag '.expand('<cword>'))<CR>
+nnoremap <leader>p :set paste!<CR>
+nnoremap <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
+nnoremap <leader>w :call StripTrailingWhitespaces()<CR>
+nnoremap <leader>c :Copy<CR><CR>
+nnoremap <leader>C :CopyFilename<CR><CR>
+nnoremap <leader>R :SlimeSend0 "!!\n"<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS
