@@ -156,6 +156,11 @@ augroup END
 nnoremap ; :<C-F>i
 inoremap jj <Esc>:w<CR><RIGHT>
 
+vmap <S-k> <Plug>SchleppUp
+vmap <S-j> <Plug>SchleppDown
+vmap <S-h> <Plug>SchleppLeft
+vmap <S-l> <Plug>SchleppRight
+
 " Movement: next and prev buffers
 map <S-j> <ESC>:bp<CR>
 map <S-k> <ESC>:bn<CR>
