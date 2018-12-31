@@ -208,7 +208,6 @@ do
 
     vim)
       git submodule update --init
-      link ~/.gvimrc "$dots/gvimrc"
       link ~/.vimrc "$dots/vimrc"
       link ~/.vim "$dots/vim"
       ;;
