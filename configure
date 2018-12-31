@@ -178,7 +178,7 @@ usage() {
   echo -n "  Tools:                        # "
 
   local i=0
-  for option in git vim ctags tmux screen bash scala
+  for option in git vim ctags tmux screen bash scala chunkwm
   do
     i=$((i+1))
 
@@ -210,6 +210,11 @@ do
       git submodule update --init
       link ~/.vimrc "$dots/vimrc"
       link ~/.vim "$dots/vim"
+      ;;
+
+    chunkwm)
+      link ~/.chunkwmrc "$dots/chunkwmrc"
+      link ~/.skhdrc "$dots/skhdrc"
       ;;
 
     ctags)
