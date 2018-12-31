@@ -2,11 +2,6 @@
 
 chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
 
-chunkc core::hotload 1
-chunkc core::unload tiling.so
-chunkc core::unload ffm.so
-chunkc core::unload border.so
-
 chunkc set custom_bar_offset_top         10
 chunkc set custom_bar_offset_bottom      0
 chunkc set custom_bar_offset_left        0
@@ -21,4 +16,3 @@ chunkc set global_desktop_offset_gap     10
 chunkc core::load border.so
 chunkc core::load tiling.so
 chunkc core::load ffm.so
-
