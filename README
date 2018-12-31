@@ -23,7 +23,7 @@ ready to use a cofiguration, just run the script with the item name(s).
       update, u                     # Update dependencies (like Vim plugins)
       check, c                      # Display optional software information
 
-      Tools:                        # git, vim, ctags, tmux, screen, bash, scala
+      Tools:                        # git, vim, ctags, tmux, screen, bash, scala, chunkwm
 
 
 
