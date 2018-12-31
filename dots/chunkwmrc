@@ -2,6 +2,8 @@
 
 chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
 
+chunkc set mouse_follows_focus           intrinsic
+
 chunkc set custom_bar_offset_top         10
 chunkc set custom_bar_offset_bottom      0
 chunkc set custom_bar_offset_left        0
@@ -13,6 +15,16 @@ chunkc set global_desktop_offset_left    10
 chunkc set global_desktop_offset_right   10
 chunkc set global_desktop_offset_gap     10
 
+chunkc set focused_border_color          0xffd5c4a1
+chunkc set focused_border_width          4
+chunkc set focused_border_outline        0
+chunkc set focused_border_skip_floating  1
+chunkc set focused_border_skip_monocle   1
+
 chunkc core::load border.so
 chunkc core::load tiling.so
 chunkc core::load ffm.so
+
+chunkc tiling::rule --owner Finder  --state float &
+chunkc tiling::rule --owner Spotify --state float &
+chunkc tiling::rule --owner Todoist --state float &
