@@ -9,3 +9,16 @@ shift + alt - h : chunkc tiling::window --warp west
 shift + alt - j : chunkc tiling::window --warp south
 shift + alt - k : chunkc tiling::window --warp north
 shift + alt - l : chunkc tiling::window --warp east
+
+ctrl + shift + alt - h :
+  chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge west; \
+  chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east
+ctrl + shift + alt - j :
+  chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge south; \
+  chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north
+ctrl + shift + alt - k :
+  chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge north; \
+  chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south
+ctrl + shift + alt - l :
+  chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge east; \
+  chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west
