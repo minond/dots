@@ -22,3 +22,7 @@ ctrl + shift + alt - k :
 ctrl + shift + alt - l :
   chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge east; \
   chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west
+
+ctrl + shift + alt - r :
+  chunkc tiling::desktop --toggle offset; \
+  chunkc tiling::desktop --toggle offset
