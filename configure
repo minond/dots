@@ -173,11 +173,19 @@ link() {
 #        NAME: try_it
 # DESCRIPTION: clone a vim plugin or delete it if it already exists
 # PARAMETER 1: url of git repo
+# PARAMETER 2: optional install path
 #==============================================================================
 try_it() {
   local url="$1"
-  dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git//')
-  dir="dots/vim/bundle/$dir"
+  local dir="$2"
+
+  if [ -z "$dir" ]; then
+    dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git//')
+  fi
+
+  if [[ "$dir" != dots* ]]; then
+    dir="dots/vim/pack/eges/start/$dir"
+  fi
 
   if [ ! -d "$dir" ]; then
     info "repository url is $url"
@@ -238,7 +246,7 @@ usage() {
   echo
   echo "  Commands:"
   echo "  install, i <repo> [path]      # Install a git submodule as a Pathogen plugin"
-  echo "  try, t <repo>                 # Clone/delete a git submodule as a Pathogen plugin"
+  echo "  try, t <repo> [path]          # Clone/delete a git submodule as a Pathogen plugin"
   echo "  update, u                     # Update dependencies (like Vim plugins)"
   echo "  check, c                      # Display optional software information"
   echo
@@ -319,7 +327,7 @@ do
       ;;
 
     t|try)
-      try_it "$2"
+      try_it "$2" "$3"
       exit 0
       ;;
 
