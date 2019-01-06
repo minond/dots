@@ -12,12 +12,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $LOAD EXTERNALS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-execute pathogen#infect()
-
 filetype on
 filetype indent plugin on
-
-Helptags
 
 if filereadable(expand("~/.private.vim"))
   source ~/.private.vim
