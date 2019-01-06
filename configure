@@ -190,7 +190,7 @@ try_it() {
   if [ ! -d "$dir" ]; then
     info "repository url is $url"
     info "install directory will be $dir"
-    cd dots/vim/bundle
+    cd dots/vim/pack/eges/start/
     git clone --depth=1 https://github.com/majutsushi/tagbar.git
   else
     info "detected directory, clearing $dir"
@@ -337,7 +337,7 @@ do
       ;;
 
     u|update)
-      for p in dots/vim/bundle/*;
+      for p in dots/vim/pack/eges/start/*;
       do
         pushd "$p" &> /dev/null
         info "updating $p..."
@@ -346,7 +346,7 @@ do
       done
 
       wait
-      info "done updating $(echo $(wc -w <<< "$(ls ./dots/vim/bundle/)")) packages"
+      info "done updating $(echo $(wc -w <<< "$(ls ./dots/vim/pack/eges/start/)")) packages"
       exit 0
 
       ;;
