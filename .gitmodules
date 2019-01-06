@@ -91,3 +91,6 @@
 [submodule "dots/vim/bundle/vim-schlepp"]
 	path = dots/vim/bundle/vim-schlepp
 	url = https://github.com/zirrostig/vim-schlepp.git
+[submodule "dots/vim/bundle/tagbar"]
+	path = dots/vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
