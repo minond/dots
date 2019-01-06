@@ -209,7 +209,7 @@ install_it() {
   fi
 
   if [[ "$dir" != dots* ]]; then
-    dir="dots/vim/bundle/$dir"
+    dir="dots/vim/pack/eges/start/$dir"
   fi
 
   info "repository url is $url"
