@@ -1,0 +1,90 @@
+[submodule "dots/vim/pack/eges/start/elm-vim"]
+	path = dots/vim/pack/eges/start/elm-vim
+	url = https://github.com/ElmCast/elm-vim.git
+[submodule "dots/vim/pack/eges/start/ultisnips"]
+	path = dots/vim/pack/eges/start/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "dots/vim/pack/eges/start/vim-tmux-navigator"]
+	path = dots/vim/pack/eges/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "dots/vim/pack/eges/start/vim-sbt"]
+	path = dots/vim/pack/eges/start/vim-sbt
+	url = https://github.com/derekwyatt/vim-sbt.git
+[submodule "dots/vim/pack/eges/start/vim-scala"]
+	path = dots/vim/pack/eges/start/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "dots/vim/pack/eges/start/Dockerfile.vim"]
+	path = dots/vim/pack/eges/start/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "dots/vim/pack/eges/start/vim-elixir"]
+	path = dots/vim/pack/eges/start/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir.git
+[submodule "dots/vim/pack/eges/start/vim-go"]
+	path = dots/vim/pack/eges/start/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "dots/vim/pack/eges/start/vim-better-sml"]
+	path = dots/vim/pack/eges/start/vim-better-sml
+	url = https://github.com/jez/vim-better-sml.git
+[submodule "dots/vim/pack/eges/start/vim-slime"]
+	path = dots/vim/pack/eges/start/vim-slime
+	url = https://github.com/jpalardy/vim-slime.git
+[submodule "dots/vim/pack/eges/start/ctrlp.vim"]
+	path = dots/vim/pack/eges/start/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim
+[submodule "dots/vim/pack/eges/start/tagbar"]
+	path = dots/vim/pack/eges/start/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "dots/vim/pack/eges/start/vim-mix-format"]
+	path = dots/vim/pack/eges/start/vim-mix-format
+	url = https://github.com/mhinz/vim-mix-format.git
+[submodule "dots/vim/pack/eges/start/ack.vim"]
+	path = dots/vim/pack/eges/start/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "dots/vim/pack/eges/start/vim-serv"]
+	path = dots/vim/pack/eges/start/vim-serv
+	url = https://github.com/minond/vim-serv.git
+[submodule "dots/vim/pack/eges/start/vim-simple"]
+	path = dots/vim/pack/eges/start/vim-simple
+	url = https://github.com/minond/vim-simple.git
+[submodule "dots/vim/pack/eges/start/vim-whitespace"]
+	path = dots/vim/pack/eges/start/vim-whitespace
+	url = https://github.com/minond/vim-whitespace.git
+[submodule "dots/vim/pack/eges/start/simplenote.vim"]
+	path = dots/vim/pack/eges/start/simplenote.vim
+	url = https://github.com/mrtazz/simplenote.vim.git
+[submodule "dots/vim/pack/eges/start/vim-markdown"]
+	path = dots/vim/pack/eges/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
+[submodule "dots/vim/pack/eges/start/vim-llvm"]
+	path = dots/vim/pack/eges/start/vim-llvm
+	url = https://github.com/rhysd/vim-llvm.git
+[submodule "dots/vim/pack/eges/start/nerdtree"]
+	path = dots/vim/pack/eges/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "dots/vim/pack/eges/start/tcomment_vim"]
+	path = dots/vim/pack/eges/start/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim
+[submodule "dots/vim/pack/eges/start/vim-dispatch"]
+	path = dots/vim/pack/eges/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "dots/vim/pack/eges/start/vim-surround"]
+	path = dots/vim/pack/eges/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "dots/vim/pack/eges/start/vim-protobuf"]
+	path = dots/vim/pack/eges/start/vim-protobuf
+	url = https://github.com/uarun/vim-protobuf.git
+[submodule "dots/vim/pack/eges/start/vim-ruby"]
+	path = dots/vim/pack/eges/start/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "dots/vim/pack/eges/start/vim-racket"]
+	path = dots/vim/pack/eges/start/vim-racket
+	url = https://github.com/wlangstroth/vim-racket.git
+[submodule "dots/vim/pack/eges/start/VisIncr"]
+	path = dots/vim/pack/eges/start/VisIncr
+	url = https://github.com/vim-scripts/VisIncr.git
+[submodule "dots/vim/pack/eges/start/vim-schlepp"]
+	path = dots/vim/pack/eges/start/vim-schlepp
+	url = https://github.com/zirrostig/vim-schlepp.git
+[submodule "dots/vim/pack/eges/start/vim-gutter.git"]
+	path = dots/vim/pack/eges/start/vim-gutter.git
+	url = https://github.com/airblade/vim-gitgutter.git
