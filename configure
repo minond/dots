@@ -170,6 +170,63 @@ link() {
 }
 
 #=== FUNCTION =================================================================
+#        NAME: try_it
+# DESCRIPTION: clone a vim plugin or delete it if it already exists
+# PARAMETER 1: url of git repo
+#==============================================================================
+try_it() {
+  local url="$1"
+  dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git//')
+  dir="dots/vim/bundle/$dir"
+
+  if [ ! -d "$dir" ]; then
+    info "repository url is $url"
+    info "install directory will be $dir"
+    cd dots/vim/bundle
+    git clone --depth=1 https://github.com/majutsushi/tagbar.git
+  else
+    info "detected directory, clearing $dir"
+    echo -n "confirm: ok? [y/N] "
+    read ans
+    if [ "$ans" == "y" ]; then
+      rm -rf "$dir"
+    fi
+  fi
+}
+
+#=== FUNCTION =================================================================
+#        NAME: install_it
+# DESCRIPTION: install a vim plugin
+# PARAMETER 1: url of git repo
+# PARAMETER 2: optional install path
+#==============================================================================
+install_it() {
+  local url="$1"
+  local dir="$2"
+
+  if [ -z "$dir" ]; then
+    dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git//')
+  fi
+
+  if [[ "$dir" != dots* ]]; then
+    dir="dots/vim/bundle/$dir"
+  fi
+
+  info "repository url is $url"
+  info "install directory will be $dir"
+  echo -n "confirm: ok? [y/N] "
+  read ans
+
+  if [ "$ans" == "y" ]; then
+    info "saving git submodule"
+    git submodule add "$url" "$dir"
+    info "saved git submodule"
+  else
+    info "not installing plugin"
+  fi
+}
+
+#=== FUNCTION =================================================================
 #        NAME: usage
 # DESCRIPTION: prints help output
 #==============================================================================
@@ -181,6 +238,7 @@ usage() {
   echo
   echo "  Commands:"
   echo "  install, i <repo> [path]      # Install a git submodule as a Pathogen plugin"
+  echo "  try, t <repo>                 # Clone/delete a git submodule as a Pathogen plugin"
   echo "  update, u                     # Update dependencies (like Vim plugins)"
   echo "  check, c                      # Display optional software information"
   echo
@@ -260,31 +318,13 @@ do
       software
       ;;
 
+    t|try)
+      try_it "$2"
+      exit 0
+      ;;
+
     i|install)
-      url="$2"
-      dir="$3"
-
-      if [ -z "$dir" ]; then
-        dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git//')
-      fi
-
-      if [[ "$dir" != dots* ]]; then
-        dir="dots/vim/bundle/$dir"
-      fi
-
-      info "repository url is $url"
-      info "install directory will be $dir"
-      echo -n "confirm: ok? [y/N] "
-      read ans
-
-      if [ "$ans" == "y" ]; then
-        info "saving git submodule"
-        git submodule add "$url" "$dir"
-        info "saved git submodule"
-      else
-        info "not installing plugin"
-      fi
-
+      install_it "$2" "$3"
       exit 0
       ;;
 
