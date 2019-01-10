@@ -26,3 +26,5 @@ ctrl + shift + alt - l :
 ctrl + shift + alt - r :
   chunkc tiling::desktop --toggle offset; \
   chunkc tiling::desktop --toggle offset
+
+cmd - h : true

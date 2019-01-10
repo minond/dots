@@ -47,5 +47,6 @@ alias localgo="SUBSCRIPTION_PREFIX=marcos-local-go. NATS_HOSTS=nats://sb-sand-gn
 alias nats="PB_CLIENT_TYPE=protobuf/nats/client PB_SERVER_TYPE=protobuf/nats/runner"
 alias bx="bundle exec"
 alias mx="cd ~/code/mx/"
+alias mxtreb="RBENV_VERSION=2.5.1 $(RBENV_VERSION=2.5.1 rbenv which treb)"
 
 # vi: ft=sh
