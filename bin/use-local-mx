@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -eo pipefail
+
+pkg="$1"
+
+cd vendor/gitlab.mx.com/mx/
+test ! -z "$pkg"
+test ! -L "$pkg"
+rm -r "$pkg"
+ln -s "$GOPATH/src/gitlab.mx.com/mx/$pkg" "$pkg"
+
+echo ok
