@@ -11,6 +11,7 @@ alias c='gcamstar'
 alias cm='gcmstar'
 alias ca='gacmstar'
 alias p='git push origin $(git b) 2>&1'
+alias u='git pull --rebase origin $(git b)'
 
 alias b='build-it'
 alias t='test-it'

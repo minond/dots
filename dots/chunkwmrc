@@ -17,7 +17,9 @@ chunkc set focused_border_skip_monocle   1
 chunkc core::load border.so
 chunkc core::load tiling.so
 
+chunkc tiling::rule --owner Calendar --state float &
 chunkc tiling::rule --owner Finder   --state float &
+chunkc tiling::rule --owner Mail     --state float &
 chunkc tiling::rule --owner Messages --state float &
 chunkc tiling::rule --owner Slack    --state float &
 chunkc tiling::rule --owner Spotify  --state float &
