@@ -28,6 +28,7 @@ alias spotify="CLIENT_ID=$SPOTIFY_CLIENT_ID CLIENT_SECRET=SPOTIFY_CLIENT_SECRET 
 alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
 alias tmux='tmux -2'
 alias unswp='find . | grep swp | xargs rm'
+alias es='exercism submit'
 
 # Formatters:
 #  - C/C++: http://clang.llvm.org/docs/ClangFormat.html
