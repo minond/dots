@@ -1,1 +1,1 @@
-nnoremap <buffer> <leader>r :w<cr>:!clear; node %;<cr>
+nnoremap <buffer> <leader>r :w<cr>:Dispatch node %<cr>
