@@ -2,11 +2,11 @@
 
 chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
 
-chunkc set global_desktop_offset_top     10
-chunkc set global_desktop_offset_bottom  10
-chunkc set global_desktop_offset_left    10
-chunkc set global_desktop_offset_right   10
-chunkc set global_desktop_offset_gap     10
+chunkc set global_desktop_offset_top     15
+chunkc set global_desktop_offset_bottom  15
+chunkc set global_desktop_offset_left    15
+chunkc set global_desktop_offset_right   15
+chunkc set global_desktop_offset_gap     15
 
 chunkc set focused_border_color          0xffd5c4a1
 chunkc set focused_border_width          4
@@ -21,6 +21,7 @@ chunkc tiling::rule --owner Calendar  --state float &
 chunkc tiling::rule --owner Finder    --state float &
 chunkc tiling::rule --owner Mail      --state float &
 chunkc tiling::rule --owner Messages  --state float &
+chunkc tiling::rule --owner Preview   --state float &
 chunkc tiling::rule --owner Slack     --state float &
 chunkc tiling::rule --owner Slideshow --state float &
 chunkc tiling::rule --owner Spotify   --state float &
