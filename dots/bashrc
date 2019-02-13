@@ -142,6 +142,7 @@ command -v gls &> /dev/null && alias ls='gls'
 # $PATHS
 ###############################################################################
 
+path! /usr/local/sbin
 path! /usr/local/smlnj/bin
 path! $GOPATH/src/github.com/uber/go-torch/FlameGraph
 path! $HOME/code/gov

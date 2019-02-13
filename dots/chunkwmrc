@@ -2,11 +2,11 @@
 
 chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
 
-chunkc set global_desktop_offset_top     15
-chunkc set global_desktop_offset_bottom  15
-chunkc set global_desktop_offset_left    15
-chunkc set global_desktop_offset_right   15
-chunkc set global_desktop_offset_gap     15
+chunkc set global_desktop_offset_top     1
+chunkc set global_desktop_offset_bottom  1
+chunkc set global_desktop_offset_left    1
+chunkc set global_desktop_offset_right   1
+chunkc set global_desktop_offset_gap     1
 
 chunkc set focused_border_color          0xffd5c4a1
 chunkc set focused_border_width          4

@@ -1,4 +1,8 @@
+alt - 1 : chunkc tiling::desktop --layout bsp
+alt - 2 : chunkc tiling::desktop --layout monocle
+
 alt - f : chunkc tiling::window --toggle fullscreen
+alt - s : chunkc tiling::window --toggle split
 
 alt - h : chunkc tiling::window --focus west
 alt - j : chunkc tiling::window --focus south
