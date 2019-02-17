@@ -55,8 +55,9 @@ software() {
   installed macapp Spotify https://www.spotify.com/us/download
 
   installed cmd tmux
-  installed cmd brew
-  installed cmd protoc
+  installed cmd brew "https://brew.sh"
+  installed cmd protoc "https://github.com/protocolbuffers/protobuf/releases"
+  installed cmd fff "https://github.com/dylanaraps/fff#manual"
 
   installed brew ack
   installed brew chunkwm
