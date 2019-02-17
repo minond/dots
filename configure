@@ -73,6 +73,7 @@ software() {
   installed brew koekeishiya/formulae/skhd
   installed brew reattach-to-user-namespace
   installed brew rlwrap
+  installed brew z
 
   info done
 
