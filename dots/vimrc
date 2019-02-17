@@ -107,13 +107,16 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(exe|so|dll)$',
   \ }
 
-let NERDTreeCascadeOpenSingleChildDir = 1
-let NERDTreeCaseSensitiveSort = 1
-let NERDTreeShowHidden = 1
-let NERDTreeMinimalUI = 1
-let NERDTreeRespectWildIgnore = 0
-let NERDTreeIgnore = ['\.sw.$', '.git$']
-let NERDTreeNodeDelimiter="\u00a0"
+let g:NERDTreeCascadeOpenSingleChildDir = 1
+let g:NERDTreeCaseSensitiveSort = 1
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeRespectWildIgnore = 0
+let g:NERDTreeIgnore = ['\.sw.$', '.git$']
+let g:NERDTreeNodeDelimiter="\u00a0"
+
+let g:NERDTreeMapJumpNextSibling = ""
+let g:NERDTreeMapJumpPrevSibling = ""
 
 let g:gitgutter_sign_added = '-'
 let g:gitgutter_sign_modified = '-'
