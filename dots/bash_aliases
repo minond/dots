@@ -18,6 +18,8 @@ alias u='git pull --rebase origin $(git b)'
 alias b='build-it'
 alias t='test-it'
 
+alias q='test $? -eq 0 && exit'
+
 # colors!
 alias grep='grep -I --color=auto'
 alias la='ls -hA  --color --group-directories-first'
