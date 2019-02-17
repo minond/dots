@@ -16,9 +16,6 @@
 [submodule "dots/vim/pack/eges/start/Dockerfile.vim"]
 	path = dots/vim/pack/eges/start/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
-[submodule "dots/vim/pack/eges/start/vim-elixir"]
-	path = dots/vim/pack/eges/start/vim-elixir
-	url = https://github.com/elixir-lang/vim-elixir.git
 [submodule "dots/vim/pack/eges/start/vim-go"]
 	path = dots/vim/pack/eges/start/vim-go
 	url = https://github.com/fatih/vim-go.git
@@ -34,9 +31,6 @@
 [submodule "dots/vim/pack/eges/start/tagbar"]
 	path = dots/vim/pack/eges/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "dots/vim/pack/eges/start/vim-mix-format"]
-	path = dots/vim/pack/eges/start/vim-mix-format
-	url = https://github.com/mhinz/vim-mix-format.git
 [submodule "dots/vim/pack/eges/start/ack.vim"]
 	path = dots/vim/pack/eges/start/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
