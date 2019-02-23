@@ -12,7 +12,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $LOAD EXTERNALS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype on
 filetype indent plugin on
 
 if filereadable(expand("~/.private.vim"))
@@ -22,47 +21,58 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $VIM SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = "\<Space>"
+
+set t_Co=256                             " 256 colors available
+
+set splitbelow                           " hirizontal splits go down
+set splitright                           " vertical splits go to the right
+
+set autoindent                           " copy indent from current line to next
+set smartindent                          " block indentation
+set backspace=indent,eol,start           " ok to backspace over most things
+
+set softtabstop=2                        " back character length
+set shiftwidth=2                         " shift movement length
+set expandtab                            " when you say tab we space
+set tabstop=2                            " tab character length
+
 set colorcolumn=80,120                   " http://paul-m-jones.com/archives/276
 set cursorline                           " highlight the line cursor is on
 
+set foldlevel=100                        " no folds below level of 100 at start
+set formatoptions-=t                     " disable automatic wrapping of lines
+set hidden                               " best. thing. ever. no buffer closed
+
+set smartcase                            " case insensitive defaul
 set hlsearch                             " highlight all matches
 set ignorecase                           " case insensitive searches
 set incsearch                            " highlight matches while typing
 set showmatch                            " jump to search result
-set smartcase                            " case insensitive defaul
-set nojoinspaces                         " just one space after a period!
 
-set modeline
-set modelines=5
-
-set foldlevel=100                        " no folds below level of 100 at start
 set list                                 " display special characters
 set listchars=tab:\ \ ,trail:.           " special characters for special char
-set ls=2
-set nocompatible
-set nowrap
+
+set laststatus=2                         " always show status line
 set number                               " show line numbers
-
-set numberwidth=4                        " set line numbers section width
-set expandtab
-set shiftwidth=2                         " shift movement length
-set softtabstop=2                        " back character length
-set tabstop=2                            " tab character length
-set nuw=4                                " make line number column wider
-set backspace=indent,eol,start
-set matchpairs=<:>,‘:’,(:),{:},[:]
-
-set autoindent                           " copy indent from current line to next
-set smartindent                          " block indentation
-set splitbelow
-set splitright
-
-set hidden                               " best. thing. ever. no buffer closed
-set antialias
-set t_Co=256
-set tags^=./.tags,./.TAGS,.tags,.TAGS
+set cmdwinheight=10                      " make command win a little bigger
+set numberwidth=4                        " make line number column wider
+set signcolumn=yes                       " gitgutter puts its signs here
 set statusline=%f\ [line:\ %l,\ col:\ %c\ -\ %P\]\ %m\ %r
-set signcolumn=yes
+
+set makeprg=make
+set errorformat=%+A\ %#%f\ %#(%l\\\,%c):\ %m,%C%m
+
+set matchpairs=<:>,‘:’,(:),{:},[:]       " match open/close characters
+set modeline
+set modelines=5
+set nocompatible                         " we want the more useful way
+set nojoinspaces                         " just one space after a period!
+set nowrap                               " press enter instead
+
+set tags^=./.tags,./.TAGS,.tags,.TAGS    " possible names for ctags file
+
+set wildmenu                             " better cmd line completion
 
 set wildignore+=*.class
 set wildignore+=*.so
@@ -81,14 +91,6 @@ set wildignore+=*/public/javascripts/*
 set wildignore+=*/target/*
 set wildignore+=*/tmp/*
 set wildignore+=*/vendor/*
-
-set wildmenu
-
-set makeprg=make
-set errorformat=%+A\ %#%f\ %#(%l\\\,%c):\ %m,%C%m
-set formatoptions-=t                     " disable automatic wrapping of lines
-
-let mapleader = "\<Space>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $PLUGIN SETTINGS
@@ -109,14 +111,13 @@ let g:ctrlp_custom_ignore = {
 
 let g:NERDTreeCascadeOpenSingleChildDir = 1
 let g:NERDTreeCaseSensitiveSort = 1
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeRespectWildIgnore = 0
 let g:NERDTreeIgnore = ['\.sw.$', '.git$']
-let g:NERDTreeNodeDelimiter="\u00a0"
-
 let g:NERDTreeMapJumpNextSibling = ""
 let g:NERDTreeMapJumpPrevSibling = ""
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeNodeDelimiter="\u00a0"
+let g:NERDTreeRespectWildIgnore = 0
+let g:NERDTreeShowHidden = 1
 
 let g:gitgutter_sign_added = '-'
 let g:gitgutter_sign_modified = '-'
@@ -125,14 +126,14 @@ let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '-'
 
 let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+let g:UltiSnipsJumpForwardTrigger='<c-j>'
 
 let g:SimpleColScalar = 238
 
-let g:SimplenoteVertical = 1
 let g:SimplenoteListSize = 30
 let g:SimplenoteNoteFormat = "%N%>(%T)"
+let g:SimplenoteVertical = 1
 
 let g:tagbar_compact = 1
 let g:tagbar_iconchars = ['▸', '▾']
@@ -156,57 +157,92 @@ augroup VimReload
   au BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
 
+augroup Cmdwin
+  au!
+  au CmdwinEnter  * setlocal nonumber
+  au CmdwinEnter  * setlocal ft=text
+augroup END
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" enter command window with history and in insert mode
 nnoremap ; :<C-F>i
+
+" jj in insert mode takes you out of insert mode and saves the buffer
 inoremap jj <Esc>:w<CR><RIGHT>
 
+" Schlepp movement bindings. Allow you to move whole selections at a time
 vmap <S-k> <Plug>SchleppUp
 vmap <S-j> <Plug>SchleppDown
 vmap <S-h> <Plug>SchleppLeft
 vmap <S-l> <Plug>SchleppRight
 
-" Movement: next and prev buffers
+" move between buffers with Shift+j/k
 nnoremap <S-j> <ESC>:bp<CR>
 nnoremap <S-k> <ESC>:bn<CR>
 
-" Movement: tag through windows
+" move between windows with [Shift+]Tab
 nnoremap <Tab>   <C-w><C-w>
 nnoremap <S-Tab> <C-w><S-w>
 
-" Movement: next git diff chunk
+" move to the next diff hunk with leader+j/k
 nnoremap <leader>j <ESC>:GitGutterNextHunk<CR>
 nnoremap <leader>k <ESC>:GitGutterPrevHunk<CR>
 
-nnoremap <C-o> <ESC>:CtrlP<CR>
-nnoremap <leader>o <ESC>:CtrlPTag<CR>
+" open ctrlp for files, tags, and buffers
+nnoremap <leader>o <ESC>:CtrlP<CR>
+nnoremap <leader>t <ESC>:CtrlPTag<CR>
 nnoremap <leader>b <ESC>:CtrlPBuffer<CR>
 
+" it's hard to give up old habits
+nnoremap <C-o> <ESC>:CtrlP<CR>
+
+" code-comment single and multiple lines
 nnoremap <C-c> <ESC>:TComment<CR>
 xnoremap <C-c> <ESC>:'<,'>TComment<CR>
 
+" using ctags, go to the definition of the word under the cursor
+nnoremap <leader>g <ESC>:exec('tag '.expand('<cword>'))<CR>
+
+" focus on current window by shrinking every other window as much as possible
+nnoremap <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
+
+" strip trailing whitespace
+nnoremap <leader>w :call StripTrailingWhitespaces()<CR>
+
+" copy helpers, copy whole buffer with leader+c and file name with leader+C
+nnoremap <leader>c :Copy<CR><CR>
+nnoremap <leader>C :CopyFilename<CR><CR>
+
+" sends `!!` (run last command) to the designated slime output pane
+nnoremap <leader>R :SlimeSend0 "!!\n"<CR>
+
+" toggle tagbar, duh
+nnoremap <leader>1 :TagbarToggle<CR>
+
+" open and close nerdtree, even within nerdtree
+" TODO switch this to use a number shortcut instead, like Tagbar does
 nnoremap <leader>f <ESC>:NERDTreeFind<CR>
 nnoremap <leader><S-f> <ESC>:NERDTreeToggle<CR>
 
-nnoremap <leader>g <ESC>:exec('tag '.expand('<cword>'))<CR>
+" toggle paste mode
+" TODO change this to it's automatically done with actually pasting
 nnoremap <leader>p :set paste!<CR>
-nnoremap <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
-nnoremap <leader>w :call StripTrailingWhitespaces()<CR>
-nnoremap <leader>c :Copy<CR><CR>
-nnoremap <leader>C :CopyFilename<CR><CR>
-nnoremap <leader>R :SlimeSend0 "!!\n"<CR>
-nnoremap <leader>1 :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-command! Ctags !ctags -R --verbose -f .tags
+" copy related helpers
 command! Copy w !cat | pbcopy
 command! CopyFilename !echo -n % | pbcopy
 command! -range=% -nargs=0 C :<line1>,<line2>call CopySelection()
-command! -range=% -nargs=0 CopySelection :<line1>,<line2>call CopySelection()
+
+" toggle spell checker using en_us dict
 command! Spell setlocal spell! spelllang=en_us
+
+" generate tags file
+command! Ctags !ctags -R --verbose -f .tags
 
 " git commands
 command! Ann !clear; git annotate %
