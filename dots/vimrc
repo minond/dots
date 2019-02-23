@@ -129,8 +129,6 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 
-let g:SimpleColScalar = 238
-
 let g:SimplenoteListSize = 30
 let g:SimplenoteNoteFormat = "%N%>(%T)"
 let g:SimplenoteVertical = 1
