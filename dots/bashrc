@@ -59,8 +59,6 @@ ps1_nice_exit_code() {
     fi
 }
 
-export PROMPT_COMMAND='ps1_nice_exit_code'
-
 export PS1='$(ps1_nice_exit_code)\w$(ps1_prompt_jobscount) > '
 
 if [[ "$TERM" =~ 256color ]]; then
