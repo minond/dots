@@ -1,3 +1,7 @@
+# brew install coreutils
+command -v gnome-open &> /dev/null && alias open='gnome-open'
+command -v gls &> /dev/null && alias ls='gls'
+
 # git aliases
 alias add='git add'
 alias addp='clear; git add -p'
@@ -17,7 +21,6 @@ alias u='git pull --rebase origin $(git b)'
 
 alias b='build-it'
 alias t='test-it'
-
 alias q='test $? -eq 0 && exit'
 
 # colors!
@@ -32,28 +35,21 @@ alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
 alias tmux='tmux -2'
 alias unswp='find . | grep swp | xargs rm'
 alias es='exercism submit'
-alias notes='vim -c "SimplenoteList"'
+alias notes='vim -c SimplenoteList'
 
-# Formatters:
-#  - C/C++: http://clang.llvm.org/docs/ClangFormat.html
-#  - D: https://github.com/dlang-community/dfmt
-#  - Java: https://github.com/google/google-java-format
-#  - JavaScript: https://github.com/prettier/prettier
-#  - Scala Fmt: http://scalameta.org/scalafmt/
-#  - Scala Style: http://www.scalastyle.org/
-alias cfmt='clang-format -i -style Google'
-alias dfmt='dub run dfmt -- -i --brace_style=stroustrup --indent_size=2'
-alias javafmt='java -jar $HOME/.jars/google-java-format-1.5-all-deps.jar -r'
-alias jsfmt='prettier --no-semi --write'
-alias scalafmt='scalafmt -c ~/.scalafmt.conf'
-alias scalastyle='scalastyle -c ~/.scalastyle.xml'
+# Formatters
+alias cfmt='clang-format -i -style Google'                                      # C/C++: http://clang.llvm.org/docs/ClangFormat.html
+alias dfmt='dub run dfmt -- -i --brace_style=stroustrup --indent_size=2'        # D: https://github.com/dlang-community/dfmt
+alias javafmt='java -jar $HOME/.jars/google-java-format-1.5-all-deps.jar -r'    # Java: https://github.com/google/google-java-format
+alias jsfmt='prettier --no-semi --write'                                        # JavaScript: https://github.com/prettier/prettier
+alias scalafmt='scalafmt -c ~/.scalafmt.conf'                                   # Scala Fmt: http://scalameta.org/scalafmt/
+alias scalastyle='scalastyle -c ~/.scalastyle.xml'                              # Scala Style: http://www.scalastyle.org/
 
- # Work
-alias bx="bundle exec"
-alias derp="PB_IGNORE_DEPRECATIONS=1"
-alias localgo="SUBSCRIPTION_PREFIX=marcos-local-go. NATS_HOSTS=nats://sb-sand-gnatsd1:4222 go"
-alias mx="cd ~/code/mx/"
-alias mxtreb="RBENV_VERSION=2.5.1 $(RBENV_VERSION=2.5.1 rbenv which treb)"
-alias nats="PB_CLIENT_TYPE=protobuf/nats/client PB_SERVER_TYPE=protobuf/nats/runner"
+# Work
+alias bx='bundle exec'
+alias derp='PB_IGNORE_DEPRECATIONS=1'
+alias localgo='SUBSCRIPTION_PREFIX=marcos-local-go. NATS_HOSTS=nats://sb-sand-gnatsd1:4222 go'
+alias mx='cd ~/code/mx/'
+alias nats='PB_CLIENT_TYPE=protobuf/nats/client PB_SERVER_TYPE=protobuf/nats/runner'
 
 # vi: ft=sh

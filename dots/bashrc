@@ -5,7 +5,6 @@
 # VAR SETTINGS ............................................. settings for tools
 # SETTINGS ................................. settings for commands/applications
 # ALIASES ........................................ anything but aliases go here
-# GNU FTW .............................................. brew install coreutils
 # PATHS ...................................................... path var setters
 # EXTRA SOURCES .................................. load additional source files
 ###############################################################################
@@ -128,13 +127,6 @@ fi
 
 source? ~/.bash_aliases
 source? ~/.bash_aliases_sys
-
-###############################################################################
-# $GNU FTW (brew install coreutils)
-###############################################################################
-
-command -v gnome-open &> /dev/null && alias open='gnome-open'
-command -v gls &> /dev/null && alias ls='gls'
 
 ###############################################################################
 # $PATHS
