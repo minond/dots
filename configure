@@ -172,39 +172,6 @@ link() {
 }
 
 #=== FUNCTION =================================================================
-#        NAME: try_it
-# DESCRIPTION: clone a vim plugin or delete it if it already exists
-# PARAMETER 1: url of git repo
-# PARAMETER 2: optional install path
-#==============================================================================
-try_it() {
-  local url="$1"
-  local dir="$2"
-
-  if [ -z "$dir" ]; then
-    dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git//')
-  fi
-
-  if [[ "$dir" != dots* ]]; then
-    dir="dots/vim/pack/eges/start/$dir"
-  fi
-
-  if [ ! -d "$dir" ]; then
-    info "repository url is $url"
-    info "install directory will be $dir"
-    cd dots/vim/pack/eges/start/
-    git clone --depth=1 https://github.com/majutsushi/tagbar.git
-  else
-    info "detected directory, clearing $dir"
-    echo -n "confirm: ok? [y/N] "
-    read ans
-    if [ "$ans" == "y" ]; then
-      rm -rf "$dir"
-    fi
-  fi
-}
-
-#=== FUNCTION =================================================================
 #        NAME: install_it
 # DESCRIPTION: install a vim plugin
 # PARAMETER 1: url of git repo
@@ -330,11 +297,6 @@ do
 
     c|check)
       software
-      ;;
-
-    t|try)
-      try_it "$2" "$3"
-      exit 0
       ;;
 
     i|install)
