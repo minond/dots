@@ -15,7 +15,7 @@ nnoremap <buffer> <leader>r :w<cr>:!clear<cr>:GoRun<cr>
 nnoremap <buffer> <leader>t :GoTest<cr>
 nnoremap <buffer> <leader>T :GoCoverageBrowser<cr>
 
-let g:go_fmt_command = "gofmt"
+let g:go_fmt_command = "goimports"
 let g:go_fmt_options = {
   \ 'gofmt': '-s',
   \ 'goimports': '-local gitlab.mx.com,github.com/minond',
