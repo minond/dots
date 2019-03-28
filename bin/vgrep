@@ -2,7 +2,13 @@
 
 set -eo pipefail
 
-files=$(grep -l $*)
+grep=grep
+if [ -d .git ]; then
+  grep='git grep'
+fi
+
+echo $grep -l $*
+files=$($grep -l $*)
 echo -n "vim "
 echo $files
 vim $files
