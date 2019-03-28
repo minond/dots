@@ -58,12 +58,12 @@ ps1_nice_exit_code() {
     fi
 }
 
-export PS1='$(ps1_nice_exit_code)\w$(ps1_prompt_jobscount) > '
+export PS1='$(ps1_nice_exit_code)\w$(ps1_prompt_jobscount) : '
 
 if [[ "$TERM" =~ 256color ]]; then
   export PS1='\
 \[\033[01;21m\]\w\[\033[0m\]\
-\[\033[01;35m\]$(ps1_prompt_jobscount)\[\033[0m\] > '
+\[\033[01;35m\]$(ps1_prompt_jobscount)\[\033[0m\] : '
 fi
 
 ###############################################################################
