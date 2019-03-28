@@ -15,3 +15,5 @@
   l = log --graph --pretty --stat --decorate
 [http]
 	cookiefile = /Users/marcosmindon/.gitcookies
+[push]
+	default = current
