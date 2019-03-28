@@ -8,8 +8,7 @@ nnoremap <buffer> <leader>B :GoTestCompile<cr>
 nnoremap <buffer> <leader>d :GoDoc<cr>
 nnoremap <buffer> <leader>D :GoDocBrowser<cr>
 nnoremap <buffer> <leader>g :GoDef<cr>
-nnoremap <buffer> <leader>i :GoImports<cr>:e<cr>
-nnoremap <buffer> <leader>I :GoInstall<cr>:e<cr>
+nnoremap <buffer> <leader>i :GoInstall<cr>:e<cr>
 nnoremap <buffer> <leader>l :GoMetaLinter<cr>
 nnoremap <buffer> <leader>r :w<cr>:!clear<cr>:GoRun<cr>
 nnoremap <buffer> <leader>t :GoTest<cr>
