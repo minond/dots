@@ -82,3 +82,6 @@
 [submodule "dots/vim/pack/eges/start/vim-gutter.git"]
 	path = dots/vim/pack/eges/start/vim-gutter.git
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "dots/vim/pack/eges/start/typescript-vim"]
+	path = dots/vim/pack/eges/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
