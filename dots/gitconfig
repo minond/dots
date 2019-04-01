@@ -1,19 +1,24 @@
 [user]
-  name = Marcos Minond
-  email = minond.marcos@gmail.com
+	name = Marcos Minond
+	email = minond.marcos@gmail.com
+
 [color]
-  ui = true
+	ui = true
+
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
+	autocrlf = false
 
 [url "git@gitlab.mx.com:"]
-  insteadOf = https://gitlab.mx.com/
+	insteadOf = https://gitlab.mx.com/
 
 [alias]
-  open = !git-open
-  b = !git branch | cut -d ' ' -f2
-  l = log --graph --pretty --stat --decorate
+	open = !git-open
+	b = !git branch | cut -d ' ' -f2 | xargs -n1 echo
+	l = log --graph --pretty --stat --decorate
+
 [http]
 	cookiefile = /Users/marcosmindon/.gitcookies
+
 [push]
 	default = current
