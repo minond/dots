@@ -85,3 +85,6 @@
 [submodule "dots/vim/pack/eges/start/typescript-vim"]
 	path = dots/vim/pack/eges/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "dots/vim/pack/eges/start/vim-jsx-typescript"]
+	path = dots/vim/pack/eges/start/vim-jsx-typescript
+	url = https://github.com/peitalin/vim-jsx-typescript.git
