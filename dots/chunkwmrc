@@ -18,6 +18,7 @@ chunkc core::load border.so
 chunkc core::load tiling.so
 
 chunkc tiling::rule --owner Calendar  --state float &
+chunkc tiling::rule --owner FaceTime  --state float &
 chunkc tiling::rule --owner Finder    --state float &
 chunkc tiling::rule --owner Mail      --state float &
 chunkc tiling::rule --owner Messages  --state float &
