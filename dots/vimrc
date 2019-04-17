@@ -216,6 +216,9 @@ nnoremap <leader>R :SlimeSend0 "!!\n"<CR>
 " toggle tagbar, duh
 nnoremap <leader>1 :TagbarToggle<CR>
 
+" open cwd
+nnoremap <leader>. :e .<CR>
+
 " open and close nerdtree, even within nerdtree
 " TODO switch this to use a number shortcut instead, like Tagbar does
 nnoremap <leader>f <ESC>:NERDTreeFind<CR>
