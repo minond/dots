@@ -138,6 +138,7 @@ path! $GOPATH/src/github.com/uber/go-torch/FlameGraph
 path! $HOME/code/gov
 path! $HOME/code/click
 
+path! $HOME/.pub-cache/bin
 path! $HOME/.rvm/bin
 path! $HOME/.cargo/bin
 path! $HOME/.nvm/versions/node/v8.9.1/bin
