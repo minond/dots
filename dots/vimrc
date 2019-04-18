@@ -198,8 +198,8 @@ nnoremap <C-c> <ESC>:TComment<CR>
 xnoremap <C-c> <ESC>:'<,'>TComment<CR>
 
 " if ALE is disabled, use tag go-to's instead of go-to-definition command
-nnoremap <buffer> <leader>g :ALEGoToDefinition<cr>
-nnoremap <buffer> <leader>d :ALEHover<cr>
+nnoremap <leader>g :ALEGoToDefinition<cr>
+nnoremap <leader>d :ALEHover<cr>
 
 " focus on current window by shrinking every other window as much as possible
 nnoremap <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
