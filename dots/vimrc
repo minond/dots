@@ -197,8 +197,9 @@ nnoremap <leader>b <ESC>:CtrlPBuffer<CR>
 nnoremap <C-c> <ESC>:TComment<CR>
 xnoremap <C-c> <ESC>:'<,'>TComment<CR>
 
-" using ctags, go to the definition of the word under the cursor
-nnoremap <leader>g <ESC>:exec('tag '.expand('<cword>'))<CR>
+" if ALE is disabled, use tag go-to's instead of go-to-definition command
+nnoremap <buffer> <leader>g :ALEGoToDefinition<cr>
+nnoremap <buffer> <leader>d :ALEHover<cr>
 
 " focus on current window by shrinking every other window as much as possible
 nnoremap <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
