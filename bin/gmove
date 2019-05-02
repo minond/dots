@@ -11,7 +11,7 @@ git fetch --all
 git fetch --prune --prune-tags
 git checkout $branch
 git pull --rebase origin $branch
-git submodule update
+[ -f .gitmodules ] && git submodule update
 
 echo "status $branch for"
 git status
