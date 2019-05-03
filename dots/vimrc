@@ -253,6 +253,7 @@ command! History !clear; git log -p -- %
 command! Add execute ':silent !clear; git add %' | execute ':redraw!' | execute ':GitGutter'
 command! AddP execute '!clear; git add -p %' | execute ':GitGutter'
 command! -nargs=* Diff !clear; git diff <f-args>
+command! Gopen !git open %
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLORSCHEME
