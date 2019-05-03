@@ -94,6 +94,6 @@
 [submodule "dots/vim/pack/eges/start/ale"]
 	path = dots/vim/pack/eges/start/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "dots/vim/pack/eges/start/vim-five.git"]
-	path = dots/vim/pack/eges/start/vim-five.git
+[submodule "dots/vim/pack/eges/start/vim-fugitive"]
+	path = dots/vim/pack/eges/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git

@@ -182,7 +182,7 @@ install_it() {
   local dir="$2"
 
   if [ -z "$dir" ]; then
-    dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git//')
+    dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git$//')
   fi
 
   if [[ "$dir" != dots* ]]; then
