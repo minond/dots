@@ -54,10 +54,9 @@ set list                                 " display special characters
 set listchars=tab:\ \ ,trail:.           " special characters for special char
 
 set laststatus=2                         " always show status line
-set number                               " show line numbers
 set cmdwinheight=10                      " make command win a little bigger
+set foldcolumn=1                         " adds a bit of padding on the left
 set numberwidth=4                        " make line number column wider
-set signcolumn=yes                       " gitgutter puts its signs here
 set statusline=%f\ [line:\ %l,\ col:\ %c\ -\ %P\]\ %m\ %r
 
 set makeprg=make
@@ -124,6 +123,8 @@ let g:gitgutter_sign_modified = '-'
 let g:gitgutter_sign_modified_removed = '-'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '-'
+let g:gitgutter_map_keys = 0
+let g:gitgutter_enabled = 0
 
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
@@ -143,11 +144,6 @@ let g:ale_lint_on_enter = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup Git
-  au!
-  au BufWritePost * :GitGutterAll
-augroup END
-
 augroup CursorLine
   au!
   au WinEnter     * setlocal cursorline
@@ -218,8 +214,9 @@ nnoremap <leader>C :CopyFilename<CR><CR>
 " sends `!!` (run last command) to the designated slime output pane
 nnoremap <leader>R :SlimeSend0 "!!\n"<CR>
 
-" toggle tagbar, duh
-nnoremap <leader>1 :TagbarToggle<CR>
+" toggle things
+nnoremap <leader>1 :GitGutterToggle<CR>
+nnoremap <leader>2 :TagbarToggle<CR>
 
 " open cwd
 nnoremap <leader>. :e .<CR>
