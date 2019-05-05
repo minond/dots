@@ -63,6 +63,7 @@ software() {
   installed brew chunkwm
   installed brew coreutils
   installed brew ctags
+  installed brew direnv
   installed brew findutils
   installed brew gawk
   installed brew gnu-getopt

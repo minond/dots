@@ -1,5 +1,6 @@
 tags
 .tags
+.envrc
 .ctags
 *.sw*
 *.patch
