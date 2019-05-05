@@ -40,7 +40,6 @@ set tabstop=2                            " tab character length
 set colorcolumn=80,120                   " http://paul-m-jones.com/archives/276
 set cursorline                           " highlight the line cursor is on
 
-set foldlevel=100                        " no folds below level of 100 at start
 set formatoptions-=t                     " disable automatic wrapping of lines
 set hidden                               " best. thing. ever. no buffer closed
 
@@ -55,9 +54,12 @@ set listchars=tab:\ \ ,trail:.           " special characters for special char
 
 set laststatus=2                         " always show status line
 set cmdwinheight=10                      " make command win a little bigger
-set foldcolumn=1                         " adds a bit of padding on the left
 set numberwidth=4                        " make line number column wider
 set statusline=%f\ [line:\ %l,\ col:\ %c\ -\ %P\]\ %m\ %r
+
+set nofoldenable                         " lets us use foldcolumn for padding
+set foldcolumn=1                         " adds a bit of padding on the left
+set foldlevel=100                        " no folds below level of 100 at start
 
 set makeprg=make
 set errorformat=%+A\ %#%f\ %#(%l\\\,%c):\ %m,%C%m
