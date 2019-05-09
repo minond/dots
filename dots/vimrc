@@ -163,6 +163,11 @@ augroup Cmdwin
   au CmdwinEnter  * setlocal ft=text
 augroup END
 
+augroup Git
+  au!
+  au BufWritePost * :GitGutterAll
+augroup END
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
