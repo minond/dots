@@ -11,7 +11,7 @@ nnoremap <buffer> <leader>g :GoDef<cr>
 nnoremap <buffer> <leader>G :GoDefType<cr>
 nnoremap <buffer> <leader>i :GoImports<cr>:e<cr>
 nnoremap <buffer> <leader>l :GoMetaLinter<cr>
-nnoremap <buffer> <leader>r :GoRun<cr>
+nnoremap <buffer> <leader>r :!clear<cr>:GoRun<cr>
 nnoremap <buffer> <leader>R :GoTestFunc<cr>
 nnoremap <buffer> <leader>t :GoTest<cr>
 nnoremap <buffer> <leader>T :GoCoverageBrowser<cr>
