@@ -9,14 +9,14 @@ nnoremap <buffer> <leader>d :GoDoc<cr>
 nnoremap <buffer> <leader>D :GoDocBrowser<cr>
 nnoremap <buffer> <leader>g :GoDef<cr>
 nnoremap <buffer> <leader>G :GoDefType<cr>
-nnoremap <buffer> <leader>i :GoInstall<cr>:e<cr>
+nnoremap <buffer> <leader>i :GoImports<cr>:e<cr>
 nnoremap <buffer> <leader>l :GoMetaLinter<cr>
 nnoremap <buffer> <leader>r :GoRun<cr>
 nnoremap <buffer> <leader>R :GoTestFunc<cr>
 nnoremap <buffer> <leader>t :GoTest<cr>
 nnoremap <buffer> <leader>T :GoCoverageBrowser<cr>
 
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "gofmt"
 let g:go_fmt_options = {
   \ 'gofmt': '-s',
   \ 'goimports': '-local gitlab.mx.com,github.com/minond',
