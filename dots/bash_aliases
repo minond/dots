@@ -22,6 +22,7 @@ alias u='git pull --rebase origin $(git b)'
 alias b='build-it'
 alias t='test-it'
 alias q='test $? -eq 0 && exit'
+alias qq='test $? -eq 0 && say done && exit'
 
 # colors!
 alias grep='grep -I --color=auto'
