@@ -38,10 +38,15 @@ function path! {
 # $PROMPT
 ###############################################################################
 
+__TPUT_BOLD=$(tput bold)
+__TPUT_F_RED=$(tput setaf 1)
+__TPUT_F_GREEN=$(tput setaf 2)
+__TPUT_RESET=$(tput sgr0)
+
 ps1_prompt_jobscount() {
     local stopped=$(jobs -sp | wc -l | sed 's/ //g')
     local running=$(jobs -rp | wc -l | sed 's/ //g')
-    ((running+stopped)) && echo -n " (${running}r/${stopped}s)"
+    ((running+stopped)) && echo -n " $__TPUT_BOLD$__TPUT_F_GREEN(${running}r/${stopped}s)$__TPUT_RESET"
 }
 
 ps1_nice_exit_code() {
@@ -54,17 +59,11 @@ ps1_nice_exit_code() {
     if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
         return
     else
-        echo $(tput bold)$(tput setaf 1)\(error $last_exit\)$(tput sgr0)
+        echo "$__TPUT_BOLD$__TPUT_F_RED(error $last_exit)$__TPUT_RESET "
     fi
 }
 
-export PS1='$(ps1_nice_exit_code)\w$(ps1_prompt_jobscount) : '
-
-if [[ "$TERM" =~ 256color ]]; then
-  export PS1='\
-\[\033[01;21m\]\w\[\033[0m\]\
-\[\033[01;35m\]$(ps1_prompt_jobscount)\[\033[0m\] : '
-fi
+export PS1='$(ps1_nice_exit_code)$__TPUT_BOLD\w$__TPUT_RESET$(ps1_prompt_jobscount) $ '
 
 ###############################################################################
 # $ENV SETTINGS
