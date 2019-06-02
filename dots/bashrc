@@ -131,34 +131,34 @@ source? ~/.bash_aliases_sys
 # $PATHS
 ###############################################################################
 
-path! /usr/local/sbin
-path! /usr/local/smlnj/bin
-path! $GOPATH/src/github.com/uber/go-torch/FlameGraph
-path! $HOME/code/gov
-path! $HOME/code/click
+# Local user-specific binaries trump all others
+path! $HOME/.bin
+
+# Vendor paths
+path! $HOME/.dots/module/click
+path! $HOME/.dots/module/fff
+path! $HOME/.dots/module/gov
+
+path! $HOME/.dots/bin
 
 path! $HOME/.pub-cache/bin
 path! $HOME/.rvm/bin
-path! $HOME/.cargo/bin
-path! $HOME/.nvm/versions/node/v8.9.1/bin
-path! $HOME/.llvm/5.0.1/bin
-path! $HOME/.protoc/3.5.1/bin
 path! $HOME/.flutter-lib/bin
-path! $HOME/.sdkman/candidates/ant/current/bin
-path! $HOME/.sdkman/candidates/gradle/current/bin
 path! $HOME/.sdkman/candidates/sbt/current/bin
 path! $HOME/.sdkman/candidates/scala/current/bin
 
 path! $GOROOT/bin
 path! $GOBIN
 path! $NODE_PATH/bin/
-path! $GHC_DOT_APP/Contents/bin
-path! $HOME/.dots/bin
-path! $HOME/.bin
-
-path! '/Applications/Racket v6.11/bin/'
 path! '/Applications/Racket v6.12/bin/'
-path! '/Applications/Rakudo/bin/'
+path! /usr/local/smlnj/bin
+
+path! /usr/local/sbin
+
+# path! $HOME/.cargo/bin
+# path! $GOPATH/src/github.com/uber/go-torch/FlameGraph
+# path! $HOME/.sdkman/candidates/ant/current/bin
+# path! $HOME/.sdkman/candidates/gradle/current/bin
 
 ###############################################################################
 # $EXTRA SOURCES
@@ -166,7 +166,9 @@ path! '/Applications/Rakudo/bin/'
 
 source? $HOME/.private
 source? $HOME/.bashrc_local
-source? /usr/local/etc/profile.d/z.sh
+
+# Vendor sources
+source? $HOME/.dots/module/z/z.sh
 
 # These following slow down a session's start time and are not often used, so
 # they're in a function instead:

@@ -57,7 +57,6 @@ software() {
   installed cmd tmux
   installed cmd brew "https://brew.sh"
   installed cmd protoc "https://github.com/protocolbuffers/protobuf/releases"
-  installed cmd fff "https://github.com/dylanaraps/fff#manual"
 
   installed brew ack
   installed brew chunkwm
@@ -74,7 +73,6 @@ software() {
   installed brew koekeishiya/formulae/skhd
   installed brew reattach-to-user-namespace
   installed brew rlwrap
-  installed brew z
 
   info done
 

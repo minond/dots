@@ -94,3 +94,24 @@
 [submodule "dots/vim/pack/eges/start/vim-fugitive"]
 	path = dots/vim/pack/eges/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+# [submodule "vendor/fff"]
+# 	path = vendor/fff
+# 	url = https://github.com/dylanaraps/fff.git
+# [submodule "vendor/z"]
+# 	path = vendor/z
+# 	url = https://github.com/rupa/z.git
+# [submodule "vendor/click"]
+# 	path = vendor/click
+# 	url = git@github.com:minond/click.git
+[submodule "module/z"]
+	path = module/z
+	url = https://github.com/rupa/z.git
+[submodule "module/fff"]
+	path = module/fff
+	url = https://github.com/dylanaraps/fff.git
+[submodule "module/gov"]
+	path = module/gov
+	url = https://github.com/minond/gov.git
+[submodule "module/click"]
+	path = module/click
+	url = https://github.com/minond/click.git
