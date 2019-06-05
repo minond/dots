@@ -22,7 +22,7 @@
 # PARAMETER 1: file
 #==============================================================================
 function source? {
-    [ -f "$1" ] && source "$1"
+  [ -f "$1" ] && source "$1"
 }
 
 #=== FUNCTION =================================================================
@@ -31,7 +31,7 @@ function source? {
 # PARAMETER 1: dir
 #==============================================================================
 function path! {
-    [ -d "$1" ] && export PATH="$PATH:$1"
+  [ -d "$1" ] && export PATH="$PATH:$1"
 }
 
 ###############################################################################
@@ -39,23 +39,23 @@ function path! {
 ###############################################################################
 
 ps1_prompt_jobscount() {
-    local stopped=$(jobs -sp | wc -l | sed 's/ //g')
-    local running=$(jobs -rp | wc -l | sed 's/ //g')
-    ((running+stopped)) && echo -n " (${running}r/${stopped}s)"
+  local stopped=$(jobs -sp | wc -l | sed 's/ //g')
+  local running=$(jobs -rp | wc -l | sed 's/ //g')
+  ((running+stopped)) && echo -n " (${running}r/${stopped}s)"
 }
 
 ps1_nice_exit_code() {
-    local last_exit="$?"
+  local last_exit="$?"
 
-    # 0   ok
-    # 146 sent process to background
-    # 141 git less exit
-    # 130 manually cancelled (ctrl-c)
-    if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
-      return
-    else
-      echo "(error $last_exit) "
-    fi
+  # 0   ok
+  # 146 sent process to background
+  # 141 git less exit
+  # 130 manually cancelled (ctrl-c)
+  if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
+    return
+  else
+    echo "(error $last_exit) "
+  fi
 }
 
 export PS1='$(ps1_nice_exit_code)\w$(ps1_prompt_jobscount) $ '
@@ -179,7 +179,7 @@ load-extras() {
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
+  . /etc/bash_completion
 fi
 
 
