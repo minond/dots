@@ -38,15 +38,10 @@ function path! {
 # $PROMPT
 ###############################################################################
 
-__TPUT_BOLD=$(tput bold)
-__TPUT_F_RED=$(tput setaf 1)
-__TPUT_F_GREEN=$(tput setaf 2)
-__TPUT_RESET=$(tput sgr0)
-
 ps1_prompt_jobscount() {
     local stopped=$(jobs -sp | wc -l | sed 's/ //g')
     local running=$(jobs -rp | wc -l | sed 's/ //g')
-    ((running+stopped)) && echo -n " $__TPUT_BOLD$__TPUT_F_GREEN(${running}r/${stopped}s)$__TPUT_RESET"
+    ((running+stopped)) && echo -n " (${running}r/${stopped}s)"
 }
 
 ps1_nice_exit_code() {
@@ -57,13 +52,13 @@ ps1_nice_exit_code() {
     # 141 git less exit
     # 130 manually cancelled (ctrl-c)
     if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
-        return
+      return
     else
-        echo "$__TPUT_BOLD$__TPUT_F_RED(error $last_exit)$__TPUT_RESET "
+      echo "(error $last_exit) "
     fi
 }
 
-export PS1='$(ps1_nice_exit_code)$__TPUT_BOLD\w$__TPUT_RESET$(ps1_prompt_jobscount) $ '
+export PS1='$(ps1_nice_exit_code)\w$(ps1_prompt_jobscount) $ '
 
 ###############################################################################
 # $ENV SETTINGS
