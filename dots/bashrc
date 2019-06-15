@@ -79,6 +79,7 @@ export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
 # $TOOL SETTINGS
 ###############################################################################
 
+export GO111MODULE=auto
 export GOPATH=$HOME/code/go
 export GOROOT=$HOME/.gov/go
 export GOBIN=$HOME/.gov/bin
@@ -86,7 +87,6 @@ export GRADLE_HOME=$HOME/.sdkman/candidates/gradle/current
 export LUA_CPATH="$HOME/.luarocks/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/loadall.so;./?.so"
 export LUA_PATH="$HOME/.luarocks/share/lua/5.3/?.lua;$HOME/.luarocks/share/lua/5.3/?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua;/usr/local/Cellar/lua/5.3.4_2/libexec/share/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua"
 export LUA_ROCKS=$HOME/.luarocks
-export NODE_PATH=$HOME/.node
 export NVM_DIR=$HOME/.nvm
 export PGDATA=/usr/local/var/postgres
 export SDKMAN_DIR=$HOME/.sdkman
@@ -144,7 +144,6 @@ path! $HOME/.sdkman/candidates/scala/current/bin
 
 path! $GOROOT/bin
 path! $GOBIN
-path! $NODE_PATH/bin/
 path! '/Applications/Racket v6.12/bin/'
 path! /usr/local/smlnj/bin
 
