@@ -29,7 +29,6 @@ set splitbelow                           " hirizontal splits go down
 set splitright                           " vertical splits go to the right
 
 set autoindent                           " copy indent from current line to next
-set smartindent                          " block indentation
 set backspace=indent,eol,start           " ok to backspace over most things
 
 set softtabstop=2                        " back character length
