@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -eo pipefail
+
+max=$(($1 - 1))
+shift
+
+for i in $(seq 0 $max); do
+  declare "_i=$i"
+  declare "_max=$max"
+  eval $*
+done
