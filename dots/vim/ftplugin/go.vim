@@ -29,8 +29,3 @@ let g:go_template_autocreate = 0
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 let g:go_metalinter_command='golangci-lint'
-
-" Don't auto-lint Go files
-let g:ale_go_golint_executable = ''
-let g:ale_go_golint_options = ''
-let g:ale_go_govet_options = ''
