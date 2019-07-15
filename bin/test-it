@@ -19,7 +19,7 @@ if project-is-of-type go; then
   x go test $args
 elif project-is-of-type rb; then
   [ -z "$1" ] && cmd='rake spec' || cmd="rspec ${@:1}"
-  x bundle exec $cmd
+  x env JRUBY_OPTS=--debug bundle exec $cmd
 fi
 
 echo "I don't know what to do"
