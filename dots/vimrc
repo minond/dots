@@ -242,7 +242,7 @@ command! -range=% -nargs=0 C :<line1>,<line2>call CopySelection()
 command! Spell setlocal spell! spelllang=en_us
 
 " generate tags file
-command! Ctags !ctags -R --verbose -f .tags
+command! Ctags !git ls-files | ctags -R --verbose -f .tags
 
 " git commands
 command! Ann !clear; git annotate %
