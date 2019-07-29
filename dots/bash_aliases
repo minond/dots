@@ -38,6 +38,7 @@ alias tmux='tmux -2'
 alias unswp='find . | grep swp | xargs rm'
 alias es='exercism submit'
 alias notes='vim -c SimplenoteList'
+alias v='vim .'
 
 # Formatters
 alias cfmt='clang-format -i -style Google'                                      # C/C++: http://clang.llvm.org/docs/ClangFormat.html
