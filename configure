@@ -214,7 +214,6 @@ usage() {
   echo
   echo "  Commands:"
   echo "  install, i <repo> [path]      # Install a git submodule as a vim plugin"
-  echo "  try, t <repo> [path]          # Clone/delete a git submodule as a vim plugin"
   echo "  update, u                     # Update dependencies (like Vim plugins)"
   echo "  check, c                      # Display optional software information"
   echo
