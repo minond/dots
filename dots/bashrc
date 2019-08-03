@@ -145,6 +145,7 @@ path! $HOME/.rvm/bin
 path! $HOME/.flutter-lib/bin
 path! $HOME/.sdkman/candidates/sbt/current/bin
 path! $HOME/.sdkman/candidates/scala/current/bin
+path! $HOME/.bloop
 
 path! $GOROOT/bin
 path! $GOBIN
