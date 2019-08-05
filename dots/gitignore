@@ -6,5 +6,6 @@
 .ruby-version
 .tags
 ignore*
+*.ignore
 npm-debug.log
 tags
