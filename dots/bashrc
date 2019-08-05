@@ -130,34 +130,22 @@ source? ~/.bash_aliases_sys
 # $PATHS
 ###############################################################################
 
-# Local user-specific binaries trump all others
-path! $HOME/.bin
-
-# Vendor paths
-path! $HOME/.dots/module/click
+path! $HOME/.bin                                                               # Local binaries before all others
+path! $HOME/.dots/module/click                                                 # Vendored binaries
 path! $HOME/.dots/module/fff
 path! $HOME/.dots/module/gov
-
 path! $HOME/.dots/bin
-
-path! $HOME/.pub-cache/bin
-path! $HOME/.rvm/bin
+path! $HOME/.pub-cache/bin                                                     # Dart and Flutter
 path! $HOME/.flutter-lib/bin
+path! $HOME/.rvm/bin                                                           # Ruby and Rvm
+path! $HOME/.sdkman/candidates/scala/current/bin                               # Scala and friends
 path! $HOME/.sdkman/candidates/sbt/current/bin
-path! $HOME/.sdkman/candidates/scala/current/bin
 path! $HOME/.bloop
-
-path! $GOROOT/bin
+path! $GOROOT/bin                                                              # Go
 path! $GOBIN
-path! '/Applications/Racket v6.12/bin/'
-path! /usr/local/smlnj/bin
-
+path! '/Applications/Racket v6.12/bin/'                                        # Racket
+path! /usr/local/smlnj/bin                                                     # StandardML of NJ
 path! /usr/local/sbin
-
-# path! $HOME/.cargo/bin
-# path! $GOPATH/src/github.com/uber/go-torch/FlameGraph
-# path! $HOME/.sdkman/candidates/ant/current/bin
-# path! $HOME/.sdkman/candidates/gradle/current/bin
 
 ###############################################################################
 # $EXTRA SOURCES
@@ -166,17 +154,18 @@ path! /usr/local/sbin
 source? $HOME/.private
 source? $HOME/.bashrc_local
 
-# Vendor sources
-source? $HOME/.dots/module/z/z.sh
+source? $HOME/.dots/module/z/z.sh                                              # Z
+source? $HOME/.ghcup/env                                                       # Haskell
 
 # These following slow down a session's start time and are not often used, so
 # they're in a function instead:
 load-extras() {
-  source? $HOME/.sdkman/bin/sdkman-init.sh
-  source? $NVM_DIR/nvm.sh
-  source? $HOME/.travis/travis.sh
-  source? $HOME/torch/install/bin/torch-activate
-  source? /usr/local/bin/virtualenvwrapper.sh
+  source? $HOME/.sdkman/bin/sdkman-init.sh                                     # JVM SDK Man
+  source? $NVM_DIR/nvm.sh                                                      # Node's nvm
+  source? /usr/local/bin/virtualenvwrapper.sh                                  # Python virenv
+  path! $HOME/.cargo/bin                                                       # Rust
+  path! $HOME/.sdkman/candidates/ant/current/bin                               # Ant
+  path! $HOME/.sdkman/candidates/gradle/current/bin                            # Gradle
 }
 
 # enable programmable completion features (you don't need to enable
