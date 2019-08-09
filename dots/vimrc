@@ -217,6 +217,7 @@ nnoremap <leader>R :SlimeSend0 "!!\n"<CR>
 " toggle things
 nnoremap <leader>1 :GitGutterToggle<CR>
 nnoremap <leader>2 :TagbarToggle<CR>
+nnoremap <leader>3 :windo set number!<CR>
 
 " open cwd
 nnoremap <leader>. :e .<CR>
