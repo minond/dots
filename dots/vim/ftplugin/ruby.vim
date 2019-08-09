@@ -1,5 +1,5 @@
 " Ruby's syntax highlighting is sloooowwwwww for some odd reason.
-" syntax off
+syntax off
 
 nnoremap <buffer> <leader>r :w<cr>:!clear; bundle exec ruby %<cr>
 nnoremap <leader>g <ESC>:exec('tag '.expand('<cword>'))<CR>
