@@ -67,6 +67,7 @@ set matchpairs=<:>,‘:’,(:),{:},[:]       " match open/close characters
 set modeline
 set modelines=5
 set nocompatible                         " we want the more useful way
+set re=1                                 " use old re engine
 set nojoinspaces                         " just one space after a period!
 set nowrap                               " press enter instead
 
