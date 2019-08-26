@@ -1,0 +1,8 @@
+#!/bin/bash
+
+CTAGS_ARGS="-a --languages=Ruby -R --tag-relative=yes -f $(pwd)/.tags"
+
+for path in $(bundle show --paths | tail -n +2); do
+  echo "generating ctags in $path"
+  (cd $path; ctags $CTAGS_ARGS)
+done
