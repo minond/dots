@@ -421,3 +421,6 @@
 
 
 --ignore-directory=is:build
+
+# Rails assets
+--ignore-directory=is:public/assets

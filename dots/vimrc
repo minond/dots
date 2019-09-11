@@ -92,6 +92,7 @@ set wildignore+=*/public/javascripts/*
 set wildignore+=*/target/*
 set wildignore+=*/tmp/*
 set wildignore+=*/vendor/*
+set wildignore+=*/doc/*
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $PLUGIN SETTINGS
