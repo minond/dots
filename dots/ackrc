@@ -424,3 +424,6 @@
 
 # Rails assets
 --ignore-directory=is:public/assets
+
+# Ctags output
+--ignore-file=is:.tags
