@@ -65,5 +65,6 @@ alias lrb='rbenvshell $(cat .ruby-version)'
 alias jrb='rbenvshell jruby-9.2.6.0'
 alias  rb='rbenvshell 2.6.2'
 alias fastjruby='JRUBY_OPTS=--debug'
+alias rc='derp nats bx rails c'
 
 # vi: ft=sh
