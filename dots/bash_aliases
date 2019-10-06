@@ -23,7 +23,6 @@ alias b='build-it'
 alias t='test-it'
 alias q='test $? -eq 0 && exit'
 alias qq='if test $? -eq 0; then say done; exit; else say failure; fi'
-alias lmk='say $(basename $(pwd)) is done'
 
 # colors!
 alias grep='grep -I --color=auto'
