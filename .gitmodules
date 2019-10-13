@@ -58,9 +58,6 @@
 [submodule "dots/vim/pack/eges/start/vim-dispatch"]
 	path = dots/vim/pack/eges/start/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
-[submodule "dots/vim/pack/eges/start/vim-surround"]
-	path = dots/vim/pack/eges/start/vim-surround
-	url = https://github.com/tpope/vim-surround.git
 [submodule "dots/vim/pack/eges/start/vim-protobuf"]
 	path = dots/vim/pack/eges/start/vim-protobuf
 	url = https://github.com/uarun/vim-protobuf.git
