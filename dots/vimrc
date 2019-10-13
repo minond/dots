@@ -36,7 +36,7 @@ set shiftwidth=2                         " shift movement length
 set expandtab                            " when you say tab we space
 set tabstop=2                            " tab character length
 
-set colorcolumn=80,120                   " http://paul-m-jones.com/archives/276
+set colorcolumn=                         " http://paul-m-jones.com/archives/276
 set cursorline                           " highlight the line cursor is on
 
 set formatoptions-=t                     " disable automatic wrapping of lines
@@ -218,8 +218,9 @@ nnoremap <leader>R :SlimeSend0 "!!\n"<CR>
 
 " toggle things
 nnoremap <leader>1 :GitGutterToggle<CR>
-nnoremap <leader>2 :TagbarToggle<CR>
-nnoremap <leader>3 :windo set number!<CR>
+nnoremap <leader>2 :windo set number!<CR>
+nnoremap <leader>3 :call ToggleCC()<CR>
+nnoremap <leader>4 :TagbarToggle<CR>
 
 " open cwd
 nnoremap <leader>. :e .<CR>
@@ -281,6 +282,14 @@ endfunction
 function! CopySelection() range
   echo system('echo ' . shellescape(GetVisualSelection()) . '| pbcopy')
 endfunction
+
+function! ToggleCC()
+  if &cc == ''
+    set cc=80,120
+  else
+    set cc=
+  endif
+endfun
 
 function! GetVisualSelection()
   let [line_start, column_start] = getpos("'<")[1:2]
