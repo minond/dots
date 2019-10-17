@@ -427,3 +427,6 @@
 
 # Ctags output
 --ignore-file=is:.tags
+
+# Code coverage output
+--ignore-directory=is:coverage
