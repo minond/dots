@@ -3,7 +3,6 @@
 *.sw*
 .ctags
 .envrc
-.ruby-version
 .tags
 ignore*
 *.ignore
