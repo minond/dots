@@ -215,7 +215,7 @@ nnoremap <leader>R :SlimeSend0 "!!\n"<CR>
 
 " toggle things
 nnoremap <leader>1 :GitGutterToggle<CR>
-nnoremap <leader>2 :windo set number!<CR>
+nnoremap <leader>2 :set number!<CR>
 nnoremap <leader>3 :call ToggleCC()<CR>
 
 " open cwd
