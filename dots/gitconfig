@@ -1,31 +1,31 @@
 [user]
-	name = Marcos Minond
-	email = minond.marcos@gmail.com
+  name = Marcos Minond
+  email = minond.marcos@gmail.com
 
 [color]
-	ui = true
+  ui = true
 
 [core]
-	excludesfile = ~/.gitignore
-	autocrlf = false
+  excludesfile = ~/.gitignore
+  autocrlf = false
 
 [url "git@gitlab.mx.com:"]
-	insteadOf = https://gitlab.mx.com/
+  insteadOf = https://gitlab.mx.com/
 
 [alias]
-	open = !git-open
-	b = !git branch | cut -d ' ' -f2 | xargs -n1 echo
-	l = log --graph --pretty --stat --decorate
+  o = open
+  b = !git branch | cut -d ' ' -f2 | xargs -n1 echo
+  l = log --graph --pretty --stat --decorate
 
 [http]
-	cookiefile = /Users/marcosmindon/.gitcookies
+  cookiefile = /Users/marcosmindon/.gitcookies
 
 [push]
-	default = current
+  default = current
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [diff]
-	noprefix = true
+  noprefix = true
