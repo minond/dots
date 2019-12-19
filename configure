@@ -178,15 +178,7 @@ link() {
 #==============================================================================
 install_it() {
   local url="$1"
-  local dir="$2"
-
-  if [ -z "$dir" ]; then
-    dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git$//')
-  fi
-
-  if [[ "$dir" != dots* ]]; then
-    dir="dots/vim/pack/eges/start/$dir"
-  fi
+  local dir=$(vim_plugin_dir_path "$1" "$2")
 
   info "repository url is $url"
   info "install directory will be $dir"
@@ -203,6 +195,69 @@ install_it() {
 }
 
 #=== FUNCTION =================================================================
+#        NAME: soft_install_it
+# DESCRIPTION: try out a vim plugin
+# PARAMETER 1: url of git repo
+# PARAMETER 2: optional install path
+#==============================================================================
+soft_install_it() {
+  local url="$1"
+  local dir=$(vim_plugin_dir_path "$1" "$2")
+
+  info "repository url is $url"
+  info "install directory will be $dir"
+  echo -n "confirm: ok? [y/N] "
+  read ans
+
+  if [ "$ans" == "y" ]; then
+    info "cloning git repo"
+    git clone "$url" "$dir"
+    info "done"
+  else
+    info "not installing plugin"
+  fi
+}
+
+#=== FUNCTION =================================================================
+#        NAME: unsoft_install_it
+# DESCRIPTION: stop trying that plugin out
+# PARAMETER 1: url of git repo
+# PARAMETER 2: optional install path
+#==============================================================================
+unsoft_install_it() {
+  local dir=$(vim_plugin_dir_path "$1" "$2")
+
+  if [ -d "$dir" ]; then
+    echo "deleting $dir"
+    rm -rf "$dir"
+    echo "done"
+  else
+    echo "looking in $dir but did not find the plugin"
+  fi
+}
+
+#=== FUNCTION =================================================================
+#        NAME: vim_plugin_dir_path
+# DESCRIPTION: print out the path to where a given vim plugin should be
+# PARAMETER 1: url of git repo
+# PARAMETER 2: optional install path
+#==============================================================================
+vim_plugin_dir_path() {
+  local url="$1"
+  local dir="$2"
+
+  if [ -z "$dir" ]; then
+    dir=$(echo $url | awk -F'/' '{ print $5 }' | sed -e 's/.git$//')
+  fi
+
+  if [[ "$dir" != dots* ]]; then
+    dir="dots/vim/pack/eges/start/$dir"
+  fi
+
+  echo "$dir"
+}
+
+#=== FUNCTION =================================================================
 #        NAME: usage
 # DESCRIPTION: prints help output
 #==============================================================================
@@ -214,6 +269,8 @@ usage() {
   echo
   echo "  Commands:"
   echo "  install, i <repo> [path]      # Install a git submodule as a vim plugin"
+  echo "  try <repo> [path]             # Temporarily try out a vim plugin"
+  echo "  untry <repo> [path]           # Remove a temporary vim plugin"
   echo "  update, u                     # Update dependencies (like Vim plugins)"
   echo "  check, c                      # Display optional software information"
   echo
@@ -303,6 +360,16 @@ do
 
     i|install)
       install_it "$2" "$3"
+      exit 0
+      ;;
+
+    try)
+      soft_install_it "$2" "$3"
+      exit 0
+      ;;
+
+    untry)
+      unsoft_install_it "$2" "$3"
       exit 0
       ;;
 
