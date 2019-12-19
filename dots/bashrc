@@ -157,6 +157,8 @@ source? $HOME/.bashrc_local
 source? $HOME/.dots/module/z/z.sh                                              # Z
 source? $HOME/.ghcup/env                                                       # Haskell
 
+source? $HOME/.rvm/scripts/rvm                                                 # Load RVM into a shell session *as a function*
+
 # These following slow down a session's start time and are not often used, so
 # they're in a function instead:
 load-extras() {

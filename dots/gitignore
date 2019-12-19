@@ -1,10 +1,11 @@
 *.DS_Store*
+*.ignore
 *.patch
 *.sw*
 .ctags
 .envrc
+.ruby-version
 .tags
 ignore*
-*.ignore
 npm-debug.log
 tags
