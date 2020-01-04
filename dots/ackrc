@@ -99,11 +99,24 @@
 # http://www.haskell.org/cabal/users-guide/installing-packages.html
 --ignore-directory=is:.cabal-sandbox
 
+# Rails
+--ignore-directory=is:public/assets
+--ignore-directory=is:coverage
+
+# Common
+--ignore-directory=is:build
+--ignore-directory=is:log
+--ignore-directory=is:tmp
+
+
 ### Files to ignore
 
 # Backup files
 --ignore-file=ext:bak
 --ignore-file=match:/~$/
+
+# Ctags
+--ignore-file=is:.tags
 
 # Emacs swap files
 --ignore-file=match:/^#.+#$/
@@ -418,15 +431,3 @@
 # YAML
 # http://yaml.org/
 --type-add=yaml:ext:yaml,yml
-
-
---ignore-directory=is:build
-
-# Rails assets
---ignore-directory=is:public/assets
-
-# Ctags output
---ignore-file=is:.tags
-
-# Code coverage output
---ignore-directory=is:coverage
