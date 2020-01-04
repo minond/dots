@@ -100,3 +100,6 @@
 [submodule "dots/vim/pack/eges/start/async.vim"]
 	path = dots/vim/pack/eges/start/async.vim
 	url = https://github.com/prabirshrestha/async.vim.git
+[submodule "dots/vim/pack/eges/start/vim-rails"]
+	path = dots/vim/pack/eges/start/vim-rails
+	url = https://github.com/tpope/vim-rails
