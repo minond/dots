@@ -141,6 +141,7 @@ path! $HOME/.rvm/bin                                                           #
 path! $HOME/.sdkman/candidates/scala/current/bin                               # Scala and friends
 path! $HOME/.sdkman/candidates/sbt/current/bin
 path! $HOME/.bloop
+path! $HOME/.v/v_macos_0.1.23                                                  # V
 path! $GOROOT/bin                                                              # Go
 path! $GOBIN
 path! '/Applications/Racket v6.12/bin/'                                        # Racket
