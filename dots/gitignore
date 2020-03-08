@@ -1,7 +1,7 @@
 *.DS_Store*
 *.ignore
 *.patch
-*.sw*
+*.swp
 .ctags
 .envrc
 .ruby-version

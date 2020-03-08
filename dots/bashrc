@@ -139,6 +139,7 @@ path! $HOME/.pub-cache/bin                                                     #
 path! $HOME/.flutter-lib/bin
 path! $HOME/.rvm/bin                                                           # Ruby and Rvm
 path! $HOME/.sdkman/candidates/scala/current/bin                               # Scala and friends
+path! $HOME/.cargo/bin                                                       # Rust
 path! $HOME/.sdkman/candidates/sbt/current/bin
 path! $HOME/.bloop
 path! $HOME/.v/v_macos_0.1.23                                                  # V
@@ -166,7 +167,6 @@ load-extras() {
   source? $HOME/.sdkman/bin/sdkman-init.sh                                     # JVM SDK Man
   source? $NVM_DIR/nvm.sh                                                      # Node's nvm
   source? /usr/local/bin/virtualenvwrapper.sh                                  # Python virenv
-  path! $HOME/.cargo/bin                                                       # Rust
   path! $HOME/.sdkman/candidates/ant/current/bin                               # Ant
   path! $HOME/.sdkman/candidates/gradle/current/bin                            # Gradle
 }
