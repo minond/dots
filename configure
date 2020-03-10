@@ -34,112 +34,6 @@ confirm() {
 }
 
 #=== FUNCTION =================================================================
-#        NAME: software
-# DESCRIPTION: display common programs
-#
-#
-# chunkwm and co. may need the following:
-#
-#     brew tap crisidev/homebrew-chunkwm
-#     brew install --HEAD --with-tmp-logging chunkwm
-#     brew install --HEAD --with-logging  koekeishiya/formulae/skhd
-#
-#==============================================================================
-software() {
-  set +eo pipefail
-
-  installed macapp Simplenote https://simplenote.com
-  installed macapp Todoist https://en.todoist.com/downloads
-  installed macapp 1Password\ 7 https://1password.com/downloads
-  installed macapp Dropbox https://www.dropbox.com/install
-  installed macapp Spotify https://www.spotify.com/us/download
-
-  installed cmd tmux
-  installed cmd brew "https://brew.sh"
-  installed cmd protoc "https://github.com/protocolbuffers/protobuf/releases"
-
-  installed brew ack
-  installed brew chunkwm
-  installed brew coreutils
-  installed brew ctags
-  installed brew direnv
-  installed brew findutils
-  installed brew gawk
-  installed brew gnu-getopt
-  installed brew gnu-indent
-  installed brew gnu-sed
-  installed brew gnu-tar
-  installed brew gnutls
-  installed brew koekeishiya/formulae/skhd
-  installed brew reattach-to-user-namespace
-  installed brew rlwrap
-
-  info done
-
-  set -eo pipefail
-}
-
-#=== FUNCTION =================================================================
-#        NAME: installed
-# DESCRIPTION: check if something is installed
-# PARAMETER 1: label used to figure out how to find the app
-# PARAMETER 2: name of the program
-# PARAMETER 3: suggestion to show when not found
-#==============================================================================
-installed() {
-  local type=$1
-  local name=$2
-  local suggestion=$3
-
-  local warning=""
-  local found=1
-
-  case "$type" in
-    cmd)
-      which "$name" &> /dev/null
-      found=$?
-      ;;
-
-    brew)
-      suggestion="'brew install $name'"
-      which brew &> /dev/null
-      if [ $? -ne 0 ]; then
-        warning="brew is required to check for this program."
-      else
-        brew list "$name" &> /dev/null
-        found=$?
-      fi
-      ;;
-
-    macapp)
-      test -d "/Applications/$name.app"
-      found=$?
-      ;;
-
-    *)
-      warning="Invalid program type: $type"
-      ;;
-  esac
-
-  if [ "$warning" != "" ]; then
-    warn "$name $warning"
-    return
-  fi
-
-  echo -n "info: $name "
-  printf '%*.*s' 0 $((40 - ${#name})) \
-    "........................................."
-
-  if [ $found -eq 0 ]; then
-    echo " ok"
-  else
-    echo " missing $suggestion"
-  fi
-
-  return $found
-}
-
-#=== FUNCTION =================================================================
 #        NAME: backup
 # DESCRIPTION: backup a file ($1 => $1.bak) if it exists
 # PARAMETER 1: the file you want to backup
@@ -272,7 +166,6 @@ usage() {
   echo "  try <repo> [path]             # Temporarily try out a vim plugin"
   echo "  untry <repo> [path]           # Remove a temporary vim plugin"
   echo "  update, u                     # Update dependencies (like Vim plugins)"
-  echo "  check, c                      # Display optional software information"
   echo
   echo -n "  Tools:                        # "
 
@@ -330,14 +223,6 @@ do
 
     tmux)
       link ~/.tmux.conf "$dots/tmux.conf"
-      installed brew reattach-to-user-namespace
-
-      if [ $? -ne 0 ]; then
-        warn "Current tmux configuration requires that 'reattach-to-user-namespace'"
-        warn "be installed. Tmux will not be able to start up without it. To"
-        warn "install, run the following command:"
-        confirm
-      fi
       ;;
 
     screen)
@@ -352,10 +237,6 @@ do
     scala)
       link ~/.scalafmt.conf "$dots/scalafmt.conf"
       link ~/.scalastyle.xml "$dots/scalastyle.xml"
-      ;;
-
-    c|check)
-      software
       ;;
 
     i|install)
