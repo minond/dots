@@ -130,23 +130,24 @@ source? ~/.bash_aliases_sys
 # $PATHS
 ###############################################################################
 
-path! $HOME/.bin                                                               # Local binaries before all others
-path! $HOME/.dots/module/click                                                 # Vendored binaries
+path! $HOME/.bin                                                              # Local binaries before all others
+path! $HOME/.dots/module/click                                                # Vendored binaries
 path! $HOME/.dots/module/fff
 path! $HOME/.dots/module/gov
 path! $HOME/.dots/bin
-path! $HOME/.pub-cache/bin                                                     # Dart and Flutter
+path! $HOME/.pub-cache/bin                                                    # Dart and Flutter
 path! $HOME/.flutter-lib/bin
-path! $HOME/.rvm/bin                                                           # Ruby and Rvm
-path! $HOME/.sdkman/candidates/scala/current/bin                               # Scala and friends
-path! $HOME/.cargo/bin                                                       # Rust
+path! $HOME/.rvm/bin                                                          # Ruby and Rvm
+path! $HOME/.sdkman/candidates/scala/current/bin                              # Scala and friends
+path! $HOME/.cargo/bin                                                        # Rust
 path! $HOME/.sdkman/candidates/sbt/current/bin
 path! $HOME/.bloop
-path! $HOME/.v/v_macos_0.1.23                                                  # V
-path! $GOROOT/bin                                                              # Go
+path! $HOME/.v/v_macos_0.1.23                                                 # V
+path! $HOME/opt/GNAT/2019/bin                                                 # Ada
+path! $GOROOT/bin                                                             # Go
 path! $GOBIN
-path! '/Applications/Racket v6.12/bin/'                                        # Racket
-path! /usr/local/smlnj/bin                                                     # StandardML of NJ
+path! '/Applications/Racket v6.12/bin/'                                       # Racket
+path! /usr/local/smlnj/bin                                                    # StandardML of NJ
 path! /usr/local/sbin
 
 ###############################################################################
@@ -156,19 +157,19 @@ path! /usr/local/sbin
 source? $HOME/.private
 source? $HOME/.bashrc_local
 
-source? $HOME/.dots/module/z/z.sh                                              # Z
-source? $HOME/.ghcup/env                                                       # Haskell
+source? $HOME/.dots/module/z/z.sh                                             # Z
+source? $HOME/.ghcup/env                                                      # Haskell
 
-source? $HOME/.rvm/scripts/rvm                                                 # Load RVM into a shell session *as a function*
+source? $HOME/.rvm/scripts/rvm                                                # Load RVM into a shell session *as a function*
 
 # These following slow down a session's start time and are not often used, so
 # they're in a function instead:
 load-extras() {
-  source? $HOME/.sdkman/bin/sdkman-init.sh                                     # JVM SDK Man
-  source? $NVM_DIR/nvm.sh                                                      # Node's nvm
-  source? /usr/local/bin/virtualenvwrapper.sh                                  # Python virenv
-  path! $HOME/.sdkman/candidates/ant/current/bin                               # Ant
-  path! $HOME/.sdkman/candidates/gradle/current/bin                            # Gradle
+  source? $HOME/.sdkman/bin/sdkman-init.sh                                    # JVM SDK Man
+  source? $NVM_DIR/nvm.sh                                                     # Node's nvm
+  source? /usr/local/bin/virtualenvwrapper.sh                                 # Python virenv
+  path! $HOME/.sdkman/candidates/ant/current/bin                              # Ant
+  path! $HOME/.sdkman/candidates/gradle/current/bin                           # Gradle
 }
 
 # enable programmable completion features (you don't need to enable
