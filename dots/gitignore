@@ -2,6 +2,7 @@
 *.ignore
 *.patch
 *.swp
+*.swo
 .ctags
 .envrc
 .ruby-version
