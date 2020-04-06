@@ -29,3 +29,4 @@ chunkc tiling::rule --owner Slack      --state float &
 chunkc tiling::rule --owner Slideshow  --state float &
 chunkc tiling::rule --owner Spotify    --state float &
 chunkc tiling::rule --owner Todoist    --state float &
+chunkc tiling::rule --owner zoom.us    --state float &
