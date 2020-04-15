@@ -106,3 +106,6 @@
 [submodule "dots/vim/pack/eges/start/swift.vim"]
 	path = dots/vim/pack/eges/start/swift.vim
 	url = https://github.com/keith/swift.vim
+[submodule "dots/vim/pack/eges/start/vim-elixir"]
+	path = dots/vim/pack/eges/start/vim-elixir
+	url = https://github.com/elixir-editors/vim-elixir
