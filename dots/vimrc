@@ -73,6 +73,7 @@ set nowrap                               " press enter instead
 
 set tags^=./.tags,./.TAGS,.tags,.TAGS    " possible names for ctags file
 
+set virtualedit=all                      " freely move around a buffer
 set wildmenu                             " better cmd line completion
 
 set wildignore+=*.class
