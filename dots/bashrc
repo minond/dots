@@ -87,6 +87,7 @@ export GO111MODULE=auto
 export GOPATH=$HOME/code/go
 export GOROOT=$HOME/.gov/go
 export GOBIN=$HOME/.gov/bin
+export GOPRIVATE="*.mx.com"
 export GRADLE_HOME=$HOME/.sdkman/candidates/gradle/current
 export LUA_CPATH="$HOME/.luarocks/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/?.so;/usr/local/lib/lua/5.3/loadall.so;./?.so"
 export LUA_PATH="$HOME/.luarocks/share/lua/5.3/?.lua;$HOME/.luarocks/share/lua/5.3/?/init.lua;/usr/local/share/lua/5.3/?.lua;/usr/local/share/lua/5.3/?/init.lua;/usr/local/Cellar/lua/5.3.4_2/libexec/share/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?.lua;/usr/local/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua"
