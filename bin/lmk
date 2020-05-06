@@ -1,6 +1,5 @@
 #!/bin/bash
 
-location=$(basename $(pwd))
-message="$location is done"
+message=$(tmux display-message -p "#I #{pane_index}")
 osascript -e "display notification \"$message\" with title \"Complete\""
 say $message
