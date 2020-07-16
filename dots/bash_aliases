@@ -24,6 +24,7 @@ alias b='build-it'
 alias t='test-it'
 alias q='test $? -eq 0 && exit'
 alias qq='if test $? -eq 0; then say done; exit; else say failure; fi'
+alias qqq='sleep 5; q'
 
 # colors!
 alias grep='grep -I --color=auto'

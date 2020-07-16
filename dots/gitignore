@@ -1,12 +1,13 @@
 *.DS_Store*
 *.ignore
 *.patch
-*.swp
 *.swo
+*.swp
 .ctags
 .envrc
 .ruby-version
 .tags
+.unisonHistory
 ignore*
 npm-debug.log
 tags
