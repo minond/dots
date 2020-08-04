@@ -207,10 +207,6 @@ nnoremap <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
 " strip trailing whitespace
 nnoremap <leader>w :call StripTrailingWhitespaces()<CR>
 
-" copy helpers, copy whole buffer with leader+c and file name with leader+C
-nnoremap <leader>c :Copy<CR><CR>
-nnoremap <leader>C :CopyFilename<CR><CR>
-
 " sends `!!` (run last command) to the designated slime output pane
 nnoremap <leader>R :SlimeSend0 "!!\n"<CR>
 
