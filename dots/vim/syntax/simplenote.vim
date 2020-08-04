@@ -1,5 +1,2 @@
-syn match SN_Name "^.[^(]*"
-syn match SN_Tags "(.*)$"
-
-hi SN_Name cterm=bold
-hi link SN_Tags Comment
+hi SN_NoteAgeYear   cterm=none  ctermbg=none  ctermfg=black
+hi SN_NoteTags      cterm=bold  ctermbg=none  ctermfg=blue
