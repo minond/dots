@@ -69,4 +69,10 @@ alias  rb='rbenvshell 2.6.2'
 alias fastjruby='JRUBY_OPTS=--debug'
 alias rc='derp nats bx rails c'
 
+# Z
+function z() {
+  _zz $* # z into directory
+  cd . # and get cd hooks to run
+}
+
 # vi: ft=sh

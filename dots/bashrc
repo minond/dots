@@ -4,9 +4,9 @@
 # ENV SETTINGS ...................................... settings for the bash env
 # VAR SETTINGS ............................................. settings for tools
 # SETTINGS ................................. settings for commands/applications
-# ALIASES ........................................ anything but aliases go here
 # PATHS ...................................................... path var setters
 # EXTRA SOURCES .................................. load additional source files
+# ALIASES ........................................ anything but aliases go here
 ###############################################################################
 
 # If not running interactively, don't do anything
@@ -123,13 +123,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 ###############################################################################
-# $ALIASES
-###############################################################################
-
-source? ~/.bash_aliases
-source? ~/.bash_aliases_sys
-
-###############################################################################
 # $PATHS
 ###############################################################################
 
@@ -160,7 +153,7 @@ path! /usr/local/sbin
 source? $HOME/.private
 source? $HOME/.bashrc_local
 
-source? $HOME/.dots/module/z/z.sh                                             # Z
+_Z_CMD=_zz source? $HOME/.dots/module/z/z.sh                                             # Z
 source? $HOME/.ghcup/env                                                      # Haskell
 
 source? $HOME/.rvm/scripts/rvm                                                # Load RVM into a shell session *as a function*
@@ -181,6 +174,13 @@ load-extras() {
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   . /etc/bash_completion
 fi
+
+###############################################################################
+# $ALIASES
+###############################################################################
+
+source? ~/.bash_aliases
+source? ~/.bash_aliases_sys
 
 
 # ~ Marcos Minond
