@@ -59,9 +59,9 @@ ps1_nice_exit_code() {
 }
 
 if [[ "$TERM" =~ 256color ]]; then
-  export PS1='\n\[\e[1m\]\[\e[31m\]$(ps1_nice_exit_code)\[\e[30m\]\w\[\e[34m\]$(ps1_prompt_jobscount) \[\e[30m\]$\[\e[0m\] '
+  export PS1='\[\e[1m\]\[\e[31m\]$(ps1_nice_exit_code)\[\e[30m\]\w\[\e[34m\]$(ps1_prompt_jobscount) \[\e[30m\]$\[\e[0m\] '
 else
-  export PS1='\n$(ps1_nice_exit_code)\w$(ps1_prompt_jobscount) $ '
+  export PS1='$(ps1_nice_exit_code)\w$(ps1_prompt_jobscount) $ '
 fi
 
 ###############################################################################
