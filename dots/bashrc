@@ -141,6 +141,7 @@ path! $HOME/.bloop
 path! $HOME/.v/v_macos_0.1.23                                                 # V
 path! $HOME/opt/GNAT/2019/bin                                                 # Ada
 path! $GOROOT/bin                                                             # Go
+path! $HOME/Library/Python/2.7/bin                                            # Python on macOS
 path! $GOBIN
 path! '/Applications/Racket v6.12/bin/'                                       # Racket
 path! /usr/local/smlnj/bin                                                    # StandardML of NJ

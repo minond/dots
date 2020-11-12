@@ -8,7 +8,7 @@ if [ -d .git ]; then
 fi
 
 echo "$grep -l $*"
-files=$($grep -l $*)
+files=$($grep -l "$*")
 echo -n "vim "
 echo $files
 vim $files
