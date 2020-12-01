@@ -30,6 +30,7 @@ alias qqq='sleep 5; q'
 alias grep='grep -I --color=auto'
 alias la='ls -hA  --color --group-directories-first'
 alias ll='ls -hlF --color --group-directories-first'
+alias bat='bat --theme GitHub'
 
 alias gomod='GO111MODULE=on go'
 alias https='http --default-scheme=https'
