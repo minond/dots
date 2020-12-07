@@ -8,19 +8,15 @@
 
 set -eo pipefail
 
-x() {
-  echo $@
-  $@
-  exit
-}
-
 if project-is-of-type go; then
   [ -z "$1" ] && args=./... || args=${@:1}
-  x go test $args
+  set -x
+  go test $args
 elif project-is-of-type rb; then
   [ -z "$1" ] && cmd='rake spec' || cmd="rspec ${@:1}"
-  x env PB_IGNORE_DEPRECATIONS=1 JRUBY_OPTS=--debug bundle exec $cmd
+  set -x
+  env PB_IGNORE_DEPRECATIONS=1 JRUBY_OPTS="$JRUBY_OPTS --debug" bundle exec $cmd
+else
+  echo "I don't know what to do"
+  exit 1
 fi
-
-echo "I don't know what to do"
-exit 1
