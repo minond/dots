@@ -112,3 +112,6 @@
 [submodule "dots/vim/pack/eges/start/rust.vim"]
 	path = dots/vim/pack/eges/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule "dots/vim/pack/eges/start/diffconflicts"]
+	path = dots/vim/pack/eges/start/diffconflicts
+	url = https://github.com/whiteinge/diffconflicts
