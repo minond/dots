@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -euo pipefail
+
+function task() {
+  local message="$1"
+  shift
+
+  echo -n "* $message ... "
+  $* &> /dev/null
+  echo "done"
+}
+
+task "Checking out master"    git checkout master
+task "Updating local branch"  git pull origin master
+task "Checking out sand"      git checkout sand
+task "Merging master"         git merge master
+task "Pushing to sand"        git push
+task "Checking out qa"        git checkout qa
+task "Merging sand"           git merge sand
+task "Pushing to qa"          git push
+task "Checking out master"    git checkout master
