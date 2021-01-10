@@ -115,3 +115,6 @@
 [submodule "dots/vim/pack/eges/start/diffconflicts"]
 	path = dots/vim/pack/eges/start/diffconflicts
 	url = https://github.com/whiteinge/diffconflicts
+[submodule "dots/vim/pack/eges/start/v-vim"]
+	path = dots/vim/pack/eges/start/v-vim
+	url = https://github.com/ollykel/v-vim
