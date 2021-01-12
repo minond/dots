@@ -59,9 +59,9 @@ alias mx='cd ~/code/mx/'
 alias nats='PB_CLIENT_TYPE=protobuf/nats/client PB_SERVER_TYPE=protobuf/nats/runner'
 
 # Tmux
-alias smallest='tmux resize-pane -y 5 ; q'
-alias smaller='tmux resize-pane -y 10 ; q'
-alias small='tmux resize-pane -y 25 ; q'
+alias smallest='tmux resize-pane -y 5'
+alias smaller='tmux resize-pane -y 10'
+alias small='tmux resize-pane -y 25'
 
 # Ruby
 alias lrb='rbenvshell $(cat .ruby-version)'
