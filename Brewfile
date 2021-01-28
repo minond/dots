@@ -30,6 +30,7 @@ brew "tmux"
 brew "tree"
 brew "vim", link: false
 brew "watch"
+brew "wget"
 brew "zlib"
 
 cask "mactex"
