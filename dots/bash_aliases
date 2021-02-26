@@ -44,6 +44,7 @@ alias notes='vim -c SimplenoteList'
 alias worklog='vim -c "SimplenoteOpen d02c9ad65d4747f68cebeefd2f673019" -c on'
 alias ok='ok_base $?'
 alias copy='pbcopy'
+alias gentags='git ls-files | ctags -R --verbose -f .tags'
 
 # Formatters
 alias cfmt='clang-format -i -style Google'                                      # C/C++: http://clang.llvm.org/docs/ClangFormat.html
