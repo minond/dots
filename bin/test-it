@@ -16,6 +16,10 @@ elif project-is-of-type rb; then
   [ -z "$1" ] && cmd='rake spec' || cmd="rspec ${@:1}"
   set -x
   env PB_IGNORE_DEPRECATIONS=1 JRUBY_OPTS="$JRUBY_OPTS --debug" bundle exec $cmd
+elif project-is-of-type js; then
+  [ -z "$1" ] && cmd='npm run test' || cmd="./node_modules/.bin/jest ${@:1}"
+  set -x
+  exec $cmd
 else
   echo "I don't know what to do"
   exit 1

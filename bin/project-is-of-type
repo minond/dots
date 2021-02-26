@@ -20,6 +20,9 @@ case "$1" in
 
   rb|ruby)
     expects -f Gemfile ;;
+
+  js|javascript)
+    expects -f package.json ;;
 esac
 
 exit 1
