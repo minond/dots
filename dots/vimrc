@@ -207,8 +207,10 @@ nnoremap <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
 " strip trailing whitespace
 nnoremap <leader>w :call StripTrailingWhitespaces()<CR>
 
-" sends `!!` (run last command) to the designated slime output pane
-nnoremap <leader>R :SlimeSend0 "!!\n"<CR>
+" sends runcmd to the designated slime output pane. Defaults to `!!` to re-run
+" the last command.
+let runcmd = "!!\n"
+nnoremap <leader>R :SlimeSend0 runcmd<CR>
 
 " toggle things
 nnoremap <leader>1 :GitGutterToggle<CR>
