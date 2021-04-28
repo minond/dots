@@ -9,6 +9,6 @@ fi
 
 echo "$grep -l $*"
 files=$($grep -l "$*")
-echo -n "vim "
+echo -n "vim -c '/$*' "
 echo $files
-vim $files
+vim -c "/$*" $files
