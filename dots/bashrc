@@ -142,7 +142,7 @@ path! $HOME/.sdkman/candidates/scala/current/bin                              # 
 path! $HOME/.cargo/bin                                                        # Rust
 path! $HOME/.sdkman/candidates/sbt/current/bin
 path! $HOME/.bloop
-path! $HOME/.v/v_macos_0.1.23                                                 # V
+path! $HOME/.v                                                                # V
 path! $HOME/opt/GNAT/2019/bin                                                 # Ada
 path! $GOROOT/bin                                                             # Go
 path! $HOME/Library/Python/2.7/bin                                            # Python on macOS
