@@ -367,6 +367,7 @@
 # Scala
 # http://www.scala-lang.org/
 --type-add=scala:ext:scala
+--ignore-directory=is:target
 
 # Scheme
 # http://groups.csail.mit.edu/mac/projects/scheme/
