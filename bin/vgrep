@@ -11,4 +11,4 @@ echo "$grep -l $*"
 files=$($grep -l "$*")
 echo -n "vim -c '/$*' "
 echo $files
-vim -c "/$*" $files
+vim -c "/$*" "+normal zz" $files
