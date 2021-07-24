@@ -15,6 +15,7 @@
 [alias]
   o = open
   b = !git branch | cut -d ' ' -f2 | xargs -n1 echo
+  ob = !echo "origin/$(git branch | cut -d ' ' -f2 | xargs -n1 echo)"
   l = log --graph --pretty --stat --decorate
 
 [http]
