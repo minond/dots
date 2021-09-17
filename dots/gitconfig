@@ -30,3 +30,5 @@
   required = true
 [diff]
   noprefix = true
+[init]
+  defaultBranch = master
