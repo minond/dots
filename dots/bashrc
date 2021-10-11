@@ -147,7 +147,7 @@ path! $HOME/opt/GNAT/2019/bin                                                 # 
 path! $GOROOT/bin                                                             # Go
 path! $HOME/Library/Python/2.7/bin                                            # Python on macOS
 path! $GOBIN
-path! '/Applications/Racket v6.12/bin/'                                       # Racket
+path! '/Applications/Racket v8.2/bin/'                                        # Racket
 path! /usr/local/smlnj/bin                                                    # StandardML of NJ
 path! /usr/local/sbin
 
