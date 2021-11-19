@@ -214,8 +214,9 @@ nnoremap <leader>R :SlimeSend0 runcmd<CR>
 
 " toggle things
 nnoremap <leader>1 :GitGutterToggle<CR>
-nnoremap <leader>2 :set number!<CR>
-nnoremap <leader>3 :call ToggleCC()<CR>
+nnoremap <leader>2 :Tagbar<CR>
+nnoremap <leader>3 :set number!<CR>
+nnoremap <leader>4 :call ToggleCC()<CR>
 
 " open cwd
 nnoremap <leader>. :e .<CR>
