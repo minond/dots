@@ -118,3 +118,9 @@
 [submodule "dots/vim/pack/eges/start/v-vim"]
 	path = dots/vim/pack/eges/start/v-vim
 	url = https://github.com/ollykel/v-vim
+[submodule "dots/vim/pack/eges/start/tagbar"]
+	path = dots/vim/pack/eges/start/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "dots/vim/pack/eges/start/vim-jsonpath"]
+	path = dots/vim/pack/eges/start/vim-jsonpath
+	url = https://github.com/mogelbrod/vim-jsonpath
