@@ -33,6 +33,7 @@ alias ll='ls -hlF --color --group-directories-first'
 alias bat='bat --theme GitHub'
 
 alias vi=vim
+alias fewer=less
 alias gomod='GO111MODULE=on go'
 alias https='http --default-scheme=https'
 alias spotify="CLIENT_ID=$SPOTIFY_CLIENT_ID CLIENT_SECRET=SPOTIFY_CLIENT_SECRET spotify"
