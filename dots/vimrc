@@ -221,9 +221,6 @@ nnoremap <leader>4 :call ToggleCC()<CR>
 " open cwd
 nnoremap <leader>. :e .<CR>
 
-" https://vim.fandom.com/wiki/Easily_switch_between_source_and_header_file
-nmap <leader>s :call SwitchSourceHeader()<CR>
-
 " open and close nerdtree, even within nerdtree
 nnoremap <leader>f <ESC>:NERDTreeFind<CR>
 nnoremap <leader><S-f> <ESC>:NERDTreeToggle<CR>
@@ -304,14 +301,6 @@ endfunction
 
 function! WhatIsThis()
   exec "echo synIDattr(synID(line('.'), col('.'), 1), 'name')"
-endfunction
-
-function! SwitchSourceHeader()
-  if (expand ("%:e") == "cpp")
-    find %:t:r.h
-  else
-    find %:t:r.cpp
-  endif
 endfunction
 
 " ~ Marcos Minond
