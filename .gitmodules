@@ -124,3 +124,6 @@
 [submodule "dots/vim/pack/eges/start/vim-jsonpath"]
 	path = dots/vim/pack/eges/start/vim-jsonpath
 	url = https://github.com/mogelbrod/vim-jsonpath
+[submodule "dots/vim/pack/eges/start/vim-prisma"]
+	path = dots/vim/pack/eges/start/vim-prisma
+	url = https://github.com/pantharshit00/vim-prisma.git
