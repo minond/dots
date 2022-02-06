@@ -190,10 +190,8 @@ nnoremap <S-Tab> <C-w><S-w>
 nnoremap <leader>j <ESC>:GitGutterNextHunk<CR>
 nnoremap <leader>k <ESC>:GitGutterPrevHunk<CR>
 
-" open ctrlp for files, tags, and buffers
+" open ctrlp for files
 nnoremap <leader>o <ESC>:CtrlP<CR>
-nnoremap <leader>t <ESC>:CtrlPTag<CR>
-nnoremap <leader>b <ESC>:CtrlPBuffer<CR>
 
 " code-comment single and multiple lines
 nnoremap <C-c> <ESC>:TComment<CR>
