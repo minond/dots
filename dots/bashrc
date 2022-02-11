@@ -138,6 +138,7 @@ fi
 ###############################################################################
 
 path! $HOME/.bin                                                              # Local binaries before all others
+path! $HOME/bin                                                               # Local binaries before all others
 path! $HOME/.dots/module/click                                                # Vendored binaries
 path! $HOME/.dots/module/fff
 path! $HOME/.dots/module/gov
