@@ -1,3 +1,15 @@
 #!/bin/bash
 
-vim $(find . -name "$1")
+set -eo pipefail
+
+pattern="$1"
+shift
+locations="$*"
+[ -z "$locations" ] && locations=.
+
+files=$(find $locations -name "*$pattern*")
+for file in $files; do
+  echo $file
+done
+
+vim $files
