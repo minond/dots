@@ -41,7 +41,7 @@ function path! {
 ps1_prompt_jobscount() {
   local stopped=$(jobs -sp | wc -l | sed 's/ //g')
   local running=$(jobs -rp | wc -l | sed 's/ //g')
-  ((running+stopped)) && echo -n " (${running}r/${stopped}s)"
+  ((running+stopped)) && echo -n " ($((running+stopped)))"
 }
 
 ps1_nice_exit_code() {
@@ -53,15 +53,15 @@ ps1_nice_exit_code() {
   # 130 manually cancelled (ctrl-c)
   if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
     return
-  else
-    echo "(error $last_exit) "
   fi
+
+  echo " ($last_exit)"
 }
 
 if [[ "$TERM" =~ 256color ]]; then
-  export PS1='\[\e[1m\]\[\e[31m\]$(ps1_nice_exit_code)\[\e[30m\]\w\[\e[34m\]$(ps1_prompt_jobscount) \[\e[30m\]$\[\e[0m\] '
+  export PS1='\[\e[1m\]\W\[\e[31m\]$(ps1_nice_exit_code)\[\e[34m\]$(ps1_prompt_jobscount)\[\e[30m\]\[\e[0m\] '
 else
-  export PS1='$(ps1_nice_exit_code)\w$(ps1_prompt_jobscount) $ '
+  export PS1='\W$(ps1_nice_exit_code)$(ps1_prompt_jobscount) '
 fi
 
 ###############################################################################
