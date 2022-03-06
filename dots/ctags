@@ -54,6 +54,7 @@
 --exclude=build
 --exclude=coverage
 --exclude=dist
+--exclude=example
 --exclude=log
 --exclude=node_modules
 --exclude=out
