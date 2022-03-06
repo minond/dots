@@ -5,7 +5,6 @@
 *.swp
 .ctags
 .envrc
-.ruby-version
 .tags
 .unisonHistory
 ignore*
