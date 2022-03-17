@@ -109,6 +109,7 @@ export SMLNJ_HOME=/usr/local/smlnj
 export GRADLE_HOME=$HOME/.sdkman/candidates/gradle/current
 export SDKMAN_DIR=$HOME/.sdkman
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 ###############################################################################
 # $SETTINGS
