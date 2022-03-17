@@ -301,4 +301,23 @@ function! WhatIsThis()
   exec "echo synIDattr(synID(line('.'), col('.'), 1), 'name')"
 endfunction
 
+" Taken from https://stackoverflow.com/a/15994331, ty!
+function! Preserve(command)
+  let search = @/ " Save the last search.
+  let cursor_position = getpos('.') " Save the current cursor position.
+
+  normal! H
+  let window_position = getpos('.')
+  call setpos('.', cursor_position) " Save the current window position.
+
+  execute a:command
+
+  let @/ = search " Restore the last search.
+
+  call setpos('.', window_position)
+  normal! zt " Restore the previous window position.
+
+  call setpos('.', cursor_position) " Restore the previous cursor position.
+endfunction
+
 " ~ Marcos Minond
