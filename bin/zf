@@ -1,4 +1,4 @@
 #!/bin/bash
 
-. /usr/local/etc/profile.d/z.sh
+. $HOME/.dots/module/z/z.sh                                             # Z
 _z "$1" && FFF_CD_ON_EXIT=1 fff
