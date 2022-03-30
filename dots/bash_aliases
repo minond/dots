@@ -2,7 +2,7 @@
 command -v gnome-open &> /dev/null && alias open='gnome-open'
 command -v gls &> /dev/null && alias ls='gls'
 
-# git aliases
+# git
 alias addp='git add -p'
 alias c='gcamstar'
 alias cm='gcmstar'
@@ -15,32 +15,26 @@ alias s='git status'
 alias save='git stash save'
 alias show='git show'
 
-alias b='build-it'
-alias t='test-it'
+# Pane and process flow helpers
 alias q='test $? -eq 0 && exit'
 alias qq='if test $? -eq 0; then say done; exit; else say failure; fi'
 alias qqq='sleep 5; q'
-
-# colors!
-alias grep='grep -I --color=auto'
-alias la='ls -hA  --color --group-directories-first'
-alias ll='ls -hlF --color --group-directories-first'
-alias bat='bat --theme GitHub'
-
-alias vi=vim
-alias fewer=less
-alias gomod='GO111MODULE=on go'
-alias https='http --default-scheme=https'
-alias spotify="CLIENT_ID=$SPOTIFY_CLIENT_ID CLIENT_SECRET=SPOTIFY_CLIENT_SECRET spotify"
-alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
-alias tmux='tmux -2'
-alias unswp='find . | grep swp | xargs rm'
-alias es='exercism submit'
-alias notes='vim -c SimplenoteList'
-alias worklog='vim -c "SimplenoteOpen d02c9ad65d4747f68cebeefd2f673019" -c on'
 alias ok='ok_base $?'
+
+# Default flags
+alias bat='bat --theme Coldark-Cold'
 alias copy='pbcopy'
+alias grep='grep -I --color=auto'
+alias ll='ls -hlF --color --group-directories-first'
+alias tmux='tmux -2'
+
+# Vim, notes, and ctags
 alias gentags='git ls-files | ctags -R --verbose -f .tags'
+alias notes='vim -c SimplenoteList'
+alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
+alias unswp='find . | grep swp | xargs rm'
+alias vi=vim
+alias worklog='vim -c "SimplenoteOpen d02c9ad65d4747f68cebeefd2f673019" -c on'
 
 # Formatters
 alias cfmt='clang-format -i -style Google'                                      # C/C++: http://clang.llvm.org/docs/ClangFormat.html
@@ -57,11 +51,6 @@ alias localgo='SUBSCRIPTION_PREFIX=marcos-local-go. NATS_HOSTS=nats://sb-sand-gn
 alias mx='cd ~/code/mx/'
 alias nats='PB_CLIENT_TYPE=protobuf/nats/client PB_SERVER_TYPE=protobuf/nats/runner'
 alias reset-jaeger='docker stop jaeger ; docker rm jaeger ; docker run -d --name jaeger -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 -p 5775:5775/udp -p 6831:6831/udp -p 6832:6832/udp -p 5778:5778 -p 16686:16686 -p 14268:14268 -p 14250:14250 -p 9411:9411 jaegertracing/all-in-one:1.17'
-
-# Tmux
-alias smallest='tmux resize-pane -y 5'
-alias smaller='tmux resize-pane -y 10'
-alias small='tmux resize-pane -y 25'
 
 # Ruby
 alias lrb='rbenvshell $(cat .ruby-version)'
