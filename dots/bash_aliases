@@ -4,6 +4,7 @@ command -v gls &> /dev/null && alias ls='gls'
 
 # git
 alias addp='git add -p'
+alias add='git add'
 alias c='gcamstar'
 alias cm='gcmstar'
 alias d='git diff --color=always'
