@@ -56,7 +56,7 @@ alias reset-jaeger='docker stop jaeger ; docker rm jaeger ; docker run -d --name
 # Ruby
 alias lrb='rbenvshell $(cat .ruby-version)'
 alias jrb='rbenvshell jruby-9.2.6.0'
-alias  rb='rbenvshell 2.6.2'
+alias  rb='rbenvshell 2.7.5'
 alias fastjruby='JRUBY_OPTS=--debug'
 alias rc='derp nats bx rails c'
 alias migrate-db='RAILS_ENV=development bx rake db:migrate && RAILS_ENV=test bx rake db:migrate'
