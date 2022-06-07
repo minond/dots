@@ -274,7 +274,7 @@ function! ShowColors()
 endfunction
 
 function! CopySelection() range
-  echo system('echo ' . shellescape(GetVisualSelection()) . '| pbcopy')
+  echo system('echo -n ' . shellescape(GetVisualSelection()) . '| pbcopy')
 endfunction
 
 function! ToggleCC()
