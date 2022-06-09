@@ -98,6 +98,8 @@ set wildignore+=*/doc/*
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $PLUGIN SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:fzf_preview_window = []
+
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_dont_ask_default = 1
@@ -190,8 +192,9 @@ nnoremap <S-Tab> <C-w><S-w>
 nnoremap <leader>j <ESC>:GitGutterNextHunk<CR>
 nnoremap <leader>k <ESC>:GitGutterPrevHunk<CR>
 
-" open ctrlp for files
-nnoremap <leader>o <ESC>:CtrlP<CR>
+" open fzf for files
+nnoremap <leader>o <ESC>:Files<CR>
+nnoremap <leader><S-o> <ESC>:GFiles<CR>
 
 " code-comment single and multiple lines
 nnoremap <C-c> <ESC>:TComment<CR>
