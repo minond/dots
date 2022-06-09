@@ -127,3 +127,9 @@
 [submodule "dots/vim/pack/eges/start/vim-prisma"]
 	path = dots/vim/pack/eges/start/vim-prisma
 	url = https://github.com/pantharshit00/vim-prisma.git
+[submodule "dots/vim/pack/eges/start/fzf.vim"]
+	path = dots/vim/pack/eges/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "dots/vim/pack/eges/start/fzf"]
+	path = dots/vim/pack/eges/start/fzf
+	url = https://github.com/junegunn/fzf
