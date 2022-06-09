@@ -7,7 +7,7 @@ system (mostly my home directory).
 
 The `configure` script in the repo can be used to create those links. You can
 run it without arguments to get a list of that it can link for you. Once you're
-ready to use a cofiguration, just run the script with the item name(s).
+ready to use a configuration, just run the script with the item name(s).
 
     $ cd
     $ git clone http://github.com/minond/dots .dots
