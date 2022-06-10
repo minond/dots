@@ -192,9 +192,10 @@ nnoremap <S-Tab> <C-w><S-w>
 nnoremap <leader>j <ESC>:GitGutterNextHunk<CR>
 nnoremap <leader>k <ESC>:GitGutterPrevHunk<CR>
 
-" open fzf for files
-nnoremap <leader>o <ESC>:Files<CR>
-nnoremap <leader><S-o> <ESC>:GFiles<CR>
+" fzf
+nnoremap <leader>o <ESC>:GFiles<CR>
+nnoremap <leader>O <ESC>:Files<CR>
+nnoremap <leader>i <ESC>:GGrep<CR>
 
 " code-comment single and multiple lines
 nnoremap <C-c> <ESC>:TComment<CR>
@@ -252,6 +253,12 @@ command! Add execute ':silent !clear; git add %' | execute ':redraw!' | execute 
 command! AddP execute '!clear; git add -p %' | execute ':GitGutter'
 command! -nargs=* Diff !clear; git diff <f-args>
 command! Gopen !git open %
+
+" git grep wrapper with fzf
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number -- '.shellescape(<q-args>), 0,
+  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLORSCHEME
