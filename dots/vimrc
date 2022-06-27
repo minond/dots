@@ -195,7 +195,7 @@ nnoremap <leader>k <ESC>:GitGutterPrevHunk<CR>
 " fzf
 nnoremap <leader>o <ESC>:GFiles<CR>
 nnoremap <leader>O <ESC>:Files<CR>
-nnoremap <leader>i <ESC>:GGrep<CR>
+nnoremap <leader>s <ESC>:GGrep<CR>
 
 " code-comment single and multiple lines
 nnoremap <C-c> <ESC>:TComment<CR>
