@@ -29,13 +29,15 @@ alias grep='grep -I --color=auto'
 alias ll='ls -hlF --color --group-directories-first'
 alias tmux='tmux -2'
 
-# Vim, notes, and ctags
+# Vim and ctags
 alias gentags='git ls-files | ctags -R --verbose -f .tags'
-alias notes='vim -c SimplenoteList'
 alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
 alias unswp='find . | grep swp | xargs rm'
 alias vi=vim
-alias worklog='vim -c "SimplenoteOpen d02c9ad65d4747f68cebeefd2f673019" -c on'
+
+# Notes
+alias notes='vim /Users/marcos.minond/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes/ -c "let NERDTreeShowHidden=1"'
+alias worklog='vim /Users/marcos.minond/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes/Work/Work\ Log.md'
 
 # Formatters
 alias cfmt='clang-format -i -style Google'                                      # C/C++: http://clang.llvm.org/docs/ClangFormat.html
