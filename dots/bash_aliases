@@ -35,10 +35,6 @@ alias swp="find . | grep swp | sed -e 's/.swp//' | sed -e 's/\/\./\//'"
 alias unswp='find . | grep swp | xargs rm'
 alias vi=vim
 
-# Notes
-alias notes='vim /Users/marcos.minond/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes/ -c "let NERDTreeShowHidden=1"'
-alias worklog='vim /Users/marcos.minond/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes/Work/Work\ Log.md'
-
 # Formatters
 alias cfmt='clang-format -i -style Google'                                      # C/C++: http://clang.llvm.org/docs/ClangFormat.html
 alias dfmt='dub run dfmt -- -i --brace_style=stroustrup --indent_size=2'        # D: https://github.com/dlang-community/dfmt

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+vim "$OBSIDIAN_NOTES_ROOT"

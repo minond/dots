@@ -82,6 +82,8 @@ export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=93:*.rpm=90'
 # Disable zsh warnings on macos
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+export OBSIDIAN_NOTES_ROOT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes"
+
 ###############################################################################
 # $TOOL SETTINGS
 ###############################################################################
