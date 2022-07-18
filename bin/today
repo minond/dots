@@ -1,6 +1,6 @@
 #!/bin/bash
 
-filepath="$OBSIDIAN_NOTES_ROOT/Daily/$(date +%Y)/$(date +%F).md"
+filepath="$OBSIDIAN_NOTES_ROOT/Daily/$(date +%F).md"
 
 if [ -f "$filepath" ]; then
   vim "$filepath"
