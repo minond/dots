@@ -7,6 +7,7 @@
 # PATHS ...................................................... path var setters
 # EXTRA SOURCES .................................. load additional source files
 # ALIASES ........................................ anything but aliases go here
+# INITIALIZERS ............................................. initialize plugins
 ###############################################################################
 
 # If not running interactively, don't do anything
@@ -112,6 +113,7 @@ export GRADLE_HOME=$HOME/.sdkman/candidates/gradle/current
 export SDKMAN_DIR=$HOME/.sdkman
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
+export PYENV_ROOT="$HOME/.pyenv"
 
 ###############################################################################
 # $SETTINGS
@@ -136,9 +138,6 @@ if [ -x /usr/bin/dircolors ]; then
     eval "$(dircolors -b)"
 fi
 
-# initialize direnv
-eval "$(direnv hook bash)"
-
 ###############################################################################
 # $PATHS
 ###############################################################################
@@ -159,7 +158,6 @@ path! $HOME/.bloop
 path! $HOME/.v                                                                # V
 path! $HOME/opt/GNAT/2019/bin                                                 # Ada
 path! $GOROOT/bin                                                             # Go
-path! $HOME/Library/Python/2.7/bin                                            # Python on macOS
 path! $GOBIN
 path! '/Applications/Racket v8.2/bin/'                                        # Racket
 path! /usr/local/smlnj/bin                                                    # StandardML of NJ
@@ -206,6 +204,15 @@ fi
 
 source? ~/.bash_aliases
 source? ~/.bash_aliases_sys
+
+###############################################################################
+# $INITIALIZERS
+###############################################################################
+
+eval "$(direnv hook bash)"
+eval "$(pyenv init --path)"
+eval "$(rbenv init -)"
+. ~/.nvm/nvm.sh
 
 
 # ~ Marcos Minond
