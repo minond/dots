@@ -50,6 +50,15 @@
 --langmap=json:.json
 --regex-json=/^[ \t]*"(.*)":/\1/k,key,keys/
 
+--langdef=Swift
+--langmap=Swift:+.swift
+--regex-swift=/(var|let)[ \t]+([^:=]+).*$/\2/,variable/
+--regex-swift=/func[ \t]+([^\(\)]+)\([^\(\)]*\)/\1/,function/
+--regex-swift=/class[ \t]+([^:\{]+).*$/\1/,class/
+--regex-swift=/protocol[ \t]+([^:\{]+).*$/\1/,protocol/
+--regex-swift=/struct[ \t]+([^:\{]+).*$/\1/,struct/
+
+--exclude=.build
 --exclude=bin
 --exclude=build
 --exclude=coverage
