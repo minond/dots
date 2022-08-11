@@ -64,6 +64,11 @@ alias big-udp='sudo sysctl -w net.inet.udp.maxdgram=65535'
 alias more-udp='sudo sysctl -w net.inet.udp.maxdgram=65535'
 alias reset-sound='sudo killall coreaudiod'
 
+# Tmux
+alias smallest='tmux resize-pane -y 5'
+alias smaller='tmux resize-pane -y 10'
+alias small='tmux resize-pane -y 25'
+
 # Z
 function z() {
   _zz $* # z into directory
