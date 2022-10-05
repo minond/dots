@@ -40,3 +40,6 @@
 
 [includeIf "gitdir:~/code/mx/"]
   path = .gitconfig-mx
+
+[interactive]
+  singleKey = true

@@ -7,6 +7,7 @@
 " COMMANDS .................................................... custom commands
 " COLORSCHEME ................................ colorscheme and color overwrites
 " FUNCTIONS .................................................. custom functions
+" VARIABLES ................................................. helpful variables
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -332,5 +333,13 @@ function! Preserve(command)
 
   call setpos('.', cursor_position) " Restore the previous cursor position.
 endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FUNCTIONS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:opening_double_quote = "“"
+let g:closing_double_quote = "”"
+let g:opening_single_quote = "‘"
+let g:closing_single_quote = "’"
 
 " ~ Marcos Minond
