@@ -17,7 +17,7 @@
   b = !git branch | cut -d ' ' -f2 | xargs -n1 echo
   ob = !echo "origin/$(git b)"
   l = log --graph --pretty --stat --decorate
-  clean-branches = !git branch | xargs -n1 git branch -d
+  branch-clean = !git branch | xargs -n1 git branch -d
   update = !git pull --rebase origin $(git b)
 
 [http]
