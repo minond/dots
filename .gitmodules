@@ -130,3 +130,6 @@
 [submodule "dots/vim/pack/eges/start/fzf"]
 	path = dots/vim/pack/eges/start/fzf
 	url = https://github.com/junegunn/fzf
+[submodule "dots/vim/pack/eges/start/vim-markdown"]
+	path = dots/vim/pack/eges/start/vim-markdown
+	url = https://github.com/tpope/vim-markdown
