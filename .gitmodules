@@ -43,9 +43,6 @@
 [submodule "dots/vim/pack/eges/start/simplenote.vim"]
 	path = dots/vim/pack/eges/start/simplenote.vim
 	url = https://github.com/mrtazz/simplenote.vim.git
-[submodule "dots/vim/pack/eges/start/vim-markdown"]
-	path = dots/vim/pack/eges/start/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown
 [submodule "dots/vim/pack/eges/start/vim-llvm"]
 	path = dots/vim/pack/eges/start/vim-llvm
 	url = https://github.com/rhysd/vim-llvm.git
