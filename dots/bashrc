@@ -157,10 +157,11 @@ path! $HOME/.cargo/bin                                                        # 
 path! $HOME/.sdkman/candidates/sbt/current/bin
 path! $HOME/.bloop
 path! $HOME/.v                                                                # V
+path! $HOME/.local/bin/                                                       # Pip
 path! $HOME/opt/GNAT/2019/bin                                                 # Ada
 path! $GOROOT/bin                                                             # Go
 path! $GOBIN
-path! '/Applications/Racket v8.2/bin/'                                        # Racket
+path! '/Applications/Racket v8.7/bin/'                                        # Racket
 path! /usr/local/smlnj/bin                                                    # StandardML of NJ
 path! /usr/local/sbin
 
