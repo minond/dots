@@ -214,7 +214,6 @@ source? ~/.bash_aliases_sys
 eval "$(direnv hook bash)"
 eval "$(pyenv init --path)"
 eval "$(rbenv init -)"
-. ~/.nvm/nvm.sh
 
 
 # ~ Marcos Minond
