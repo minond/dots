@@ -133,3 +133,6 @@
 [submodule "dots/vim/pack/eges/start/vim-markdown"]
 	path = dots/vim/pack/eges/start/vim-markdown
 	url = https://github.com/tpope/vim-markdown
+[submodule "dots/vim/pack/eges/start/paredit.vim"]
+	path = dots/vim/pack/eges/start/paredit.vim
+	url = https://github.com/vim-scripts/paredit.vim.git
