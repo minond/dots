@@ -24,6 +24,9 @@ function! RacketStartOrReloadRepl(context)
     endif
 
     SlimeSend0 "clear; racket -Z " . g:racket_repl_id . "\n"
+
+    redraw
+    sleep 1000m
   endif
 
   SlimeSend0 "(dynamic-enter\! \"" . a:context . "\")\n"
