@@ -14,7 +14,9 @@ function! RacketReplRunning()
 endfunction
 
 function! RacketStartOrReloadRepl(context)
-  if RacketReplRunning() == 0
+  let l:new_repl = RacketReplRunning() == 0
+
+  if l:new_repl == 1
     let pane_count = system("tmux list-panes | wc -l | xargs -n1 echo -n")
     if pane_count == "1"
       silent !tmux split-window
@@ -25,6 +27,10 @@ function! RacketStartOrReloadRepl(context)
   endif
 
   SlimeSend0 "(dynamic-enter\! \"" . a:context . "\")\n"
+
+  if l:new_repl == 1
+    SlimeSend0 "(require racket/trace)\n"
+  endif
 endfunction
 
 function! RacketKillRepl()
