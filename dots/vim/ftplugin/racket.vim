@@ -9,7 +9,7 @@ nnoremap <buffer> <leader>d :silent !raco docs <cword><cr>:redraw!<cr>
 let g:racket_repl_id = str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
 
 function! RacketReplRunning()
-  let match_count = system("ps aux | grep racket | grep " . b:racket_repl_id . " | wc -l | xargs -n1 echo -n")
+  let match_count = system("ps aux | grep racket | grep " . g:racket_repl_id . " | wc -l | xargs -n1 echo -n")
   return match_count == "2" ? 0 : 1
 endfunction
 
@@ -21,7 +21,7 @@ function! RacketStartOrReloadRepl(context)
       silent !tmux last-pane
     endif
 
-    SlimeSend0 "clear; racket -Z " . b:racket_repl_id . "\n"
+    SlimeSend0 "clear; racket -Z " . g:racket_repl_id . "\n"
   endif
 
   SlimeSend0 "(dynamic-enter\! \"" . a:context . "\")\n"
