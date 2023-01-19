@@ -133,3 +133,9 @@
 [submodule "dots/vim/pack/eges/start/vim-markdown"]
 	path = dots/vim/pack/eges/start/vim-markdown
 	url = https://github.com/tpope/vim-markdown
+[submodule "dots/vim/pack/eges/start/vim-lsp"]
+	path = dots/vim/pack/eges/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp
+[submodule "dots/vim/pack/eges/start/vim-lsp-settings"]
+	path = dots/vim/pack/eges/start/vim-lsp-settings
+	url = https://github.com/mattn/vim-lsp-settings

@@ -141,6 +141,9 @@ let g:SimplenoteListSize = 50
 let g:SimplenoteNoteFormat = "%N%>[%T]"
 let g:SimplenoteVertical = 1
 
+let g:lsp_diagnostics_enabled = 0        " diagnostics support
+let g:lsp_document_highlight_enabled = 0 " highlight symbol under cursor
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -183,6 +186,11 @@ vmap <S-k> <Plug>SchleppUp
 vmap <S-j> <Plug>SchleppDown
 vmap <S-h> <Plug>SchleppLeft
 vmap <S-l> <Plug>SchleppRight
+
+" Lsp
+nmap <buffer> gd <plug>(lsp-definition)
+nmap <buffer> gs <plug>(lsp-peek-definition)
+nmap <buffer> gi <plug>(lsp-hover)
 
 " move between buffers with Shift+j/k
 nnoremap <S-j> <ESC>:bp<CR>
