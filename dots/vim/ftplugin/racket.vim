@@ -3,7 +3,6 @@ setlocal nosmartindent
 nnoremap <buffer> <leader>r :w<cr>:call RacketStartOrReloadRepl(expand("%"))<cr>
 nnoremap <buffer> <leader><S-r> :w<cr>:call RacketKillRepl()<cr>
 
-nnoremap <buffer> <leader>d :LspSignatureHelp<cr>
 nnoremap <buffer> <leader>D :silent !raco docs <cword><cr>:redraw!<cr>
 
 " If Slime has a way to scope a tmux pane to a buffer, then this repl instance

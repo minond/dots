@@ -191,6 +191,7 @@ vmap <S-l> <Plug>SchleppRight
 " Lsp
 nnoremap <leader>g <plug>(lsp-definition)
 nnoremap <leader>i <plug>(lsp-hover)
+nnoremap <leader>d :LspSignatureHelp<cr>
 
 nnoremap <leader>t <ESC>:exec('tag '.expand('<cword>'))<CR>
 
