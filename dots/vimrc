@@ -141,8 +141,9 @@ let g:SimplenoteListSize = 50
 let g:SimplenoteNoteFormat = "%N%>[%T]"
 let g:SimplenoteVertical = 1
 
-let g:lsp_diagnostics_enabled = 0        " diagnostics support
-let g:lsp_document_highlight_enabled = 0 " highlight symbol under cursor
+let g:lsp_diagnostics_enabled = 0
+let g:lsp_document_highlight_enabled = 0
+let g:lsp_signature_help_enabled = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
@@ -188,9 +189,10 @@ vmap <S-h> <Plug>SchleppLeft
 vmap <S-l> <Plug>SchleppRight
 
 " Lsp
-nmap <buffer> gd <plug>(lsp-definition)
-nmap <buffer> gs <plug>(lsp-peek-definition)
-nmap <buffer> gi <plug>(lsp-hover)
+nnoremap <leader>g <plug>(lsp-definition)
+nnoremap <leader>i <plug>(lsp-hover)
+
+nnoremap <leader>t <ESC>:exec('tag '.expand('<cword>'))<CR>
 
 " move between buffers with Shift+j/k
 nnoremap <S-j> <ESC>:bp<CR>
@@ -212,8 +214,6 @@ nnoremap <leader>s <ESC>:GGrep<CR>
 " code-comment single and multiple lines
 nnoremap <C-c> <ESC>:TComment<CR>
 xnoremap <C-c> <ESC>:'<,'>TComment<CR>
-
-nnoremap <leader>g <ESC>:exec('tag '.expand('<cword>'))<CR>
 
 " focus on current window by shrinking every other window as much as possible
 nnoremap <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
