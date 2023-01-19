@@ -144,6 +144,7 @@ let g:SimplenoteVertical = 1
 let g:lsp_diagnostics_enabled = 0
 let g:lsp_document_highlight_enabled = 0
 let g:lsp_signature_help_enabled = 0
+let g:lsp_document_code_action_signs_enabled = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
