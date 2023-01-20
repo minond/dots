@@ -181,7 +181,7 @@ nnoremap ; :<C-F>i
 inoremap jj <Esc>:w<CR><RIGHT>
 
 " fzf path completion
-inoremap <c-f> <plug>(fzf-complete-path)
+inoremap <C-f> <plug>(fzf-complete-path)
 
 " Schlepp movement bindings. Allow you to move whole selections at a time
 vmap <S-k> <Plug>SchleppUp
@@ -191,8 +191,10 @@ vmap <S-l> <Plug>SchleppRight
 
 " Lsp
 nnoremap <leader>g <plug>(lsp-definition)
-nnoremap <leader>i <plug>(lsp-hover)
+nnoremap <leader>i :call LspHoverToggle()<cr>
 nnoremap <leader>d :LspSignatureHelp<cr>
+nnoremap <buffer> <expr><C-f> lsp#scroll(+4)
+nnoremap <buffer> <expr><C-d> lsp#scroll(-4)
 
 nnoremap <leader>t <ESC>:exec('tag '.expand('<cword>'))<CR>
 
@@ -342,6 +344,14 @@ function! Preserve(command)
   normal! zt " Restore the previous window position.
 
   call setpos('.', cursor_position) " Restore the previous cursor position.
+endfunction
+
+function! LspHoverToggle()
+  if lsp#document_hover_preview_winid()
+    call popup_close(lsp#document_hover_preview_winid())
+  else
+    LspHover
+  endif
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
