@@ -105,15 +105,15 @@ let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_dont_ask_default = 1
 let g:slime_default_config = {
-    \ 'socket_name': split($TMUX, ",")[0],
-    \ 'target_pane': ':.1'
-  \ }
+      \ 'socket_name': split($TMUX, ",")[0],
+      \ 'target_pane': ':.1'
+      \ }
 
 let g:ctrlp_max_height = 30
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  'vendor',
-    \ 'file': '\v\.(exe|so|dll)$',
-  \ }
+      \ 'dir':  'vendor',
+      \ 'file': '\v\.(exe|so|dll)$',
+      \ }
 
 let g:NERDTreeCascadeOpenSingleChildDir = 1
 let g:NERDTreeCaseSensitiveSort = 1
@@ -148,16 +148,28 @@ let g:lsp_document_code_action_signs_enabled = 0
 let g:lsp_popup_options = {
       \ 'border': [1, 1, 1, 1],
       \ 'borderchars': ['─', '│', '─', '│', '┌', '┐', '┘', '└'],
-      \ 'borderhighlight': ['bor', 'bor', 'bor', 'bor'],
-      \ 'padding': [1, 1, 1, 1]
+      \ 'borderhighlight': ['LspPopupBorder', 'LspPopupBorder', 'LspPopupBorder', 'LspPopupBorder'],
+      \ 'padding': [0, 1, 0, 1],
+      \ 'scrollbar': 1
       \ }
 
-hi LspPopupBorder ctermfg=232 ctermbg=white
+hi LspPopupBorder ctermfg=black ctermbg=white
+hi LspPopupWindow ctermfg=black ctermbg=white
 
-autocmd User lsp_float_opened
-      \ call popup_setoptions(lsp#document_hover_preview_winid(), g:lsp_popup_options)
-autocmd User lsp_float_opened
-      \ call popup_setoptions(lsp#ui#vim#output#getpreviewwinid(), g:lsp_popup_options)
+augroup lsp_styling
+  autocmd User lsp_float_opened
+        \ call popup_setoptions(lsp#document_hover_preview_winid(), g:lsp_popup_options)
+  autocmd User lsp_float_opened
+        \ call popup_setoptions(lsp#ui#vim#output#getpreviewwinid(), g:lsp_popup_options)
+
+  " Note: This is setting wincolor on _all_ windows, not just the
+  " hover/preview window. It's fine for now since it matches the existing
+  " normal window styles.
+  autocmd User lsp_float_opened
+        \ call setwinvar(lsp#document_hover_preview_winid(), '&wincolor', 'LspPopupWindow')
+  autocmd User lsp_float_opened
+        \ call setwinvar(lsp#ui#vim#output#getpreviewwinid(), '&wincolor', 'LspPopupWindow')
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
