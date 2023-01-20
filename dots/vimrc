@@ -145,6 +145,19 @@ let g:lsp_diagnostics_enabled = 0
 let g:lsp_document_highlight_enabled = 0
 let g:lsp_signature_help_enabled = 0
 let g:lsp_document_code_action_signs_enabled = 0
+let g:lsp_popup_options = {
+      \ 'border': [1, 1, 1, 1],
+      \ 'borderchars': ['─', '│', '─', '│', '┌', '┐', '┘', '└'],
+      \ 'borderhighlight': ['bor', 'bor', 'bor', 'bor'],
+      \ 'padding': [1, 1, 1, 1]
+      \ }
+
+hi LspPopupBorder ctermfg=232 ctermbg=white
+
+autocmd User lsp_float_opened
+      \ call popup_setoptions(lsp#document_hover_preview_winid(), g:lsp_popup_options)
+autocmd User lsp_float_opened
+      \ call popup_setoptions(lsp#ui#vim#output#getpreviewwinid(), g:lsp_popup_options)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $FILE TYPE SETTINGS
