@@ -206,8 +206,8 @@ vmap <S-l> <Plug>SchleppRight
 nnoremap <leader>g <plug>(lsp-definition)
 nnoremap <leader>i :call LspHoverToggle()<cr>
 nnoremap <leader>d :LspSignatureHelp<cr>
-nnoremap <buffer> <expr><C-f> lsp#scroll(+4)
-nnoremap <buffer> <expr><C-d> lsp#scroll(-4)
+nnoremap <buffer> <expr><S-f> lsp#scroll(+4)
+nnoremap <buffer> <expr><S-d> lsp#scroll(-4)
 
 nnoremap <leader>t <ESC>:exec('tag '.expand('<cword>'))<CR>
 
