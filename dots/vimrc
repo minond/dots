@@ -221,6 +221,10 @@ nnoremap <leader>d :LspSignatureHelp<cr>
 nnoremap <expr> <S-z> lsp#scroll(-1)
 nnoremap <expr> <S-x> lsp#scroll(+1)
 
+" Lsp is automatically setting this mapping when it opens a floating window
+" which causes issues with the existing C-c mapping.
+nmap <silent> <buffer> <M-c> <Plug>(lsp-float-close)
+
 nnoremap <leader>t <ESC>:exec('tag '.expand('<cword>'))<CR>
 
 " move between buffers with Shift+j/k
