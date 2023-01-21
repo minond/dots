@@ -7,7 +7,8 @@ nnoremap <buffer> <leader>D :silent !raco docs <cword><cr>:redraw!<cr>
 
 " If Slime has a way to scope a tmux pane to a buffer, then this repl instance
 " could also be scoped to a buffer (b:racket_repl_id).
-let g:racket_repl_id = str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
+" let g:racket_repl_id = str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
+let g:racket_repl_id = "e6c6c1023f703c01fd1d9442facd716f"
 
 function! RacketReplRunning()
   let match_count = system("ps aux | grep racket | grep " . g:racket_repl_id . " | wc -l | xargs -n1 echo -n")
