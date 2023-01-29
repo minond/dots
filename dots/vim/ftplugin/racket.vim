@@ -1,5 +1,7 @@
 setlocal nosmartindent
 
+hi racketSyntax cterm=bold
+
 nnoremap <buffer> <leader>r :w<cr>:call RacketStartOrReloadRepl(expand("%"))<cr>
 nnoremap <buffer> <leader><S-r> :w<cr>:call RacketKillRepl()<cr>
 nnoremap <buffer> <leader>t :Dispatch raco test "%"<CR>
