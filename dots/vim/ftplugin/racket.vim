@@ -2,6 +2,7 @@ setlocal nosmartindent
 
 nnoremap <buffer> <leader>r :w<cr>:call RacketStartOrReloadRepl(expand("%"))<cr>
 nnoremap <buffer> <leader><S-r> :w<cr>:call RacketKillRepl()<cr>
+nnoremap <buffer> <leader>t :Dispatch raco test "%"<CR>
 
 nnoremap <buffer> <leader>D :silent !raco docs <cword><cr>:redraw!<cr>
 

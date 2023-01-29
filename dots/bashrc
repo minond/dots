@@ -165,7 +165,8 @@ path! $HOME/.local/bin/                                                       # 
 path! $HOME/opt/GNAT/2019/bin                                                 # Ada
 path! $GOROOT/bin                                                             # Go
 path! $GOBIN
-path! '/Applications/Racket v8.7/bin/'                                        # Racket
+path! '/Applications/Racket v8.7/bin/'                                        # Racket, system
+path! '/Users/marcos/Library/Racket/8.7/bin'                                  # Racket, user
 path! /usr/local/smlnj/bin                                                    # StandardML of NJ
 path! /usr/local/sbin
 path! "$HOME/Library/Application Support/Coursier/bin"                        # Java, Scala, etc.
