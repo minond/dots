@@ -1,12 +1,25 @@
 setlocal nosmartindent
 
-hi racketSyntax cterm=bold
+autocmd bufenter *.rkt :call UpdateRacketSyntax()
+autocmd filetype *.rkt :call UpdateRacketSyntax()
 
 nnoremap <buffer> <leader>r :w<cr>:call RacketStartOrReloadRepl(expand("%"))<cr>
 nnoremap <buffer> <leader><S-r> :w<cr>:call RacketKillRepl()<cr>
 nnoremap <buffer> <leader>t :Dispatch raco test "%"<CR>
 
 nnoremap <buffer> <leader>D :silent !raco docs <cword><cr>:redraw!<cr>
+
+let g:racket_hash_lang_dict =
+      \ {
+      \   'racket/base': 'racket',
+      \   'typed/racket': 'racket',
+      \   'typed/racket/base': 'racket',
+      \   'br': 'racket',
+      \   'br/quicklang': 'racket',
+      \   'slideshow': 'racket',
+      \   'scribble/base': 'scribble',
+      \   'scribble/manual': 'scribble',
+      \ }
 
 " If Slime has a way to scope a tmux pane to a buffer, then this repl instance
 " could also be scoped to a buffer (b:racket_repl_id).
@@ -40,4 +53,10 @@ function! RacketKillRepl()
     SlimeSend0 "(exit)\n"
     SlimeSend0 "exit\n"
   endif
+endfunction
+
+function! UpdateRacketSyntax()
+  syn keyword racketSyntax struct         " Treat struct as a keyword
+  syn match racketSyntax /define-\w\+/    " Treat anything that starts with define-* as a keyword
+  hi racketSyntax cterm=bold
 endfunction
