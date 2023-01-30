@@ -56,7 +56,9 @@ function! RacketKillRepl()
 endfunction
 
 function! UpdateRacketSyntax()
-  syn keyword racketSyntax struct         " Treat struct as a keyword
-  syn match racketSyntax /define-\w\+/    " Treat anything that starts with define-* as a keyword
+  syn keyword racketSyntax struct
+  syn match racketSyntax /define-\w\+/
+  syn match racketStruc /^#lang .\+$/
+  syn keyword racketStruc format else
   hi racketSyntax cterm=bold
 endfunction
