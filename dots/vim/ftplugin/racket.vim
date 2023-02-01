@@ -56,7 +56,7 @@ function! RacketKillRepl()
 endfunction
 
 function! UpdateRacketSyntax()
-  syn keyword racketSyntax struct
+  syn keyword racketSyntax struct test-suite test-case
   syn match racketSyntax /define-\w\+/
   syn match racketStruc /^#lang .\+$/
   syn keyword racketStruc format else
