@@ -22,7 +22,7 @@ let g:racket_hash_lang_dict =
       \   'scribble/manual': 'scribble',
       \ }
 
-let g:racket_repl_id = system("echo -n $$") . "vim"
+let g:racket_repl_id = getpid() . "_vim"
 
 function! RacketReplRunning()
   let match_count = system("ps aux | grep racket | grep " . g:racket_repl_id . " | wc -l | xargs -n1 echo -n")
