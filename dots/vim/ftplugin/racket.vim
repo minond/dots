@@ -9,6 +9,8 @@ nnoremap <buffer> <leader>t :Dispatch raco test "%"<CR>
 
 nnoremap <buffer> <leader>D :silent !raco docs <cword><cr>:redraw!<cr>
 
+command! -nargs=* RacoDoc execute ':silent !raco doc <f-args>' | execute ':redraw!'
+
 let g:racket_hash_lang_dict =
       \ {
       \   'racket/base': 'racket',
