@@ -138,10 +138,6 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 
-let g:SimplenoteListSize = 50
-let g:SimplenoteNoteFormat = "%N%>[%T]"
-let g:SimplenoteVertical = 1
-
 let g:lsp_diagnostics_enabled = 0
 let g:lsp_document_highlight_enabled = 0
 let g:lsp_signature_help_enabled = 0
