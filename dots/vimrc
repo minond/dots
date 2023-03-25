@@ -101,6 +101,31 @@ set wildignore+=*/doc/*
 " $PLUGIN SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fzf_preview_window = []
+let g:fzf_layout = {
+      \ 'down': '40%'
+      \ }
+let g:fzf_colors = {
+      \ 'fg':      ['fg', 'Normal'],
+      \ 'fg+':     ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'bg+':     ['bg', 'FzfWindowCurrentItem'],
+      \ 'hl':      ['fg', 'FzfWindowHighlight'],
+      \ 'hl+':     ['fg', 'FzfWindowHighlight'],
+      \ 'info':    ['fg', 'Normal'],
+      \ 'border':  ['fg', 'Normal'],
+      \ 'prompt':  ['fg', 'Normal'],
+      \ 'pointer': ['fg', 'Normal'],
+      \ 'marker':  ['fg', 'FzfWindowMarker'],
+      \ 'spinner': ['fg', 'Normal'],
+      \ 'header':  ['fg', 'Normal']
+      \ }
+
+hi FzfWindowHighlight ctermfg=12
+hi FzfWindowCurrentItem ctermbg=white
+hi FzfWindowMarker ctermbg=5
+hi fzf1 ctermfg=white ctermbg=white
+hi fzf2 ctermfg=white ctermbg=white
+hi fzf3 ctermfg=white ctermbg=white
 
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
