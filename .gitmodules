@@ -63,7 +63,8 @@
 	url = https://github.com/vim-ruby/vim-ruby.git
 [submodule "dots/vim/pack/eges/start/vim-racket"]
 	path = dots/vim/pack/eges/start/vim-racket
-	url = https://github.com/wlangstroth/vim-racket.git
+    ; url = https://github.com/wlangstroth/vim-racket.git
+	url = https://github.com/minond/vim-racket.git
 [submodule "dots/vim/pack/eges/start/VisIncr"]
 	path = dots/vim/pack/eges/start/VisIncr
 	url = https://github.com/vim-scripts/VisIncr.git
