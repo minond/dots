@@ -1,0 +1,64 @@
+(require 'package)
+
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/")
+	     t)
+
+(setq package-list
+      '(racket-mode
+	evil
+	basic-theme))
+
+(package-initialize)
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+(require 'evil)
+(require 'racket-xp)
+
+(custom-set-variables
+ '(custom-safe-themes
+   '("62fcab88d19e2b4110439489ece7bd4318c1d25d5ec48de9bb9e3123d3ab8419" default))
+ '(package-selected-packages '(basic-theme ## racket-mode)))
+
+(evil-mode 1)
+(evil-set-undo-system 'undo-redo)
+
+(menu-bar-mode -1) 
+(global-font-lock-mode 2)
+
+(add-hook 'racket-mode-hook #'racket-xp-mode)
+
+(load-theme 'basic)
+
+(defvar black "#181818")
+(defvar gray1 "#282828")
+(defvar gray2 "#383838")
+(defvar gray3 "#585858")
+(defvar gray4 "#b8b8b8")
+(defvar gray5 "#d8d8d8")
+(defvar gray6 "#e8e8e8")
+(defvar gray7 "#f8f8f8")
+(defvar white "#ffffff")
+(defvar red "#ab4642")
+(defvar orange "#dc9656")
+(defvar yellow "#f7ca88")
+(defvar green "#a1b56c")
+(defvar turquoise "#86c1b9")
+(defvar blue "#7cafc2")
+(defvar purple "#ba8baf")
+(defvar brown "#a16046")
+
+(custom-set-faces
+ '(eldoc-highlight-function-argument ((t (:weight normal :foreground "#181818" :background nil))))
+ '(font-lock-comment-delimiter-face ((t :foreground "#b8b8b8" :background nil)))
+ '(font-lock-comment-face ((t :foreground "#b8b8b8" :background nil)))
+ '(font-lock-keyword-face ((t :foreground nil :background nil :weight bold)))
+ '(font-lock-string-face ((t :foreground "#585858" :background nil)))
+ '(mode-line ((t (:foreground "#181818" :background "#e8e8e8" :box nil))))
+ '(racket-keyword-argument-face ((t :foreground nil :background nil))))

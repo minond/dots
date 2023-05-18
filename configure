@@ -170,7 +170,7 @@ usage() {
   echo -n "  Tools:                        # "
 
   local i=0
-  for option in ack git vim ctags tmux screen bash scala chunkwm kitty irb
+  for option in ack git emacs vim ctags tmux screen bash scala chunkwm kitty irb
   do
     i=$((i+1))
 
@@ -204,6 +204,10 @@ do
 
     irb)
       link ~/.irbrc "$dots/irbrc"
+      ;;
+
+    emacs)
+      link ~/.emacs "$dots/emacs"
       ;;
 
     vim)
