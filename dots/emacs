@@ -7,7 +7,8 @@
 (setq package-list
       '(racket-mode
 	evil
-	basic-theme))
+	basic-theme
+	markdown-mode))
 
 (package-initialize)
 
@@ -22,6 +23,10 @@
 (require 'racket-xp)
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("62fcab88d19e2b4110439489ece7bd4318c1d25d5ec48de9bb9e3123d3ab8419" default))
  '(package-selected-packages '(basic-theme ## racket-mode)))
@@ -55,6 +60,10 @@
 (defvar brown "#a16046")
 
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(eldoc-highlight-function-argument ((t (:weight normal :foreground "#181818" :background nil))))
  '(font-lock-comment-delimiter-face ((t :foreground "#b8b8b8" :background nil)))
  '(font-lock-comment-face ((t :foreground "#b8b8b8" :background nil)))
