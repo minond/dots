@@ -65,6 +65,7 @@
 (evil-define-key 'normal 'global (kbd "<leader>O") 'fzf)
 (evil-define-key 'normal 'global (kbd "<leader>o") 'fzf-git)
 (evil-define-key 'normal 'global (kbd "<leader>s") 'fzf-git-grep)
+(evil-define-key 'normal 'racket-xp-mode (kbd "<leader>g") 'racket-visit-definition)
 
 
 ;; THEME
