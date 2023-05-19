@@ -3,10 +3,12 @@
 *.patch
 *.swo
 *.swp
+*~
 .ctags
 .envrc
 .tags
 .unisonHistory
+\#*\#
 ignore*
 npm-debug.log
 tags
