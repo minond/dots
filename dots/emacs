@@ -6,6 +6,7 @@
 
 (setq package-list
       '(racket-mode
+	fzf
 	evil
 	basic-theme
 	markdown-mode))
@@ -33,6 +34,7 @@
 
 (evil-mode 1)
 (evil-set-undo-system 'undo-redo)
+(evil-set-leader 'normal (kbd "SPC"))
 
 (menu-bar-mode -1) 
 (global-font-lock-mode 2)
@@ -71,3 +73,7 @@
  '(font-lock-string-face ((t :foreground "#585858" :background nil)))
  '(mode-line ((t (:foreground "#181818" :background "#e8e8e8" :box nil))))
  '(racket-keyword-argument-face ((t :foreground nil :background nil))))
+
+(evil-define-key 'normal 'global (kbd "<leader>O") 'fzf)
+(evil-define-key 'normal 'global (kbd "<leader>o") 'fzf-git)
+(evil-define-key 'normal 'global (kbd "<leader>s") 'fzf-git-grep)
