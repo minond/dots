@@ -1,9 +1,21 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SETUP ...................... initialize package managers
+;; PACKAGES ................... install packages
+;; CUSTOM ..................... customize settings
+;; EMACS SETTINGS ............. builtin setting overrides
+;; PACKAGE SETTINGS ........... package setting overrides
+;; KEY BINDINGS ............... custom key bindings
+;; THEME ...................... set theme and face updates
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;; SETUP
 (require 'package)
 
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/")
-	     t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
+
+;; PACKAGES
 (setq package-list
       '(racket-mode
 	fzf
@@ -20,8 +32,8 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(require 'evil)
-(require 'racket-xp)
+
+;; CUSTOM
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -32,35 +44,39 @@
    '("62fcab88d19e2b4110439489ece7bd4318c1d25d5ec48de9bb9e3123d3ab8419" default))
  '(package-selected-packages '(basic-theme ## racket-mode)))
 
-(evil-mode 1)
-(evil-set-undo-system 'undo-redo)
-(evil-set-leader 'normal (kbd "SPC"))
+
+;; EMACS SETTINGS
 
 (menu-bar-mode -1) 
 (global-font-lock-mode 2)
 
+
+;; PACKAGE SETTINGS
+
+(evil-mode 1)
+(evil-set-undo-system 'undo-redo)
+(evil-set-leader 'normal (kbd "SPC"))
+
 (add-hook 'racket-mode-hook #'racket-xp-mode)
+
+
+;; KEY BINDINGS
+
+(evil-define-key 'normal 'global (kbd "<leader>O") 'fzf)
+(evil-define-key 'normal 'global (kbd "<leader>o") 'fzf-git)
+(evil-define-key 'normal 'global (kbd "<leader>s") 'fzf-git-grep)
+
+
+;; THEME
 
 (load-theme 'basic)
 
-(defvar black "#181818")
-(defvar gray1 "#282828")
-(defvar gray2 "#383838")
-(defvar gray3 "#585858")
-(defvar gray4 "#b8b8b8")
-(defvar gray5 "#d8d8d8")
-(defvar gray6 "#e8e8e8")
-(defvar gray7 "#f8f8f8")
-(defvar white "#ffffff")
-(defvar red "#ab4642")
-(defvar orange "#dc9656")
-(defvar yellow "#f7ca88")
-(defvar green "#a1b56c")
-(defvar turquoise "#86c1b9")
-(defvar blue "#7cafc2")
-(defvar purple "#ba8baf")
-(defvar brown "#a16046")
-
+;; black     #181818        white     #ffffff        orange    #dc9656
+;; yellow    #f7ca88        green     #a1b56c        turquoise #86c1b9
+;; blue      #7cafc2        purple    #ba8baf        brown     #a16046
+;; red       #ab4642        gray1     #282828        gray2     #383838
+;; gray3     #585858        gray4     #b8b8b8        gray5     #d8d8d8
+;; gray6     #e8e8e8        gray7     #f8f8f8
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -73,7 +89,3 @@
  '(font-lock-string-face ((t :foreground "#585858" :background nil)))
  '(mode-line ((t (:foreground "#181818" :background "#e8e8e8" :box nil))))
  '(racket-keyword-argument-face ((t :foreground nil :background nil))))
-
-(evil-define-key 'normal 'global (kbd "<leader>O") 'fzf)
-(evil-define-key 'normal 'global (kbd "<leader>o") 'fzf-git)
-(evil-define-key 'normal 'global (kbd "<leader>s") 'fzf-git-grep)
