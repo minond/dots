@@ -18,6 +18,8 @@
 ;; PACKAGES
 (setq package-list
       '(racket-mode
+	yaml-mode
+	dockerfile-mode
 	fzf
 	evil
 	basic-theme
