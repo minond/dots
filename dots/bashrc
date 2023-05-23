@@ -97,7 +97,6 @@ export GO111MODULE=auto
 export GOPATH=$HOME/code/go
 export GOROOT=$HOME/.gov/go
 export GOBIN=$HOME/.gov/bin
-export GOPRIVATE="*.mx.com"
 export GOSUMDB=off
 export GOPROXY=direct
 
@@ -186,7 +185,6 @@ source? $HOME/.bashrc_local
 
 _Z_CMD=_zz source? $HOME/.dots/module/z/z.sh                                  # Z
 source? $HOME/.ghcup/env                                                      # Haskell
-
 source? $HOME/.rvm/scripts/rvm                                                # Load RVM into a shell session *as a function*
 
 # These following slow down a session's start time and are not often used, so
