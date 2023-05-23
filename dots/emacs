@@ -13,6 +13,7 @@
 (require 'package)
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 
 ;; PACKAGES
@@ -22,6 +23,7 @@
 	dockerfile-mode
 	fzf
 	evil
+	magit
 	basic-theme
 	markdown-mode))
 
@@ -44,7 +46,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("62fcab88d19e2b4110439489ece7bd4318c1d25d5ec48de9bb9e3123d3ab8419" default))
- '(package-selected-packages '(basic-theme ## racket-mode)))
+ '(package-selected-packages '(magit basic-theme ## racket-mode)))
 
 
 ;; EMACS SETTINGS
