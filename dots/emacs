@@ -52,6 +52,7 @@
 ;; EMACS SETTINGS
 
 (menu-bar-mode -1) 
+(display-time-mode 1)
 (global-font-lock-mode 2)
 
 
