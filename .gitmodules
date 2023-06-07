@@ -139,3 +139,6 @@
 [submodule "dots/vim/pack/eges/start/vim-lsp-settings"]
 	path = dots/vim/pack/eges/start/vim-lsp-settings
 	url = https://github.com/mattn/vim-lsp-settings
+[submodule "dots/vim/pack/eges/start/vim-prettier"]
+	path = dots/vim/pack/eges/start/vim-prettier
+	url = https://github.com/prettier/vim-prettier
