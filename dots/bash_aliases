@@ -57,6 +57,9 @@ alias smallest='tmux resize-pane -y 5'
 alias smaller='tmux resize-pane -y 10'
 alias small='tmux resize-pane -y 25'
 
+# Python
+alias pipenv-activate='source $(pipenv --venv)/bin/activate'
+
 # Z
 function z() {
   _zz $* # z into directory
