@@ -161,6 +161,7 @@ path! $HOME/.bloop
 path! $HOME/.v                                                                # V
 path! $HOME/.local/bin/                                                       # Pip
 path! $HOME/opt/GNAT/2019/bin                                                 # Ada
+path! $HOME/.local/bin                                                        # Python Poetry
 path! $GOROOT/bin                                                             # Go
 path! $GOBIN
 path! '/Applications/Racket v8.7/bin/'                                        # Racket, system
@@ -215,6 +216,7 @@ source? ~/.bash_aliases_sys
 # $INITIALIZERS
 ###############################################################################
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(direnv hook bash)"
 eval "$(pyenv init --path)"
 eval "$(rbenv init -)"
