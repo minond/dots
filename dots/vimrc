@@ -144,13 +144,22 @@ let g:ctrlp_custom_ignore = {
 
 let g:NERDTreeCascadeOpenSingleChildDir = 1
 let g:NERDTreeCaseSensitiveSort = 1
-let g:NERDTreeIgnore = ['\.sw.$', '.git$']
 let g:NERDTreeMapJumpNextSibling = ""
 let g:NERDTreeMapJumpPrevSibling = ""
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeNodeDelimiter="\u00a0"
 let g:NERDTreeRespectWildIgnore = 0
 let g:NERDTreeShowHidden = 1
+let g:NERDTreeIgnore = [
+      \ '\.sw.$',
+      \ '.git$',
+      \ '^__pycache__$',
+      \ '^.hypothesis$',
+      \ '^.mypy_cache$',
+      \ '^.pytest_cache$',
+      \ '^.htmlcov$',
+      \ '^.coverage$',
+      \ ]
 
 let g:gitgutter_sign_added = '-'
 let g:gitgutter_sign_modified = '-'

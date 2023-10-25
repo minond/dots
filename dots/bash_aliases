@@ -40,7 +40,7 @@ alias jsfmt='prettier --no-semi --write'                                        
 alias scalafmt='scalafmt -c ~/.scalafmt.conf'                                   # Scala Fmt: http://scalameta.org/scalafmt/
 alias scalastyle='scalastyle -c ~/.scalastyle.xml'                              # Scala Style: http://www.scalastyle.org/
 
-# Work
+# Ruby
 alias lrb='rbenvshell $(cat .ruby-version)'
 alias jrb='rbenvshell jruby-9.2.6.0'
 alias rb='rbenvshell 2.7.5'
@@ -59,6 +59,7 @@ alias small='tmux resize-pane -y 25'
 
 # Python
 alias pipenv-activate='source $(pipenv --venv)/bin/activate'
+alias pa=pipenv-activate
 
 # Z
 function z() {
