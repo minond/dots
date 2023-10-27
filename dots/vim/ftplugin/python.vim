@@ -1,1 +1,1 @@
-autocmd BufWritePre *.py call execute("LspDocumentFormatSync")
+autocmd BufWritePre *.py call execute("LspDocumentFormat")
