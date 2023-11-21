@@ -31,9 +31,14 @@
 --ignore-directory=is:~.nib
 --ignore-directory=is:~.plst
 
-# Python test coverage
+# Python
 --ignore-directory=is:.covreport
 --ignore-file=is:.coverage
+--ignore-directory=.pytest_cache
+--ignore-directory=.mypy_cache
+--ignore-directory=__pycache__
+--ignore-directory=.hypothesis
+--ignore-directory=htmlcov
 
 # Git
 # http://git-scm.com/

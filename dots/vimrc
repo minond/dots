@@ -96,6 +96,8 @@ set wildignore+=*/target/*
 set wildignore+=*/tmp/*
 set wildignore+=*/vendor/*
 set wildignore+=*/doc/*
+set wildignore+=*/.pytest_cache/*
+set wildignore+=*/.mypy_cache/*
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $PLUGIN SETTINGS
