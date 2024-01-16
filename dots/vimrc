@@ -102,6 +102,8 @@ set wildignore+=*/.mypy_cache/*
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $PLUGIN SETTINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:dispatch_no_maps = 1
+
 let g:fzf_preview_window = []
 let g:fzf_layout = {
       \ 'down': '40%'
