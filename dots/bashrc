@@ -119,6 +119,7 @@ export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export PYENV_ROOT="$HOME/.pyenv"
 export DOTNET_ROOT=$HOME/dotnet
+export XDG_CONFIG_HOME=$HOME/.config
 
 ###############################################################################
 # $SETTINGS
