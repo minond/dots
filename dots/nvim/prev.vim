@@ -1,0 +1,441 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LOAD EXTERNALS ............... load external resources, start package manager
+" VIM SETTINGS ................................ vim built in setting overwrites
+" PLUGIN SETTINGS ................................... plugin setting overwrites
+" FILE TYPE SETTINGS .................... file type specific setting overwrites
+" MAPPINGS ................................................ custom key mappings
+" COMMANDS .................................................... custom commands
+" COLORSCHEME ................................ colorscheme and color overwrites
+" FUNCTIONS .................................................. custom functions
+" VARIABLES ................................................. helpful variables
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $LOAD EXTERNALS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype indent plugin on
+
+if filereadable(expand("~/.private.vim"))
+  source ~/.private.vim
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $VIM SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = "\<Space>"
+
+set t_Co=256                             " 256 colors available
+
+set splitbelow                           " hirizontal splits go down
+set splitright                           " vertical splits go to the right
+
+set autoindent                           " copy indent from current line to next
+set backspace=indent,eol,start           " ok to backspace over most things
+
+set softtabstop=2                        " back character length
+set shiftwidth=2                         " shift movement length
+set expandtab                            " when you say tab we space
+set tabstop=2                            " tab character length
+
+set colorcolumn=                         " http://paul-m-jones.com/archives/276
+set cursorline                           " highlight the line cursor is on
+
+set formatoptions-=t                     " disable automatic wrapping of lines
+set hidden                               " best. thing. ever. no buffer closed
+
+set smartcase                            " case insensitive default
+set hlsearch                             " highlight all matches
+set ignorecase                           " case insensitive searches
+set incsearch                            " highlight matches while typing
+set showmatch                            " jump to search result
+
+set list                                 " display special characters
+set listchars=tab:\ \ ,trail:.           " special characters for special char
+
+set laststatus=2                         " always show status line
+set cmdwinheight=10                      " make command win a little bigger
+set numberwidth=4                        " make line number column wider
+" set statusline=%f\ [%l\]\ %{LspGetAllowedServerStatus()}\ %m\ %r
+
+set nofoldenable                         " lets us use foldcolumn for padding
+set foldcolumn=1                         " adds a bit of padding on the left
+set foldlevel=100                        " no folds below level of 100 at start
+
+set makeprg=make
+set errorformat=%+A\ %#%f\ %#(%l\\\,%c):\ %m,%C%m
+
+set matchpairs=<:>,‘:’,(:),{:},[:]       " match open/close characters
+set modeline
+set modelines=5
+set nocompatible                         " we want the more useful way
+set re=1                                 " use old re engine
+set nojoinspaces                         " just one space after a period!
+set nowrap                               " press enter instead
+
+set tags^=./.tags,./.TAGS,.tags,.TAGS    " possible names for ctags file
+
+set virtualedit=all                      " freely move around a buffer
+set wildmenu                             " better cmd line completion
+set fillchars+=vert:│                    " vertical split line character
+
+set wildignore+=*.class
+set wildignore+=*.so
+set wildignore+=*.swp
+set wildignore+=*/bin/*
+set wildignore+=*/build/*
+set wildignore+=*/coverage/*
+set wildignore+=*/dist/*
+set wildignore+=*/log/*
+set wildignore+=*/node_modules/*
+set wildignore+=*/out/*
+set wildignore+=*/public/assets/*
+set wildignore+=*/public/fonts/*
+set wildignore+=*/public/images/*
+set wildignore+=*/public/javascripts/*
+set wildignore+=*/target/*
+set wildignore+=*/tmp/*
+set wildignore+=*/vendor/*
+set wildignore+=*/doc/*
+set wildignore+=*/.pytest_cache/*
+set wildignore+=*/.mypy_cache/*
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $PLUGIN SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:dispatch_no_maps = 1
+
+let g:fzf_preview_window = []
+let g:fzf_layout = {
+      \ 'down': '40%'
+      \ }
+let g:fzf_colors = {
+      \ 'fg':      ['fg', 'Normal'],
+      \ 'fg+':     ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'bg+':     ['bg', 'FzfWindowCurrentItem'],
+      \ 'hl':      ['fg', 'FzfWindowHighlight'],
+      \ 'hl+':     ['fg', 'FzfWindowHighlight'],
+      \ 'info':    ['fg', 'Normal'],
+      \ 'border':  ['fg', 'Normal'],
+      \ 'prompt':  ['fg', 'Normal'],
+      \ 'pointer': ['fg', 'Normal'],
+      \ 'marker':  ['fg', 'FzfWindowMarker'],
+      \ 'spinner': ['fg', 'Normal'],
+      \ 'header':  ['fg', 'Normal']
+      \ }
+
+hi FzfWindowHighlight ctermfg=12
+hi FzfWindowCurrentItem ctermbg=white
+hi FzfWindowMarker ctermbg=5
+hi fzf1 ctermfg=white ctermbg=white
+hi fzf2 ctermfg=white ctermbg=white
+hi fzf3 ctermfg=white ctermbg=white
+
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_dont_ask_default = 1
+let g:slime_python_ipython = 1
+let g:slime_default_config = {
+      \ 'socket_name': split($TMUX, ",")[0],
+      \ 'target_pane': ':.1'
+      \ }
+
+let g:ctrlp_max_height = 30
+let g:ctrlp_custom_ignore = {
+      \ 'dir':  'vendor',
+      \ 'file': '\v\.(exe|so|dll)$',
+      \ }
+
+let g:NERDTreeCascadeOpenSingleChildDir = 1
+let g:NERDTreeCaseSensitiveSort = 1
+let g:NERDTreeMapJumpNextSibling = ""
+let g:NERDTreeMapJumpPrevSibling = ""
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeNodeDelimiter="\u00a0"
+let g:NERDTreeRespectWildIgnore = 0
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeIgnore = [
+      \ '\.sw.$',
+      \ '.git$',
+      \ '^__pycache__$',
+      \ '^.hypothesis$',
+      \ '^.mypy_cache$',
+      \ '^.pytest_cache$',
+      \ '^.htmlcov$',
+      \ '^.coverage$',
+      \ ]
+
+let g:gitgutter_sign_added = '-'
+let g:gitgutter_sign_modified = '-'
+let g:gitgutter_sign_modified_removed = '-'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '-'
+let g:gitgutter_map_keys = 0
+let g:gitgutter_enabled = 0
+
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+let g:UltiSnipsJumpForwardTrigger='<c-j>'
+
+let g:prettier#autoformat = 0
+let g:prettier#autoformat_require_pragma = 1
+
+let g:lsp_diagnostics_enabled = 0
+let g:lsp_document_highlight_enabled = 0
+let g:lsp_signature_help_enabled = 0
+let g:lsp_document_code_action_signs_enabled = 0
+let g:lsp_popup_options = {
+      \ 'border': [1, 1, 1, 1],
+      \ 'borderchars': ['─', '│', '─', '│', '┌', '┐', '┘', '└'],
+      \ 'borderhighlight': ['LspPopupBorder', 'LspPopupBorder', 'LspPopupBorder', 'LspPopupBorder'],
+      \ 'padding': [0, 1, 0, 1],
+      \ 'scrollbar': 1
+      \ }
+
+hi LspPopupBorder ctermfg=black ctermbg=white
+hi LspPopupWindow ctermfg=black ctermbg=white
+
+augroup lsp_styling
+  autocmd User lsp_float_opened
+        \ call popup_setoptions(lsp#document_hover_preview_winid(), g:lsp_popup_options)
+  autocmd User lsp_float_opened
+        \ call popup_setoptions(lsp#ui#vim#output#getpreviewwinid(), g:lsp_popup_options)
+
+  " Note: This is setting wincolor on _all_ windows, not just the
+  " hover/preview window. It's fine for now since it matches the existing
+  " normal window styles.
+  autocmd User lsp_float_opened
+        \ call setwinvar(lsp#document_hover_preview_winid(), '&wincolor', 'LspPopupWindow')
+  autocmd User lsp_float_opened
+        \ call setwinvar(lsp#ui#vim#output#getpreviewwinid(), '&wincolor', 'LspPopupWindow')
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $FILE TYPE SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup CursorLine
+  au!
+  au WinEnter     * setlocal cursorline
+  au WinLeave     * setlocal nocursorline
+augroup END
+
+augroup VimReload
+  au!
+  au BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
+augroup Cmdwin
+  au!
+  au CmdwinEnter  * setlocal nonumber
+  au CmdwinEnter  * setlocal ft=text
+augroup END
+
+augroup Git
+  au!
+  au BufWritePost * :GitGutterAll
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $MAPPINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" enter command window with history and in insert mode
+nnoremap ; :<C-F>i
+
+" jj in insert mode takes you out of insert mode and saves the buffer
+inoremap jj <Esc>:w<CR><RIGHT>
+
+" fzf path completion
+" inoremap <C-f> <plug>(fzf-complete-path)
+
+" Schlepp movement bindings. Allow you to move whole selections at a time
+vmap <S-k> <Plug>SchleppUp
+vmap <S-j> <Plug>SchleppDown
+vmap <S-h> <Plug>SchleppLeft
+vmap <S-l> <Plug>SchleppRight
+
+" Lsp
+nnoremap <leader>g <plug>(lsp-definition)
+nnoremap <leader>i :call LspHoverToggle()<cr>
+nnoremap <leader>d :LspSignatureHelp<cr>
+nnoremap <expr> <S-z> lsp#scroll(-1)
+nnoremap <expr> <S-x> lsp#scroll(+1)
+
+" Lsp is automatically setting this mapping when it opens a floating window
+" which causes issues with the existing C-c mapping.
+nmap <silent> <buffer> <M-c> <Plug>(lsp-float-close)
+
+nnoremap <leader>t <ESC>:exec('tag '.expand('<cword>'))<CR>
+
+" move between buffers with Shift+j/k
+nnoremap <S-j> <ESC>:bp<CR>
+nnoremap <S-k> <ESC>:bn<CR>
+
+" move between windows with [Shift+]Tab
+nnoremap <Tab>   <C-w><C-w>
+nnoremap <S-Tab> <C-w><S-w>
+
+" move to the next diff hunk with leader+j/k
+nnoremap <leader>j <ESC>:GitGutterNextHunk<CR>
+nnoremap <leader>k <ESC>:GitGutterPrevHunk<CR>
+
+" fzf
+" nnoremap <leader>o <ESC>:GFiles<CR>
+" nnoremap <leader>O <ESC>:Files<CR>
+" nnoremap <leader>s <ESC>:GGrep<CR>
+
+" code-comment single and multiple lines
+nnoremap <C-c> <ESC>:TComment<CR>
+xnoremap <C-c> <ESC>:'<,'>TComment<CR>
+
+" focus on current window by shrinking every other window as much as possible
+nnoremap <leader>= :NERDTreeClose<CR><C-w><S-_><C-w><S-\|>
+
+" strip trailing whitespace
+nnoremap <leader>w :call StripTrailingWhitespaces()<CR>
+
+" sends runcmd to the designated slime output pane. Defaults to `!!` to re-run
+" the last command.
+let runcmd = "!!\n"
+nnoremap <leader>R :SlimeSend0 runcmd<CR>
+
+" toggle things
+nnoremap <leader>1 :GitGutterToggle<CR>
+nnoremap <leader>2 :Tagbar<CR>
+nnoremap <leader>3 :set number!<CR>
+nnoremap <leader>4 :call ToggleCC()<CR>
+
+" open cwd
+nnoremap <leader>. :e .<CR>
+
+" open and close nerdtree, even within nerdtree
+nnoremap <leader>f <ESC>:NERDTreeFind<CR>
+nnoremap <leader><S-f> <ESC>:NERDTreeToggle<CR>
+
+" toggle paste mode
+" TODO change this to it's automatically done with actually pasting
+nnoremap <leader>p :set paste!<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $COMMANDS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" copy related helpers
+command! Copy w !cat | pbcopy
+command! CopyFilename !echo -n "%" | pbcopy
+command! CF !echo -n % | pbcopy
+command! -range=% -nargs=0 C :<line1>,<line2>call CopySelection()
+
+" toggle spell checker using en_us dict
+command! Spell setlocal spell! spelllang=en_us
+
+" generate tags file
+command! Ctags !git ls-files | ctags -R --verbose -f .tags
+
+" git commands
+command! Ann !clear; git annotate %
+command! History !clear; git log -p -- %
+command! Add execute ':silent !clear; git add %' | execute ':redraw!' | execute ':GitGutter'
+command! AddP execute '!clear; git add -p %' | execute ':GitGutter'
+command! -nargs=* Diff !clear; git diff <f-args>
+command! Gopen !git open %
+
+" git grep wrapper with fzf
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number -- '.shellescape(<q-args>), 0,
+  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
+command! Format :LspDocumentFormat
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLORSCHEME
+" http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on
+
+if ! has("gui_running")
+  colo simple
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FUNCTIONS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! ShowColors()
+    let num = 255
+    while num >= 0
+        exec 'hi col_' . num . ' ctermbg=' . num . ' ctermfg=white'
+        exec 'syn match col_' . num . ' "ctermbg=' . num . ':...." containedIn=ALL'
+        call append(0, 'ctermbg=' . num . ':....')
+        let num = num - 1
+    endwhile
+endfunction
+
+function! CopySelection() range
+  echo system('echo -n ' . shellescape(GetVisualSelection()) . '| pbcopy')
+endfunction
+
+function! ToggleCC()
+  if &cc == ''
+    set cc=80,120
+  else
+    set cc=
+  endif
+endfun
+
+function! GetVisualSelection()
+  let [line_start, column_start] = getpos("'<")[1:2]
+  let [line_end, column_end] = getpos("'>")[1:2]
+  let lines = getline(line_start, line_end)
+  if len(lines) == 0
+    return ''
+  endif
+  let lines[-1] = lines[-1][: column_end - 2]
+  let lines[0] = lines[0][column_start - 1:]
+  return join(lines, "\n")
+endfunction
+
+function! WhatIsThis()
+  exec "echo synIDattr(synID(line('.'), col('.'), 1), 'name')"
+endfunction
+
+" Taken from https://stackoverflow.com/a/15994331, ty!
+function! Preserve(command)
+  let search = @/ " Save the last search.
+  let cursor_position = getpos('.') " Save the current cursor position.
+
+  normal! H
+  let window_position = getpos('.')
+  call setpos('.', cursor_position) " Save the current window position.
+
+  execute a:command
+
+  let @/ = search " Restore the last search.
+
+  call setpos('.', window_position)
+  normal! zt " Restore the previous window position.
+
+  call setpos('.', cursor_position) " Restore the previous cursor position.
+endfunction
+
+function! LspHoverToggle()
+  if lsp#document_hover_preview_winid()
+    call popup_close(lsp#document_hover_preview_winid())
+  else
+    LspHover
+  endif
+endfunction
+
+" function! LspGetAllowedServerStatus()
+"   return join(map(lsp#get_allowed_servers(), {k, v ->
+"         \ '(' . v . ': ' . lsp#get_server_status(v) . ')'
+"         \ }), ' | ')
+" endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VARIABLES
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:opening_double_quote = "“"
+let g:closing_double_quote = "”"
+let g:opening_single_quote = "‘"
+let g:closing_single_quote = "’"
+
+" ~ Marcos Minond

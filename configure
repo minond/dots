@@ -210,6 +210,10 @@ do
       link ~/.emacs "$dots/emacs"
       ;;
 
+    nvim|neovim)
+      link ~/.config/nvim "$dots/nvim"
+      ;;
+
     vim)
       git submodule update --init
       link ~/.vimrc "$dots/vimrc"
