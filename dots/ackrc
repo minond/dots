@@ -17,6 +17,7 @@
 ### Directories to ignore
 --ignore-directory=is:.next
 --ignore-directory=is:.angular
+--ignore-directory=is:.yarn
 
 # Bazaar
 # http://bazaar.canonical.com/

@@ -12,3 +12,9 @@
 ignore*
 npm-debug.log
 tags
+
+# Kotlin
+.classpath
+.project
+.settings/
+kls_database.db

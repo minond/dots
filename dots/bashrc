@@ -165,6 +165,7 @@ path! $HOME/.local/bin/                                                       # 
 path! $HOME/opt/GNAT/2019/bin                                                 # Ada
 path! $HOME/.local/bin                                                        # Python Poetry
 path! $GOROOT/bin                                                             # Go
+path! $HOME/.bun/bin                                                          # Bun
 path! $GOBIN
 path! '/Applications/Racket v8.7/bin/'                                        # Racket, system
 path! '/Users/marcos/Library/Racket/8.7/bin'                                  # Racket, user
@@ -225,3 +226,11 @@ eval "$(rbenv init -)"
 
 
 # ~ Marcos Minond
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
