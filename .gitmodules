@@ -142,3 +142,6 @@
 [submodule "dots/vim/pack/eges/start/vim-prettier"]
 	path = dots/vim/pack/eges/start/vim-prettier
 	url = https://github.com/prettier/vim-prettier
+[submodule "dots/vim/pack/eges/start/markdown-preview.nvim"]
+	path = dots/vim/pack/eges/start/markdown-preview.nvim
+	url = https://github.com/iamcco/markdown-preview.nvim
