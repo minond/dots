@@ -15,6 +15,9 @@ alias s='git status'
 alias save='git stash save'
 alias show='git show'
 
+# gh
+alias cs='gh cs'
+
 # Pane and process flow helpers
 alias q='test $? -eq 0 && exit'
 alias qq='if test $? -eq 0; then say done; exit; else say failure; fi'
@@ -24,7 +27,9 @@ alias ok='ok_base $?'
 alias copy='pbcopy'
 alias grep='grep -I --color=auto'
 alias ll='ls -hlF --color --group-directories-first'
+alias ll='ls -hlF --color'
 alias tmux='tmux -2'
+alias cd-='cd -'
 
 # Vim and ctags
 alias gentags='git ls-files | ctags -R --verbose -f .tags'
