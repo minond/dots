@@ -1,9 +1,9 @@
 [submodule "dots/vim/pack/eges/start/elm-vim"]
 	path = dots/vim/pack/eges/start/elm-vim
 	url = https://github.com/ElmCast/elm-vim.git
-[submodule "dots/vim/pack/eges/start/ultisnips"]
-	path = dots/vim/pack/eges/start/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
+# [submodule "dots/vim/pack/eges/start/ultisnips"]
+# 	path = dots/vim/pack/eges/start/ultisnips
+# 	url = https://github.com/SirVer/ultisnips.git
 [submodule "dots/vim/pack/eges/start/vim-tmux-navigator"]
 	path = dots/vim/pack/eges/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
