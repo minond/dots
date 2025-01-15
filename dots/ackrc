@@ -18,6 +18,7 @@
 --ignore-directory=is:.next
 --ignore-directory=is:.angular
 --ignore-directory=is:.yarn
+--ignore-directory=is:storage/logs
 
 # Bazaar
 # http://bazaar.canonical.com/
