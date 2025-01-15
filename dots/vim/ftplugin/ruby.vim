@@ -2,7 +2,6 @@
 " syntax off
 
 nnoremap <buffer> <leader>r :w<cr>:!clear; [ % == Gemfile ] && bundle \|\| ruby %<cr>
-nnoremap <leader>g <ESC>:exec('tag '.expand('<cword>'))<CR>
 
 " Always point to an MRI Ruby to keep JRuby from being used.
 let g:ruby_path='$HOME/.rbenv/versions/2.3.1/bin/ruby'
