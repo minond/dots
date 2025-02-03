@@ -145,3 +145,6 @@
 [submodule "dots/vim/pack/eges/start/markdown-preview.nvim"]
 	path = dots/vim/pack/eges/start/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim
+[submodule "dots/vim/pack/eges/start/copilot.vim"]
+	path = dots/vim/pack/eges/start/copilot.vim
+	url = https://github.com/github/copilot.vim
