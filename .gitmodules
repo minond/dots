@@ -1,9 +1,6 @@
 [submodule "dots/vim/pack/eges/start/elm-vim"]
 	path = dots/vim/pack/eges/start/elm-vim
 	url = https://github.com/ElmCast/elm-vim.git
-# [submodule "dots/vim/pack/eges/start/ultisnips"]
-# 	path = dots/vim/pack/eges/start/ultisnips
-# 	url = https://github.com/SirVer/ultisnips.git
 [submodule "dots/vim/pack/eges/start/vim-tmux-navigator"]
 	path = dots/vim/pack/eges/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
@@ -40,9 +37,6 @@
 [submodule "dots/vim/pack/eges/start/vim-whitespace"]
 	path = dots/vim/pack/eges/start/vim-whitespace
 	url = https://github.com/minond/vim-whitespace.git
-[submodule "dots/vim/pack/eges/start/simplenote.vim"]
-	path = dots/vim/pack/eges/start/simplenote.vim
-	url = https://github.com/mrtazz/simplenote.vim.git
 [submodule "dots/vim/pack/eges/start/vim-llvm"]
 	path = dots/vim/pack/eges/start/vim-llvm
 	url = https://github.com/rhysd/vim-llvm.git
@@ -76,9 +70,6 @@
 [submodule "dots/vim/pack/eges/start/typescript-vim"]
 	path = dots/vim/pack/eges/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "dots/vim/pack/eges/start/dart-vim-plugin"]
-	path = dots/vim/pack/eges/start/dart-vim-plugin
-	url = https://github.com/dart-lang/dart-vim-plugin.git
 [submodule "dots/vim/pack/eges/start/vim-fugitive"]
 	path = dots/vim/pack/eges/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -100,30 +91,15 @@
 [submodule "dots/vim/pack/eges/start/vim-rails"]
 	path = dots/vim/pack/eges/start/vim-rails
 	url = https://github.com/tpope/vim-rails
-[submodule "dots/vim/pack/eges/start/swift.vim"]
-	path = dots/vim/pack/eges/start/swift.vim
-	url = https://github.com/keith/swift.vim
-[submodule "dots/vim/pack/eges/start/vim-elixir"]
-	path = dots/vim/pack/eges/start/vim-elixir
-	url = https://github.com/elixir-editors/vim-elixir
-[submodule "dots/vim/pack/eges/start/rust.vim"]
-	path = dots/vim/pack/eges/start/rust.vim
-	url = https://github.com/rust-lang/rust.vim
 [submodule "dots/vim/pack/eges/start/diffconflicts"]
 	path = dots/vim/pack/eges/start/diffconflicts
 	url = https://github.com/whiteinge/diffconflicts
-[submodule "dots/vim/pack/eges/start/v-vim"]
-	path = dots/vim/pack/eges/start/v-vim
-	url = https://github.com/ollykel/v-vim
 [submodule "dots/vim/pack/eges/start/tagbar"]
 	path = dots/vim/pack/eges/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 [submodule "dots/vim/pack/eges/start/vim-jsonpath"]
 	path = dots/vim/pack/eges/start/vim-jsonpath
 	url = https://github.com/mogelbrod/vim-jsonpath
-[submodule "dots/vim/pack/eges/start/vim-prisma"]
-	path = dots/vim/pack/eges/start/vim-prisma
-	url = https://github.com/pantharshit00/vim-prisma.git
 [submodule "dots/vim/pack/eges/start/fzf.vim"]
 	path = dots/vim/pack/eges/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
