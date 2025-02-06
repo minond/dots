@@ -220,7 +220,7 @@ source? ~/.bash_aliases_sys
 # $INITIALIZERS
 ###############################################################################
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/usr/local/bin/brew shellenv)"
 eval "$(direnv hook bash)"
 eval "$(pyenv init --path)"
 eval "$(rbenv init -)"
