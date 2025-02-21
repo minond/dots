@@ -1,4 +1,9 @@
 #!/bin/bash
 
-message=$(tmux display-message -p "#I #{pane_index}")
+if [[ ! -z "$@" ]]; then
+  message="$@"
+else
+  message=$(tmux display-message -p "#I #{pane_index}")
+fi
+
 osascript -e "display notification \"$message\" with title \"Complete\""
