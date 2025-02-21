@@ -3,7 +3,13 @@
 set -eo pipefail
 
 branch=$1
-[ -z "$branch" ] && branch=master
+if [ -z "$branch" ]; then
+  if [ `git rev-parse --verify main 2>/dev/null` ]; then
+    branch=main
+  else
+    branch=master
+  fi
+fi
 
 echo "updating $branch"
 
