@@ -19,6 +19,7 @@
 --ignore-directory=is:.angular
 --ignore-directory=is:.yarn
 --ignore-directory=is:storage/logs
+--ignore-directory=is:generated_graphql_schema
 
 # Bazaar
 # http://bazaar.canonical.com/
