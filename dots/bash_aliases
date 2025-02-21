@@ -52,6 +52,36 @@ alias rb='rbenvshell 2.7.5'
 alias fastjruby='JRUBY_OPTS=--debug'
 alias bx='bundle exec'
 
+function rspec() {
+  if [ -f ./bin/rspec ]; then
+    bin/rspec --fail-fast $*
+  elif [ -f Gemfile ]; then
+    bundle exec rspec --fail-fast $*
+  else
+    command rspec --fail-fast $*
+  fi
+}
+
+function rails() {
+  if [ -f ./bin/rails ]; then
+    bin/rails $*
+  elif [ -f Gemfile ]; then
+    bundle exec rails $*
+  else
+    command rails $*
+  fi
+}
+
+function rake() {
+  if [ -f ./bin/rake ]; then
+    bin/rake $*
+  elif [ -f Gemfile ]; then
+    bundle exec rake $*
+  else
+    command rake $*
+  fi
+}
+
 # System and networking
 alias big-udp='sudo sysctl -w net.inet.udp.maxdgram=65535'
 alias more-udp='sudo sysctl -w net.inet.udp.maxdgram=65535'
