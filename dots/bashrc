@@ -122,6 +122,8 @@ export DOTNET_ROOT=$HOME/dotnet
 export BUN_INSTALL="$HOME/.bun"
 export XDG_CONFIG_HOME=$HOME/.config
 
+export PGGSSENCMODE="disable" # Fixes Ruby PG issues (https://github.com/ged/ruby-pg/issues/311)
+
 ###############################################################################
 # $SETTINGS
 ###############################################################################
