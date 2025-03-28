@@ -222,10 +222,10 @@ source? ~/.bash_aliases_sys
 # $INITIALIZERS
 ###############################################################################
 
-eval "$(/usr/local/bin/brew shellenv)"
-eval "$(direnv hook bash)"
-eval "$(pyenv init --path)"
-eval "$(rbenv init -)"
+[ -f /opt/homebrew/bin/brew ]     && eval "$(/opt/homebrew/bin/brew shellenv)" || true
+command -v direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"   || true
+command -v pyenv  >/dev/null 2>&1 && eval "$(pyenv init --path)"  || true
+command -v rbenv  >/dev/null 2>&1 && eval "$(rbenv init -)"       || true
 
 
 # ~ Marcos Minond
