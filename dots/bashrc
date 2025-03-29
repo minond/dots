@@ -193,6 +193,7 @@ _Z_CMD=_zz source? $HOME/.dots/module/z/z.sh                                  # 
 source? $HOME/.ghcup/env                                                      # Haskell
 # source? $HOME/.rvm/scripts/rvm                                                # Load RVM into a shell session *as a function*
 source? $HOME/.cargo/env                                                      # Rust
+source? "$HOME/.local/bin/env"
 
 # These following slow down a session's start time and are not often used, so
 # they're in a function instead:

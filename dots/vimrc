@@ -192,8 +192,8 @@ let g:lsp_popup_options = {
       \ 'scrollbar': 1
       \ }
 
-hi LspPopupBorder ctermfg=black ctermbg=white
-hi LspPopupWindow ctermfg=black ctermbg=white
+hi LspPopupBorder ctermfg=black ctermbg=none
+hi LspPopupWindow ctermfg=black ctermbg=none
 
 augroup lsp_styling
   autocmd User lsp_float_opened
