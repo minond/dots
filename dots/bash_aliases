@@ -15,9 +15,6 @@ alias s='git status'
 alias save='git stash save'
 alias show='git show'
 
-# gh
-alias cs='gh cs'
-
 # Pane and process flow helpers
 alias q='test $? -eq 0 && exit'
 alias qq='if test $? -eq 0; then say done; exit; else say failure; fi'
