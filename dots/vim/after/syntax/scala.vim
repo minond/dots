@@ -1,0 +1,3 @@
+hi link scalaParamAnnotationValue Comment
+hi link scalaParameterAnnotation Comment
+hi link scalaCommentCodeBlock Comment
