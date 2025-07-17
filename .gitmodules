@@ -127,3 +127,9 @@
 [submodule "dots/vim/pack/eges/start/csv.vim"]
 	path = dots/vim/pack/eges/start/csv.vim
 	url = https://github.com/chrisbra/csv.vim
+[submodule "dots/vim/pack/eges/start/copilot-chat.vim"]
+	path = dots/vim/pack/eges/start/copilot-chat.vim
+	url = https://github.com/DanBradbury/copilot-chat.vim.git
+[submodule "dots/vim/pack/eges/start/claude.vim"]
+	path = dots/vim/pack/eges/start/claude.vim
+	url = https://github.com/pasky/claude.vim.git
