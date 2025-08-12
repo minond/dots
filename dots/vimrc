@@ -60,6 +60,7 @@ set statusline=%f\ [%c:%l\]\ %m\ %r
 set nofoldenable                         " lets us use foldcolumn for padding
 set foldcolumn=1                         " adds a bit of padding on the left
 set foldlevel=100                        " no folds below level of 100 at start
+set switchbuf=uselast                    " use previously used window when jumping with quickfix
 
 set makeprg=make
 set errorformat=%+A\ %#%f\ %#(%l\\\,%c):\ %m,%C%m
