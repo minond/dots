@@ -379,6 +379,7 @@
 # http://www.scala-lang.org/
 --type-add=scala:ext:scala
 --ignore-directory=is:target
+--ignore-directory=is:.bloop
 
 # Scheme
 # http://groups.csail.mit.edu/mac/projects/scheme/
