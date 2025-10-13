@@ -269,9 +269,12 @@ do
     u|update)
       for p in dots/vim/pack/eges/start/*;
       do
-        pushd "$p" &> /dev/null
+        if [ ! -d "$p" ]; then
+          continue
+        fi
         info "updating $p..."
-        git pull --rebase origin master &> /dev/null &
+        pushd "$p" &> /dev/null
+        git pull --rebase origin $(git branch --show-current) &> /dev/null &
         popd &> /dev/null
       done
 
