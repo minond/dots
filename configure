@@ -267,7 +267,7 @@ do
       ;;
 
     u|update)
-      for p in dots/vim/pack/eges/start/*;
+      for p in dots/vim/pack/eges/start/* module/*;
       do
         if [ ! -d "$p" ]; then
           continue
