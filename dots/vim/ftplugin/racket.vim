@@ -31,6 +31,10 @@ function! RacketReplRunning()
   return match_count == "2" ? 0 : 1
 endfunction
 
+function! IsTypedRacket()
+  return match(getline(1), "typed/racket") != -1
+endfunction
+
 function! RacketStartOrReloadRepl(context)
   if RacketReplRunning() == 0
     let pane_count = system("tmux list-panes | wc -l | xargs -n1 echo -n")
@@ -39,12 +43,19 @@ function! RacketStartOrReloadRepl(context)
       silent !tmux last-pane
     endif
 
-    SlimeSend0 "clear; racket -Z " . g:racket_repl_id . "\n"
+    if IsTypedRacket()
+      SlimeSend0 "clear; racket -Z " . g:racket_repl_id . " -I typed/racket\n"
+    else
+      SlimeSend0 "clear; racket -Z " . g:racket_repl_id . "\n"
+    endif
 
     redraw
     sleep 1000m
   endif
 
+  if IsTypedRacket()
+    SlimeSend0 "(require/typed racket/enter [dynamic-enter! (-> String Void)])\n"
+  endif
   SlimeSend0 "(dynamic-enter\! \"" . a:context . "\")\n"
 endfunction
 
