@@ -343,6 +343,7 @@
 # http://www.php.net/
 --type-add=php:ext:php,phpt,php3,php4,php5,phtml
 --type-add=php:firstlinematch:/^#!.*\bphp/
+--ignore-directory=is:vendor
 
 # Plone
 # http://plone.org/
