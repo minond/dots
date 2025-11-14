@@ -109,7 +109,7 @@ export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
 export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 
 export JRUBY_OPTS=--dev
-export NVM_DIR=$HOME/.nvm
+export NVM_DIR=$HOME/.config/nvm
 export PGDATA=/usr/local/var/postgres
 export SMLNJ_HOME=/usr/local/smlnj
 export GRADLE_HOME=$HOME/.sdkman/candidates/gradle/current
