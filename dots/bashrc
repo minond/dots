@@ -170,7 +170,8 @@ path! $HOME/.local/bin                                                        # 
 path! $GOROOT/bin                                                             # Go
 path! $HOME/.bun/bin                                                          # Bun
 path! $GOBIN
-path! '/Applications/Racket v8.18/bin/'                                       # Racket, system
+path! '/Applications/Racket v9.0/bin'                                         # Racket, system
+path! '/Applications/Racket v8.18/bin'                                        # Racket, system
 path! '/Users/marcos/Library/Racket/8.7/bin'                                  # Racket, user
 path! /usr/local/smlnj/bin                                                    # StandardML of NJ
 path! /usr/local/sbin
