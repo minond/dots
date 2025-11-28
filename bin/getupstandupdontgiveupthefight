@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 until $@; do
     echo "process died, restarting" >&2

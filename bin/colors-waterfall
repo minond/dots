@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 for i in {0..255}; do
   echo $(tput setaf $i)########################$(tput sgr0) - $i
