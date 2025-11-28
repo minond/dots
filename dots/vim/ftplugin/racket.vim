@@ -12,6 +12,7 @@ nnoremap <buffer> <leader>D :silent !raco docs <cword><cr>:redraw!<cr>
 
 command! -nargs=* RacoDoc execute ':silent !raco doc <f-args>' | execute ':redraw!'
 
+let g:no_racket_maps = 1
 let g:racket_hash_lang_dict =
       \ {
       \   'racket/base': 'racket',
