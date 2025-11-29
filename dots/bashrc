@@ -124,6 +124,9 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 export PGGSSENCMODE="disable" # Fixes Ruby PG issues (https://github.com/ged/ruby-pg/issues/311)
 
+# So GNOME can locate and load .desktop files
+export XDG_DATA_DIRS="/nix/var/nix/profiles/system/sw/share:${XDG_DATA_DIRS}"
+
 ###############################################################################
 # $SETTINGS
 ###############################################################################
