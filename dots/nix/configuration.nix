@@ -51,10 +51,18 @@
   # services.xserver.displayManager.lightdm.enable = true;
   # services.xserver.desktopManager.xfce.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    # nvidiaPatches = true;
-    xwayland.enable = true;
+  # Hyprland
+  # programs.hyprland = {
+  #   enable = true;
+  #   # nvidiaPatches = true;
+  #   xwayland.enable = true;
+  # };
+
+  # Plasma
+  services = {
+    desktopManager.plasma6.enable = true;
+    displayManager.sddm.enable = true;
+    displayManager.sddm.wayland.enable = true;
   };
 
   environment.sessionVariables = {
@@ -156,7 +164,8 @@
 
   environment.systemPackages = with pkgs; [
     ack
-    waybar
+    # waybar                          # Top bar
+    # hyprpaper                       # Wallpaper utility for Hyprland
     asdf-vm
     btop
     discord-ptb
@@ -219,7 +228,7 @@
     setSocketVariable = true;
   };
 
-  programs.waybar.enable = true;
+  # programs.waybar.enable = true;
 
   programs.java = {
     enable = true;
