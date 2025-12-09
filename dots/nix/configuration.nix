@@ -65,6 +65,30 @@
     displayManager.sddm.wayland.enable = true;
   };
 
+  # https://github.com/NixOS/nixpkgs/blob/nixos-25.11/nixos/modules/services/desktop-managers/plasma6.nix
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    # okular              # Document viewer
+    # ark                 # Archiving tool
+    # elisa               # Music player
+    # gwenview            # Image viewer
+    # spectacle           # Screenshots
+
+    # aurorae
+    # plasma-browser-integration
+    # plasma-workspace-wallpapers
+    konsole
+    # kwin-x11
+    # (lib.getBin qttools) # Expose qdbus in PATH
+    kate
+    # ktexteditor # provides elevated actions for kate
+    # khelpcenter
+    # dolphin
+    # baloo-widgets # baloo information in Dolphin
+    # dolphin-plugins
+    # ffmpegthumbs
+    # krdp
+  ];
+
   environment.sessionVariables = {
     # # If cursor becomes invisible
     # WLR_NO_HARDWARE_CURSORS = "1";
