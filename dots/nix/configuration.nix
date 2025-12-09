@@ -45,17 +45,53 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   # XFCE
   # services.xserver.displayManager.lightdm.enable = true;
   # services.xserver.desktopManager.xfce.enable = true;
 
+  programs.hyprland = {
+    enable = true;
+    # nvidiaPatches = true;
+    xwayland.enable = true;
+  };
+
+  environment.sessionVariables = {
+    # # If cursor becomes invisible
+    # WLR_NO_HARDWARE_CURSORS = "1";
+    # # Hint electron apps to use wayland
+    # NIXOS_OZONE_WL = "1";
+  };
+
+  hardware = {
+    opengl.enable = true;
+    # nvdia.modesetting.enable = true;
+  };
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        # Shows batter charge of connected devices on supported adapters.
+        Experimental = true;
+        # So that other devices can connect faster to us, downside is increased
+        # power consumption.
+        FastConnectable = true;
+      };
+      Policy = {
+        # Enable all controllers when they are found.
+        AutoEnable = true;
+      };
+    };
+  };
+
   # GNOME
   # https://github.com/NixOS/nixpkgs/blob/d804208062fdba0610158f2e97054d4410828ba2/nixos/modules/services/desktop-managers/gnome.nix
-  services.desktopManager.gnome.enable = true;
-  services.displayManager.gdm.enable = true;
-  services.gnome.core-apps.enable = false;
+  # services.desktopManager.gnome.enable = true;
+  # services.displayManager.gdm.enable = true;
+  # services.gnome.core-apps.enable = false;
 
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
@@ -99,6 +135,7 @@
 
   services.locate.enable = true;
   programs.firefox.enable = true;
+  programs.thunderbird.enable = true;
 
   xdg.mime.enable = true;
   xdg.mime.defaultApplications = {
@@ -119,29 +156,31 @@
 
   environment.systemPackages = with pkgs; [
     ack
+    waybar
     asdf-vm
     btop
     discord-ptb
     file-roller                     # Archive manager
-    flat-remix-gnome
+    # flat-remix-gnome
     fzf
     geary                           # Email reader
+    rofi                            # Application launcher
     git
-    gnome-calculator
-    gnome-calendar
-    gnome-characters
-    gnome-clocks
-    gnome-contacts
-    gnome-disk-utility
-    gnome-font-viewer
-    gnome-initial-setup
-    gnome-logs
-    gnome-maps
-    gnome-photos
-    gnome-sudoku
-    gnome-system-monitor
-    gnome-text-editor
-    gnome-weather
+    # gnome-calculator
+    # gnome-calendar
+    # gnome-characters
+    # gnome-clocks
+    # gnome-contacts
+    # gnome-disk-utility
+    # gnome-font-viewer
+    # gnome-initial-setup
+    # gnome-logs
+    # gnome-maps
+    # gnome-photos
+    # gnome-sudoku
+    # gnome-system-monitor
+    # gnome-text-editor
+    # gnome-weather
     hunspell                        # Spell checkers for LibreOffice
     hunspellDicts.en_US
     hunspellDicts.es_CL
@@ -150,34 +189,37 @@
     libreoffice-qt
     mlocate                         # Locate
     nautilus                        # File manager
-    ncspot
-    neofetch
+    # ncspot
     obsidian
-    papers                          # Gnome document viewer
+    # papers                          # Gnome document viewer
     pipenv
-    planify                         # Todo app
     racket
     sbt
     scala
     showtime                        # Video player
     snapshot
-    spotify
+    # spotify
     tmux
     vim
     wl-clipboard                    # Wayland clipboard copy/paste
-    z-lua
-gnome-tweaks
+    z-lua                           # Z command
+    # gnome-tweaks
+
+    todoist-electron
+    planify                         # Todo app
   ];
 
-  environment.gnome.excludePackages = [
-    pkgs.gnome-tour
-  ];
+  # environment.gnome.excludePackages = [
+  #   pkgs.gnome-tour
+  # ];
 
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
     enable = true;
     setSocketVariable = true;
   };
+
+  programs.waybar.enable = true;
 
   programs.java = {
     enable = true;
