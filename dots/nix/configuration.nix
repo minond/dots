@@ -14,23 +14,14 @@
   networking.networkmanager.enable = true;
   networking.hostName = "heartofgold";
 
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # networking.firewall.enable = false;
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-  # Set your time zone.
   time.timeZone = "America/Denver";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -43,50 +34,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # XFCE
-  # services.xserver.displayManager.lightdm.enable = true;
-  # services.xserver.desktopManager.xfce.enable = true;
-
-  # Hyprland
-  # programs.hyprland = {
-  #   enable = true;
-  #   # nvidiaPatches = true;
-  #   xwayland.enable = true;
-  # };
-
-  # Plasma
-  # services = {
-  #   desktopManager.plasma6.enable = true;
-  #   displayManager.sddm.enable = true;
-  #   displayManager.sddm.wayland.enable = true;
-  # };
-
-  # https://github.com/NixOS/nixpkgs/blob/nixos-25.11/nixos/modules/services/desktop-managers/plasma6.nix
-  # environment.plasma6.excludePackages = with pkgs.kdePackages; [
-  #   # okular              # Document viewer
-  #   # ark                 # Archiving tool
-  #   # elisa               # Music player
-  #   # gwenview            # Image viewer
-  #   # spectacle           # Screenshots
-  #
-  #   # aurorae
-  #   # plasma-browser-integration
-  #   # plasma-workspace-wallpapers
-  #   konsole
-  #   # kwin-x11
-  #   # (lib.getBin qttools) # Expose qdbus in PATH
-  #   kate
-  #   # ktexteditor # provides elevated actions for kate
-  #   # khelpcenter
-  #   # dolphin
-  #   # baloo-widgets # baloo information in Dolphin
-  #   # dolphin-plugins
-  #   # ffmpegthumbs
-  #   # krdp
-  # ];
 
   environment.sessionVariables = {
     # # If cursor becomes invisible
@@ -95,11 +43,7 @@
     # NIXOS_OZONE_WL = "1";
   };
 
-  hardware = {
-    opengl.enable = true;
-    # nvdia.modesetting.enable = true;
-  };
-
+  hardware.opengl.enable = true;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -143,18 +87,11 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    # jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    # media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.marcos = {
     isNormalUser = true;
     description = "Marcos";
@@ -165,7 +102,6 @@
 
   services.locate.enable = true;
   programs.firefox.enable = true;
-  # programs.thunderbird.enable = true;
 
   xdg.mime.enable = true;
   xdg.mime.defaultApplications = {
@@ -186,15 +122,11 @@
 
   environment.systemPackages = with pkgs; [
     ack
-    # waybar                          # Top bar
-    # hyprpaper                       # Wallpaper utility for Hyprland
-    asdf-vm                           # ASDF version manager
-    # btop
+    asdf-vm                         # ASDF version manager
     discord-ptb
     file-roller                     # Archive manager
     fzf
     geary                           # Email reader
-    # rofi                            # Application launcher
     git
 
     # Gnome packages
@@ -215,7 +147,7 @@
     gnome-system-monitor
     gnome-text-editor
     gnome-weather
-    papers                          # Gnome document viewer
+    papers                          # Document viewer
 
     libreoffice-qt
     hunspell                        # Spell checkers for LibreOffice
@@ -235,16 +167,14 @@
     snapshot
     tmux
     vim
-    # wl-clipboard                    # Wayland clipboard copy/paste
+    wl-clipboard                    # Wayland clipboard copy/paste
     z-lua                           # Z command
-
     todoist-electron
-    # planify                         # Todo app
   ];
 
-  # environment.gnome.excludePackages = [
-  #   pkgs.gnome-tour
-  # ];
+  environment.gnome.excludePackages = [
+    pkgs.gnome-tour
+  ];
 
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
@@ -252,23 +182,10 @@
     setSocketVariable = true;
   };
 
-  # programs.waybar.enable = true;
-
   programs.java = {
     enable = true;
     package = pkgs.jre8;
   };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -276,5 +193,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.05";
 }
