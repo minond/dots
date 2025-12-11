@@ -2,24 +2,23 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   boot.initrd.luks.devices."luks-055d126b-21ac-4130-acd8-4eda9bda5a10".device = "/dev/disk/by-uuid/055d126b-21ac-4130-acd8-4eda9bda5a10";
+
+  networking.networkmanager.enable = true;
   networking.hostName = "heartofgold";
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
+  # networking.firewall.enable = false;
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -45,7 +44,7 @@
   };
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
+  services.xserver.enable = true;
 
   # XFCE
   # services.xserver.displayManager.lightdm.enable = true;
@@ -59,35 +58,35 @@
   # };
 
   # Plasma
-  services = {
-    desktopManager.plasma6.enable = true;
-    displayManager.sddm.enable = true;
-    displayManager.sddm.wayland.enable = true;
-  };
+  # services = {
+  #   desktopManager.plasma6.enable = true;
+  #   displayManager.sddm.enable = true;
+  #   displayManager.sddm.wayland.enable = true;
+  # };
 
   # https://github.com/NixOS/nixpkgs/blob/nixos-25.11/nixos/modules/services/desktop-managers/plasma6.nix
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    # okular              # Document viewer
-    # ark                 # Archiving tool
-    # elisa               # Music player
-    # gwenview            # Image viewer
-    # spectacle           # Screenshots
-
-    # aurorae
-    # plasma-browser-integration
-    # plasma-workspace-wallpapers
-    konsole
-    # kwin-x11
-    # (lib.getBin qttools) # Expose qdbus in PATH
-    kate
-    # ktexteditor # provides elevated actions for kate
-    # khelpcenter
-    # dolphin
-    # baloo-widgets # baloo information in Dolphin
-    # dolphin-plugins
-    # ffmpegthumbs
-    # krdp
-  ];
+  # environment.plasma6.excludePackages = with pkgs.kdePackages; [
+  #   # okular              # Document viewer
+  #   # ark                 # Archiving tool
+  #   # elisa               # Music player
+  #   # gwenview            # Image viewer
+  #   # spectacle           # Screenshots
+  #
+  #   # aurorae
+  #   # plasma-browser-integration
+  #   # plasma-workspace-wallpapers
+  #   konsole
+  #   # kwin-x11
+  #   # (lib.getBin qttools) # Expose qdbus in PATH
+  #   kate
+  #   # ktexteditor # provides elevated actions for kate
+  #   # khelpcenter
+  #   # dolphin
+  #   # baloo-widgets # baloo information in Dolphin
+  #   # dolphin-plugins
+  #   # ffmpegthumbs
+  #   # krdp
+  # ];
 
   environment.sessionVariables = {
     # # If cursor becomes invisible
@@ -121,12 +120,11 @@
 
   # GNOME
   # https://github.com/NixOS/nixpkgs/blob/d804208062fdba0610158f2e97054d4410828ba2/nixos/modules/services/desktop-managers/gnome.nix
-  # services.desktopManager.gnome.enable = true;
-  # services.displayManager.gdm.enable = true;
-  # services.gnome.core-apps.enable = false;
-
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.gnome.core-apps.enable = false;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -167,7 +165,7 @@
 
   services.locate.enable = true;
   programs.firefox.enable = true;
-  programs.thunderbird.enable = true;
+  # programs.thunderbird.enable = true;
 
   xdg.mime.enable = true;
   xdg.mime.defaultApplications = {
@@ -190,56 +188,58 @@
     ack
     # waybar                          # Top bar
     # hyprpaper                       # Wallpaper utility for Hyprland
-    asdf-vm
-    btop
+    asdf-vm                           # ASDF version manager
+    # btop
     discord-ptb
     file-roller                     # Archive manager
-    # flat-remix-gnome
     fzf
     geary                           # Email reader
-    rofi                            # Application launcher
+    # rofi                            # Application launcher
     git
-    # gnome-calculator
-    # gnome-calendar
-    # gnome-characters
-    # gnome-clocks
-    # gnome-contacts
-    # gnome-disk-utility
-    # gnome-font-viewer
-    # gnome-initial-setup
-    # gnome-logs
-    # gnome-maps
-    # gnome-photos
-    # gnome-sudoku
-    # gnome-system-monitor
-    # gnome-text-editor
-    # gnome-weather
+
+    # Gnome packages
+    flat-remix-gnome
+    gnome-calculator
+    gnome-calendar
+    gnome-characters
+    gnome-clocks
+    gnome-contacts
+    gnome-disk-utility
+    gnome-tweaks
+    gnome-font-viewer
+    gnome-initial-setup
+    gnome-logs
+    gnome-maps
+    gnome-photos
+    gnome-sudoku
+    gnome-system-monitor
+    gnome-text-editor
+    gnome-weather
+    papers                          # Gnome document viewer
+
+    libreoffice-qt
     hunspell                        # Spell checkers for LibreOffice
     hunspellDicts.en_US
     hunspellDicts.es_CL
+
     ibm-plex
     kitty
-    libreoffice-qt
     mlocate                         # Locate
     nautilus                        # File manager
-    # ncspot
     obsidian
-    # papers                          # Gnome document viewer
     pipenv
     racket
     sbt
     scala
     showtime                        # Video player
     snapshot
-    # spotify
     tmux
     vim
-    wl-clipboard                    # Wayland clipboard copy/paste
+    # wl-clipboard                    # Wayland clipboard copy/paste
     z-lua                           # Z command
-    # gnome-tweaks
 
     todoist-electron
-    planify                         # Todo app
+    # planify                         # Todo app
   ];
 
   # environment.gnome.excludePackages = [
@@ -269,12 +269,6 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
