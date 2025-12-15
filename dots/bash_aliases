@@ -3,7 +3,7 @@ command -v gnome-open &> /dev/null && alias open='gnome-open'
 command -v gls &> /dev/null && alias ls='gls'
 
 # git
-alias addp='git add -p'
+alias addp='clear; git add -p'
 alias add='git add'
 alias cm='git commit-m'
 alias d='git diff --color=always'
