@@ -101,15 +101,14 @@
   };
 
   services.locate.enable = true;
-  programs.firefox.enable = true;
 
   xdg.mime.enable = true;
   xdg.mime.defaultApplications = {
-    "text/html" = "firefox.desktop";
-    "x-scheme-handler/http" = "firefox.desktop";
-    "x-scheme-handler/https" = "firefox.desktop";
-    "x-scheme-handler/about" = "firefox.desktop";
-    "x-scheme-handler/unknown" = "firefox.desktop";
+    "text/html" = "chromium.desktop";
+    "x-scheme-handler/http" = "chromium.desktop";
+    "x-scheme-handler/https" = "chromium.desktop";
+    "x-scheme-handler/about" = "chromium.desktop";
+    "x-scheme-handler/unknown" = "chromium.desktop";
   };
 
   programs._1password.enable = true;
@@ -128,6 +127,7 @@
     fzf
     geary                           # Email reader
     git
+    ungoogled-chromium
 
     # Gnome packages
     flat-remix-gnome
