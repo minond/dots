@@ -170,6 +170,8 @@
     wl-clipboard                    # Wayland clipboard copy/paste
     z-lua                           # Z command
     todoist-electron
+
+    yt-dlp
   ];
 
   environment.gnome.excludePackages = [
