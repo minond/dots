@@ -1,0 +1,14 @@
+/* https://github.com/ubuntu/yaru/blob/master/gnome-shell/src/gnome-shell-sass/widgets/_panel.scss */
+
+#panel {
+  background-color: transparent;
+}
+
+#panel * {
+  color: black;
+}
+
+#panel:overview * {
+  color: white;
+}
+
