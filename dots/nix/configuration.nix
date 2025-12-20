@@ -124,10 +124,13 @@
     asdf-vm                         # ASDF version manager
     discord-ptb
     file-roller                     # Archive manager
-    fzf
+    fzf                             # Fuzzy finder
+    fd                              # Find alternative
     geary                           # Email reader
     git
     ungoogled-chromium
+    slack
+    zoom-us
 
     # Gnome packages
     flat-remix-gnome
