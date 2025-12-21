@@ -129,6 +129,7 @@
     geary                           # Email reader
     git
     ungoogled-chromium
+    ctags
     slack
     zoom-us
 
