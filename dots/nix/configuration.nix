@@ -158,6 +158,7 @@
     hunspellDicts.es_CL
 
     ibm-plex
+    alacritty
     kitty
     mlocate                         # Locate
     nautilus                        # File manager

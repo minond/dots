@@ -233,6 +233,10 @@ do
       link ~/.skhdrc "$dots/skhdrc"
       ;;
 
+    alacritty)
+      link ~/.config/alacritty/alacritty.toml "$dots/alacritty.toml"
+      ;;
+
     ctags)
       link ~/.ctags "$dots/ctags"
       ;;

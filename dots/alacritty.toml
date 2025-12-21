@@ -1,0 +1,17 @@
+[window]
+title = ""
+
+[colors]
+primary.foreground = "#000000"
+primary.background = "#fffff9"
+selection.background = "#fffacd"
+selection.text = "#000000"
+
+[font]
+size=12
+normal.family = "IBM Plex Mono"
+normal.style = "Regular"
+bold.style = "Bold"
+
+[mouse]
+hide_when_typing = true
