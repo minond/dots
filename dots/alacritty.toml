@@ -1,5 +1,7 @@
 [window]
 title = ""
+dimensions.columns = 150
+dimensions.lines = 35
 
 [colors]
 primary.foreground = "#000000"
