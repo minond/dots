@@ -158,6 +158,9 @@
     hunspellDicts.en_US
     hunspellDicts.es_CL
 
+    imagemagick
+    libheif
+
     ibm-plex
     alacritty
     kitty
