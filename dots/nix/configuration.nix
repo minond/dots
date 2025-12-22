@@ -169,6 +169,7 @@
     obsidian
     pipenv
     racket
+    typst
     sbt
     scala
     showtime                        # Video player
