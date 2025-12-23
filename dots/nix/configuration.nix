@@ -175,6 +175,8 @@
     ibm-plex
     alacritty
     kitty
+    wget
+    gimp
     mlocate                         # Locate
     nautilus                        # File manager
     obsidian
