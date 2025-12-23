@@ -21,7 +21,6 @@ alias qq='if test $? -eq 0; then say done; exit; else say failure; fi'
 alias ok='ok_base $?'
 
 # Default flags
-alias copy='pbcopy'
 alias grep='grep -I --color=auto'
 alias ll='ls -hlF --color --group-directories-first'
 alias ll='ls -hlF --color'
