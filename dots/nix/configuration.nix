@@ -176,6 +176,7 @@
     alacritty
     kitty
     wget
+    librecad
     gimp
     mlocate                         # Locate
     nautilus                        # File manager
