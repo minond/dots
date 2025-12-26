@@ -176,6 +176,8 @@
     alacritty
     kitty
     wget
+    netcat-gnu
+    netcat
     librecad
     gimp
     mlocate                         # Locate
