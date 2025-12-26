@@ -28,6 +28,8 @@ size=12
 normal.family = "IBM Plex Mono"
 normal.style = "Regular"
 bold.style = "Bold"
+offset.x = 1
+offset.y = 0
 
 [mouse]
 hide_when_typing = true
