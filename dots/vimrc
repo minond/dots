@@ -336,7 +336,7 @@ command! Ann !clear; git annotate %
 command! History !clear; git log -p -- %
 command! Add execute ':silent !clear; git add %' | execute ':redraw!' | execute ':GitGutter'
 command! AddP execute '!clear; git add -p %' | execute ':GitGutter'
-command! -nargs=* Diff !clear; git diff head % <f-args>
+command! -nargs=* Diff !clear; git diff HEAD % <f-args>
 command! Gopen !git open %
 
 " git grep wrapper with fzf
