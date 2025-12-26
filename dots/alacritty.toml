@@ -9,6 +9,14 @@ primary.background = "#fffff9"
 selection.background = "#fffacd"
 selection.text = "#000000"
 
+[colors.normal]
+red = "#ff2400"
+green = "#4cbb17"
+yellow = "#daa520"
+
+[colors.bright]
+yellow = "#daa520"
+
 [font]
 size=12
 normal.family = "IBM Plex Mono"
@@ -17,3 +25,7 @@ bold.style = "Bold"
 
 [mouse]
 hide_when_typing = true
+
+[cursor]
+style.blinking = "Always"
+blink_interval = 500
