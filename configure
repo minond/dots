@@ -234,6 +234,7 @@ do
       ;;
 
     alacritty)
+      mkdir ~/.config/alacritty
       link ~/.config/alacritty/alacritty.toml "$dots/alacritty.toml"
       ;;
 
