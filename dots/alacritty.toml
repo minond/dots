@@ -3,11 +3,13 @@ title = ""
 dimensions.columns = 150
 dimensions.lines = 35
 
-[colors]
-primary.foreground = "#000000"
-primary.background = "#fffff9"
-selection.background = "#fffacd"
-selection.text = "#000000"
+[colors.primary]
+foreground = "#000000"
+background = "#fffff9"
+
+[colors.selection]
+background = "#fffacd"
+text = "#000000"
 
 [colors.normal]
 red = "#ff2400"
@@ -16,6 +18,10 @@ yellow = "#daa520"
 
 [colors.bright]
 yellow = "#daa520"
+
+[colors.cursor]
+text = '#f7f7f7'
+cursor = '#000000'
 
 [font]
 size=12
