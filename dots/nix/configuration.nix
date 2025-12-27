@@ -176,7 +176,7 @@
     alacritty
     kitty
     wget
-    netcat-gnu
+    nmap
     netcat
     librecad
     gimp
