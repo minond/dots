@@ -13,6 +13,10 @@
 
   networking.networkmanager.enable = true;
   networking.hostName = "heartofgold";
+  networking.extraHosts = ''
+  10.0.0.139 minond.local
+  10.0.0.61  storage01.local
+  '';
 
   nix.settings.experimental-features = [
     "nix-command"
