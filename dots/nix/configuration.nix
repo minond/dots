@@ -180,6 +180,12 @@
     alacritty
     kitty
     wget
+    tree
+    picard
+    beets
+    id3v2
+    rhythmbox
+    vlc
     nmap
     netcat
     librecad
