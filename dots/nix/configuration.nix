@@ -11,6 +11,15 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.luks.devices."luks-055d126b-21ac-4130-acd8-4eda9bda5a10".device = "/dev/disk/by-uuid/055d126b-21ac-4130-acd8-4eda9bda5a10";
 
+  networking.firewall.trustedInterfaces = [
+    "p2p-wl+" # For network display sharing
+  ];
+  networking.firewall.allowedTCPPorts = [
+    7236 7250 # For network display sharing
+  ];
+  networking.firewall.allowedUDPPorts = [
+    7236 5353 # For network display sharing
+  ];
   networking.networkmanager.enable = true;
   networking.hostName = "heartofgold";
   networking.extraHosts = ''
@@ -150,6 +159,7 @@
 
     # Gnome packages
     flat-remix-gnome
+    gnome-network-displays
     gnome-calculator
     gnome-calendar
     gnome-characters
