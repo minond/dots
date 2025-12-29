@@ -283,6 +283,7 @@ nnoremap <leader>k <ESC>:GitGutterPrevHunk<CR>
 nnoremap <leader>o <ESC>:GFiles<CR>
 nnoremap <leader>O <ESC>:Files<CR>
 nnoremap <leader>s <ESC>:GGrep<CR>
+nnoremap <leader>0 <ESC>:CtrlPBuffer<CR>
 
 " code-comment single and multiple lines
 nnoremap <C-c> <ESC>:TComment<CR>
