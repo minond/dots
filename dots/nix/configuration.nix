@@ -171,12 +171,13 @@
     gnome-initial-setup
     gnome-logs
     gnome-maps
-    gnome-photos
     gnome-sudoku
     gnome-system-monitor
     gnome-text-editor
     gnome-weather
+
     papers                          # Document viewer
+    shotwell                        # Photos
 
     libreoffice-qt
     hunspell                        # Spell checkers for LibreOffice
@@ -221,8 +222,9 @@
     yt-dlp
   ];
 
-  environment.gnome.excludePackages = [
-    pkgs.gnome-tour
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    gnome-photos
   ];
 
   virtualisation.docker.enable = true;
