@@ -136,10 +136,12 @@ let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_dont_ask_default = 1
 let g:slime_python_ipython = 1
-let g:slime_default_config = {
-      \ 'socket_name': split($TMUX, ",")[0],
-      \ 'target_pane': ':.1'
-      \ }
+if $TMUX != ''
+  let g:slime_default_config = {
+        \ 'socket_name': split($TMUX, ",")[0],
+        \ 'target_pane': ':.1'
+        \ }
+endif
 
 let g:ctrlp_max_height = 30
 let g:ctrlp_custom_ignore = {
