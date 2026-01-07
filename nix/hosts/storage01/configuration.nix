@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-    ];
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -15,12 +11,8 @@
   boot.loader.grub.useOSProber = true;
 
   networking.networkmanager.enable = true;
-
   services.openssh.enable = true;
-
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 8080 ];
-  networking.firewall.allowedUDPPorts = [];
 
   time.timeZone = "America/Denver";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -57,6 +49,7 @@
     netcat
     tmux
     ibm-plex
+    lsof
     wget
   ];
 
