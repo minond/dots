@@ -36,9 +36,11 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  console.useXkbConfig = true;
   services.xserver.xkb = {
     layout = "us";
     variant = "";
+    options = "caps:escape";
   };
 
   users.users.storage01 = {
