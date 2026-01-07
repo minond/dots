@@ -3,7 +3,6 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
     ];
 
   nix.settings.experimental-features = [
@@ -15,7 +14,6 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "storage01"; # Define your hostname.
   networking.networkmanager.enable = true;
 
   services.openssh.enable = true;

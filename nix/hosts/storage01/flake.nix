@@ -14,8 +14,12 @@
     nixosConfigurations.storage01 = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
+        ./hardware-configuration.nix
         ./configuration.nix
-        # inputs.home-manager.nixosModules.default
+
+        ({ ... }): {
+          networking.hostName = "storage01";
+        }
       ];
     };
   };
