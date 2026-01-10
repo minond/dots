@@ -1,4 +1,5 @@
 setlocal nosmartindent
+set lispwords+=define-schema
 
 autocmd bufenter *.rkt :call UpdateRacketSyntax()
 autocmd filetype *.rkt :call UpdateRacketSyntax()
