@@ -133,3 +133,6 @@
 [submodule "dots/vim/pack/eges/start/claude.vim"]
 	path = dots/vim/pack/eges/start/claude.vim
 	url = https://github.com/pasky/claude.vim.git
+[submodule "dots/vim/pack/eges/start/xterm-color-table.vim"]
+	path = dots/vim/pack/eges/start/xterm-color-table.vim
+	url = https://github.com/vim-scripts/xterm-color-table.vim
