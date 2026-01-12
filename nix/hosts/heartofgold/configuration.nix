@@ -158,6 +158,7 @@
     geary                           # Email reader
     git
     ungoogled-chromium
+    firefox
     ctags
     slack
     zoom-us
