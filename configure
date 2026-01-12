@@ -283,7 +283,7 @@ do
         fi
         info "updating $p..."
         pushd "$p" &> /dev/null
-        git pull --rebase origin $(git branch --show-current) &> /dev/null &
+        git pull --rebase origin HEAD &> /dev/null &
         popd &> /dev/null
       done
 
