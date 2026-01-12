@@ -144,6 +144,11 @@
   fonts.fontconfig.enable = true;
 
   environment.systemPackages = with pkgs; [
+    direnv
+    jq
+    htop
+    marp-cli
+    pandoc
     ack
     asdf-vm                         # ASDF version manager
     discord-ptb
