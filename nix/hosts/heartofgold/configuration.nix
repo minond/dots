@@ -156,6 +156,8 @@
     ctags
     slack
     zoom-us
+    signal-desktop
+    gnuplot
 
     # Gnome packages
     flat-remix-gnome
