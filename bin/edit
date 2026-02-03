@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-if [ -z "$1" ]; then
-  echo "Usage: edit <command to execute>"
-  echo "       edit find client/default/ -name *theme*"
-  exit 1
-fi
-
-vim $($@)
