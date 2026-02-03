@@ -193,22 +193,23 @@
     hunspellDicts.es_CL
 
     imagemagick
-    libheif
+    libheif                         # HEIF image format library
 
     ibm-plex
     alacritty
     kitty
     wget
     tree
-    picard
-    beets
-    id3v2
-    rhythmbox
+    picard                          # Audio file tag editor
+    beets                           # Audio file tag editor
+    id3v2                           # Audio file tag editor
+    rhythmbox                       # Music player
     vlc
     nmap
     netcat
     librecad
-    gimp
+    gimp                            # Image editor
+    gradia                          # Simple image editor
     mlocate                         # Locate
     nautilus                        # File manager
     obsidian
@@ -218,7 +219,7 @@
     sbt
     scala
     showtime                        # Video player
-    snapshot
+    snapshot                        # Computer camera app
     tmux
     vim
     wl-clipboard                    # Wayland clipboard copy/paste
