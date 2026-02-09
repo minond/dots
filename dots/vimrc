@@ -55,7 +55,7 @@ set listchars=tab:\ \ ,trail:.           " special characters for special char
 set laststatus=2                         " always show status line
 set cmdwinheight=10                      " make command win a little bigger
 set numberwidth=4                        " make line number column wider
-set statusline=%f\ [%c:%l\]\ %m\ %r
+set statusline=%f\ (%c:%l\)\ %m\ %r
 
 set nofoldenable                         " lets us use foldcolumn for padding
 set foldcolumn=1                         " adds a bit of padding on the left
