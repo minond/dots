@@ -5,9 +5,9 @@
 # VAR SETTINGS ............................................. settings for tools
 # SETTINGS ................................. settings for commands/applications
 # PATHS ...................................................... path var setters
+# INITIALIZERS ............................................. initialize plugins
 # EXTRA SOURCES .................................. load additional source files
 # ALIASES ........................................ anything but aliases go here
-# INITIALIZERS ............................................. initialize plugins
 ###############################################################################
 
 # If not running interactively, don't do anything
@@ -187,6 +187,14 @@ path! $ANDROID_HOME/tools                                                     # 
 path! $ANDROID_HOME/tools/bin                                                 # Android
 path! $ANDROID_HOME/platform-tools                                            # Android
 
+###############################################################################
+# $INITIALIZERS
+###############################################################################
+
+[ -f /opt/homebrew/bin/brew ]     && eval "$(/opt/homebrew/bin/brew shellenv)" || true
+command -v direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"   || true
+command -v pyenv  >/dev/null 2>&1 && eval "$(pyenv init --path)"  || true
+command -v rbenv  >/dev/null 2>&1 && eval "$(rbenv init -)"       || true
 
 ###############################################################################
 # $EXTRA SOURCES
@@ -200,6 +208,7 @@ source? $HOME/.ghcup/env                                                      # 
 # source? $HOME/.rvm/scripts/rvm                                                # Load RVM into a shell session *as a function*
 source? $HOME/.cargo/env                                                      # Rust
 source? "$HOME/.local/bin/env"
+source? $NVM_DIR/nvm.sh                                                       # Node's nvm
 
 # These following slow down a session's start time and are not often used, so
 # they're in a function instead:
@@ -224,15 +233,6 @@ fi
 
 source? ~/.bash_aliases
 source? ~/.bash_aliases_sys
-
-###############################################################################
-# $INITIALIZERS
-###############################################################################
-
-[ -f /opt/homebrew/bin/brew ]     && eval "$(/opt/homebrew/bin/brew shellenv)" || true
-command -v direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"   || true
-command -v pyenv  >/dev/null 2>&1 && eval "$(pyenv init --path)"  || true
-command -v rbenv  >/dev/null 2>&1 && eval "$(rbenv init -)"       || true
 
 
 # ~ Marcos Minond
