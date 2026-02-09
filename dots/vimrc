@@ -326,9 +326,9 @@ nnoremap <leader>p :set paste!<CR>
 " $COMMANDS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " copy related helpers
-command! Copy w !cat | copy_base
-command! CopyFilename !echo -n "%" | copy_base
-command! CF !echo -n % | copy_base
+command! Copy w !cat | copy
+command! CopyFilename !echo -n "%" | copy
+command! CF !echo -n % | copy
 command! -range=% -nargs=0 C :<line1>,<line2>call CopySelection()
 
 " toggle spell checker using en_us dict
@@ -377,7 +377,7 @@ function! ShowColors()
 endfunction
 
 function! CopySelection() range
-  echo system('echo -n ' . shellescape(GetVisualSelection()) . '| copy_base')
+  echo system('echo -n ' . shellescape(GetVisualSelection()) . '| copy')
 endfunction
 
 function! ToggleCC()
