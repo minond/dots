@@ -3,6 +3,6 @@
 set -eo pipefail
 
 term="${@: -1}"
-files=$(git grep -wl $@)
+files=$(git grep -wl "$@")
 
 vim "+/\<$term\>" $files
