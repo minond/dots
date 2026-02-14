@@ -151,7 +151,6 @@
     marp-cli
     pandoc
     ack
-    asdf-vm                         # ASDF version manager
     discord-ptb
     file-roller                     # Archive manager
     fzf                             # Fuzzy finder
@@ -216,6 +215,7 @@
     obsidian
     pipenv
     racket
+    nodejs_24
     typst
     sbt
     scala
