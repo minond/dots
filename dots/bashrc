@@ -161,6 +161,7 @@ path! $HOME/bin                                                               # 
 path! $HOME/.dots/module/click                                                # Vendored binaries
 path! $HOME/.dots/module/fff
 path! $HOME/.dots/module/gov
+path! $HOME/.dots/module/node_modules/.bin
 path! $HOME/.dots/bin
 path! $HOME/.pub-cache/bin                                                    # Dart and Flutter
 path! $HOME/.flutter-lib/bin
