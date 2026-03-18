@@ -18,6 +18,7 @@ alias show='git show'
 # Pane and process flow helpers
 alias q='test $? -eq 0 && exit'
 alias qq='if test $? -eq 0; then say done; exit; else say failure; fi'
+alias qqq=exit
 alias ok='ok_base $?'
 
 # Default flags
@@ -47,6 +48,10 @@ alias jrb='rbenvshell jruby-9.2.6.0'
 alias rb='rbenvshell 2.7.5'
 alias fastjruby='JRUBY_OPTS=--debug'
 alias bx='bundle exec'
+
+function rubocoprb() {
+  rubocop -a $(git diff HEAD --name-only | grep '\.rb$')
+}
 
 function rspec() {
   if [ -f ./bin/rspec ]; then

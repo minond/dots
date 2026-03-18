@@ -19,3 +19,6 @@ tags
 .project
 .settings/
 kls_database.db
+
+# Claude
+.claude/settings.local.json
