@@ -147,6 +147,7 @@
   environment.systemPackages = with pkgs; [
     direnv
     jq
+    uv
     htop
     marp-cli
     pandoc
@@ -241,6 +242,10 @@
   virtualisation.docker.rootless = {
     enable = true;
     setSocketVariable = true;
+  };
+
+  programs.nix-ld = {
+    enable = true;
   };
 
   programs.java = {
