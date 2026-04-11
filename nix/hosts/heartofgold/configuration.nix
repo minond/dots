@@ -165,6 +165,7 @@
     zoom-us
     signal-desktop
     gnuplot
+    mgba
 
     # Gnome packages
     flat-remix-gnome
