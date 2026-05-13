@@ -49,8 +49,24 @@ alias rb='rbenvshell 2.7.5'
 alias fastjruby='JRUBY_OPTS=--debug'
 alias bx='bundle exec'
 
+function standardrb() {
+  local branch="${1:-HEAD}"
+  local files=$(git diff "$branch" --name-only | grep '\.rb$')
+  echo -e "Comparing against \033[1m$branch\033[0m:"
+  for file in $files; do
+    echo "  - $file"
+  done
+  bin/standardrb --format github --parallel $files
+}
+
 function rubocoprb() {
-  rubocop -a $(git diff HEAD --name-only | grep '\.rb$')
+  local branch="${1:-HEAD}"
+  local files=$(git diff "$branch" --name-only | grep '\.rb$')
+  echo -e "Comparing against \033[1m$branch\033[0m:"
+  for file in $files; do
+    echo "  - $file"
+  done
+  rubocop -a $files
 }
 
 function rspec() {
