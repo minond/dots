@@ -219,6 +219,7 @@
     racket
     nodejs_24
     typst
+    gnumake
     sbt
     scala
     showtime                        # Video player
