@@ -220,6 +220,7 @@
     nodejs_24
     typst
     gnumake
+    killall
     sbt
     scala
     showtime                        # Video player
