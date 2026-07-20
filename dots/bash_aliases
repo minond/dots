@@ -110,6 +110,7 @@ alias smaller='tmux resize-pane -y 10'
 alias small='tmux resize-pane -y 25'
 
 # Python
+alias venv-activate='source .venv/bin/activate'
 alias pipenv-activate='source $(pipenv --venv)/bin/activate'
 alias pa=pipenv-activate
 
