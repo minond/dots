@@ -148,11 +148,13 @@
     direnv
     jq
     uv
+    pi-coding-agent
     htop
     marp-cli
     pandoc
     ack
     discord-ptb
+    legcord
     file-roller                     # Archive manager
     fzf                             # Fuzzy finder
     fd                              # Find alternative
