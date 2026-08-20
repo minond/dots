@@ -153,7 +153,6 @@
     marp-cli
     pandoc
     ack
-    discord-ptb
     legcord
     file-roller                     # Archive manager
     fzf                             # Fuzzy finder
