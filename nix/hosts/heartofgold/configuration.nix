@@ -145,96 +145,99 @@
   fonts.fontconfig.enable = true;
 
   environment.systemPackages = with pkgs; [
-    direnv
-    jq
-    uv
-    pi-coding-agent
-    htop
-    marp-cli
-    pandoc
-    ack
-    legcord
+    alacritty
     file-roller                     # Archive manager
-    fzf                             # Fuzzy finder
-    fd                              # Find alternative
-    geary                           # Email reader
-    git
-    ungoogled-chromium
     firefox
-    ctags
-    slack
-    zoom-us
-    signal-desktop
-    gnuplot
-    mgba
-
-    # Gnome packages
-    flat-remix-gnome
-    gnome-network-displays
+    geary                           # Email reader
+    gimp                            # Image editor
     gnome-calculator
     gnome-calendar
     gnome-characters
     gnome-clocks
     gnome-contacts
     gnome-disk-utility
-    gnome-tweaks
     gnome-font-viewer
     gnome-initial-setup
     gnome-logs
     gnome-maps
+    gnome-network-displays
     gnome-sudoku
     gnome-system-monitor
     gnome-text-editor
+    gnome-tweaks
     gnome-weather
-
+    gradia                          # Simple image editor
+    kitty
+    legcord                         # Discord client
+    librecad                        # CAD
+    mgba
+    nautilus                        # File manager
+    obsidian
     papers                          # Document viewer
+    rhythmbox                       # Music player
     shotwell                        # Photos
+    showtime                        # Video player
+    signal-desktop
+    slack
+    snapshot                        # Camera app
+    todoist-electron
+    ungoogled-chromium
+    vlc
+    zoom-us
 
-    libreoffice-qt
+    lutris
+    steam
+    wineWow64Packages.stable
+
+    beets                           # Audio file tag editor
+    id3v2                           # Audio file tag editor
+    picard                          # Audio file tag editor
+
+    flat-remix-gnome                # GNOME Shell theme
+
     hunspell                        # Spell checkers for LibreOffice
     hunspellDicts.en_US
     hunspellDicts.es_CL
+    libreoffice-qt
 
     imagemagick
     libheif                         # HEIF image format library
 
-    ibm-plex
-    alacritty
-    kitty
-    wget
-    tree
-    picard                          # Audio file tag editor
-    beets                           # Audio file tag editor
-    id3v2                           # Audio file tag editor
-    rhythmbox                       # Music player
-    vlc
-    nmap
-    netcat
-    librecad
-    gimp                            # Image editor
-    gradia                          # Simple image editor
-    mlocate                         # Locate
-    nautilus                        # File manager
-    obsidian
-    pipenv
-    racket
-    nodejs_24
-    typst
-    gnumake
-    killall
-    sbt
-    scala
-    showtime                        # Video player
-    snapshot                        # Computer camera app
+    ack
+    ctags
+    fzf
+    git
+    pi-coding-agent
     tmux
     vim
+
+    nodejs_24
+    pipenv
+    racket
+    sbt
+    scala
+    uv
+
+    marp-cli
+    pandoc
+    typst
+
+    direnv
+    fd                              # Find alternative
+    gnumake
+    gnuplot
+    htop
+    ibm-plex
+    jq
+    killall
+    mlocate                         # Locate
+    netcat
+    nmap
+    tree
+    wget
     wl-clipboard                    # Wayland clipboard copy/paste
-    z-lua                           # Z command
-    todoist-electron
-
-    steam
-
     yt-dlp
+    z-lua                           # Z
   ];
 
   environment.gnome.excludePackages = with pkgs; [
