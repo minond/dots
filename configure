@@ -210,6 +210,10 @@ do
       link ~/.emacs "$dots/emacs"
       ;;
 
+    sc-im)
+      link ~/.config/sc-im "$dots/sc-im"
+      ;;
+
     nvim|neovim)
       link ~/.config/nvim "$dots/nvim"
       ;;

@@ -210,6 +210,7 @@
     pi-coding-agent
     tmux
     vim
+    sc-im
 
     nodejs_24
     pipenv

@@ -1,0 +1,26 @@
+REDEFINE_COLOR "WHITE" 255 255 255
+
+color "type=HEADINGS              fg=BLACK        bg=YELLOW        bold=0"
+color "type=HEADINGS_ODD          fg=BLACK        bg=YELLOW        bold=0"
+
+color "type=CELL_SELECTION_SC     fg=BLACK        bg=YELLOW        bold=0"
+color "type=CELL_SELECTION        fg=BLACK        bg=YELLOW        bold=1"
+
+color "type=CELL_ID               fg=BLACK        bg=WHITE        bold=1"
+color "type=CELL_FORMAT           fg=BLACK        bg=WHITE        bold=0"
+color "type=CELL_CONTENT          fg=BLACK        bg=WHITE        bold=1"
+color "type=CELL_ERROR            fg=BLACK        bg=WHITE        bold=0"
+color "type=CELL_NEGATIVE         fg=BLACK        bg=WHITE        bold=0"
+
+color "type=ERROR_MSG             fg=RED          bg=WHITE        bold=1"
+
+color "type=DEFAULT               fg=BLACK        bg=WHITE        bold=0"
+color "type=INPUT                 fg=BLACK        bg=WHITE        bold=1"
+color "type=NORMAL                fg=BLACK        bg=WHITE        bold=0"
+color "type=WELCOME               fg=BLACK        bg=WHITE        bold=0"
+color "type=NUMB                  fg=BLACK        bg=WHITE        bold=0"
+color "type=STRG                  fg=BLACK        bg=WHITE        bold=0"
+color "type=DATEF                 fg=BLACK        bg=WHITE        bold=0"
+color "type=EXPRESSION            fg=BLACK        bg=WHITE        bold=0"
+color "type=INFO_MSG              fg=BLACK        bg=WHITE        bold=0"
+color "type=MODE                  fg=BLACK        bg=WHITE        bold=0"
