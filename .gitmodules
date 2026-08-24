@@ -136,3 +136,6 @@
 [submodule "dots/vim/pack/eges/start/xterm-color-table.vim"]
 	path = dots/vim/pack/eges/start/xterm-color-table.vim
 	url = https://github.com/vim-scripts/xterm-color-table.vim
+[submodule "dots/vim/pack/eges/start/vim-scimark"]
+	path = dots/vim/pack/eges/start/vim-scimark
+	url = https://github.com/mipmip/vim-scimark
