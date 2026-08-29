@@ -224,6 +224,7 @@
     typst
 
     direnv
+    devenv
     fd                              # Find alternative
     gnumake
     gnuplot
