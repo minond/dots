@@ -16,6 +16,7 @@
   ];
   networking.firewall.allowedTCPPorts = [
     7236 7250 # For network display sharing
+    53317     # For localsend
   ];
   networking.firewall.allowedUDPPorts = [
     7236 5353 # For network display sharing
@@ -182,6 +183,7 @@
     ungoogled-chromium
     vlc
     zoom-us
+    localsend
 
     lutris
     steam
