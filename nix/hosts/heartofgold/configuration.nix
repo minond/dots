@@ -123,10 +123,8 @@
     "x-scheme-handler/unknown" = "firefox.desktop";
   };
 
-  programs._1password.enable = true;
-  programs._1password-gui = {
-    enable = true;
-  };
+  nixpkgs.config.allowUnfree = true;
+  fonts.fontconfig.enable = true;
 
   programs.steam = {
     enable = true;
@@ -139,8 +137,15 @@
     ];
   };
 
-  nixpkgs.config.allowUnfree = true;
-  fonts.fontconfig.enable = true;
+  programs.java = {
+    enable = true;
+    package = pkgs.jre8;
+  };
+
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
+  programs.nix-ld.enable = true;
+  programs.localsend.enable = true;
 
   environment.systemPackages = with pkgs; [
     alacritty
@@ -249,19 +254,6 @@
   virtualisation.docker.rootless = {
     enable = true;
     setSocketVariable = true;
-  };
-
-  programs.nix-ld = {
-    enable = true;
-  };
-
-  programs.java = {
-    enable = true;
-    package = pkgs.jre8;
-  };
-
-  programs.localsend = {
-    enable = true;
   };
 
   # This value determines the NixOS release from which the default
