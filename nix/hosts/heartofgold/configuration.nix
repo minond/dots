@@ -247,7 +247,6 @@
 
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
-    gnome-photos
   ];
 
   virtualisation.docker.enable = true;
