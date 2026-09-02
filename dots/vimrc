@@ -218,8 +218,9 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup CursorLine
   au!
-  au WinEnter     * setlocal cursorline
-  au WinLeave     * setlocal nocursorline
+
+  au WinEnter,FocusGained  * setlocal cursorline
+  au WinLeave,FocusLost    * setlocal nocursorline
 augroup END
 
 augroup VimReload
