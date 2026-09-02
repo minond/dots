@@ -139,3 +139,6 @@
 [submodule "dots/vim/pack/eges/start/vim-scimark"]
 	path = dots/vim/pack/eges/start/vim-scimark
 	url = https://github.com/mipmip/vim-scimark
+[submodule "dots/tmux/tpm"]
+	path = dots/tmux/tpm
+	url = https://github.com/tmux-plugins/tpm
