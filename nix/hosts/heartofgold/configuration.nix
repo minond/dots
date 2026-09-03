@@ -108,7 +108,12 @@
     isNormalUser = true;
     description = "Marcos";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      (pkgs.python3.withPackages
+        (python-pkgs: with python-pkgs; [
+          libtmux
+        ]))
+    ];
     shell = pkgs.bash;
   };
 
@@ -220,6 +225,7 @@
     racket
     sbt
     scala
+    python313
     uv
 
     marp-cli

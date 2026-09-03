@@ -25,7 +25,6 @@ alias ok='ok_base $?'
 alias grep='grep -I --color=auto'
 alias ll='ls -hlF --color --group-directories-first'
 alias ll='ls -hlF --color'
-alias tmux='tmux -2'
 alias cd-='cd -'
 
 # Vim and ctags
@@ -105,9 +104,7 @@ alias more-udp='sudo sysctl -w net.inet.udp.maxdgram=65535'
 alias reset-sound='sudo killall coreaudiod'
 
 # Tmux
-alias smallest='tmux resize-pane -y 5'
-alias smaller='tmux resize-pane -y 10'
-alias small='tmux resize-pane -y 25'
+alias tmux='tmux -2'
 
 alias devenv-load-env='source .devenv/shell-env.sh'
 
