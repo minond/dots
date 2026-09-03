@@ -3,7 +3,7 @@
 if [[ ! -z "$@" ]]; then
   message="$@"
 else
-  message=$(tmux display-message -p "#I #{pane_index}")
+  message="(Done: $(tmux display-message -p "#I #{pane_index}"))"
 fi
 
-osascript -e "display notification \"$message\" with title \"Complete\""
+tmux display-message "$message"
