@@ -4,9 +4,9 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./modules/gnome.nix
     ];
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.luks.devices."luks-055d126b-21ac-4130-acd8-4eda9bda5a10".device = "/dev/disk/by-uuid/055d126b-21ac-4130-acd8-4eda9bda5a10";
@@ -20,6 +20,7 @@
   networking.firewall.allowedUDPPorts = [
     7236 5353 # For network display sharing
   ];
+
   networking.networkmanager.enable = true;
   networking.hostName = "heartofgold";
   networking.extraHosts = ''
@@ -47,15 +48,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.xserver.enable = true;
-
-  environment.sessionVariables = {
-    # # If cursor becomes invisible
-    # WLR_NO_HARDWARE_CURSORS = "1";
-    # # Hint electron apps to use wayland
-    # NIXOS_OZONE_WL = "1";
-  };
-
   hardware.graphics.enable = true;
   hardware.bluetooth = {
     enable = true;
@@ -75,24 +67,8 @@
     };
   };
 
-  # GNOME
-  # https://github.com/NixOS/nixpkgs/blob/d804208062fdba0610158f2e97054d4410828ba2/nixos/modules/services/desktop-managers/gnome.nix
-  services.desktopManager.gnome.enable = true;
-  services.displayManager.gdm.enable = true;
-  services.gnome.core-apps.enable = false;
-
-  programs.dconf.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -128,23 +104,14 @@
 
   services.locate.enable = true;
 
-  xdg.mime.enable = true;
-  xdg.mime.defaultApplications = {
-    "text/html" = "firefox.desktop";
-    "x-scheme-handler/http" = "firefox.desktop";
-    "x-scheme-handler/https" = "firefox.desktop";
-    "x-scheme-handler/about" = "firefox.desktop";
-    "x-scheme-handler/unknown" = "firefox.desktop";
-  };
-
   nixpkgs.config.allowUnfree = true;
   fonts.fontconfig.enable = true;
 
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    remotePlay.openFirewall = true;                 # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true;            # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true;  # Open ports in the firewall for Steam Local Network Game Transfers
 
     extraCompatPackages = with pkgs; [
       proton-ge-bin
@@ -181,7 +148,6 @@
     gnome-sudoku
     gnome-system-monitor
     gnome-text-editor
-    gnome-tweaks
     gnome-weather
     gradia                          # Simple image editor
     kitty
@@ -209,8 +175,6 @@
     beets                           # Audio file tag editor
     id3v2                           # Audio file tag editor
     picard                          # Audio file tag editor
-
-    flat-remix-gnome                # GNOME Shell theme
 
     hunspell                        # Spell checkers for LibreOffice
     hunspellDicts.en_US
@@ -258,11 +222,6 @@
     wl-clipboard                    # Wayland clipboard copy/paste
     yt-dlp
     z-lua                           # Z
-    dconf2nix
-  ];
-
-  environment.gnome.excludePackages = with pkgs; [
-    gnome-tour
   ];
 
   virtualisation.docker.enable = true;
