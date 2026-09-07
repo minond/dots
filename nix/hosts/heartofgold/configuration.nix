@@ -81,6 +81,8 @@
   services.displayManager.gdm.enable = true;
   services.gnome.core-apps.enable = false;
 
+  programs.dconf.enable = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -115,6 +117,13 @@
         ]))
     ];
     shell = pkgs.bash;
+  };
+
+  home-manager.users.marcos = {
+    home.stateVersion = "25.05";
+    imports = [
+      ./modules/paperwm.nix
+    ];
   };
 
   services.locate.enable = true;
