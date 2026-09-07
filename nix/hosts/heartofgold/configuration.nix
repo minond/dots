@@ -249,6 +249,7 @@
     wl-clipboard                    # Wayland clipboard copy/paste
     yt-dlp
     z-lua                           # Z
+    dconf2nix
   ];
 
   environment.gnome.excludePackages = with pkgs; [
