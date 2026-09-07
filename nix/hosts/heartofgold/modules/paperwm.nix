@@ -41,8 +41,8 @@ with lib.hm.gvariant;
         {}
       '';
       restore-workspaces-only-on-primary = "true";
-      selection-border-radius-bottom = 12;
-      selection-border-radius-top = 12;
+      selection-border-radius-bottom = 20;
+      selection-border-radius-top = 20;
       selection-border-size = 10;
       show-focus-mode-icon = false;
       show-open-position-icon = false;
@@ -89,8 +89,8 @@ with lib.hm.gvariant;
       background = "";
       color = "rgb(153,193,241)";
       index = 0;
-      show-position-bar = true;
-      show-top-bar = true;
+      show-position-bar = false;
+      show-top-bar = false;
     };
 
   };
