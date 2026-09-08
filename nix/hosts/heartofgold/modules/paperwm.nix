@@ -9,7 +9,7 @@ with lib.hm.gvariant;
       animation-time = 0.1;
       cycle-height-steps = [ 0.38 0.5 0.62 ];
       cycle-width-steps = [ 0.38 0.5 0.62 1.0 ];
-      default-focus-mode = 2;
+      default-focus-mode = 0;
       disable-scratch-in-overview = true;
       disable-topbar-styling = true;
       drag-drift-speed = 2;
