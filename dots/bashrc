@@ -1,11 +1,11 @@
 ###############################################################################
 # DEFINITIONS ..................................... helper function definitions
-# PROMPT ...................................................... prompt settings
 # ENV SETTINGS ...................................... settings for the bash env
 # VAR SETTINGS ............................................. settings for tools
 # SETTINGS ................................. settings for commands/applications
 # PATHS ...................................................... path var setters
 # INITIALIZERS ............................................. initialize plugins
+# PROMPT ...................................................... prompt settings
 # EXTRA SOURCES .................................. load additional source files
 # ALIASES ........................................ anything but aliases go here
 ###############################################################################
@@ -34,36 +34,6 @@ function source? {
 function path! {
   [ -d "$1" ] && export PATH="$PATH:$1"
 }
-
-###############################################################################
-# $PROMPT
-###############################################################################
-
-ps1_prompt_jobscount() {
-  local stopped=$(jobs -sp | wc -l | sed 's/ //g')
-  local running=$(jobs -rp | wc -l | sed 's/ //g')
-  ((running+stopped)) && echo -n " ($((running+stopped)))"
-}
-
-ps1_nice_exit_code() {
-  local last_exit="$?"
-
-  # 0   ok
-  # 146 sent process to background
-  # 141 git less exit
-  # 130 manually cancelled (ctrl-c)
-  if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
-    return
-  fi
-
-  echo " ($last_exit)"
-}
-
-if [[ "$TERM" =~ 256color ]]; then
-  export PS1='\[\e[1m\]\W\[\e[31m\]$(ps1_nice_exit_code)\[\e[34m\]$(ps1_prompt_jobscount)\[\e[30m\]\[\e[0m\] '
-else
-  export PS1='\W$(ps1_nice_exit_code)$(ps1_prompt_jobscount) '
-fi
 
 ###############################################################################
 # $ENV SETTINGS
@@ -197,6 +167,36 @@ path! $ANDROID_HOME/platform-tools                                            # 
 command -v direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"   || true
 command -v pyenv  >/dev/null 2>&1 && eval "$(pyenv init --path)"  || true
 command -v rbenv  >/dev/null 2>&1 && eval "$(rbenv init -)"       || true
+
+###############################################################################
+# $PROMPT
+###############################################################################
+
+ps1_prompt_jobscount() {
+  local stopped=$(jobs -sp | wc -l | sed 's/ //g')
+  local running=$(jobs -rp | wc -l | sed 's/ //g')
+  ((running+stopped)) && echo -n " ($((running+stopped)))"
+}
+
+ps1_nice_exit_code() {
+  local last_exit="$?"
+
+  # 0   ok
+  # 146 sent process to background
+  # 141 git less exit
+  # 130 manually cancelled (ctrl-c)
+  if [ "$last_exit" -eq 0 ] || [ "$last_exit" -eq 146 ] || [ "$last_exit" -eq 141 ] || [ "$last_exit" -eq 130 ]; then
+    return
+  fi
+
+  echo " ($last_exit)"
+}
+
+if [[ "$TERM" =~ 256color ]]; then
+  export PS1='\[\e[1m\]\W\[\e[31m\]$(ps1_nice_exit_code)\[\e[34m\]$(ps1_prompt_jobscount)\[\e[30m\]\[\e[0m\] '
+else
+  export PS1='\W$(ps1_nice_exit_code)$(ps1_prompt_jobscount) '
+fi
 
 ###############################################################################
 # $EXTRA SOURCES
