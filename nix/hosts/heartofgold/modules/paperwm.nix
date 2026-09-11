@@ -60,9 +60,32 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell/extensions/paperwm/keybindings" = {
+      close-window = [ "<Shift><Super>BackSpace" ];
+      cycle-height = [ "" ];
+      cycle-height-backwards = [ "" ];
       cycle-width-backwards = [ "<Shift><Super>r" ];
+      live-alt-tab-scratch = [ "" ];
+      live-alt-tab-scratch-backward = [ "" ];
       open-window-position-down = [ "" ];
+      switch-down = [ "" ];
+      switch-down-loop = [ "<Super>Down" ];
+      switch-first = [ "" ];
+      switch-focus-mode = [ "" ];
+      switch-last = [ "" ];
+      switch-left = [ "" ];
+      switch-left-loop = [ "<Super>Left" ];
+      switch-next = [ "" ];
       switch-next-loop = [ "" ];
+      switch-previous = [ "" ];
+      switch-previous-loop = [ "" ];
+      switch-right = [ "" ];
+      switch-right-loop = [ "<Super>Right" ];
+      switch-up = [ "" ];
+      switch-up-loop = [ "<Super>Up" ];
+      take-window = [ "" ];
+      toggle-scratch = [ "" ];
+      toggle-scratch-layer = [ "" ];
+      toggle-scratch-window = [ "" ];
     };
 
     "org/gnome/shell/extensions/paperwm/workspaces" = {
