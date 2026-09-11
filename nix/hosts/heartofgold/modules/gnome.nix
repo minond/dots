@@ -4,8 +4,10 @@
 {
   services.xserver.enable = true;
   services.desktopManager.gnome.enable = true;
+
   services.displayManager.gdm.enable = true;
-  services.gnome.core-apps.enable = false;
+  services.displayManager.autoLogin.enable  = true;
+  services.displayManager.autoLogin.user = "marcos";
 
   programs.dconf.enable = true;
 
@@ -23,6 +25,9 @@
     "x-scheme-handler/about" = "firefox.desktop";
     "x-scheme-handler/unknown" = "firefox.desktop";
   };
+
+  services.gnome.core-apps.enable = false;
+  services.gnome.games.enable = false;
 
   environment.systemPackages = with pkgs; [
     gnome-tweaks

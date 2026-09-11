@@ -133,7 +133,6 @@
     file-roller                     # Archive manager
     firefox
     geary                           # Email reader
-    gimp                            # Image editor
     gnome-calculator
     gnome-calendar
     gnome-characters
