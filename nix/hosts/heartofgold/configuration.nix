@@ -169,6 +169,7 @@
 
     lutris
     steam
+    seventeenlands
     wineWow64Packages.stable
 
     beets                           # Audio file tag editor
